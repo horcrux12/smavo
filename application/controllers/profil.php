@@ -17,6 +17,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'profil/view_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data profil';
@@ -29,7 +31,8 @@
 
 		public function tambah() // tambah data profil
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'profil/form_tambah_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data profil';

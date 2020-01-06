@@ -16,6 +16,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_profil/view_kat_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Kategori Profil';
@@ -26,7 +28,8 @@
 
 		public function tambah() 
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_profil/form_tambah_kat_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data Kategori Profil';
@@ -36,7 +39,8 @@
 
 		public function ubah()
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_profil/ubah_kat_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Profil';

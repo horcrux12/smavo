@@ -17,9 +17,11 @@ class Dashboard extends CI_Controller {
 
 
 	public function index() {
+			$konten['css']			= '';
 			$konten['konten'] 		= 'v_konten';
 			$konten['judul']		= 'Beranda';
 			$konten['sub_judul'] 	= '';
+			$konten['js']			= '';
 			$this->load->view('v_dashboard',$konten);	
 	}
 

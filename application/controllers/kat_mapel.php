@@ -16,6 +16,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_mapel/view_kat_mapel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Kategori Mapel';
@@ -26,7 +28,8 @@
 
 		public function tambah() 
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_mapel/form_tambah_kat_mapel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data Kategori Mapel';
@@ -36,7 +39,8 @@
 
 		public function ubah()
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_mapel/ubah_kat_mapel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Mapel';

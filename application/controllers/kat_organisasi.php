@@ -16,6 +16,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_organisasi/view_kat_organisasi';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Organisasi';
@@ -26,7 +28,8 @@
 
 		public function tambah() 
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_organisasi/form_tambah_kat_organisasi';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data Organisasi';
@@ -37,6 +40,8 @@
 		public function ubah()
 		{
 			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_organisasi/ubah_kat_organisasi';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Organisasi';

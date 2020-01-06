@@ -16,6 +16,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_artikel/view_kat_artikel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Kategori Artikel';
@@ -26,7 +28,8 @@
 
 		public function tambah() 
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_artikel/form_tambah_kat_artikel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data Kategori Artikel';
@@ -36,7 +39,8 @@
 
 		public function ubah()
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_artikel/ubah_kat_artikel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Artikel';

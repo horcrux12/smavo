@@ -16,6 +16,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_jabatan/view_kat_jabatan';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Kategori Jabatan';
@@ -26,7 +28,8 @@
 
 		public function tambah() 
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_jabatan/form_tambah_kat_jabatan';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data Kategori Jabatan';
@@ -36,7 +39,8 @@
 
 		public function ubah()
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_jabatan/ubah_kat_jabatan';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Jabatan';

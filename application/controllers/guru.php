@@ -14,6 +14,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'guru/view_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';

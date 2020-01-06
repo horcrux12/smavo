@@ -17,6 +17,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'user/view_user';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data user';
@@ -28,7 +30,8 @@
 
 		public function tambah() // tambah data user
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'user/form_tambah_user';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data user';

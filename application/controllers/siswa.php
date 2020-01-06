@@ -17,6 +17,8 @@
 		
 		public function index()
 		{
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'siswa/view_siswa';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data siswa';
@@ -29,7 +31,8 @@
 
 		public function tambah() // tambah data siswa
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'siswa/form_tambah_siswa';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data siswa';
