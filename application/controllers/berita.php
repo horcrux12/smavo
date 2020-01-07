@@ -110,12 +110,15 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-
 		public function simpan() // simpan data berita
 		{
 			
 		  $config['upload_path'] 	= './assets/photo/';
-	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
+		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
+		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
+		  $config['max_size'] 		= 5000;
+	      $config['max_width'] 		= 5000;
+	      $config['max_height'] 	= 5000;
 	      $config['encrypt_name']	= FALSE;
 	     
 	 
@@ -145,6 +148,7 @@
 			}
 			else
 			{
+				// print_r($data);
 				$this->model_berita->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
@@ -152,84 +156,84 @@
 		}
 	}
 
-// 		public function ubah() // Mengubah data berita
-// 		{
+		public function ubah() // Mengubah data berita
+		{
 			
-// 			$konten['konten'] 		= 'berita/form_ubah_berita';
-// 			$konten['judul']		= 'Data Master';
-// 			$konten['sub_judul'] 	= 'Ubah Data berita';
-// 			$key = $this->uri->segment(3);
-// 			$this->db->where('id_berita',$key);
-// 			$query = $this->db->get('tb_berita');
-// 			if($query->num_rows()>0)
-// 			{
+			$konten['konten'] 		= 'berita/form_ubah_berita';
+			$konten['judul']		= 'Data Master';
+			$konten['sub_judul'] 	= 'Ubah Data berita';
+			$key = $this->uri->segment(3);
+			$this->db->where('id_berita',$key);
+			$query = $this->db->get('tb_berita');
+			if($query->num_rows()>0)
+			{
 
-// 				foreach ($query->result() as $row )
-// 					{
-// 						$konten['kode']			= $row->id_berita;
-// 						$konten['kode_kat']		= $row->id_kat_berita;
-// 						$konten['user']			= $row->penulis;
-// 						$konten['isi']			= $row->deskripsi;
-// 						$konten['file']			= $row->foto;
-// 						// $konten['tanggal']		= $row->tgl_update;
+				foreach ($query->result() as $row )
+					{
+						$konten['kode']			= $row->id_berita;
+						$konten['kode_kat']		= $row->id_kat_berita;
+						$konten['user']			= $row->penulis;
+						$konten['isi']			= $row->deskripsi;
+						$konten['file']			= $row->foto;
+						// $konten['tanggal']		= $row->tgl_update;
 						
 						
-// 					}
-// 				}
-// 				else
-// 				{
-// 						$konten['kode']			= "";
-// 						$konten['kode_kat']		= "";
-// 						$konten['user']			= "";
-// 						$konten['isi']			= "";
-// 						$konten['file']			= "";
-// 						// $konten['tanggal']		= "";
+					}
+				}
+				else
+				{
+						$konten['kode']			= "";
+						$konten['kode_kat']		= "";
+						$konten['user']			= "";
+						$konten['isi']			= "";
+						$konten['file']			= "";
+						// $konten['tanggal']		= "";
 						
 						
 			
-// 			} 
-// 				$this->load->view('v_dashboard',$konten);
-// }
+			} 
+				$this->load->view('v_dashboard',$konten);
+}
 
-// 		public function detail() // Detail data berita
-// 		{
+		public function detail() // Detail data berita
+		{
 			
-// 			$konten['konten'] 		= 'berita/view_detail_berita';
-// 			$konten['judul']		= 'Data Master';
-// 			$konten['sub_judul'] 	= 'Detail berita';
-// 			$konten['data']			= $this->model_berita->tampil_berita();
-// 			$key = $this->uri->segment(3);
-// 			$this->db->where('id_berita',$key);
-// 			$query = $this->db->get('tb_berita');
-// 			if($query->num_rows()>0)
-// 			{
+			$konten['konten'] 		= 'berita/view_detail_berita';
+			$konten['judul']		= 'Data Master';
+			$konten['sub_judul'] 	= 'Detail berita';
+			$konten['data']			= $this->model_berita->tampil_berita();
+			$key = $this->uri->segment(3);
+			$this->db->where('id_berita',$key);
+			$query = $this->db->get('tb_berita');
+			if($query->num_rows()>0)
+			{
 
-// 				foreach ($query->result() as $row )
-// 					{
-// 						$konten['kode']			= $row->id_berita;
-// 						$konten['kode_kat']		= $row->id_kat_berita;
-// 						$konten['user']			= $row->penulis;
-// 						$konten['isi']			= $row->deskripsi;
-// 						$konten['file']			= $row->foto;
-// 						// $konten['tanggal']		= $row->tgl_update;
+				foreach ($query->result() as $row )
+					{
+						$konten['kode']			= $row->id_berita;
+						$konten['kode_kat']		= $row->id_kat_berita;
+						$konten['user']			= $row->penulis;
+						$konten['isi']			= $row->deskripsi;
+						$konten['file']			= $row->foto;
+						// $konten['tanggal']		= $row->tgl_update;
 						
 						
 						
-// 					}
-// 				}
-// 				else
-// 				{
-// 						$konten['kode']			= "";
-// 						$konten['kode_kat']		= "";
-// 						$konten['user']			= "";
-// 						$konten['isi']			= "";
-// 						$konten['file']			= "";
-// 						// $konten['tanggal']		= "";
-// 				}
+					}
+				}
+				else
+				{
+						$konten['kode']			= "";
+						$konten['kode_kat']		= "";
+						$konten['user']			= "";
+						$konten['isi']			= "";
+						$konten['file']			= "";
+						// $konten['tanggal']		= "";
+				}
 			
-// 			$this->load->view('v_dashboard',$konten);
+			$this->load->view('v_dashboard',$konten);
 		
-// 			} 
+			} 
 
 
 		public function delete()

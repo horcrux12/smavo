@@ -13,9 +13,6 @@ if (!empty($info_gagal)) {
 ?>
 
 
-
-
-
 <!-- Kembali -->
 
 <a href="<?php echo base_url(); ?>berita">
@@ -66,7 +63,7 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-5">
-      <input type="file" id="id-input-file-2" name="file_name" />
+      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     </div>
   </div>
 
