@@ -122,43 +122,13 @@ if (!empty($info_gagal)) {
 
     <div class="row">
       <label class="col-sm-2 control-label">Isi berita</label>
-      <div class="col-md-9">
+      <div class="col-md-5">
         <div class="box-header">
         </div>
         <textarea id="summernote_1" name="isi"></textarea>
       </div>
     </div>
     <br>
-
-    <label for="" class="col-sm-2 control-label">Foto</label>
-    <div class="container">
-      <div class="panel panel-default col-md-9">
-        <div class="panel-body">
-          <div class="input-group control-group after-add-more">
-
-            <input type="file" name="file_name[]" class="form-control" placeholder="Enter Name Here">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-sm add-more">
-                <span class="ace-icon fa fa-plus icon-on-right bigger-110"></span>
-              </button>
-            </span>
-          </div>
-
-          <!-- Copy Fields -->
-          <div class="copy hide">
-            <div class="control-group input-group" style="margin-top:10px">
-              <input type="file" name="file_name[]" class="form-control" placeholder="Enter Name Here">
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-danger btn-sm remove">
-                  <span class="ace-icon fa fa-trash icon-on-right bigger-110"></span>
-                </button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </section>
   <br>
 
