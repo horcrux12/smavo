@@ -93,7 +93,7 @@ if(!empty($info_hapus))
                             <td>#</td>
                             <td align="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_berita?></td>
-                            <td><?php echo $row->id_kat_artikel?></td>
+                            <td><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->penulis?></td>
                            
                             <td colspan="2">
@@ -103,10 +103,6 @@ if(!empty($info_hapus))
                                   echo " .... " ?>  
                                   <br>
                             <a href="<?php echo base_url();?>berita/detail/<?php echo $row->id_berita?>"> ( Selanjutnya )</a> </td>
-                            
-                            
-                            
-                           
                            
                            <td align="center">
                               <div class="hidden-sm hidden-xs action-buttons">

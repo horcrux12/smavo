@@ -1,51 +1,3 @@
-<!-- CEK FORM KOSONG -->
-
-<script type="text/javascript">
-  function cekform() {
-
-    //         if(!$ ("#kode").val())
-    //   {
-    //     alert('Maaf kode berita tidak boleh kosong');
-    //     $("#kode").focus();
-    //     return false;
-
-    //   }
-
-    //   if(!$ ("#nama").val())
-    //   {
-    //     alert('Maaf nama berita tidak boleh kosong');
-    //     $("#nama").focus();
-    //     return false;
-
-    //   }
-
-    //   if(!$ ("#kode_kat").val())
-    //   {
-    //     alert('Maaf kategori tidak boleh kosong');
-    //     $("#kode_kat").focus();
-    //     return false;
-
-    //   }
-
-    //   if(!$ ("#judul").val())
-    //   {
-    //     alert('Maaf judul tidak boleh kosong');
-    //     $("#judul").focus();
-    //     return false;
-
-    // }
-
-    //  if(!$ ("#isi").val())
-    //   {
-    //     alert('Maaf isi berita tidak boleh kosong');
-    //     $("#isi").focus();
-    //     return false;
-
-  }
-</script>
-
-
-
 <?php
 $info_gagal = $this->session->flashdata('info_gagal');
 if (!empty($info_gagal)) {
@@ -114,7 +66,7 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-5">
-      <input type="file" id="id-input-file-2" />
+      <input type="file" id="id-input-file-2" name="file_name" />
     </div>
   </div>
 
@@ -122,7 +74,7 @@ if (!empty($info_gagal)) {
 
     <div class="row">
       <label class="col-sm-2 control-label">Isi berita</label>
-      <div class="col-md-5">
+      <div class="col-md-10">
         <div class="box-header">
         </div>
         <textarea id="summernote_1" name="isi"></textarea>
@@ -131,11 +83,7 @@ if (!empty($info_gagal)) {
     <br>
   </section>
   <br>
-
-
-
-
-
+  
   <center>
 
     <div class="box-footer">

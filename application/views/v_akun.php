@@ -6,7 +6,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 <li class="light-blue dropdown-modal">
 	<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 		<i class="ace-icon fa fa-user"></i>&nbsp;&nbsp;
-		<span><?php echo $this->session->userdata('nama');?></span>s
+		<span><?php echo $this->session->userdata('nama');?></span>
 		<i class="ace-icon fa fa-caret-down"></i>
 	</a>
 	<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">

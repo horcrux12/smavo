@@ -58,8 +58,12 @@
 			$data	= " SELECT
 
 						tb_berita.id_berita,
-						
+						tb_kat_artikel.nama_kat_artikel,
+						tb_berita.foto,
+						tb_berita.penulis,
+						tb_berita.deskripsi
 
+					
 						FROM 
 						tb_berita,tb_kat_artikel
 
