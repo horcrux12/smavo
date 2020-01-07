@@ -182,16 +182,6 @@ if (!empty($info_gagal)) {
 <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script type="text/javascript">
-  $(function() {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-
-  });
-</script>
-
-<script type="text/javascript">
   $(document).ready(function() {
     $(".add-more").click(function() {
       var html = $(".copy").html();

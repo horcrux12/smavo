@@ -34,7 +34,6 @@
 			$konten['css']			= '
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
-				
 				<!-- BEGIN PAGE LEVEL PLUGINS -->
 		        <link href="'.base_url('assets/pluginss/bootstrap-wysihtml5/bootstrap-wysihtml5.css').'" rel="stylesheet" type="text/css" />
 		        <link href="'.base_url().'assets/pluginss/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
@@ -304,5 +303,4 @@
 
 
 // } 
-	
 	}	
