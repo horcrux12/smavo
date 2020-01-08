@@ -35,7 +35,6 @@
              
            <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>kat_profil/simpan" onsubmit="return cekform();">
 
-              
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">ID Kategori profil</label>
               <div class="col-sm-2">
@@ -57,4 +56,6 @@
 <button type="reset"  class="btn btn-danger btn-small">Batal</button>
    </form>
       </div>
-            </center>
+</center>
+
+
