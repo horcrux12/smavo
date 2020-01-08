@@ -60,64 +60,65 @@ if(!empty($info_gagal))
             <?php } ?>
             </select>
               </div>
-              </div>
-              
-       <section class="content">
-
-          <div class="row">
-            <label class="col-sm-2 control-label">Isi profil</label>
-                      <div class="col-md-9">
-                            <div class="box-header">
             </div>
-                    <textarea id="editor1" name="isi" rows="10" cols="80"></textarea>
-        </div>
-    </div>  
-    <br>
 
-<label for="" class="col-sm-2 control-label">Foto</label>
-<div class="container">
-  <div class="panel panel-default col-md-9">
-     <div class="panel-body">
-        <div class="input-group control-group after-add-more">
-          
-                    <input type="file" name="file_name[]" class="form-control" placeholder="Enter Name Here">
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-primary btn-sm add-more">
-                        <span class="ace-icon fa fa-plus icon-on-right bigger-110"></span> 
-                      </button>
-                    </span>
+
+
+  <!-- form sejarah -->
+  <section class="content">
+
+    <div class="row">
+      <label class="col-sm-2 control-label">sejarah</label>
+      <div class="col-md-10">
+        <div class="box-header">
         </div>
-        
-        <!-- Copy Fields -->
-        <div class="copy hide">
-          <div class="control-group input-group" style="margin-top:10px">
-            <input type="file" name="file_name[]" class="form-control" placeholder="Enter Name Here">
-            <span class="input-group-btn">
-                      <button type="button" class="btn btn-danger btn-sm remove">
-                        <span class="ace-icon fa fa-trash icon-on-right bigger-110"></span> 
-                      </button>
-            </span>
-        </div>
-      </div> 
+        <textarea id="summernote_1" name="sejarah"></textarea>
+      </div>
     </div>
- </div>
-</div>
+    <br>
+  </section>
+  <!-- end form sejarah  -->
 
-</section>
-<br>
 
+  <!-- form visi dan misi -->
+  <section class="content">
+    <div class="row">
+      <label class="col-sm-2 control-label">Visi</label>
+      <div class="col-md-10">
+        <div class="box-header">
+        </div>
+        <textarea id="summernote_2" name="visi"></textarea>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <label class="col-sm-2 control-label">Misi</label>
+      <div class="col-md-10">
+        <div class="box-header">
+        </div>
+        <textarea id="summernote_3" name="misi"></textarea>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <!-- end form visi dan misi   -->
+       
+    
 
 
 
 
 <center>
-
 <div class="box-footer">		
 <button type="submit" class="btn btn-info btn-small"> Simpan</button>
 <button type="reset"  class="btn btn-danger btn-small">Batal</button>
    </form>
       </div>
-            </center>
+</center>
 
 
 
