@@ -44,10 +44,10 @@
 
       }
 
-        if(!$ ("#file_name").val())
+        if(!$ ("#id-input-file-2").val())
       {
         alert('Maaf foto tidak boleh kosong');
-        $("#file_name").focus();
+        $("#id-input-file-2").focus();
         return false;
       }
 
@@ -162,17 +162,12 @@ if(!empty($info_gagal))
               </div>
               </div>
 
-
-             
-
-
               <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Foto</label>
+              <label class="col-sm-2 control-label">Foto Guru</label>
               <div class="col-sm-5">
-              <input type="file" class="form-control" name="file_name" id="file_name" placeholder="Pilih Foto">
-              <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i>
+                <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               </div>
-              </div> 
+            </div>
                 
 <center> 
 <div class="box-footer">		

@@ -31,8 +31,78 @@
 
 		public function tambah() // tambah data profil
 		{
-			$konten['css']			= '';
-			$konten['js']			= '';
+			$konten['css']			= '
+				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
+				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
+				<!-- BEGIN PAGE LEVEL PLUGINS -->
+		        <link href="'.base_url('assets/pluginss/bootstrap-wysihtml5/bootstrap-wysihtml5.css').'" rel="stylesheet" type="text/css" />
+		        <link href="'.base_url().'assets/pluginss/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+		        <link href="'.base_url().'assets/pluginss/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+		        <!-- END PAGE LEVEL PLUGINS -->';
+			$konten['js']			= '
+			<script src="'.base_url().'assets/js/jquery-ui.custom.min.js"></script>
+				<script src="'.base_url().'assets/js/chosen.jquery.min.js"></script>
+				<script src="'.base_url().'assets/js/autosize.min.js"></script>
+				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
+				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
+					
+				<!-- BEGIN PAGE LEVEL PLUGINS -->
+		        <script src="'.base_url().'assets/pluginss/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
+		        <script src="'.base_url().'assets/pluginss/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+		        <script src="'.base_url().'assets/pluginss/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+		        <script src="'.base_url().'assets/pluginss/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+		        <script src="'.base_url().'assets/pluginss/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+		        <!-- END PAGE LEVEL PLUGINS -->
+		        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+		        <script src="'.base_url().'assets/pluginss/components-editors.min.js" type="text/javascript"></script>
+		        <script src="'.base_url().'assets/pluginss/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+				<!-- END PAGE LEVEL SCRIPTS -->
+				<script>
+				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
+					no_file:"No File ...",
+					btn_choose:"Choose",
+					btn_change:"Change",
+					droppable:false,
+					onchange:null,
+					thumbnail:false //| true | large
+					//whitelist:"gif|png|jpg|jpeg"
+					//blacklist:"exe|php"
+					//onchange:""
+					//
+				});
+
+				$("#id-input-file-3").ace_file_input({
+					style: "well",
+					btn_choose: "Drop files here or click to choose",
+					btn_change: null,
+					no_icon: "ace-icon fa fa-cloud-upload",
+					droppable: true,
+					thumbnail: "small"//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = "FILE_LOAD_FAILED",
+						//2 = "IMAGE_LOAD_FAILED",
+						//3 = "THUMBNAIL_FAILED"
+						//alert(error_code);
+					}
+			
+				}).on("change", function(){
+					//console.log($(this).data("ace_input_files"));
+					//console.log($(this).data("ace_input_method"));
+				});
+				</script>
+				';
 			$konten['konten'] 		= 'profil/form_tambah_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data profil';

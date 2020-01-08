@@ -12,7 +12,6 @@ if (!empty($info_gagal)) {
 }
 ?>
 
-
 <!-- Kembali -->
 
 <a href="<?php echo base_url(); ?>berita">
@@ -36,7 +35,7 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Nama Penulis</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>">
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>"readonly>
     </div>
   </div>
 
