@@ -27,32 +27,27 @@ if (!empty($info_gagal)) {
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Kode berita</label>
-    <div class="col-sm-5">
+    <div class="col-sm-8">
       <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
     </div>
   </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Nama Penulis</label>
-    <div class="col-sm-5">
+    <div class="col-sm-8">
       <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>"readonly>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label">Kategori</label>
-    <div class="col-sm-5">
-      <select class="" name="kode_kat" id="kode_kat">
+    <div class="col-sm-8">
+      <select class="form-control" name="kode_kat" id="kode_kat">
         <option value="">-------- pilih salah satu -------</option>
-
-
         <?php
-
         $kat  = $this->db->get('tb_kat_artikel');
         foreach ($kat->result() as $row) {
-
         ?>
-
           <option value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
         <?php } ?>
       </select>
@@ -61,7 +56,7 @@ if (!empty($info_gagal)) {
 
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
-    <div class="col-sm-5">
+    <div class="col-sm-8">
       <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     </div>
   </div>
@@ -120,6 +115,7 @@ if (!empty($info_gagal)) {
   $(document).ready(function() {
     $('#isi').summernote({
       height: "300px",
+      width: "990px",
       styleWithSpan: false
     });
   }); 
