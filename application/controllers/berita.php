@@ -34,11 +34,8 @@
 			$konten['css']			= '
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
-				<!-- BEGIN PAGE LEVEL PLUGINS -->
-		        <link href="'.base_url('assets/pluginss/bootstrap-wysihtml5/bootstrap-wysihtml5.css').'" rel="stylesheet" type="text/css" />
-		        <link href="'.base_url().'assets/pluginss/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
-		        <link href="'.base_url().'assets/pluginss/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
-		        <!-- END PAGE LEVEL PLUGINS -->';
+				<link rel="stylesheet" href="'.base_url().'assets/summernote-master/dist/summernote-lite.min.css" />
+				';
 			$konten['konten'] 		= 'berita/form_tambah_berita';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data berita';
@@ -49,18 +46,7 @@
 				<script src="'.base_url().'assets/js/autosize.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
-					
-				<!-- BEGIN PAGE LEVEL PLUGINS -->
-		        <script src="'.base_url().'assets/pluginss/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
-		        <script src="'.base_url().'assets/pluginss/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
-		        <script src="'.base_url().'assets/pluginss/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
-		        <script src="'.base_url().'assets/pluginss/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-		        <script src="'.base_url().'assets/pluginss/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
-		        <!-- END PAGE LEVEL PLUGINS -->
-		        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-		        <script src="'.base_url().'assets/pluginss/components-editors.min.js" type="text/javascript"></script>
-		        <script src="'.base_url().'assets/pluginss/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-				<!-- END PAGE LEVEL SCRIPTS -->
+				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 				<script>
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",

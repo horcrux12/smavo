@@ -73,7 +73,7 @@ if (!empty($info_gagal)) {
       <div class="col-md-10">
         <div class="box-header">
         </div>
-        <textarea id="summernote_1" name="isi"></textarea>
+        <textarea id="isi" name="isi"></textarea>
       </div>
     </div>
     <br>
@@ -92,10 +92,9 @@ if (!empty($info_gagal)) {
 
 
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
-<script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function() {
     $(".add-more").click(function() {
       var html = $(".copy").html();
@@ -105,4 +104,23 @@ if (!empty($info_gagal)) {
       $(this).parents(".control-group").remove();
     });
   });
+</script> -->
+<!-- <script>
+  var ckeditor = CKEDITOR.replace('isi',{
+    height : '400px',
+    width : '610px',
+    filebrowserBrowseUrl : 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+    filebrowserUploadUrl : 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+    filebrowserImageBrowseUrl : 'filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+  });
+  CKEDITOR.disablAutoInLine = true;
+  CKEDITOR.inline('editable');
+</script> -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#isi').summernote({
+      height: "300px",
+      styleWithSpan: false
+    });
+  }); 
 </script>
