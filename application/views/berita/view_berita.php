@@ -67,6 +67,7 @@ if(!empty($info_hapus))
                             <th>Kode </th>
                             <th>Kategori</th>
                             <th>Penulis</th>
+                            <th>Judul</th>
                             <th>Foto Utama</th>
                             <th colspan="2">Isi berita</th>
                             <th>Aksi</th>
@@ -94,6 +95,7 @@ if(!empty($info_hapus))
                             <td><?php echo $row->id_berita?></td>
                             <td><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->penulis?></td>
+                            <td><?php echo $row->judul?></td>
                             <td align="center">
                               <img class="img-circle" width="70" height="70" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>>
                            </td>

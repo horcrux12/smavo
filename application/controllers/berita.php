@@ -47,7 +47,7 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				<script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
+				// <script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
 				<script>
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",
@@ -120,6 +120,7 @@
 			$key = $this->input->post('kode');
 			$data['id_berita'] 			= $this->input->post('kode');
 			$data['id_kat_artikel'] 	= $this->input->post('kode_kat');
+			$data['judul'] 				= $this->input->post('judul');
 			$data['penulis'] 			= $this->input->post('nama');
 			$data['deskripsi'] 			= $this->input->post('isi');
 			$data['foto'] 				= $this->upload->data('file_name');	
@@ -159,6 +160,7 @@
 					{
 						$konten['kode']			= $row->id_berita;
 						$konten['kode_kat']		= $row->id_kat_berita;
+						$konten['judul']		= $row->judul;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file']			= $row->foto;
@@ -171,6 +173,7 @@
 				{
 						$konten['kode']			= "";
 						$konten['kode_kat']		= "";
+						$konten['judul']		= "";
 						$konten['user']			= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";
@@ -200,6 +203,7 @@
 					{
 						$konten['kode']			= $row->id_berita;
 						$konten['kode_kat']		= $row->id_kat_artikel;
+						$konten['judul']		= $row->judul;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file']			= $row->foto;
@@ -210,6 +214,7 @@
 				{
 						$konten['kode']			= "";
 						$konten['kode_kat']		= "";
+						$konten['judul']		= "";
 						$konten['user']			= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";

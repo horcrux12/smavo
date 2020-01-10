@@ -60,6 +60,14 @@ if (!empty($info_gagal)) {
       <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     </div>
   </div>
+
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Judul</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul Berita" >
+    </div>
+  </div>
+
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
     <div class="col-sm-8">
@@ -82,35 +90,14 @@ if (!empty($info_gagal)) {
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 <!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
-<!-- <script type="text/javascript">
-  $(document).ready(function() {
-    $(".add-more").click(function() {
-      var html = $(".copy").html();
-      $(".after-add-more").after(html);
-    });
-    $("body").on("click", ".remove", function() {
-      $(this).parents(".control-group").remove();
-    });
-  });
-</script> -->
-<!-- <script>
-  var ckeditor = CKEDITOR.replace('isi',{
-    height : '400px',
-    width : '610px',
-    filebrowserBrowseUrl : 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-    filebrowserUploadUrl : 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-    filebrowserImageBrowseUrl : 'filemanager/dialog.php?type=1&editor=ckeditor&fldr='
-  });
-  CKEDITOR.disablAutoInLine = true;
-  CKEDITOR.inline('editable');
-</script> -->
+
 <script type="text/javascript">
   $(document).ready(function() {
     $('#isi').summernote({
       height: "300px",
       styleWithSpan: false,
       toolbar:[
-        ['cleaner',['cleaner']], // The Button
+        ['cleaner',['cleaner']],// The Button
         ['style',['style']],
         ['font',['bold','italic','underline','clear']],
         ['fontname',['fontname']],
@@ -118,7 +105,7 @@ if (!empty($info_gagal)) {
         ['para',['ul','ol','paragraph']],
         ['height',['height']],
         ['table',['table']],
-        ['insert',['media','link','hr']],
+        ['insert',['media','link','hr','picture']],
         ['view',['fullscreen','codeview']],
         ['help',['help']]
     ],

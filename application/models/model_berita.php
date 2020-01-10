@@ -61,6 +61,7 @@
 						tb_kat_artikel.nama_kat_artikel,
 						tb_berita.foto,
 						tb_berita.penulis,
+						tb_berita.judul,
 						tb_berita.deskripsi
 
 					

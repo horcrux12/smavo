@@ -1,9 +1,4 @@
-  <!-- hak akses admin -->
-  <?php 
-    if ($this->session->userdata('hak_akses') === 'Administrator'):
- ?>
-
-   <!-- Kembali -->
+  <!-- Kembali -->
      
       <a href="<?php echo base_url();?>berita">
       <button type="button" class="btn btn-warning btn-sm pull-right">
@@ -21,13 +16,13 @@
 
 
             <div class="page-header">
-              <!-- <h1>
-                <?php echo $row->nama_lengkap;?>
+              <h1>
+                <?php echo $row->judul?>
                 <small>
                   <i class="ace-icon fa fa-angle-double-right"></i> Dengan ID berita
                   ( <?php echo $row->id_berita  ;?> )
                 </small>
-              </h1> -->
+              </h1>
             </div>
             <!-- /.page-header -->
 
@@ -63,7 +58,7 @@
                           <div class="inline position-relative">
                             
                               
-                              <span class="white"><?php echo $row->penulis;?></span>
+                              <span class="white">Foto Utama</span>
                             
 
                           </div>
@@ -133,5 +128,3 @@
                   </div>
 <?php } ?>
 
-<!--   end hak akses admin -->
-<?php endif; ?>
