@@ -60,19 +60,12 @@ if (!empty($info_gagal)) {
       <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     </div>
   </div>
-
-  <section class="content">
-
-    <div class="row">
-      <label class="col-sm-2 control-label">Isi berita</label>
-      <div class="col-md-10">
-        <div class="box-header">
-        </div>
-        <textarea id="isi" name="isi"></textarea>
-      </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
+    <div class="col-sm-8">
+      <textarea name="isi" id="isi" ></textarea>
     </div>
-    <br>
-  </section>
+  </div>
   <br>
   
   <center>
@@ -115,7 +108,7 @@ if (!empty($info_gagal)) {
   $(document).ready(function() {
     $('#isi').summernote({
       height: "300px",
-      width: "990px",
+    
       styleWithSpan: false
     });
   }); 
