@@ -108,8 +108,20 @@ if (!empty($info_gagal)) {
   $(document).ready(function() {
     $('#isi').summernote({
       height: "300px",
-    
-      styleWithSpan: false
+      styleWithSpan: false,
+      toolbar:[
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['fontname', ['fontname']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
     });
   }); 
 </script>
