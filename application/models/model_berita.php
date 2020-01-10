@@ -52,7 +52,7 @@
 		 }
 
 
-		 public function tampil_berita() // join tb_jabatan, tb_berita dan tb_mapel
+		 public function tampil_berita() 
 		{
 
 			$data	= " SELECT

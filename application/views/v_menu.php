@@ -28,10 +28,10 @@
 				<a href="<?php echo base_url();?>kat_artikel"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Artikel</a>
 				<b class="arrow"></b>
 			</li>
-			<li class="">
+			<!-- <li class="">
 				<a href="<?php echo base_url();?>kat_profil"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Profil</a>
 				<b class="arrow"></b>
-			</li>
+			</li> -->
 			<li class="">
 				<a href="<?php echo base_url();?>kat_siswa"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Siswa</a>
 				<b class="arrow"></b>

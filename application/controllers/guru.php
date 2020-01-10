@@ -187,7 +187,8 @@
 
 		public function detail() // Detail data guru
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'guru/view_detail_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail guru';

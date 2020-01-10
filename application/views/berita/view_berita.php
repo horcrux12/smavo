@@ -63,10 +63,11 @@ if(!empty($info_hapus))
                         <thead>
                           <tr>
 
-                            <th>#</th>
                             <th align="center">No</th>
                             <th>Kode </th>
                             <th>Kategori</th>
+                            <th>Penulis</th>
+                            <th>Foto Utama</th>
                             <th colspan="2">Isi berita</th>
                             <th>Aksi</th>
 
@@ -88,13 +89,15 @@ if(!empty($info_hapus))
                             foreach ($data->result() as $row) {
                               
                             ?>
-                            
-                            
-                            <td>#</td>
+                          
                             <td align="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_berita?></td>
                             <td><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->penulis?></td>
+                            <td align="center">
+                              <img class="img-circle" width="70" height="70" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>>
+                           </td>
+
                            
                             <td colspan="2">
                                              <?php $data=$row->deskripsi;
@@ -102,7 +105,7 @@ if(!empty($info_hapus))
                                              echo $cut;
                                   echo " .... " ?>  
                                   <br>
-                            <a href="<?php echo base_url();?>berita/detail/<?php echo $row->id_berita?>"> ( Selanjutnya )</a> </td>
+                            <a href="<?php echo base_url();?>berita/detail/<?php echo $row->id_berita?>"></a> </td>
                            
                            <td align="center">
                               <div class="hidden-sm hidden-xs action-buttons">

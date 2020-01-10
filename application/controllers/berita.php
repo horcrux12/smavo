@@ -47,6 +47,7 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
+				<script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
 				<script>
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",
@@ -183,7 +184,8 @@
 
 		public function detail() // Detail data berita
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'berita/view_detail_berita';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail berita';
@@ -197,14 +199,11 @@
 				foreach ($query->result() as $row )
 					{
 						$konten['kode']			= $row->id_berita;
-						$konten['kode_kat']		= $row->id_kat_berita;
+						$konten['kode_kat']		= $row->id_kat_artikel;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file']			= $row->foto;
-						// $konten['tanggal']		= $row->tgl_update;
-						
-						
-						
+				
 					}
 				}
 				else
@@ -214,7 +213,6 @@
 						$konten['user']			= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";
-						// $konten['tanggal']		= "";
 				}
 			
 			$this->load->view('v_dashboard',$konten);
