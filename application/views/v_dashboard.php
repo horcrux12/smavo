@@ -21,7 +21,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<link rel="stylesheet" href="<?= base_url();?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
-
+			<?= $css;?>
 		<!-- text fonts -->
 		<link rel="stylesheet" href="<?= base_url();?>assets/css/fonts.googleapis.com.css" />
 
@@ -34,7 +34,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<link rel="stylesheet" href="<?= base_url();?>assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="<?= base_url();?>assets/css/ace-rtl.min.css" />
 
-		<?= $css;?>
+		
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="<?= base_url();?>assets/css/ace-ie.min.css" />
@@ -254,11 +254,8 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-		<script src="<?= base_url();?>assets/js/jquery-1.11.3.min.js"></script>
+		
 		<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='<?= base_url();?>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
 		<script src="<?= base_url();?>assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
