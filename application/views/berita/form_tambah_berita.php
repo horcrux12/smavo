@@ -64,7 +64,7 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul Berita" >
+      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" >
     </div>
   </div>
 
@@ -97,7 +97,7 @@ if (!empty($info_gagal)) {
       height: "300px",
       styleWithSpan: false,
       toolbar:[
-        ['cleaner',['cleaner']],// The Button
+   
         ['style',['style']],
         ['font',['bold','italic','underline','clear']],
         ['fontname',['fontname']],

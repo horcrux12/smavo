@@ -69,7 +69,7 @@ if(!empty($info_gagal))
   echo "</i>";
   echo $info_gagal;
   echo "</div>";
-}
+} 
 ?>
 <!-- END INFO -->
 

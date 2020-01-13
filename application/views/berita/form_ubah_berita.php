@@ -43,28 +43,44 @@ if(!empty($info_gagal))
     <label class="col-sm-2 control-label">Kategori</label>
     <div class="col-sm-8">
       <select class="form-control" name="kode_kat" id="kode_kat">
-        <option value="">-------- pilih salah satu -------</option>
         <?php
+        
         $kat  = $this->db->get('tb_kat_artikel');
         foreach ($kat->result() as $row) {
+          if($row->id_kat_artikel == $kode_kat){
+            $selected = 'selected';
+          }else{
+            $selected = '';
+          }
         ?>
-          <option value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
+          <option <?= $selected?> value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
         <?php } ?>
       </select>
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Foto Utama</label>
-    <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
-    </div>
-  </div>
+  <?php
+                $key = $this->uri->segment(3);
+                $this->db->where('id_berita',$key);
+                $query = $this->db->get('tb_berita');
+                foreach ($query->result() as $row) {
+                ?>
+
+
+              <div class="form-group">
+              <label for="" class="col-sm-2 control-label">Foto Utama</label>
+              <div class="col-sm-5">
+              <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
+              <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+              <i><font color="red">*Foto yang telah digunakan : <?php echo $file;?><br></font></i>
+              </div>
+              </div>   
+              <?php } ?>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="judul" id="judul" value="<?php echo $judul;?>" placeholder="Judul Berita">
+      <input type="text" class="form-control" name="jdl" id="jdl" value="<?php echo $jdl;?>" placeholder="Judul Berita">
   </div>
 </div>
    

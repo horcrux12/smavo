@@ -18,10 +18,6 @@
             <div class="page-header">
               <h1>
                 <?php echo $row->judul?>
-                <small>
-                  <i class="ace-icon fa fa-angle-double-right"></i> Dengan ID berita
-                  ( <?php echo $row->id_berita  ;?> )
-                </small>
               </h1>
             </div>
             <!-- /.page-header -->
@@ -88,6 +84,15 @@
 
                           <div class="profile-info-value">
                             <span class="editable" id="username"><?php echo $row->id_berita;?></span>
+                          </div>
+                        </div>
+
+                        
+                        <div class="profile-info-row">
+                          <div class="profile-info-name"> Judul Berita </div>
+
+                          <div class="profile-info-value">
+                            <span class="editable" id="jdl"><?php echo $row->judul;?></span>
                           </div>
                         </div>
                                <?php

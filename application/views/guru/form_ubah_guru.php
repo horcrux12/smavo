@@ -132,16 +132,21 @@ if(!empty($info_gagal))
               <label class="col-sm-2 control-label">Jabatan</label>
               <div class="col-lg-3">
               <select class="form-control" name="jbt" id="jbt">
-              <option value="">-------- pilih salah satu -------</option>
+              <option  value="">-------- pilih salah satu -------</option>
                           
-                          <?php
-
-                            $jbt  = $this->db->get('tb_jabatan');
-                            foreach ($jbt->result() as $row) {
-
-                            ?>            
+                          
+                            <?php
+        
+                            $kat  = $this->db->get('tb_jabatan');
+                            foreach ($kat->result() as $row) {
+                              if($row->id_jabatan == $jbt){
+                                $selected = 'selected';
+                              }else{
+                                $selected = '';
+                              }
+                            ?>     
             
-            <option value="<?php echo $row->id_jabatan;?>"><?php echo $row->nama_jabatan;?></option>
+            <option <?= $selected?> value="<?php echo $row->id_jabatan;?>"><?php echo $row->nama_jabatan;?></option>
             <?php } ?>
               </select>
               </div>
@@ -153,14 +158,18 @@ if(!empty($info_gagal))
               <select class="form-control" name="mapel" id="mapel">
               <option value="">-------- pilih salah satu -------</option>
                           
-                          <?php
+                         
+                <?php
+                $kat  = $this->db->get('tb_mapel');
+                foreach ($kat->result() as $row) {
+                  if($row->id_mapel== $mapel){
+                    $selected = 'selected';
+                  }else{
+                    $selected = '';
+                  }
+                ?>   
 
-                            $mapel  = $this->db->get('tb_mapel');
-                            foreach ($mapel->result() as $row) {
-
-                            ?>            
-            
-            <option value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
+            <option <?= $selected?> value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
             <?php } ?>
               </select>
               <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i>

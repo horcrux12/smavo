@@ -116,7 +116,7 @@ if(!empty($info_gagal))
               <label for="" class="col-sm-2 control-label">Username</label>
               <div class="col-sm-5">
               <input type="text" class="form-control" name="user" id="user" value="<?php echo $user;?>">
-              <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i>
+              <!-- <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i> -->
               </div>
               </div>
              
@@ -124,7 +124,7 @@ if(!empty($info_gagal))
               <label for="" class="col-sm-2 control-label">Password</label>
               <div class="col-sm-5">
               <input type="password" class="form-control" name="pass" id="pass" value="<?php echo $pass;?>">
-              <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i>
+              <!-- <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i> -->
               </div>
               </div>
 

@@ -69,7 +69,7 @@ if(!empty($info_hapus))
                           <tr>
 
                             <th align="center">No</th>
-                            <th>Kode </th>
+                            <!-- <th>Kode </th> -->
                             <th>Kategori</th>
                             <th>Penulis</th>
                             <th>Judul</th>
@@ -97,7 +97,7 @@ if(!empty($info_hapus))
                             ?>
                           
                             <td align="center"><?php echo $no++; ?></td>
-                            <td><?php echo $row->id_berita?></td>
+                            <!-- <td><?php echo $row->id_berita?></td> -->
                             <td><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->penulis?></td>
                             <td><?php echo $row->judul?></td>
