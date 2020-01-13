@@ -1,55 +1,3 @@
-
-  
-  <!-- CEK FORM KOSONG -->
-
-<script type="text/javascript">
-  
-  function cekform(){
-
-      if(!$ ("#kode").val())
-      {
-        alert('Maaf kode artikel tidak boleh kosong');
-        $("#kode").focus();
-        return false;
-
-      }
-
-      if(!$ ("#nama").val())
-      {
-        alert('Maaf nama artikel tidak boleh kosong');
-        $("#nama").focus();
-        return false;
-
-      }
-
-      if(!$ ("#kode_kat").val())
-      {
-        alert('Maaf kategori tidak boleh kosong');
-        $("#kode_kat").focus();
-        return false;
-
-      }
-
-      if(!$ ("#judul").val())
-      {
-        alert('Maaf judul tidak boleh kosong');
-        $("#judul").focus();
-        return false;
-
-    }
-
-     if(!$ ("#isi").val())
-      {
-        alert('Maaf isi artikel tidak boleh kosong');
-        $("#isi").focus();
-        return false;
-
-    }
-
-</script>
-
-
-
 <?php
 $info_gagal = $this->session->flashdata('info_gagal');
 if(!empty($info_gagal))
@@ -67,116 +15,117 @@ if(!empty($info_gagal))
 }
 ?>
 
-    
-    
-    
-
     <!-- Kembali -->
-     
-      <a href="<?php echo base_url();?>artikel">
+      <a href="<?php echo base_url();?>berita">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
       </button>
       </a>
       </i>
-   
-             
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>artikel/simpan" onsubmit="return cekform();">
 
-              
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Kode Artikel</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Nama Penulis</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $nama; ?>">
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Tanggal</label>
-              <div class="col-sm-2">
-              <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?php echo $tgl=date('Ymd');?>" readonly>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label class="col-sm-2 control-label">Kategori</label>
-              <div class="col-lg-3">
-              <select class="form-control" name="kode_kat" id="kode_kat">
-              <option value="">-------- pilih salah satu -------</option>
-
-
-                            <?php
-
-                            $kat  = $this->db->get('tb_kategori');
-                            foreach ($kat->result() as $row) {
-
-                            ?>            
-            
-            <option value="<?php echo $row->kode_kategori;?>"><?php echo $row->nama_kategori;?></option>
-            <?php } ?>
-            </select>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Judul Artikel</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="judul" id="judul" value="<?php echo $judul; ?>">
-              </div>
-              </div>
-
-              
-       <section class="content">
-          <div class="row">
-            <label class="col-sm-2 control-label">Isi Artikel</label>
-                      <div class="col-md-10">
-                            <div class="box-header">
-            </div>
-            
-              
-                    <textarea id="editor1" name="isi" rows="10" cols="80"><?php echo $isi;?></textarea>
-           
-           
-        </div>
+  <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>berita/simpan" onsubmit="return cekform();">
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Kode berita</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
     </div>
-</section>
+  </div>
 
-<br>
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Nama Penulis</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>"readonly>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Kategori</label>
+    <div class="col-sm-8">
+      <select class="form-control" name="kode_kat" id="kode_kat">
+        <option value="">-------- pilih salah satu -------</option>
+        <?php
+        $kat  = $this->db->get('tb_kat_artikel');
+        foreach ($kat->result() as $row) {
+        ?>
+          <option value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
+        <?php } ?>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Foto Utama</label>
+    <div class="col-sm-8">
+      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Judul</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="judul" id="judul" value="<?php echo $judul;?>" placeholder="Judul Berita">
+  </div>
+</div>
+   
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
+    <div class="col-sm-8">
+      <textarea name="isi" id="isi" ><?php echo $isi;?></textarea>
+    </div>
+  </div>
+  <br>
+  </div>
+  
+  <center>
+  <div class="box-footer">
+    <button type="submit" class="btn btn-info btn-small"> Simpan</button>
+    <button type="reset" class="btn btn-danger btn-small">Batal</button>
+    </form>
+  </div>
+  </center>
 
 
 
-<center> 
-<div class="box-footer">		
-<button type="submit" class="btn btn-info btn-small"> Simpan</button>
-<button type="reset"  class="btn btn-danger btn-small">Batal</button>
-   </form>
-      </div>
-            </center>
+<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
 
-
-    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
-    <script src="<?php echo base_url();?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-
-    <script type="text/javascript">
-
-      $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    
-  });
-  </script> 
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#isi').summernote({
+      height: "300px",
+      styleWithSpan: false
+    //   toolbar:[
+    //     ['cleaner',['cleaner']],// The Button
+    //     ['style',['style']],
+    //     ['font',['bold','italic','underline','clear']],
+    //     ['fontname',['fontname']],
+    //     ['color',['color']],
+    //     ['para',['ul','ol','paragraph']],
+    //     ['height',['height']],
+    //     ['table',['table']],
+    //     ['insert',['media','link','hr','picture']],
+    //     ['view',['fullscreen','codeview']],
+    //     ['help',['help']]
+    // ],
+    // cleaner:{
+    //       action: 'both', // both|button|paste 'button' only cleans via toolbar button, 'paste' only clean when pasting content, both does both options.
+    //       newline: '<br>', // Summernote's default is to use '<p><br></p>'
+    //       notStyle: 'position:absolute;top:0;left:0;right:0', // Position of Notification
+    //       icon: '<i class="note-icon">Clean</i>',
+    //       keepHtml: false, // Remove all Html formats
+    //       keepOnlyTags: ['<p>', '<br>', '<ul>', '<li>', '<b>', '<strong>','<i>', '<a>'], // If keepHtml is true, remove all tags except these
+    //       keepClasses: false, // Remove Classes
+    //       badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'html'], // Remove full tags with contents
+    //       badAttributes: ['style', 'start'], // Remove attributes from remaining tags
+    //       limitChars: false, // 0/false|# 0/false disables option
+    //       limitDisplay: 'both', // text|html|both
+    //       limitStop: false // true/false
+    // }
+});
+  }); 
+</script>
                  
 

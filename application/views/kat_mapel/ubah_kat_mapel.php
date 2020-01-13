@@ -1,8 +1,4 @@
-<!-- hak akses admin -->   
-<?php 
-  if ($this->session->userdata('akses') == 'Administrator'):
- ?>
-  
+
   <!-- CEK FORM KOSONG -->
 <script type="text/javascript">
   
@@ -38,8 +34,6 @@
       </i>
     
            <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>kat_mapel/simpan" onsubmit="return cekform();">
-
-
            
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">ID Mata Pelajaran</label>
@@ -64,8 +58,6 @@
       </div>
             </center>
 
-<!-- end hak akses admin -->
-<?php endif; ?>
 
 
 

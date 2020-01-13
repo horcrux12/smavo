@@ -1,9 +1,4 @@
-<!-- hak akses admin -->   
-<?php 
-  if ($this->session->userdata('akses') == 'Administrator'):
- ?>
-  
-  <!-- CEK FORM KOSONG -->
+<!-- CEK FORM KOSONG -->
 <script type="text/javascript">
   
   function cekform(){
@@ -63,9 +58,6 @@
    </form>
       </div>
             </center>
-
-<!-- end hak akses admin -->
-<?php endif; ?>
 
 
 
