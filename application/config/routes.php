@@ -69,3 +69,6 @@ $route['admin/login'] = 'login';
 
 // dashboard
 $route['admin/dashboard'] = 'dashboard';
+$route['admin/logout'] = 'dashboard/logout';
+
+// 
