@@ -254,7 +254,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-		
+		<script src="<?= base_url();?>assets/js/jquery-1.11.3.min.js"></script>
 		<![endif]-->
 		<script src="<?= base_url();?>assets/js/bootstrap.min.js"></script>
 
