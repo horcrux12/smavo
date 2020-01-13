@@ -13,6 +13,7 @@
 	
 		}
 		$this->load->library('upload');
+		$this->load->model('model_dinamic');
 	}
 		
 		public function index()
@@ -156,14 +157,15 @@
 			$data['judul'] 				= $this->input->post('judul');
 			$data['penulis'] 			= $this->input->post('nama');
 			$data['deskripsi'] 			= $this->input->post('isi');
-			$data['foto'] 				= $this->upload->data('file_name');	
+			$data['foto'] 				= $this->upload->data('file_name');
+			
+			$galeri['id_berita']		= $this->input->post('kode');
+			$galeri['foto']				= $this->upload->data('file_name');
 			
 			$this->load->model('model_berita');
 			$query = $this->model_berita->getdata($key);
 			if($query->num_rows()>0)
-
 			{
-
 				$this->model_berita->getupdate($key,$data);
 				$this->session->set_flashdata('info','Data berhasil di update');
 			}
@@ -171,6 +173,7 @@
 			{
 				// print_r($data);
 				$this->model_berita->getinsert($data);
+				$this->model_dinamic->input_data($galeri,'tb_galeri');
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
 			redirect('berita');

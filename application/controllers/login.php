@@ -19,9 +19,9 @@ class Login extends CI_Controller{
         $cekin = $this->session->userdata('hak_akses');
         if ($cekin) {
             $this->session->set_userdata('masuk',TRUE);
-            redirect('dashboard');
+            redirect('admin/dashboard');
         }else{
-            $url=base_url('login');
+            $url=base_url('admin/login');
             echo $this->session->set_flashdata('info','username atau password salah');
             redirect($url);
 
