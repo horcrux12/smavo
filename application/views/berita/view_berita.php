@@ -1,3 +1,8 @@
+<style>
+td p  img{
+  width: 590px !important
+}
+</style>
 <?php
 $info = $this->session->flashdata('info');
 if(!empty($info))
@@ -101,7 +106,7 @@ if(!empty($info_hapus))
                            </td>
 
                            
-                            <td colspan="2">
+                            <td colspan="2" id="nahi">
                                              <?php $data=$row->deskripsi;
                                              $cut=substr($data,0,200);
                                              echo $cut;

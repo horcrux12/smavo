@@ -109,20 +109,44 @@ if (!empty($info_gagal)) {
         ['view',['fullscreen','codeview']],
         ['help',['help']]
     ],
-    cleaner:{
-          action: 'both', // both|button|paste 'button' only cleans via toolbar button, 'paste' only clean when pasting content, both does both options.
-          newline: '<br>', // Summernote's default is to use '<p><br></p>'
-          notStyle: 'position:absolute;top:0;left:0;right:0', // Position of Notification
-          icon: '<i class="note-icon">Clean</i>',
-          keepHtml: false, // Remove all Html formats
-          keepOnlyTags: ['<p>', '<br>', '<ul>', '<li>', '<b>', '<strong>','<i>', '<a>'], // If keepHtml is true, remove all tags except these
-          keepClasses: false, // Remove Classes
-          badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'html'], // Remove full tags with contents
-          badAttributes: ['style', 'start'], // Remove attributes from remaining tags
-          limitChars: false, // 0/false|# 0/false disables option
-          limitDisplay: 'both', // text|html|both
-          limitStop: false // true/false
+    callbacks: {
+        onImageUpload: function(image) {
+            uploadImage(image[0]);
+        },
+        onMediaDelete : function(target) {
+            deleteImage(target[0].src);
+        }
     }
-});
+  });
+  function uploadImage(image) {
+      var data = new FormData();
+      data.append("image", image);
+      $.ajax({
+          url: "<?php echo base_url('berita/upload_image')?>",
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: data,
+          type: "POST",
+          success: function(url) {
+              $('#isi').summernote("insertImage", url);
+          },
+          error: function(data) {
+              console.log(data);
+          }
+      });
+  }
+
+  function deleteImage(src) {
+      $.ajax({
+          data: {src : src},
+          type: "POST",
+          url: "<?php echo base_url('berita/delete_image')?>",
+          cache: false,
+          success: function(response) {
+              console.log(response);
+          }
+      });
+  }
   }); 
 </script>
