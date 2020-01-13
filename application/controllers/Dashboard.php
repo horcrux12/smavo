@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller {
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>;
-    	  document.location='".base_url."admin/login'</script>";
+    	  document.location='".base_url()."admin/login'</script>";
 		}
 
 	}
