@@ -62,3 +62,10 @@ $route['translate_uri_dashes'] = FALSE;
 
 // // Galeri
 // $route['galeri'] = 'front/galeri';
+
+//------------- ADMIN ---------------
+
+$route['admin/login'] = 'login';
+
+// dashboard
+$route['admin/dashboard'] = 'dashboard';

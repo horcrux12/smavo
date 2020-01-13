@@ -8,9 +8,7 @@ class Dashboard extends CI_Controller {
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>;
-    	  document.location='http://localhost/smavo/login'</script>";
-
-	
+    	  document.location='".base_url."admin/login'</script>";
 		}
 
 	}
@@ -29,7 +27,7 @@ class Dashboard extends CI_Controller {
 	public function logout()
 		{
 			$this->session->sess_destroy();
-			redirect('login');
+			redirect('admin/login');
 		}
 
 }
