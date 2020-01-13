@@ -51,5 +51,30 @@
 			  $kodetampil = "KTP".$batas;  //format kode
 			  return $kodetampil;  
 		 }
+
+		 public function tampil_profil() 
+		 {
+ 
+			 $data	= " SELECT
+ 
+						 tb_profil.id_info,
+						 tb_kat_profil.nama_kat_profil,
+						 tb_profil.id_user,
+						 tb_profil.judul,
+						 tb_profil.deskripsi,
+						 tb_profil.foto
+
+ 
+					 
+						 FROM 
+						 tb_profil,tb_kat_profil
+ 
+						 WHERE 
+ 
+						 tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil";
+ 
+			 return $this->db->query($data);
+ 
+	 }
 		
 }

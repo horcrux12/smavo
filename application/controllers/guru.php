@@ -97,9 +97,9 @@
 		{
 		  $config['upload_path'] 	= './assets/photo/';
 	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
-	      $config['max_size'] 		= 5000;
-	      $config['max_width'] 		= 5000;
-	      $config['max_height'] 	= 5000;
+	    //   $config['max_size'] 		= 5000;
+	    //   $config['max_width'] 		= 5000;
+	    //   $config['max_height'] 	= 5000;
 	      $config['encrypt_name']	= FALSE;
 	     
 	 

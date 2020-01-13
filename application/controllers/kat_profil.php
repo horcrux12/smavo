@@ -4,14 +4,15 @@
 	class kat_profil extends CI_Controller {
 
 	function __construct(){
-    parent::__construct();
+	parent::__construct();
+	
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
     	  document.location='http://localhost/smavo/login'</script>";
 	
 		}
-
+			
 	}
 		
 		public function index()
