@@ -1,8 +1,9 @@
 <div>
 	<ul class="ace-thumbnails clearfix">
+		<?php foreach ($data as $key) :?>
 		<li>
-			<a href="<?= base_url()?>assets/photo/jaket_mm23.jpg" data-rel="colorbox">
-				<img width="150" height="150" alt="150x150" src="<?= base_url()?>assets/photo/jaket_mm23.jpg" />
+			<a href="<?= base_url()?>assets/photo/<?= $key->foto?>" data-rel="colorbox">
+				<img width="150" height="150" alt="150x150" src="<?= base_url()?>assets/photo/<?= $key->foto;?>" />
 				<div class="text">
 					<div class="inner">Sample Caption on Hover</div>
 				</div>
@@ -26,6 +27,7 @@
 				</a>
 			</div>
 		</li>
+		<?php endforeach?>
 	</ul>
 </div>
 <script type="text/javascript">

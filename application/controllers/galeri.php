@@ -4,7 +4,8 @@
 	class Galeri extends CI_Controller {
 
 	function __construct(){
-    parent::__construct();
+	parent::__construct();
+	$this->load->model('model_dinamic');
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>;
@@ -23,7 +24,7 @@
 			$konten['konten'] 		= 'galeri/view_galeri';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Galeri';
-			$konten['data']			= $this->db->get('tb_galeri');
+			$konten['data']			= $this->model_dinamic->getData('tb_galeri');
             $konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
 			<script type="text/javascript">
@@ -62,7 +63,7 @@
 			})
 		</script>';
         
-			$konten['data']			= $this->model_berita->tampil_berita(); 
+			// $konten['data']			= $this->model_berita->tampil_berita(); 
 			$this->load->view('v_dashboard',$konten);
 
 		}
