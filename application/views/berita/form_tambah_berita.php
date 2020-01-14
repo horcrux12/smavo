@@ -22,7 +22,7 @@ if (!empty($info_gagal)) {
 </a>
 </i>
 
-<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>berita/simpan" onsubmit="return cekform();">
+<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/tambah-berita/simpan" onsubmit="return cekform();">
 
 
   <div class="form-group">
