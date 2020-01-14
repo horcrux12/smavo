@@ -251,6 +251,7 @@
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 				<script>
+				jQuery(function($){
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",
 					btn_choose:"Choose",
@@ -294,6 +295,7 @@
 					//console.log($(this).data("ace_input_files"));
 					//console.log($(this).data("ace_input_method"));
 				});
+			});
 				</script>
 				';
 			$this->load->view('v_dashboard',$konten);
@@ -397,6 +399,7 @@
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 				// <script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
 				<script>
+				jQuery(function($) {
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",
 					btn_choose:"Choose",
@@ -440,6 +443,7 @@
 					//console.log($(this).data("ace_input_files"));
 					//console.log($(this).data("ace_input_method"));
 				});
+			});
 				</script>
 				';
 			$konten['konten'] 		= 'berita/form_ubah_berita';

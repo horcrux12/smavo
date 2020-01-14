@@ -75,7 +75,7 @@ $route['admin/logout'] = 'dashboard/logout';
 $route['admin/berita'] = 'berita';
 $route['admin/berita/tambah-berita'] = 'berita/tambah'; //tambah
 $route['admin/berita/tambah-berita/simpan'] = 'berita/simpan'; //simpan data
-$route['admin/berita/ubah-berita/(:any)'] = 'berita/tambah/$1'; //ubah
+$route['admin/berita/ubah-berita/(:any)'] = 'berita/ubah/$1'; //ubah
 $route['admin/berita/detail-berita/(:any)'] = 'berita/detail/$1'; //detail
 $route['admin/berita/hapus-berita/(:any)'] = 'berita/delete/$1'; //hapus data
 
