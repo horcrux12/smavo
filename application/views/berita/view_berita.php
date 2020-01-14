@@ -48,7 +48,7 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      <a href="<?php echo base_url();?>berita/tambah" class="btn btn-primary btn-small">
+                      <a href="<?php echo base_url();?>admin/berita/tambah-berita" class="btn btn-primary btn-small">
                     <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Berita</a>
                   <br>
                 <br>
@@ -116,11 +116,11 @@ if(!empty($info_hapus))
                            
                            <td align="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="blue" href="<?php echo base_url();?>berita/detail/<?php echo $row->id_berita?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a class="blue" href="<?php echo base_url();?>admin/berita/detail-berita/<?php echo $row->id_berita?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a class="green" href="<?php echo base_url();?>berita/ubah/<?php echo $row->id_berita?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                      <a class="green" href="<?php echo base_url();?>admin/berita/ubah-berita/<?php echo $row->id_berita?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 

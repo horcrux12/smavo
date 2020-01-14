@@ -14,8 +14,6 @@
             $query = $this->db->get('tb_profil');
             foreach ($query->result() as $row) {
             ?>
-
-
             <div class="page-header">
               <h1>
                 <?php echo $row->judul?>
