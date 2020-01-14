@@ -67,7 +67,7 @@
 						
 
 						FROM 
-						tb_profil,tb_kat_profil,tb_user
+						tb_profil,tb_kat_profil
 
 						WHERE 
 
