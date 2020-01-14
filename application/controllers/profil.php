@@ -234,9 +234,10 @@
 			});
 			</script>
 			';
+			
 			$konten['konten'] 		= 'profil/form_ubah_profil';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Ubah Data profil';
+			$konten['sub_judul'] 	= 'Ubah Data Profil';
 			$key = $this->uri->segment(3);
 			$this->db->where('id_info',$key);
 			$query = $this->db->get('tb_profil');
@@ -248,6 +249,7 @@
 						$konten['kode']			= $row->id_info;
 						$konten['kode_kat']		= $row->id_kat_profil;
 						$konten['user']			= $row->id_user;
+						$konten['jdl']			= $row->judul;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file']			= $row->foto;
 						// $konten['tanggal']		= $row->tgl_update;
@@ -260,6 +262,7 @@
 						$konten['kode']			= "";
 						$konten['kode_kat']		= "";
 						$konten['user']			= "";
+						$konten['jdl']			= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";
 						// $konten['tanggal']		= "";
@@ -270,20 +273,22 @@
 				$this->load->view('v_dashboard',$konten);
 }
 
-public function detail() // Detail data profil
-		
-{
-	$konten['kode'] = $this->model_profil->kode(); //tambah kode otomatis		
-	$konten['konten'] 		= 'profil/view_detail_profil';
-	$konten['judul']		= 'Data Master';
-	$key = $this->uri->segment(3);
-	$this->db->where('id_kat_profil',$key);
-	$query = $this->db->get('tb_kat_profil')->result();
-	$konten['sub_judul'] 	= $query[0]->nama_kat_profil	;
-	$konten['data']			= $this->model_kat_profil->tampil_profil()->result();
-	// print_r($konten['data'][0]->id_info);		
-	$this->load->view('v_dashboard',$konten); 
-	} 
+			public function detail() // Detail data profil
+					
+			{
+				$konten['css']	='';
+				$konten['js']	='';
+				$konten['kode'] = $this->model_profil->kode(); //tambah kode otomatis		
+				$konten['konten'] 		= 'profil/view_detail_profil';
+				$konten['judul']		= 'Data Master';
+				$key = $this->uri->segment(3);
+				$this->db->where('id_kat_profil',$key);
+				$query = $this->db->get('tb_kat_profil')->result();
+				$konten['sub_judul'] 	= $query[0]->nama_kat_profil;
+				$konten['data']			= $this->model_kat_profil->tampil_profil()->result();
+				// print_r($konten['data'][0]->id_info);		
+				$this->load->view('v_dashboard',$konten); 
+				} 
 
 
 		public function delete()
