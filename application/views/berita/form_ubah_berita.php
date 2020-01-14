@@ -59,7 +59,7 @@ if(!empty($info_gagal))
     </div>
   </div>
 
-  <?php
+                <?php
                 $key = $this->uri->segment(3);
                 $this->db->where('id_berita',$key);
                 $query = $this->db->get('tb_berita');

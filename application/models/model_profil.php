@@ -52,20 +52,26 @@
 		 }
 
 
-		 public function tampil_profil() // join tb_jabatan, tb_profil dan tb_mapel
+		 public function tampil_profil() // 
 		{
 
 			$data	= " SELECT
 
 						tb_profil.id_info,
+						tb_kat_profil.nama_kat_profil,
+						-- tb_user.nama_user,
+						tb_profil.judul,
+						tb_profil.deskripsi,
+						tb_profil.foto,
+						tb_profil.tgl_update
 						
 
 						FROM 
-						tb_profil,tb_kat_artikel
+						tb_profil,tb_kat_profil,tb_user
 
 						WHERE 
 
-						tb_kat_artikel.id_kat_artikel=tb_profil.id_kat_artikel";
+						tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil";
 
 			return $this->db->query($data);
 

@@ -45,17 +45,28 @@ if (!empty($info_gagal)) {
       <select class="form-control" name="kode_kat" id="kode_kat">
         <option value="">-------- pilih salah satu -------</option>
         <?php
-        $kat  = $this->db->get('tb_kat_artikel');
+        
+        $kat  = $this->db->get('tb_kat_profil');
         foreach ($kat->result() as $row) {
+          if($row->id_kat_profil == $kode_kat){
+            $selected = 'selected';
+          }else{
+            $selected = '';
+          }
         ?>
-          <option value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
+          <option <?= $selected?> value="<?php echo $row->id_kat_profil; ?>"><?php echo $row->nama_kat_profil; ?></option>
         <?php } ?>
-
-        <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" value="<?php echo$?>" >
       </select>
-    </div>
-    
+    </div>  
   </div>
+        
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Judul Profil</label>
+    <div class="col-sm-8">
+  <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" value="<?php echo $jdl ;?>" >
+  </div>
+  </div>
+
 
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
