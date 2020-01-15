@@ -229,7 +229,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			})
 		</script>';
 
-			$konten['data']		= $this->model_berita->tampil_berita()->result(); 
+			$konten['data']		= $this->model_berita->tampil_berita();
+			
+			if ($konten['data']->num_rows()>0) {
+				$konten['data'] = $konten['data']->result();
+			}
+			else{
+				$konten['data'] = 
+				array('0' => 
+				(object)array(
+					'id_berita' => "Tidak Ada Data",
+					'nama_kat_artikel' => "Tidak Ada Data",
+					'penulis' => "Tidak Ada Data",
+					'judul' => "Tidak Ada Data",
+					'foto' => "Tidak Ada Data",
+					'deskripsi' => "Tidak Ada Data"
+				)
+				);
+				// $konten['data'] =  $konten['data'];
+			} 
 			$this->load->view('v_dashboard',$konten);
 
 		}
