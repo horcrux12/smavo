@@ -72,7 +72,7 @@
 						$this->db->order_by('id_kat_artikel');
 				        $data = $this->db->get('tb_kat_artikel');
 						foreach ($data->result() as $row) {?>
-							<a href="<?php echo base_url();?>kat_artikel/detail/<?php echo $row->id_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
+							<a href="<?php echo base_url();?>admin/berita/kategori-berita/<?php echo $row->nama_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
 								<?php echo $row->nama_kat_artikel?>
 							</a>
 					<?php } ?>

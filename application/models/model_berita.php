@@ -73,7 +73,16 @@
 						tb_kat_artikel.id_kat_artikel=tb_berita.id_kat_artikel";
 
 			return $this->db->query($data);
-
 	}
+		public function tampil_kategori_berita($where){
+			$this->db->select('
+				tb_berita.*, tb_kat_artikel.id_kat_artikel AS id_kat_artikel, tb_kat_artikel.nama_kat_artikel
+			');
+			$this->db->from('tb_berita');
+			$this->db->where('tb_berita.id_kat_artikel',$where);
+			$this->db->join('tb_kat_artikel','tb_berita.id_kat_artikel = tb_kat_artikel.id_kat_artikel');
+			$query = $this->db->get();
+			return $query;
+		}
 		
 }

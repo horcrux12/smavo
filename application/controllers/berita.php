@@ -1,5 +1,8 @@
 	<?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
+
+use ___PHPSTORM_HELPERS\object;
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class Berita extends CI_Controller {
 
@@ -8,7 +11,7 @@
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>;
-    	  document.location='http://localhost/smavo/login'</script>";
+    	  document.location='".base_url()."admin/login'</script>";
 
 	
 		}
@@ -226,7 +229,7 @@
 			})
 		</script>';
 
-			$konten['data']		= $this->model_berita->tampil_berita(); 
+			$konten['data']		= $this->model_berita->tampil_berita()->result(); 
 			$this->load->view('v_dashboard',$konten);
 
 		}
@@ -549,8 +552,8 @@
 	public function detail_kat_berita($id){
 		$konten['css']			= '';
 			$konten['konten'] 		= 'berita/view_berita';
-			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Data berita';
+			$konten['judul']		= 'Data Berita';
+			
 			$konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
 			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
@@ -692,7 +695,8 @@
 			
 			
 				/////////////////////////////////
-		
+				//table checkboxes
+				$('."'".'th input[type=checkbox], td input[type=checkbox]'."'".').prop('."'".'checked'."'".', false);
 				
 				//select/deselect all rows according to table header checkbox
 				$('."'".'#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]'."'".').eq(0).on('."'".'click'."'".', function(){
@@ -735,7 +739,48 @@
 					});
 				});
 				
-				//select/deselect a row when the checkbox is checked/unchecked		
+				//select/deselect a row when the checkbox is checked/unchecked
+				$('."'".'#simple-table'."'".').on('."'".'click'."'".', '."'".'td input[type=checkbox]'."'".' , function(){
+					var $row = $(this).closest('."'".'tr'."'".');
+					if($row.is('."'".'.detail-row '."'".')) return;
+					if(this.checked) $row.addClass(active_class);
+					else $row.removeClass(active_class);
+				});
+			
+				
+			
+				/********************************/
+				//add tooltip for small view action buttons in dropdown menu
+				$('."'".'[data-rel="tooltip"]'."'".').tooltip({placement: tooltip_placement});
+				
+				//tooltip placement on right or left
+				function tooltip_placement(context, source) {
+					var $source = $(source);
+					var $parent = $source.closest('."'".'table'."'".')
+					var off1 = $parent.offset();
+					var w1 = $parent.width();
+			
+					var off2 = $source.offset();
+					//var w2 = $source.width();
+			
+					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return '."'".'right'."'".';
+					return '."'".'left'."'".';
+				}
+				
+				
+				
+				
+				/***************/
+				$('."'".'.show-details-btn'."'".').on('."'".'click'."'".', function(e) {
+					e.preventDefault();
+					$(this).closest('."'".'tr'."'".').next().toggleClass('."'".'open'."'".');
+					$(this).find(ace.vars['."'".'.icon'."'".']).toggleClass('."'".'fa-angle-double-down'."'".').toggleClass('."'".'fa-angle-double-up'."'".');
+				});
+				/***************/
+				
+				
+				
+				
 				
 				/**
 				//add horizontal scrollbars to a simple table
@@ -751,9 +796,58 @@
 			
 			
 			})
-		</script>';
+		</script>
+		
+		<script>
+			$(document).ready(function(){
+				var ini = $("#nahini").text();
+				if (ini = "Tidak Ada Data"){
+					$('."'".'#btn-detail'."'".').removeAttr('."'".'href'."'".');
+					$('."'".'#btn-ubah'."'".').removeAttr('."'".'href'."'".');
+					$('."'".'#show-option1'."'".').removeAttr('."'".'href'."'".');
+				}
 
-			$konten['data']			= $this->model_dinamic->getWhere ('tb_berita','id_kat_artikel',$id); 
+				
+			});
+		</script> ';
+			
+		$search  = array(
+			"%20",
+			"%5E",
+			"%60" );
+		$replace = array(
+			" ",
+			"^",
+			"`");
+			$id = str_replace($search,$replace,$id);
+			
+			$data = $this->model_dinamic->getWhere ('tb_kat_artikel','nama_kat_artikel',$id)->result();
+
+			$id = $data[0]->id_kat_artikel;
+
+			$konten['data']	= $this->model_berita->tampil_kategori_berita($id);
+
+			if ($konten['data']->num_rows()>0) {
+				$konten['data'] = $konten['data']->result();
+			}
+			else{
+				$konten['data'] = 
+				array('0' => 
+				(object)array(
+					'id_berita' => "Tidak Ada Data",
+					'nama_kat_artikel' => "Tidak Ada Data",
+					'penulis' => "Tidak Ada Data",
+					'judul' => "Tidak Ada Data",
+					'foto' => "Tidak Ada Data",
+					'deskripsi' => "Tidak Ada Data"
+				)
+				);
+				// $konten['data'] =  $konten['data'];
+			}
+
+			$subjudul = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id)->result();
+			$konten['sub_judul'] 	= 'Data Berita - '.$subjudul[0]->nama_kat_artikel.'';
+			// print_r($konten['data']); 
 			$this->load->view('v_dashboard',$konten);
 	}
 }

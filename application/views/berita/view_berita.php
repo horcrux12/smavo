@@ -41,7 +41,7 @@ if(!empty($info_hapus))
 
 <div class="row">
                   <div class="col-xs-12">
-                    <h3 class="header smaller lighter blue">DATA BERITA</h3>
+                    <h3 class="header smaller lighter blue"><?= $sub_judul?></h3>
 
                     <div class="clearfix">
 
@@ -70,12 +70,12 @@ if(!empty($info_hapus))
 
                             <th align="center">No</th>
                             <!-- <th>Kode </th> -->
-                            <th>Kategori</th>
-                            <th>Penulis</th>
-                            <th>Judul</th>
-                            <th>Foto Utama</th>
-                            <th colspan="2">Isi berita</th>
-                            <th>Aksi</th>
+                            <th class="col-md-1">Kategori</th>
+                            <th class="col-md-2">Penulis</th>
+                            <th class="col-md-4">Judul</th>
+                            <th class="col-md-1">Foto Utama</th>
+                            <th class="col-md-3">Isi berita</th>
+                            <th class="col-md-1">Aksi</th>
 
 
                             
@@ -92,13 +92,13 @@ if(!empty($info_hapus))
                             $no=1;
 
                             
-                            foreach ($data->result() as $row) {
+                            foreach ($data as $row) {
                               
                             ?>
                           
                             <td align="center"><?php echo $no++; ?></td>
                             <!-- <td><?php echo $row->id_berita?></td> -->
-                            <td><?php echo $row->nama_kat_artikel?></td>
+                            <td id="nahini"><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->penulis?></td>
                             <td><?php echo $row->judul?></td>
                             <td align="center">
@@ -106,7 +106,7 @@ if(!empty($info_hapus))
                            </td>
 
                            
-                            <td colspan="2" id="nahi">
+                            <td>
                                              <?php $data=$row->deskripsi;
                                              $cut=substr($data,0,200);
                                              echo $cut;
@@ -116,15 +116,15 @@ if(!empty($info_hapus))
                            
                            <td align="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="blue" href="<?php echo base_url();?>admin/berita/detail-berita/<?php echo $row->id_berita?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a id="btn-detail" class="blue" href="<?php echo base_url();?>admin/berita/detail-berita/<?php echo $row->id_berita?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a class="green" href="<?php echo base_url();?>admin/berita/ubah-berita/<?php echo $row->id_berita?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                      <a id="btn-ubah" class="green" href="<?php echo base_url();?>admin/berita/ubah-berita/<?php echo $row->id_berita?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a class="red" href="<?php echo base_url();?>berita/delete/<?php echo $row->id_berita?>"
+                                      <a  class="red" href="<?php echo base_url();?>berita/delete/<?php echo $row->id_berita?>"
                                       id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
