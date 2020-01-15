@@ -23,7 +23,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data profil';
 			$konten['data']			= $this->db->get('tb_profil');
-			// $konten['data']			= $this->model_profil->tampil_profil(); //
+			$konten['data']			= $this->model_profil->tampil_profil(); //
 			$this->load->view('v_dashboard',$konten);
 
 		}
@@ -135,26 +135,26 @@
 		public function simpan() // simpan data profil
 		{
 			
-		//   $config['upload_path'] 	= './assets/photo/';
-		//   $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
-		// //   $config['allowed_types'] 	= 'docx|pdf|xlxs';
-	    //   $config['encrypt_name']	= FALSE;
+		  $config['upload_path'] 	= './assets/photo/';
+		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
+		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
+	      $config['encrypt_name']	= FALSE;
 	     
-	    //   $this->load->library('upload', $config);
-	    //   $this->upload->initialize($config);
+	      $this->load->library('upload', $config);
+	      $this->upload->initialize($config);
 	 
-	    //   if ( ! $this->upload->do_upload('file_name')){
-	    //     $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
-	    //      redirect('profil/tambah'); 
-	    //   } else {
+	      if ( ! $this->upload->do_upload('file_name')){
+	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
+	         redirect('profil/tambah'); 
+	      } else {
 
 			$key = $this->input->post('kode');
 			$data['id_profil'] 			= $this->input->post('kode');
-			// $data['id_kat_profil'] 		= $this->input->post('kode_kat');
+			$data['id_kat_profil'] 		= $this->input->post('kode_kat');
 			$data['judul'] 				= $this->input->post('jdl');
 			$data['penulis'] 			= $this->input->post('nama');
 			$data['deskripsi'] 			= $this->input->post('isi');
-			// $data['foto'] 				= $this->upload->data('file_name');
+			$data['foto'] 				= $this->upload->data('file_name');
 			
 			$this->load->model('model_profil');
 			$query = $this->model_profil->getdata($key);
@@ -166,13 +166,13 @@
 			else
 			{
 				print_r($data);
-				// $this->model_profil->getinsert($data);
-				// $this->session->set_flashdata('info','Data berhasil di simpan');
+				$this->model_profil->getinsert($data);
+				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
-			// redirect('profil');
+			redirect('profil');
 		}
 	
-	// }
+	}
 
 
 		public function ubah() // Mengubah data profil
