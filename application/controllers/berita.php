@@ -239,7 +239,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				(object)array(
 					'id_berita' => "Tidak Ada Data",
 					'nama_kat_artikel' => "Tidak Ada Data",
-					'penulis' => "Tidak Ada Data",
+					'nama' => "Tidak Ada Data",
 					'judul' => "Tidak Ada Data",
 					'foto' => "Tidak Ada Data",
 					'deskripsi' => "Tidak Ada Data"
@@ -539,7 +539,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					(object)array(
 						'id_berita' => "Tidak Ada Data",
 						'nama_kat_artikel' => "Tidak Ada Data",
-						'penulis' => "Tidak Ada Data",
+						'nama' => "Tidak Ada Data",
 						'judul' => "Tidak Ada Data",
 						'foto' => "Tidak Ada Data",
 						'deskripsi' => "Tidak Ada Data"
@@ -710,7 +710,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->model_dinamic->input_data($galeri,'tb_galeri');
 					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
-			redirect('admin/berita/kategori-berita/');
+			redirect('admin/berita/kategori-berita/'.$this->input->post('kd_artikel').'');
 			}
 		}
 
