@@ -710,7 +710,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->model_dinamic->input_data($galeri,'tb_galeri');
 					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
-			redirect('admin/berita/kategori-berita/'.$this->input->post('kd_artikel').'');
+			$doto = $this->model_dinamic->getWhere('tb_kat_artikel','id_kat_artikel',$this->input->post('kd_artikel'))->result();
+			redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'');
 			}
 		}
 
