@@ -1,17 +1,3 @@
-<?php
-$info_gagal = $this->session->flashdata('info_gagal');
-if (!empty($info_gagal)) {
-
-  echo "<div class='alert alert-danger alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>";
-  echo "</button>";
-  echo "<i class='icon fa fa-times'>";
-  echo "</i>";
-  echo $info_gagal;
-  echo "</div>";
-}
-?>
-
 <!-- Kembali -->
 
 <!-- <a href="<?php echo base_url(); ?>profil/detail">
@@ -60,32 +46,35 @@ if (!empty($info_gagal)) {
     </div>  
   </div>
         
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Judul Profil</label>
-    <div class="col-sm-8">
-  <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" value="<?php echo $jdl ;?>" >
-  </div>
-  </div>
-
-
-  <div class="form-group">
+                <?php
+                $key = $this->uri->segment(3);
+                $this->db->where('id_info',$key);
+                $query = $this->db->get('tb_profil');
+                foreach ($query->result() as $row) {
+                ?>
+    <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+    <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
+    <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+    <i><font color="red">*Foto yang telah digunakan : <?php echo $file;?><br></font></i>
     </div>
   </div>
+  <?php } ?>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" >
+      <input type="text" class="form-control" name="jdl" id="jdl" value="<?php echo $jdl ;?>" placeholder="Judul Artikel Profil" >
     </div>
   </div>
 
+
+          
   <div class="form-group">
-    <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
+    <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
     <div class="col-sm-8">
-      <textarea name="isi" id="isi" ></textarea>
+      <textarea name="isi" id="isi" ><?php echo $isi; ?></textarea>
     </div>
   </div>
   <br>

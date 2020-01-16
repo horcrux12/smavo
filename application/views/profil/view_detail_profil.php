@@ -1,18 +1,32 @@
   <!-- Kembali -->
-     
+
+   <?php
+        $info = $this->session->flashdata('info');
+        if(!empty($info))
+
+        {
+
+          echo "<div class='alert alert-success alert-dismissible col-xs-12>";
+          echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
+          echo "</button>";
+          echo "<i class='icon fa fa-check'>"; 
+          echo "</i>";
+          echo $info;
+          echo "</div>";   
+        }
+        ?>           
   <a href="<?php echo base_url();?>profil/ubah/<?= $data[0]->id_info;?>">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Ubah Data 
       </button>
       </a>
-      </i>          
+      </i> 
+
+              
              
             <?php
-            $key = $this->uri->segment(3);
-            $this->db->where('id_kat_profil',$key);
-            $query = $this->db->get('tb_profil');
-            foreach ($query->result() as $row) {
+            foreach ($data as $row) {
             ?>
             <div class="page-header">
               <h1>
@@ -68,7 +82,7 @@
                         <div class="profile-info-row">
                           <div class="profile-info-name"> Penulis </div>
                           <div class="profile-info-value">
-                            <span class="editable" id="jdl"><?php echo $row->id_user;?></span>
+                            <span class="editable" id="jdl"><?php echo $row->nama;?></span>
                           </div>
                         </div>
                         
@@ -83,23 +97,13 @@
 
 
 
-                                      <?php
-
-                                      $key = $this->uri->segment(3);
-                                      $this->db->where('id_info',$key);
-                                      $this->db->select('*');
-                                      $this->db->from('tb_profil');
-                                      $this->db->join('tb_kat_profil','tb_kat_profil.id_kat_profil = tb_profil.id_kat_profil');
-
-                                      $query = $this->db->get();
-                                      foreach ($query->result() as $row) {
-                                    
-                                  ?>
                         <div class="profile-info-row">
                           <div class="profile-info-name"> Kategori Profil</div>
                           <div class="profile-info-value">
                             <span class="editable" id="jdl"><?php echo $row->nama_kat_profil;?></span>
-                                      <?php } ?>
+                            </div>
+                            </div>
+                                     
                           
 
 
