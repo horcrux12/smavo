@@ -683,12 +683,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$key = $this->input->post('kode');
 			$data['id_berita'] 			= $this->input->post('kode');
 			$data['id_kat_artikel'] 	= $this->input->post('kd_artikel');
-			if (! $this->input->post('kd_organisasi')) {
-				$data['id_organisasi']	= null;
-			}
-			else{
-				$data['id_organisasi'] =  $this->input->post('kd_organisasi');
-			}
+			// if (! $this->input->post('kd_organisasi')) {
+			// 	$data['id_organisasi']	= null;
+			// }
+			// else{
+			// 	$data['id_organisasi'] =  $this->input->post('kd_organisasi');
+			// }
 			$data['judul'] 				= $this->input->post('jdl');
 			$data['penulis'] 			= $this->input->post('kd_user');
 			$data['deskripsi'] 			= $this->input->post('isi');
