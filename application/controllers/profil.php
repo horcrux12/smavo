@@ -48,6 +48,7 @@
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 				<script>
+				jQuery(function($){
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 					no_file:"No File ...",
 					btn_choose:"Choose",
@@ -142,17 +143,14 @@
 	     
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
-	 
-	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
-	         redirect('profil/tambah'); 
-	      } else {
-
+	 	  $this->upload->do_upload('file_name');
+	
+			$doto=$this->model_dinamic->getWhere('tb_user','nama',$this->input->post('nama'))->result();
 			$key = $this->input->post('kode');
-			$data['id_profil'] 			= $this->input->post('kode');
+			$data['id_info'] 			= $this->input->post('kode');
 			$data['id_kat_profil'] 		= $this->input->post('kode_kat');
 			$data['judul'] 				= $this->input->post('jdl');
-			$data['penulis'] 			= $this->input->post('nama');
+			$data['id_user'] 			= $doto[0]->id_user;
 			$data['deskripsi'] 			= $this->input->post('isi');
 			$data['foto'] 				= $this->upload->data('file_name');
 			
@@ -165,14 +163,15 @@
 			}
 			else
 			{
-				print_r($data);
+				// print_r($data);
 				$this->model_profil->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
-			redirect('profil');
+			
+			redirect('profil/detail/'.$data['id_kat_profil'].'');
 		}
 	
-	}
+	
 
 
 		public function ubah() // Mengubah data profil
@@ -189,6 +188,7 @@
 			<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 			<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 			<script>
+			jQuery(function($){
 			$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 				no_file:"No File ...",
 				btn_choose:"Choose",
@@ -232,6 +232,7 @@
 				//console.log($(this).data("ace_input_files"));
 				//console.log($(this).data("ace_input_method"));
 			});
+		});
 			</script>
 			';
 			
@@ -273,7 +274,7 @@
 				$this->load->view('v_dashboard',$konten);
 }
 
-			public function detail() // Detail data profil
+			public function detail($id) // Detail data profil
 					
 			{
 				$konten['css']	='';
@@ -281,11 +282,11 @@
 				$konten['kode'] = $this->model_profil->kode(); //tambah kode otomatis		
 				$konten['konten'] 		= 'profil/view_detail_profil';
 				$konten['judul']		= 'Data Master';
-				$key = $this->uri->segment(3);
+				$key = $id;
 				$this->db->where('id_kat_profil',$key);
 				$query = $this->db->get('tb_kat_profil')->result();
 				$konten['sub_judul'] 	= $query[0]->nama_kat_profil;
-				$konten['data']			= $this->model_kat_profil->tampil_profil()->result();
+				$konten['data']			= $this->model_profil->tampil_profile_where($key)->result();
 				// print_r($konten['data'][0]->id_info);		
 				$this->load->view('v_dashboard',$konten); 
 				} 
