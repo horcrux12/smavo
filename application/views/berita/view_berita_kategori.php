@@ -48,7 +48,8 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      
+                      <a href="<?php echo base_url();?>admin/berita/tambah-berita/<?= $kd_judul?>" class="btn btn-primary btn-small">
+                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Berita - <?= $judul_tambah?></a>
                   <br>
                 <br>
               </div>
@@ -89,11 +90,15 @@ if(!empty($info_hapus))
                             <?php
 
                             $no=1;
+
+                            
                             foreach ($data as $row) {
+                              
                             ?>
+                          
                             <td align="center"><?php echo $no++; ?></td>
                             <!-- <td><?php echo $row->id_berita?></td> -->
-                            <td><?php echo $row->nama_kat_artikel?></td>
+                            <td id="nahini"><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->nama?></td>
                             <td><?php echo $row->judul?></td>
                             <td align="center">

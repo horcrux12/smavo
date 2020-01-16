@@ -22,7 +22,7 @@ if (!empty($info_gagal)) {
 </a>
 </i>
 
-<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/tambah-berita/simpan" onsubmit="return cekform();">
+<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/simpan" onsubmit="return cekform();">
 
 
   <div class="form-group">
@@ -33,26 +33,19 @@ if (!empty($info_gagal)) {
   </div>
 
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Nama Penulis</label>
+    <label for="nama" class="col-sm-2 control-label">Nama Penulis</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>"readonly>
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama');?>" readonly>
     </div>
   </div>
-
+  <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
   <div class="form-group">
     <label class="col-sm-2 control-label">Kategori</label>
     <div class="col-sm-8">
-      <select class="form-control" name="kode_kat" id="kode_kat">
-        <option value="">-------- pilih salah satu -------</option>
-        <?php
-        $kat  = $this->db->get('tb_kat_artikel');
-        foreach ($kat->result() as $row) {
-        ?>
-          <option value="<?php echo $row->id_kat_artikel; ?>"><?php echo $row->nama_kat_artikel; ?></option>
-        <?php } ?>
-      </select>
+      <input type="text" class="form-control" name="artikel" id="artikel" value="<?php echo $data[0]->nama_kat_artikel; ?>" readonly>
     </div>
   </div>
+  <input type="hidden" class="form-control" name="kd_artikel" id="kode_artikel" value="<?php echo $data[0]->id_kat_artikel; ?>">
 
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
@@ -79,7 +72,7 @@ if (!empty($info_gagal)) {
   <center>
 
     <div class="box-footer">
-      <button type="submit" class="btn btn-info btn-small"> Simpan</button>
+      <button id="toggle" type="submit" class="btn btn-info btn-small"> Simpan</button>
       <button type="reset" class="btn btn-danger btn-small">Batal</button>
 </form>
 </div>
@@ -150,3 +143,26 @@ if (!empty($info_gagal)) {
   }
   }); 
 </script>
+<!-- <script>
+  $(document).ready(function() {
+    var selected = '';
+
+    if ($('#artikel').val() == "Non Akademik") {
+      
+        $.getJSON("<?php echo base_url();?>/berita/ambil_data_organisasi", function(data){
+          selected += '<div class="form-group">'+
+    '<label class="col-sm-2 control-label">nah ini</label>'+
+    '<div class="col-sm-8">'+
+      '<select class="form-control" name="organisasi" id="organisasi">';
+          $.each( data, function( i, val ) {
+          selected += '<option value="'+data[i].id_organisasi+'">'+data[i].nama_organisasi+'</option>';
+          
+          });
+          selected+= '</select>'+
+    '</div>'+
+  '</div>';
+  $("#nahini").html(selected);
+        })
+    }
+  });
+</script> -->
