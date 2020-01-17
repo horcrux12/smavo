@@ -21,7 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 		
 		public function index()	{
-			$konten['css']			= '';
+			$konten['css']		= '<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">';
+			
 			$konten['konten'] 		= 'berita/view_berita';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data berita';
@@ -35,6 +36,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
 			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
 			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
+			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+			<script>
+				function myFunction() {
+				Swal.fire({
+				title: '."'".'Are you sure?'."'".',
+				text: "You won'."'".'t be able to revert this!",
+				icon: '."'".'warning'."'".',
+				showCancelButton: true,
+				confirmButtonColor: '."'".'#3085d6'."'".',
+				cancelButtonColor: '."'".'#d33'."'".',
+				confirmButtonText: '."'".'Yes, delete it!'."'".',
+				preConfirm:
+				}).then((result) => {
+				if (result.value) {
+					Swal.fire(
+					'."'".'Deleted!'."'".',
+					'."'".'Your file has been deleted.'."'".',
+					'."'".'success'."'".'
+					)
+					return
+				}
+				})
+			}
+				</script>
 			<script type="text/javascript">
 			jQuery(function($) {
 				//initiate dataTables plugin
@@ -560,6 +585,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function tambah($id) // tambah data berita
 		{
 			$konten['css']			= '
+				<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/summernote-master/dist/summernote-lite.min.css" />
@@ -569,6 +595,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$konten['sub_judul'] 	= 'Tambah Data berita';
 			$konten['kode'] 		= $this->model_berita->kode(); //tambah kode otomatis
 			$konten['js']			= '
+				<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery-ui.custom.min.js"></script>
 				<script src="'.base_url().'assets/js/chosen.jquery.min.js"></script>
 				<script src="'.base_url().'assets/js/autosize.min.js"></script>
@@ -621,7 +648,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					//console.log($(this).data("ace_input_method"));
 				});
 			});
-				</script>';
+				</script>
+				<script type="text/javascript">
+					$(function() {
+						const Toast = Swal.mixin({
+						toast: true,
+						position: '."'".'top-end'."'".',
+						showConfirmButton: false,
+						timer: 3000
+						});
+
+						$('."'".'.swalDefaultSuccess'."'".').click(function() {
+						Toast.fire({
+							type: '."'".'success'."'".',
+							title: '."'".'Data Berhasil di Simpan '."'".'
+						})
+						});
+						
+					});
+					</script>
+				';
 			$konten['data'] = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id)->result();
 			$this->load->view('v_dashboard',$konten);
 		}
@@ -701,17 +747,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				if($query->num_rows()>0)
 				{
 					$this->model_berita->getupdate($key,$data);
-					$this->session->set_flashdata('info','Data berhasil di update');
+					// $this->session->set_flashdata('info','Data berhasil di update');
 				}
 				else
 				{
 					// print_r($data);
 					$this->model_berita->getinsert($data);
 					$this->model_dinamic->input_data($galeri,'tb_galeri');
-					$this->session->set_flashdata('info','Data berhasil di simpan');
+					// $this->session->set_flashdata('info','Data berhasil di simpan');
 				}
 			$doto = $this->model_dinamic->getWhere('tb_kat_artikel','id_kat_artikel',$this->input->post('kd_artikel'))->result();
-			redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'');
+			redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'','refresh');
 			}
 		}
 
@@ -874,7 +920,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 			if($query->num_rows()>0)
 				{
-
+					$query=$query->result();
+					unlink('./assets/photo/'.$query[0]->foto);
 					$this->model_berita->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}

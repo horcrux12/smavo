@@ -294,7 +294,8 @@
 		
 			if($query->num_rows()>0)
 				{
-
+					$query=$query->result();
+					unlink('./assets/photo/'.$query[0]->foto);
 					$this->model_guru->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}

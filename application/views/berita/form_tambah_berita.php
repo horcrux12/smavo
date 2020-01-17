@@ -22,7 +22,7 @@ if (!empty($info_gagal)) {
 </a>
 </i>
 
-<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/simpan" onsubmit="return cekform();">
+<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/simpan" onsubmit="return cekform();">
 
 
   <div class="form-group">
@@ -72,7 +72,7 @@ if (!empty($info_gagal)) {
   <center>
 
     <div class="box-footer">
-      <button id="toggle" type="submit" class="btn btn-info btn-small"> Simpan</button>
+      <button id="toggle" type="submit" class="btn btn-info btn-small swalDefaultSuccess"> Simpan</button>
       <button type="reset" class="btn btn-danger btn-small">Batal</button>
 </form>
 </div>
@@ -142,6 +142,15 @@ if (!empty($info_gagal)) {
       });
   }
   }); 
+</script>
+<script>
+$('form').submit(function (e) {
+    var form = this;
+    e.preventDefault();
+    setTimeout(function () {
+        form.submit();
+    }, 3000); // in milliseconds
+});
 </script>
 <!-- <script>
   $(document).ready(function() {

@@ -297,12 +297,13 @@
 			
 			$this->load->model('model_profil');
 			$key = $this->uri->segment(3);
-			$this->db->where('id_profil',$key);
+			$this->db->where('id_info',$key);
 			$query = $this->db->get('tb_profil');
+			
 		
 			if($query->num_rows()>0)
 				{
-
+					
 					$this->model_profil->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}

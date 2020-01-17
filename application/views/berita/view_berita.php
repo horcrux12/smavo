@@ -3,41 +3,6 @@ td p  img{
   width: 590px !important
 }
 </style>
-<?php
-$info = $this->session->flashdata('info');
-if(!empty($info))
-
-{
-
-  echo "<div class='alert alert-success alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
-  echo "</button>";
-  echo "<i class='icon fa fa-check'>"; 
-  echo "</i>";
-  echo $info;
-  echo "</div>";
- 
-}
-?>
-
-<!-- INFO -->
-<?php
-$info_hapus = $this->session->flashdata('info_hapus');
-if(!empty($info_hapus))
-
-{
-
-  echo "<div class='alert alert-success alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
-  echo "</button>";
-  echo "&nbsp; <i class='icon fa fa-check'>"; 
-  echo "</i>";
-  echo $info_hapus;
-  echo "</div>";
- 
-}
-?>
-
 
 <div class="row">
                   <div class="col-xs-12">
@@ -119,8 +84,8 @@ if(!empty($info_hapus))
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red" href="<?php echo base_url();?>berita/delete/<?php echo $row->id_berita?>"
-                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                      <a  class="red hapus" href="#"
+                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction()">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>
@@ -171,3 +136,7 @@ if(!empty($info_hapus))
                 </div>
                       </div>
                             </div>
+
+  
+}
+</script>
