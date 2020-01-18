@@ -84,8 +84,7 @@ td p  img{
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red hapus" href="#"
-                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction()">
+                                      <a  class="red hapus" href="#" id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_berita?>)">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>
@@ -136,7 +135,3 @@ td p  img{
                 </div>
                       </div>
                             </div>
-
-  
-}
-</script>

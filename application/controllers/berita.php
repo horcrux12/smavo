@@ -38,7 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script>
-				function myFunction() {
+				function myFunction(id) {
+				
 				Swal.fire({
 				title: '."'".'Are you sure?'."'".',
 				text: "You won'."'".'t be able to revert this!",
@@ -47,15 +48,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				confirmButtonColor: '."'".'#3085d6'."'".',
 				cancelButtonColor: '."'".'#d33'."'".',
 				confirmButtonText: '."'".'Yes, delete it!'."'".',
-				preConfirm:
+				
 				}).then((result) => {
 				if (result.value) {
 					Swal.fire(
 					'."'".'Deleted!'."'".',
 					'."'".'Your file has been deleted.'."'".',
 					'."'".'success'."'".'
-					)
-					return
+					),
+					function(){
+						window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
+					}
 				}
 				})
 			}
@@ -923,9 +926,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$query=$query->result();
 					unlink('./assets/photo/'.$query[0]->foto);
 					$this->model_berita->getdelete($key);
-					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
+					// $this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('berita');
+				redirect('admin/berita');
 	}
 
 	// Detail Kategori
