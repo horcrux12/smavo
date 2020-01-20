@@ -47,15 +47,13 @@ td p  img{
                         </thead>
 
                         <tbody>
-                          <tr>
-
-
                                         <!-- MENAMPILKAN DATA berita-->
                             <?php
-
+                              
                             $no=1;
                             foreach ($data as $row) {
                             ?>
+                            <tr>
                             <td align="center"><?php echo $no++; ?></td>
                             <!-- <td><?php echo $row->id_berita?></td> -->
                             <td><?php echo $row->nama_kat_artikel?></td>
@@ -74,22 +72,21 @@ td p  img{
                                   <br>
                             <a href="<?php echo base_url();?>berita/detail/<?php echo $row->id_berita?>"></a> </td>
                            
-                           <td align="center">
+                           <td class="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a id="btn-detail" class="blue" href="<?php echo base_url();?>admin/berita/detail-berita/<?php echo $row->id_berita?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a id="btn-detail" class="blue tooltip-info" href="<?php echo base_url();?>admin/berita/detail-berita/<?php echo $row->id_berita?>" id="show-option3" title="Detail" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a id="btn-ubah" class="green" href="<?php echo base_url();?>admin/berita/ubah-berita/<?php echo $row->id_berita?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                      <a id="btn-ubah" class="green tooltip-info" href="<?php echo base_url();?>admin/berita/ubah-berita/<?php echo $row->id_berita?>" id="show-option2" title="Edit" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red hapus" href="#" id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_berita?>)">
+                                      <a  class="red hapus tooltip-info" href="#" id="show-option1" title="Hapus" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_berita?>)">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>
                                </div>
-
                            </td>
 
                               
