@@ -52,23 +52,29 @@
 		 }
 
 
-		 public function tampil_siswa() // join tb_jabatan, tb_siswa dan tb_mapel
-		{
-
-			$data	= " SELECT
-
-						tb_siswa.id_artikel,
-						
-
-						FROM 
-						tb_siswa,tb_kat_artikel
-
-						WHERE 
-
-						tb_kat_artikel.id_kat_artikel=tb_siswa.id_kat_artikel";
-
-			return $this->db->query($data);
-
-	}
+		 public function tampil_siswa() 
+		 {
+			 $this->db->select('
+			 tb_siswa.*, tb_kat_siswa.id_kat_siswa AS id_kat_siswa, tb_kat_siswa.nama_kat_siswa, tb_user.id_user AS penulis, tb_user.nama
+		 ');
+		 $this->db->from('tb_siswa');
+		 // $this->db->where('tb_siswa.id_kat_siswa',$where);
+		 $this->db->join('tb_kat_siswa','tb_siswa.id_kat_siswa = tb_kat_siswa.id_kat_siswa');
+		 $this->db->join('tb_user','tb_siswa.id_user = tb_user.id_user');
+		 $query = $this->db->get();
+		 return $query;
+		 }
+		 public function tampil_kategori_siswa($where){
+			 $this->db->select('
+				 tb_siswa.*, tb_kat_siswa.id_kat_siswa AS id_kat_siswa, tb_kat_siswa.nama_kat_siswa, tb_user.id_user AS penulis, tb_user.nama
+			 ');
+			 $this->db->from('tb_siswa');
+			 $this->db->where('tb_siswa.id_kat_siswa',$where);
+			 $this->db->join('tb_kat_siswa','tb_siswa.id_kat_siswa = tb_kat_siswa.id_kat_siswa');
+			 $this->db->join('tb_user','tb_siswa.id_user = tb_user.id_user');
+			 $query = $this->db->get();
+			 return $query;
+		 }
+		 
 		
 }
