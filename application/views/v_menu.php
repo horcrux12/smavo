@@ -4,7 +4,7 @@
  ?>
 <ul class="nav nav-list">
 	<li class="active">
-		<a href="<?php echo base_url();?>dashboard">
+		<a href="<?php echo base_url();?>admin/dashboard">
 			<i class="menu-icon fa fa-home"></i><span class="menu-text"> Dashboard </span>
 		</a>
 		<b class="arrow"></b>

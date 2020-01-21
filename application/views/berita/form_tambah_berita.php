@@ -149,7 +149,7 @@ $('form').submit(function (e) {
     e.preventDefault();
     setTimeout(function () {
         form.submit();
-    }, 3000); // in milliseconds
+    }, 1000); // in milliseconds
 });
 </script>
 <!-- <script>
