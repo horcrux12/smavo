@@ -3,6 +3,41 @@ td p  img{
   width: 590px !important
 }
 </style>
+<?php
+$info = $this->session->flashdata('info');
+if(!empty($info))
+
+{
+
+  echo "<div class='alert alert-success alert-dismissible'>";
+  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
+  echo "</button>";
+  echo "<i class='icon fa fa-check'>"; 
+  echo "</i>";
+  echo $info;
+  echo "</div>";
+ 
+}
+?>
+
+<!-- INFO -->
+<?php
+$info_hapus = $this->session->flashdata('info_hapus');
+if(!empty($info_hapus))
+
+{
+
+  echo "<div class='alert alert-success alert-dismissible'>";
+  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
+  echo "</button>";
+  echo "&nbsp; <i class='icon fa fa-check'>"; 
+  echo "</i>";
+  echo $info_hapus;
+  echo "</div>";
+ 
+}
+?>
+
 
 <div class="row">
                   <div class="col-xs-12">
@@ -10,7 +45,11 @@ td p  img{
 
                     <div class="clearfix">
 
-                      <div class="pull-right tableTools-container"></div>                    
+                      <div class="pull-right tableTools-container"></div>
+
+
+                      <a href="<?php echo base_url();?>siswa/tambah/<?= $kd_judul?>" class="btn btn-primary btn-small">
+                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data siswa - <?= $judul_tambah?></a>
                   <br>
                 <br>
               </div>
@@ -51,11 +90,15 @@ td p  img{
                             <?php
 
                             $no=1;
+
+                            
                             foreach ($data as $row) {
+                              
                             ?>
+                          
                             <td align="center"><?php echo $no++; ?></td>
-                            <!-- <td><?php echo $row->id_siswa?></td> -->
-                            <td><?php echo $row->nama_kat_siswa?></td>
+                            <!-- <td><?php echo $row->id_artikel?></td> -->
+                            <td id="nahini"><?php echo $row->nama_kat_siswa?></td>
                             <td><?php echo $row->nama?></td>
                             <td><?php echo $row->judul?></td>
                             <td align="center">
@@ -69,7 +112,6 @@ td p  img{
                                              echo $cut;
                                   echo " .... " ?>  
                                   <br>
-                            <a href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_siswa?>"></a> </td>
                            
                            <td align="center">
                               <div class="hidden-sm hidden-xs action-buttons">
@@ -81,7 +123,8 @@ td p  img{
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red hapus" href="#" id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_siswa?>)">
+                                      <a  class="red" href="<?php echo base_url();?>siswa/delete/<?php echo $row->id_siswa?>"
+                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>

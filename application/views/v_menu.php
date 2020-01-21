@@ -132,7 +132,7 @@
 									$this->db->order_by('id_kat_siswa');
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {?>
-										<a href="<?php echo base_url();?>kat_siswa/detail/<?php echo $row->id_kat_siswa?>">
+										<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											<?php echo $row->nama_kat_siswa?>
 										</a>
@@ -388,6 +388,7 @@
 
 						<b class="arrow"></b>
 
+
 						<ul class="submenu">
 							<li class="">
 
@@ -397,7 +398,7 @@
 									foreach ($data->result() as $row) {
 									  
 									?>
-								<a href="<?php echo base_url();?>kat_siswa/detail/<?php echo $row->id_kat_siswa?>">
+								<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									<?php echo $row->nama_kat_siswa?>
 								</a>

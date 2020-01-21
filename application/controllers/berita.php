@@ -22,7 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		public function index()	{
 			$konten['css']		= '<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">';
-			
 			$konten['konten'] 		= 'berita/view_berita';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data berita';
@@ -930,9 +929,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				redirect('admin/berita');
 	}
-
-	// Detail Kategori
-
-	
 }
 ?>	
