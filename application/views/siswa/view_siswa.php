@@ -29,13 +29,13 @@ td p  img{
                         <thead>
                           <tr>
 
-                            <th align="center">No</th>
+                            <th class="center">No</th>
                             <!-- <th>Kode </th> -->
                             <th class="col-md-1">Kategori</th>
                             <th class="col-md-2">Penulis</th>
                             <th class="col-md-4">Judul</th>
-                            <th class="col-md-1">Foto Utama</th>
-                            <th class="col-md-3">Isi siswa</th>
+                            <th class="col-md-1">File</th>
+                            <th class="col-md-3">Deskripsi</th>
                             <th class="col-md-1">Aksi</th>
 
 
@@ -44,7 +44,7 @@ td p  img{
                         </thead>
 
                         <tbody>
-                          <tr>
+                          
 
 
                                         <!-- MENAMPILKAN DATA siswa-->
@@ -53,13 +53,14 @@ td p  img{
                             $no=1;
                             foreach ($data as $row) {
                             ?>
-                            <td align="center"><?php echo $no++; ?></td>
-                            <!-- <td><?php echo $row->id_siswa?></td> -->
+                            <tr>
+                            <td class="center"><?php echo $no++; ?></td>
+                            <!-- <td><?php echo $row->id_artikel?></td> -->
                             <td><?php echo $row->nama_kat_siswa?></td>
                             <td><?php echo $row->nama?></td>
                             <td><?php echo $row->judul?></td>
-                            <td align="center">
-                              <img class="img-circle" width="70" height="70" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>>
+                            <td class="center">
+                            <a href="<?php echo base_url('assets/file/'.$row->foto.'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a>
                            </td>
 
                            
@@ -69,19 +70,20 @@ td p  img{
                                              echo $cut;
                                   echo " .... " ?>  
                                   <br>
-                            <a href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_siswa?>"></a> </td>
+                            <a href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_artikel?>"></a> </td>
                            
-                           <td align="center">
+                           <td class="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a id="btn-detail" class="blue" href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->id_siswa?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a id="btn-detail" class="blue" href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->id_artikel?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a id="btn-ubah" class="green" href="<?php echo base_url();?>admin/siswa/ubah-siswa/<?php echo $row->id_siswa?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                      <a id="btn-ubah" class="green" href="<?php echo base_url();?>admin/siswa/ubah-siswa/<?php echo $row->id_artikel?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red hapus" href="#" id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_siswa?>)">
+                                      <a  class="red" href="<?php echo base_url();?>siswa/delete/<?php echo $row->id_artikel?>"
+                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>

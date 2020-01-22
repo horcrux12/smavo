@@ -76,7 +76,7 @@ if(!empty($info_hapus))
                         </thead>
 
                         <tbody>
-                          <tr>
+                          
 
 
                                         <!-- MENAMPILKAN DATA profil-->
@@ -89,7 +89,7 @@ if(!empty($info_hapus))
                               
                             ?>
                             
-                            
+                            <tr>
                             <td>#</td>
                             <td align="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_info?></td>

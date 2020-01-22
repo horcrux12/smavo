@@ -17,7 +17,7 @@
         ?>           
   <a href="<?php echo base_url();?>profil/ubah/<?= $data[0]->id_info;?>">
       <button type="button" class="btn btn-warning btn-sm pull-right">
-      <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
+      <i class="fa fa-pencil bigger-130" >&nbsp;</i>
       Ubah Data 
       </button>
       </a>

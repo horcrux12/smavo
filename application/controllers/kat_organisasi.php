@@ -17,7 +17,17 @@
 		public function index()
 		{
 			$konten['css']			= '';
-			$konten['js']			= '';
+			$konten['js']			= '
+			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.buttons.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.flash.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.html5.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
+			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+			<script src="'.base_url().'assets/js/table.js"></script>';
 			$konten['konten'] 		= 'kat_organisasi/view_kat_organisasi';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Organisasi';

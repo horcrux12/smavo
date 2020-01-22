@@ -80,3 +80,12 @@ $route['admin/berita/ubah-berita/(:any)'] = 'berita/ubah/$1'; //ubah
 $route['admin/berita/detail-berita/(:any)'] = 'berita/detail/$1'; //detail
 $route['admin/berita/hapus-berita/(:any)'] = 'berita/delete/$1'; //hapus data
 $route['admin/berita/kategori-berita/(:any)'] = 'berita/detail_kat_berita/$1'; //tampil detail kategori data
+
+// siswa
+$route['admin/siswa'] = 'siswa';
+$route['admin/siswa/tambah-siswa/(:any)'] = 'siswa/tambah/$1'; //tambah
+$route['admin/siswa/simpan'] = 'siswa/simpan'; //simpan data
+$route['admin/siswa/ubah-siswa/(:any)'] = 'siswa/ubah/$1'; //ubah
+$route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail/$1'; //detail
+$route['admin/siswa/hapus-siswa/(:any)'] = 'siswa/delete/$1'; //hapus data
+$route['admin/siswa/kategori-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; //tampil detail kategori data

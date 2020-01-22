@@ -105,7 +105,7 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">NIP/NUPTK</label>
               <div class="col-sm-5">
-              <input type="text" class="form-control" name="nip" id="nip" value="<?php echo $nip;?>">
+              <input type="text" class="form-control" name="nip" id="nip"  value="<?php echo $nip; ?> ">
               </div>
               </div>
 

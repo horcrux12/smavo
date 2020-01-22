@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Jan 2020 pada 15.58
+-- Generation Time: 22 Jan 2020 pada 03.49
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -37,13 +37,6 @@ CREATE TABLE `tb_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_berita`
---
-
-INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
-('BR16012020001', 'KTA001', 'Akademik', 'USR001', '<p>Akademik</p>', '11045587_908380929192503_300379429_o91.jpg', '2020-01-16 14:57:54');
-
---
 -- Trigger `tb_berita`
 --
 DELIMITER $$
@@ -73,21 +66,6 @@ CREATE TABLE `tb_galeri` (
   `foto` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_galeri`
---
-
-INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
-(1, 'BR13012020002', 'DSC_0185_14.jpg'),
-(2, 'BR14012020003', '10849572_908789695818293_150700010_o3.jpg'),
-(3, 'BR16012020001', '11045587_908380929192503_300379429_o21.jpg'),
-(4, 'BR16012020002', '10849572_908789695818293_150700010_o31.jpg'),
-(5, 'BR16012020003', '10849572_908789695818293_150700010_o9.jpg'),
-(6, 'BR16012020004', '10849572_908789695818293_150700010_o10.jpg'),
-(7, 'BR16012020005', '10849572_908789695818293_150700010_o32.jpg'),
-(8, 'BR16012020006', '10849572_908789695818293_150700010_o12.jpg'),
-(9, 'BR16012020001', '11045587_908380929192503_300379429_o91.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -97,13 +75,101 @@ INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 CREATE TABLE `tb_guru` (
   `id_guru` char(6) NOT NULL,
   `nip` varchar(16) DEFAULT NULL,
-  `nama_lengkap` varchar(35) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
   `tempat_lahir` varchar(25) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `id_jabatan` char(6) NOT NULL,
-  `id_mapel` char(6) NOT NULL,
-  `foto` tinytext NOT NULL
+  `id_mapel` char(6) DEFAULT NULL,
+  `foto` tinytext
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_guru`
+--
+
+INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
+('GR001', '  ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'DRS__AHMAD_SOBARI.JPG'),
+('GR002', '', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.jpg'),
+('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.jpg'),
+('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP001', 'default.jpg'),
+('GR006', '', 'Artanti, S.Si.', 'BANDUNG', '1972-06-12', 'JBT006', 'MP001', 'default.jpg'),
+('GR007', '1963020819880310', 'Drs. Bambang Sumanto', 'KLATEN', '1963-02-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR008', '1969110819951210', 'DR.H. Bambang Supriyadi, M.Pd.', 'PURWOREJO', '1969-11-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR009', '', 'Budi Setiawan, S.Pd.', 'BOGOR', '1979-04-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR010', '1980051020121120', 'Chintalya Magdalena,S.T. M.M', 'JAKARTA', '1980-05-10', 'JBT006', 'MP001', 'default.jpg'),
+('GR011', '1968120419910120', 'Cony Nugraheni,S.Pd', 'CILACAP', '1968-12-04', 'JBT006', 'MP001', 'default.jpg'),
+('GR012', '', 'Dede Sanjaya', 'Bogor', '1987-01-01', 'JBT006', 'MP001', 'default.jpg'),
+('GR013', '1969010120031220', 'Dijah Noeringtyas, M.Pd.', 'SEMARANG', '1969-01-01', 'JBT006', 'MP001', 'default.jpg'),
+('GR014', '1966040319941220', 'Diyah Nursela, S.Pd.', 'SUMEDANG', '1966-04-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR015', '1968020319970220', 'Dra Dwi Kartika Rini R, M.Pd.', 'SURABAYA', '1968-02-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR016', '1967082719970220', 'Dwi Rokhmiyatun, S.Pd.', 'KEBUMEN', '1967-08-27', 'JBT006', 'MP001', 'default.jpg'),
+('GR017', '1970020619951220', 'Elita Sari, S.Pd.', 'BOGOR', '1970-02-06', 'JBT006', 'MP001', 'default.jpg'),
+('GR018', '1961010219851220', 'Hj. Erlina Alizar, S.Pd.M.Pd.', 'JAKARTA', '1961-01-02', 'JBT006', 'MP001', 'default.jpg'),
+('GR019', '1967051419941210', 'Fadjar Djaja Wirawan, S.Pd.', 'PACITAN', '1967-05-14', 'JBT006', 'MP001', 'default.jpg'),
+('GR020', '', 'Fatmawati, S.Pd.I', 'Bogor', '1985-10-28', 'JBT006', 'MP001', 'default.jpg'),
+('GR021', '1970010419941220', 'Helfy Maryamul Ilfa, S.Pd., M.Pd.', 'TASIKMALAYA', '1970-01-04', 'JBT006', 'MP001', 'default.jpg'),
+('GR022', '1974091120000320', 'Heni Handayani, M.Pd.', 'BOGOR', '1974-09-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR023', '', 'Ichsan,S.Pd.', 'JAKARTA', '1987-08-09', 'JBT006', 'MP001', 'default.jpg'),
+('GR024', '', 'Iis Sugiarti, S.Pd.M.Pd.', 'MAJALENGKA', '1989-12-21', 'JBT006', 'MP001', 'default.jpg'),
+('GR025', '1968021119941220', 'Ilmia Fathonah, S.Pd.,M.Pd.', 'JAKARTA', '1968-02-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR026', '', 'Imania Bidari, S.Pd.', 'TANGERANG', '1992-12-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR027', '1967020819960120', 'Dra. Ina Marlina, M.Pd.', 'BOGOR', '1967-02-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR028', '', 'Jahid Hisyamuddin', 'BOGOR', '1981-12-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR029', '1970021519941220', 'Dra Kristiana Kusumaningrum K, M.Pd.', 'Lampung', '1970-02-15', 'JBT006', 'MP001', 'default.jpg'),
+('GR030', '1980120320090220', 'Lina Yudiastuti, S.Si.', 'Klaten', '1980-12-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR031', '', 'Liwah Lidyawati', 'Jakarta', '1971-02-14', 'JBT006', 'MP001', 'default.jpg'),
+('GR032', '1966030119941210', 'Drs. M.rusli', 'BOGOR', '1966-03-01', 'JBT006', 'MP001', 'default.jpg'),
+('GR033', '1968062619941220', 'Margaretha Sumartining  S,S.Pd.', 'MAGELANG', '1968-06-26', 'JBT006', 'MP001', 'default.jpg'),
+('GR034', '', 'Mariyana Septi Nugraheni , S.Pd.', 'JAKARTA', '1987-09-07', 'JBT006', 'MP001', 'default.jpg'),
+('GR035', '', 'Masitoh Noer, S.Pd', 'Jakarta', '1993-12-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR036', '1992031120190320', 'Mimi Jamilah', 'Bogor', '1992-03-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR037', '', 'Muhamad', 'Bogor', '1983-07-07', 'JBT006', 'MP001', 'default.jpg'),
+('GR038', '', 'Muhamad Yusup, S.Pd.', 'BOGOR', '1983-09-30', 'JBT006', 'MP001', 'default.jpg'),
+('GR039', '', 'Muthia Nurhidayah Ashfaar,SH., MH.', 'BOGOR', '1985-11-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR040', '1966072419941220', 'Dra. Nani Suryani , M.Pd', 'BOGOR', '1966-07-24', 'JBT006', 'MP001', 'default.jpg'),
+('GR041', '', 'Nurlaela, S.Si', 'BOGOR', '1994-08-15', 'JBT006', 'MP001', 'default.jpg'),
+('GR042', '', 'Nurmawati', 'BOGOR', '1975-04-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR043', '', 'Raharjo, S.Pd.', 'BANDUNG', '1985-12-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR044', '1990121920190310', 'RAMLAN SULTON, S.Pd.I', 'Bogor', '1990-12-19', 'JBT006', 'MP001', 'default.jpg'),
+('GR045', '', 'Ranti Mustika K', 'Purwakarta', '1978-03-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR046', '1991081120190320', 'Rizki, S.Pd.', 'Bandung', '1991-08-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR047', '1967082720031220', 'Rr. Tatra Sudhawati , M.Pd.', 'MAGELANG', '1967-08-27', 'JBT006', 'MP001', 'default.jpg'),
+('GR048', '', 'Rudi Zaenudin, S. Kom.', 'BOGOR', '1970-06-02', 'JBT006', 'MP001', 'default.jpg'),
+('GR049', '1966021219941220', 'Dra. Sapmi Rahmawati, M.Pd.', 'BANDUNG', '1966-02-12', 'JBT006', 'MP001', 'default.jpg'),
+('GR050', '1964052219910110', 'Sari Ismono,S.Pd.', 'YOGYAKARTA', '1964-05-22', 'JBT006', 'MP001', 'default.jpg'),
+('GR051', '', 'Sari Rahayu Hidayat, S.Pd.', 'BOGOR', '1993-06-23', 'JBT006', 'MP001', 'default.jpg'),
+('GR052', '1965031119980220', 'Hj. Seerly Handayani, SE.,M.Pd.', 'BOGOR', '1965-03-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR053', '1972110620140710', 'Selamat Riyadi', 'BOGOR', '1972-11-06', 'JBT006', 'MP001', 'default.jpg'),
+('GR054', '1967050419900220', 'Sri Rohayati, M.Pd.', 'Tasikmalaya', '1967-05-04', 'JBT006', 'MP001', 'default.jpg'),
+('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP001', 'default.jpg'),
+('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT006', 'MP001', 'default.jpg'),
+('GR057', '1968122819951220', 'Dra. Sumitri , M.Pd.', 'KLATEN', '1968-12-28', 'JBT006', 'MP001', 'default.jpg'),
+('GR058', '', 'Syamsi  Jawawi Wahyudi, S.Pd.', 'CIANJUR', '1991-05-14', 'JBT006', 'MP001', 'default.jpg'),
+('GR059', '1974091320090220', 'Tatat Rahmalia, S.Pd.M.Pd.', 'BOGOR', '1974-09-13', 'JBT006', 'MP001', 'default.jpg'),
+('GR060', '1987112720190310', 'Teguh Satya Pratama, S.Pd.', 'Bogor', '1987-11-27', 'JBT006', 'MP001', 'default.jpg'),
+('GR061', '1967101019900220', 'Hj. Tintin Sugiharti, S.Pd., M.Pd.', 'CIAMIS', '1967-10-10', 'JBT006', 'MP001', 'default.jpg'),
+('GR062', '1982070720060410', 'Wawan Kurniawan, S.Sos.', 'JAKARTA', '1982-07-07', 'JBT006', 'MP001', 'default.jpg'),
+('GR063', '1987010920150120', 'Yanuarita Nur Hanifa, S.Pd', 'TEMANGGUNG', '1987-01-09', 'JBT006', 'MP001', 'default.jpg'),
+('GR064', '1962122019941220', 'Yayah Hartati, S.Pd.', 'KARAWANG', '1962-12-20', 'JBT006', 'MP001', 'default.jpg'),
+('GR065', '    ', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', 'MP020', 'AEF_SAEPUDIN1.JPG'),
+('GR066', ' ', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT010', 'MP020', 'AHMAD_RIJKON.JPG'),
+('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', 'MP020', 'default.jpg'),
+('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT010', 'MP020', 'default.jpg'),
+('GR069', '', 'Fitri Ihsani', 'BOGOR', '1987-06-29', 'JBT010', 'MP020', 'default.jpg'),
+('GR070', '', 'Galdis Dara Puspita', 'BOGOR', '1994-03-23', 'JBT010', 'MP020', 'default.jpg'),
+('GR071', '', 'Gryan Chessyco Zulfikar', 'Bogor', '1999-01-05', 'JBT010', 'MP020', 'default.jpg'),
+('GR072', '', 'Hendro', 'Jakarta', '1970-10-06', 'JBT010', 'MP020', 'default.jpg'),
+('GR073', '', 'Lukman Hakim', 'BOGOR', '1982-06-11', 'JBT010', 'MP020', 'default.jpg'),
+('GR074', '1966011219860310', 'Mardiono', 'JAKARTA', '1966-01-12', 'JBT010', 'MP020', 'default.jpg'),
+('GR075', '', 'Muhamad Sanusi', 'BOGOR', '1972-10-05', 'JBT010', 'MP020', 'default.jpg'),
+('GR076', '1964091519860310', 'Muhammad Ambyah', 'JAKARTA', '1964-09-15', 'JBT010', 'MP020', 'default.jpg'),
+('GR077', '', 'NENG ERNI HANDAYANI', 'PANDEGLANG', '1996-09-23', 'JBT010', 'MP020', 'default.jpg'),
+('GR078', '', 'Nurazizah Novalianty', 'Jakarta', '1998-11-13', 'JBT010', 'MP020', 'default.jpg'),
+('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', 'MP020', 'default.jpg'),
+('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', 'MP020', 'default.jpg'),
+('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT010', 'MP020', 'default.jpg'),
+('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT010', 'MP020', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -113,7 +179,7 @@ CREATE TABLE `tb_guru` (
 
 CREATE TABLE `tb_jabatan` (
   `id_jabatan` char(6) NOT NULL,
-  `nama_jabatan` varchar(25) NOT NULL
+  `nama_jabatan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -121,7 +187,20 @@ CREATE TABLE `tb_jabatan` (
 --
 
 INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
-('JBT001', 'Kepala Sekolah');
+('JBT001', 'Kepala Sekolah'),
+('JBT002', 'Wakil Kepala Sekolah Bid. Kurikulum'),
+('JBT003', 'Koordinator Laboratorium	'),
+('JBT004', 'Koordinator IT'),
+('JBT005', 'Koordinator BP/BK'),
+('JBT006', 'Guru Mata Pelajaran'),
+('JBT007', 'Kepala Tata Usaha'),
+('JBT008', 'Kepala Perpustakaan'),
+('JBT009', 'Laboran'),
+('JBT010', 'Staff Tata Usaha'),
+('JBT011', 'Penjaga Keamanan'),
+('JBT012', 'Penjaga Kebersihan'),
+('JBT013', 'Juru Masak'),
+('JBT014', 'Koperasi');
 
 -- --------------------------------------------------------
 
@@ -241,8 +320,26 @@ CREATE TABLE `tb_mapel` (
 --
 
 INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`) VALUES
-('MP001', 'Bahasa Indonesia'),
-('MP002', 'Matematika');
+('MP001', 'Pendidikan Agama Islam '),
+('MP002', 'Sejarah'),
+('MP003', 'Kimia'),
+('MP004', 'Bahasa Inggris'),
+('MP005', 'Bahasa Indonesia'),
+('MP006', 'Matematika'),
+('MP007', 'Geografi '),
+('MP008', 'Ekonomi'),
+('MP009', 'PKN'),
+('MP010', 'BP/BK'),
+('MP011', 'Biologi'),
+('MP012', 'Penjas Orkes'),
+('MP013', 'Fisika'),
+('MP014', 'Bahasa Perancis'),
+('MP015', 'Seni Rupa'),
+('MP016', 'Seni Musik'),
+('MP017', 'Sosiologi'),
+('MP018', 'TIK'),
+('MP019', 'Bahasa Sunda'),
+('MP020', 'Tidak Ada');
 
 -- --------------------------------------------------------
 
@@ -325,11 +422,18 @@ CREATE TABLE `tb_siswa` (
   `id_artikel` char(16) NOT NULL,
   `id_kat_siswa` char(6) NOT NULL,
   `id_user` char(6) NOT NULL,
+  `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
-  `foto` varchar(25) NOT NULL,
-  `file` varchar(25) NOT NULL,
+  `foto` tinytext NOT NULL,
   `tanggal_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_siswa`
+--
+
+INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_user`, `judul`, `deskripsi`, `foto`, `tanggal_update`) VALUES
+('SW22012020001', 'KTS002', 'USR001', 'hgyff', '<p>hjghjg,yhj</p>', 'daftar-guru-SMAN_2_CIBINONG-2020-01-20_15_28_14.xlsx', '2020-01-22 02:05:50');
 
 --
 -- Trigger `tb_siswa`
@@ -358,7 +462,7 @@ DELIMITER ;
 CREATE TABLE `tb_statistik` (
   `id_statistik` int(4) NOT NULL,
   `ip_address` varchar(20) NOT NULL,
-  `tanggal` date NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `hits` int(11) NOT NULL,
   `online` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -383,7 +487,7 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `hak_akses`, `foto`) VALUES
-('USR001', 'Muhammad Ridho Fauzi', 'super_admin', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrator', '11045587_908380929192503_300379429_o3.jpg'),
+('USR001', 'Muhammad Ridho Fauzi', 'super_admin', '827ccb0eea8a706c4c34a16891f84e7b', 'Administrator', 'default1.jpg'),
 ('USR002', 'Ramadhan', 'admin_publish', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Publish', '11004334_906175909413005_898042964_n7.jpg'),
 ('USR003', 'Raka Danu Umbara', 'admin_siswa', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Siswa', '11020381_908794995817763_168800336_n1.jpg');
 
@@ -492,7 +596,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --

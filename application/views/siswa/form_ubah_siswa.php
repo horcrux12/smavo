@@ -1,182 +1,178 @@
 
-  
-  <!-- CEK FORM KOSONG -->
-
-<script type="text/javascript">
-  
-  function cekform(){
-
-      if(!$ ("#kode").val())
-      {
-        alert('Maaf kode artikel tidak boleh kosong');
-        $("#kode").focus();
-        return false;
-
-      }
-
-      if(!$ ("#nama").val())
-      {
-        alert('Maaf nama artikel tidak boleh kosong');
-        $("#nama").focus();
-        return false;
-
-      }
-
-      if(!$ ("#kode_kat").val())
-      {
-        alert('Maaf kategori tidak boleh kosong');
-        $("#kode_kat").focus();
-        return false;
-
-      }
-
-      if(!$ ("#judul").val())
-      {
-        alert('Maaf judul tidak boleh kosong');
-        $("#judul").focus();
-        return false;
-
-    }
-
-     if(!$ ("#isi").val())
-      {
-        alert('Maaf isi artikel tidak boleh kosong');
-        $("#isi").focus();
-        return false;
-
-    }
-
-</script>
-
-
-
-<?php
-$info_gagal = $this->session->flashdata('info_gagal');
-if(!empty($info_gagal))
-
-{
-
-  echo "<div class='alert alert-danger alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
-  echo "</button>";
-  echo "<i class='icon fa fa-times'>"; 
-  echo "</i>";
-  echo $info_gagal;
-  echo "</div>";
- 
-}
-?>
-
-    
-    
-    
-
     <!-- Kembali -->
-     
-      <a href="<?php echo base_url();?>artikel">
+      <a href="<?php echo base_url();?>siswa">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
       </button>
       </a>
       </i>
-   
-             
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>artikel/simpan" onsubmit="return cekform();">
 
-              
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Kode Artikel</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Nama Penulis</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $nama; ?>">
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Tanggal</label>
-              <div class="col-sm-2">
-              <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?php echo $tgl=date('Ymd');?>" readonly>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label class="col-sm-2 control-label">Kategori</label>
-              <div class="col-lg-3">
-              <select class="form-control" name="kode_kat" id="kode_kat">
-              <option value="">-------- pilih salah satu -------</option>
-
-
-                            <?php
-
-                            $kat  = $this->db->get('tb_kategori');
-                            foreach ($kat->result() as $row) {
-
-                            ?>            
-            
-            <option value="<?php echo $row->kode_kategori;?>"><?php echo $row->nama_kategori;?></option>
-            <?php } ?>
-            </select>
-              </div>
-              </div>
-
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Judul Artikel</label>
-              <div class="col-sm-5">
-              <input type="text" class="form-control" name="judul" id="judul" value="<?php echo $judul; ?>">
-              </div>
-              </div>
-
-              
-       <section class="content">
-          <div class="row">
-            <label class="col-sm-2 control-label">Isi Artikel</label>
-                      <div class="col-md-10">
-                            <div class="box-header">
-            </div>
-            
-              
-                    <textarea id="editor1" name="isi" rows="10" cols="80"><?php echo $isi;?></textarea>
-           
-           
-        </div>
+  <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>siswa/simpan" onsubmit="return cekform();">
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Kode siswa</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
     </div>
-</section>
+  </div>
 
-<br>
+  <div class="form-group">
+    <label for="nama" class="col-sm-2 control-label">Nama Penulis</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama');?>" readonly>
+    </div>
+  </div>
+  <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Kategori</label>
+    <div class="col-sm-8">
+      <select class="form-control" name="kd_siswa" id="kd_siswa">
+        <?php
+        
+        $kat  = $this->db->get('tb_kat_siswa');
+        foreach ($kat->result() as $row) {
+          if($row->id_kat_siswa == $kd_siswa){
+            $selected = 'selected';
+          }else{
+            $selected = '';
+          }
+        ?>
+          <option <?= $selected?> value="<?php echo $row->id_kat_siswa; ?>"><?php echo $row->nama_kat_siswa; ?></option>
+        <?php } ?>
+      </select>
+    </div>
+  </div>
+
+                
+
+              <div class="form-group">
+    <label class="col-sm-2 control-label">File</label>
+    <div class="col-sm-8">
+      <input type="file" id="id-input-file-2" name="file_name" accept=""/>
+      <i><font color="red">*File yang telah terupload : <?php echo $file;?><br></font></i>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Judul</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="jdl" id="jdl" value="<?php echo $jdl;?>" placeholder="Judul siswa">
+  </div>
+</div>
+   
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label " for="isi">Isi siswa</label>
+    <div class="col-sm-8">
+      <textarea name="isi" id="isi" ><?php echo $isi;?></textarea>
+    </div>
+  </div>
+  <br>
+  </div>
+  
+  <center>
+  <div class="box-footer">
+    <button type="submit" class="btn btn-info btn-small"> Simpan</button>
+    <button type="reset" class="btn btn-danger btn-small">Batal</button>
+    </form>
+  </div>
+  </center>
 
 
 
-<center> 
-<div class="box-footer">		
-<button type="submit" class="btn btn-info btn-small"> Simpan</button>
-<button type="reset"  class="btn btn-danger btn-small">Batal</button>
-   </form>
-      </div>
-            </center>
+  <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
 
-
-    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
-    <script src="<?php echo base_url();?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-
-    <script type="text/javascript">
-
-      $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#isi').summernote({
+      height: "300px",
+      styleWithSpan: false,
+      toolbar:[
+   
+        ['style',['style']],
+        ['font',['bold','italic','underline','clear']],
+        ['fontname',['fontname']],
+        ['color',['color']],
+        ['para',['ul','ol','paragraph']],
+        ['height',['height']],
+        ['table',['table']],
+        ['insert',['media','link','hr','picture']],
+        ['view',['fullscreen','codeview']],
+        ['help',['help']]
+    ],
+    callbacks: {
+        onImageUpload: function(image) {
+            uploadImage(image[0]);
+        },
+        onMediaDelete : function(target) {
+            deleteImage(target[0].src);
+        }
+    }
   });
-  </script> 
+  function uploadImage(image) {
+      var data = new FormData();
+      data.append("image", image);
+      $.ajax({
+          url: "<?php echo base_url('siswa/upload_image')?>",
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: data,
+          type: "POST",
+          success: function(url) {
+              $('#isi').summernote("insertImage", url);
+          },
+          error: function(data) {
+              console.log(data);
+          }
+      });
+  }
 
-                 
+  function deleteImage(src) {
+      $.ajax({
+          data: {src : src},
+          type: "POST",
+          url: "<?php echo base_url('siswa/delete_image')?>",
+          cache: false,
+          success: function(response) {
+              console.log(response);
+          }
+      });
+  }
+  }); 
+</script>
+<script>
+$('form').submit(function (e) {
+    var form = this;
+    e.preventDefault();
+    setTimeout(function () {
+        form.submit();
+    }, 3000); nama_kat_siswa in milliseconds
+});
+</script>
+<!-- <script>
+  $(document).ready(function() {
+    var selected = '';
 
+    if ($('#siswa').val() == "Non Akademik") {
+      
+        $.getJSON("<?php echo base_url();?>/siswa/ambil_data_organisasi", function(data){
+          selected += '<div class="form-group">'+
+    '<label class="col-sm-2 control-label">nah ini</label>'+
+    '<div class="col-sm-8">'+
+      '<select class="form-control" name="organisasi" id="organisasi">';
+          $.each( data, function( i, val ) {
+          selected += '<option value="'+data[i].id_organisasi+'">'+data[i].nama_organisasi+'</option>';
+          
+          });
+          selected+= '</select>'+
+    '</div>'+
+  '</div>';
+  $("#nahini").html(selected);
+        })
+    }
+  });
+</script> -->
