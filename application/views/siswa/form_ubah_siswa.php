@@ -10,7 +10,7 @@
 
   <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>siswa/simpan" onsubmit="return cekform();">
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Kode siswa</label>
+    <label for="" class="col-sm-2 control-label">Kode Artikel Siswa</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
     </div>
@@ -25,7 +25,7 @@
   <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">Kategori</label>
+    <label class="col-sm-2 control-label">Kategori Artikel</label>
     <div class="col-sm-8">
       <select class="form-control" name="kd_siswa" id="kd_siswa">
         <?php
@@ -55,7 +55,7 @@
   </div>
 
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Judul</label>
+    <label for="" class="col-sm-2 control-label">Judul Artikel</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="jdl" id="jdl" value="<?php echo $jdl;?>" placeholder="Judul siswa">
   </div>
@@ -63,13 +63,12 @@
    
 
   <div class="form-group">
-    <label class="col-sm-2 control-label " for="isi">Isi siswa</label>
+    <label class="col-sm-2 control-label " for="isi">Deskripsi Artikel</label>
     <div class="col-sm-8">
       <textarea name="isi" id="isi" ><?php echo $isi;?></textarea>
     </div>
   </div>
-  <br>
-  </div>
+
   
   <center>
   <div class="box-footer">
@@ -82,7 +81,7 @@
 
 
   <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
-<!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
+  <!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
 
 <script type="text/javascript">
@@ -150,7 +149,7 @@ $('form').submit(function (e) {
     e.preventDefault();
     setTimeout(function () {
         form.submit();
-    }, 3000); nama_kat_siswa in milliseconds
+    }, 3000); nama_kat_siswa //in milliseconds
 });
 </script>
 <!-- <script>
