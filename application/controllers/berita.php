@@ -21,7 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 		
 		public function index()	{
-			$konten['css']		= '<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">';
+			$konten['css']		= '<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+								   <link rel="stylesheet" href="'.base_url().'assets/css/colorbox.min.css" />';
 			$konten['konten'] 		= 'berita/view_berita';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data berita';
@@ -37,33 +38,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script src="'.base_url().'assets/js/table.js"></script>
-			<script>
-				function myFunction(id) {
+			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
+			// <script>
+			// 	function myFunction(id) {
 				
-				Swal.fire({
-				title: '."'".'Are you sure?'."'".',
-				text: "You won'."'".'t be able to revert this!",
-				icon: '."'".'warning'."'".',
-				showCancelButton: true,
-				confirmButtonColor: '."'".'#3085d6'."'".',
-				cancelButtonColor: '."'".'#d33'."'".',
-				confirmButtonText: '."'".'Yes, delete it!'."'".',
+			// 	Swal.fire({
+			// 	title: '."'".'Are you sure?'."'".',
+			// 	text: "You won'."'".'t be able to revert this!",
+			// 	icon: '."'".'warning'."'".',
+			// 	showCancelButton: true,
+			// 	confirmButtonColor: '."'".'#3085d6'."'".',
+			// 	cancelButtonColor: '."'".'#d33'."'".',
+			// 	confirmButtonText: '."'".'Yes, delete it!'."'".',
 				
-				}).then((result) => {
-				if (result.value) {
-					Swal.fire(
-					'."'".'Deleted!'."'".',
-					'."'".'Your file has been deleted.'."'".',
-					'."'".'success'."'".'
-					),
-					function(){
-						window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
+			// 	}).then((result) => {
+			// 	if (result.value) {
+			// 		Swal.fire(
+			// 		'."'".'Deleted!'."'".',
+			// 		'."'".'Your file has been deleted.'."'".',
+			// 		'."'".'success'."'".'
+			// 		),
+			// 		function(){
+			// 			window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
+			// 		}
+			// 	}
+			// 	})
+			// }
+			// 	</script>
+			<script type="text/javascript">
+			jQuery(function($) {
+				var $overflow = '."''".';
+				var colorbox_params = {
+					rel: "colorbox",
+					reposition: true,
+					scalePhotos: true,
+					scrolling: false,
+					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
+					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
+					close: '."'".'&times;'."'".',
+					current: '."'".'{current} of {total}'."'".',
+					maxWidth: '."'".'100%'."'".',
+					maxHeight: '."'".'100%'."'".',
+					onOpen: function() {
+						$overflow = document.body.style.overflow;
+						document.body.style.overflow = '."'".'hidden'."'".';
+					},
+					onClosed: function() {
+						document.body.style.overflow = $overflow;
+					},
+					onComplete: function() {
+						$.colorbox.resize();
 					}
-				}
-				})
-			}
-				</script>
-			';
+				};
+
+				$('."'".'.ace-thumbnails [data-rel="colorbox"]'."'".').colorbox(colorbox_params);
+				$("#cboxLoadingGraphic").html("<i class='."'".'ace-icon fa fa-spinner orange fa-spin'."'".'></i>"); //let'."'".'s add a custom loading icon
+
+
+				$(document).one('."'".'ajaxloadstart.page'."'".', function(e) {
+					$('."'".'#colorbox, #cboxOverlay'."'".').remove();
+				});
+			})
+		</script>';
 
 			$konten['data']	= $this->model_berita->tampil_berita()->result();
 			// print_r($konten['data']); 
@@ -72,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		public function detail_kat_berita($id){
-				$konten['css']			= '';
+				$konten['css']			= '<link rel="stylesheet" href="'.base_url().'assets/css/colorbox.min.css" />';
 				$konten['konten'] 		= 'berita/view_berita_kategori';
 				$konten['judul']		= 'Data Berita';
 				
@@ -87,32 +123,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
 				<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 				<script src="'.base_url().'assets/js/table.js"></script>
-				<script>
-					function myFunction(id) {
-					
-					Swal.fire({
-					title: '."'".'Are you sure?'."'".',
-					text: "You won'."'".'t be able to revert this!",
-					icon: '."'".'warning'."'".',
-					showCancelButton: true,
-					confirmButtonColor: '."'".'#3085d6'."'".',
-					cancelButtonColor: '."'".'#d33'."'".',
-					confirmButtonText: '."'".'Yes, delete it!'."'".',
-					
-					}).then((result) => {
-					if (result.value) {
-						Swal.fire(
-						'."'".'Deleted!'."'".',
-						'."'".'Your file has been deleted.'."'".',
-						'."'".'success'."'".'
-						),
-						function(){
-							window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
+				<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
+				<script type="text/javascript">
+				jQuery(function($) {
+					var $overflow = '."''".';
+					var colorbox_params = {
+						rel: "colorbox",
+						reposition: true,
+						scalePhotos: true,
+						scrolling: false,
+						previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
+						next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
+						close: '."'".'&times;'."'".',
+						current: '."'".'{current} of {total}'."'".',
+						maxWidth: '."'".'100%'."'".',
+						maxHeight: '."'".'100%'."'".',
+						onOpen: function() {
+							$overflow = document.body.style.overflow;
+							document.body.style.overflow = '."'".'hidden'."'".';
+						},
+						onClosed: function() {
+							document.body.style.overflow = $overflow;
+						},
+						onComplete: function() {
+							$.colorbox.resize();
 						}
-					}
-					})
-				}
-					</script>			
+					};
+	
+					$('."'".'.ace-thumbnails [data-rel="colorbox"]'."'".').colorbox(colorbox_params);
+					$("#cboxLoadingGraphic").html("<i class='."'".'ace-icon fa fa-spinner orange fa-spin'."'".'></i>"); //let'."'".'s add a custom loading icon
+	
+	
+					$(document).one('."'".'ajaxloadstart.page'."'".', function(e) {
+						$('."'".'#colorbox, #cboxOverlay'."'".').remove();
+					});
+				})
+			</script>
+			// 	<script>
+			// 		function myFunction(id) {
+					
+			// 		Swal.fire({
+			// 		title: '."'".'Are you sure?'."'".',
+			// 		text: "You won'."'".'t be able to revert this!",
+			// 		icon: '."'".'warning'."'".',
+			// 		showCancelButton: true,
+			// 		confirmButtonColor: '."'".'#3085d6'."'".',
+			// 		cancelButtonColor: '."'".'#d33'."'".',
+			// 		confirmButtonText: '."'".'Yes, delete it!'."'".',
+					
+			// 		}).then((result) => {
+			// 		if (result.value) {
+			// 			Swal.fire(
+			// 			'."'".'Deleted!'."'".',
+			// 			'."'".'Your file has been deleted.'."'".',
+			// 			'."'".'success'."'".'
+			// 			),
+			// 			function(){
+			// 				window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
+			// 			}
+			// 		}
+			// 		})
+			// 	}
+			// 		</script>			
 			<script>
 				$(document).ready(function(){
 					var ini = $("#nahini").text();
@@ -170,24 +242,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
 				<script src="'.base_url().'assets/js/inputtype.js"></script>
-				<script type="text/javascript">
-					$(function() {
-						const Toast = Swal.mixin({
-						toast: true,
-						position: '."'".'top-end'."'".',
-						showConfirmButton: false,
-						timer: 3000
-						});
+				// <script type="text/javascript">
+				// 	$(function() {
+				// 		const Toast = Swal.mixin({
+				// 		toast: true,
+				// 		position: '."'".'top-end'."'".',
+				// 		showConfirmButton: false,
+				// 		timer: 3000
+				// 		});
 
-						$('."'".'.swalDefaultSuccess'."'".').click(function() {
-						Toast.fire({
-							type: '."'".'success'."'".',
-							title: '."'".'Data Berhasil di Simpan '."'".'
-						})
-						});
+				// 		$('."'".'.swalDefaultSuccess'."'".').click(function() {
+				// 		Toast.fire({
+				// 			type: '."'".'success'."'".',
+				// 			title: '."'".'Data Berhasil di Simpan '."'".'
+				// 		})
+				// 		});
 						
-					});
-					</script>
+				// 	});
+				// 	</script>
 				';
 			$konten['data'] = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id)->result();
 			$this->load->view('v_dashboard',$konten);
@@ -196,7 +268,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		//Upload image Summernote
 		function upload_image(){
 			if(isset($_FILES["image"]["name"])){
-				$config['upload_path'] = './assets/photo/';
+				$config['upload_path'] = './assets/photo/berita/';
 				$config['allowed_types'] = 'jpg|jpeg|png|gif';
 				$this->upload->initialize($config);
 				if(!$this->upload->do_upload('image')){
@@ -206,16 +278,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$data = $this->upload->data();
 					//Compress Image
 					$config['image_library']='gd2';
-					$config['source_image']='./assets/photo/'.$data['file_name'];
+					$config['source_image']='./assets/photo/berita/'.$data['file_name'];
 					$config['create_thumb']= FALSE;
 					$config['maintain_ratio']= TRUE;
 					$config['quality']= '60%';
 					$config['width']= 800;
 					$config['height']= 800;
-					$config['new_image']= './assets/photo/'.$data['file_name'];
+					$config['new_image']= './assets/photo/berita/'.$data['file_name'];
 					$this->load->library('image_lib', $config);
 					$this->image_lib->resize();
-					echo base_url().'assets/photo/'.$data['file_name'];
+					echo base_url().'assets/photo/berita/'.$data['file_name'];
 				}
 			}
 		}
@@ -231,7 +303,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		public function simpan() // simpan data berita
 		{
-		  $config['upload_path'] 	= './assets/photo/';
+		  $config['upload_path'] 	= './assets/photo/berita/';
 		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
 	      $config['encrypt_name']	= FALSE;
@@ -242,8 +314,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		//   print_r($this->upload->do_upload('file_name'));
 
 	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
-	         redirect('admin/berita/tambah-berita/'.$this->input->post('kode_kat').''); 
+	        $this->session->set_flashdata('info_gagal','Tidak ada foto yang dipilih');
+	         redirect('admin/berita/tambah-berita/'.$this->input->post('kd_artikel').''); 
 		  } 
 		  else {
 
@@ -268,14 +340,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				if($query->num_rows()>0)
 				{
 					$this->model_berita->getupdate($key,$data);
-					// $this->session->set_flashdata('info','Data berhasil di update');
+					$this->session->set_flashdata('info','Data berhasil di update');
 				}
 				else
 				{
 					// print_r($data);
 					$this->model_berita->getinsert($data);
 					$this->model_dinamic->input_data($galeri,'tb_galeri');
-					// $this->session->set_flashdata('info','Data berhasil di simpan');
+					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
 			$doto = $this->model_dinamic->getWhere('tb_kat_artikel','id_kat_artikel',$this->input->post('kd_artikel'))->result();
 			redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'','refresh');
@@ -363,7 +435,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				foreach ($query->result() as $row )
 					{
 						$konten['kode']			= $row->id_berita;
-						$konten['kode_kat']		= $row->id_kat_artikel;
+						$konten['kd_artikel']		= $row->id_kat_artikel;
 						$konten['jdl']			= $row->judul;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
@@ -376,7 +448,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				else
 				{
 						$konten['kode']			= "";
-						$konten['kode_kat']		= "";
+						$konten['kd_artikel']		= "";
 						$konten['jdl']			= "";
 						$konten['user']			= "";
 						$konten['isi']			= "";
@@ -404,7 +476,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_berita;
-						$konten['kode_kat']		= $row->id_kat_artikel;
+						$konten['kd_artikel']		= $row->id_kat_artikel;
 						$konten['jdl']			= $row->judul;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
@@ -415,17 +487,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				else
 				{
 						$konten['kode']			= "";
-						$konten['kode_kat']		= "";
+						$konten['kd_artikel']		= "";
 						$konten['jdl']			= "";
 						$konten['user']			= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";
 				}
-			$kategori = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$konten['kode_kat'])->result();
+			$kategori = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$konten['kd_artikel'])->result();
 			foreach ($kategori as $key) {
 				$konten ['nama_kategori'] = $key->nama_kat_artikel;
 			}
-			// print_r($konten['kode_kat']);
+			// print_r($konten['kd_artikel']);
 			$this->load->view('v_dashboard',$konten);
 		
 			} 
@@ -438,17 +510,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->model('model_dinamic');
 			$key = $id;
 			$query = $this->model_dinamic->getWhere ('tb_berita','id_berita',$id);
-			// $this->db->where('id_berita',$key);
-			// $query = $this->db->get('tb_berita');
-		print_r($query);
-			// if($query->num_rows()>0)
-			// 	{
-			// 		$query=$query->result();
-			// 		unlink('./assets/photo/'.$query[0]->foto);
-			// 		$this->model_berita->getdelete($key);
-			// 		$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
-			// 	}
-				// redirect('admin/berita');
+			$this->db->where('id_berita',$key);
+			$query = $this->db->get('tb_berita');
+			if($query->num_rows()>0)
+				{
+					$query=$query->result();
+					unlink('./assets/photo/berita/'.$query[0]->foto);
+					$this->model_berita->getdelete($key);
+					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
+				}
+				redirect('admin/berita');
 	}
 }
 ?>	

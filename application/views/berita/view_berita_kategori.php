@@ -52,7 +52,7 @@ if (!empty($info_hapus)) {
 			<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th align="center">No</th>
+						<th class="center">No</th>
 						<!-- <th>Kode </th> -->
 						<th class="col-md-1">Kategori</th>
 						<th class="col-md-2">Penulis</th>
@@ -69,13 +69,24 @@ if (!empty($info_hapus)) {
 					foreach ($data as $row) :
 					?>
 						<tr>
-							<td align="center"><?php echo $no++; ?></td>
+							<td class="center"><?php echo $no++; ?></td>
 							<!-- <td><?php echo $row->id_berita ?></td> -->
 							<td><?php echo $row->nama_kat_artikel ?></td>
 							<td><?php echo $row->nama ?></td>
 							<td><?php echo $row->judul ?></td>
-							<td align="center">
-								<img class="img-circle" width="70" height="70" src=<?php echo base_url('assets/photo/' . $row->foto . ''); ?>>
+							<td class="center">
+							<div>
+                              <ul class="ace-thumbnails clearfix">
+                                <li class >
+                                  <a href="<?= base_url()?>assets/photo/berita/<?= $row->foto?>" data-rel="colorbox">
+                                    <img width="80" height="80" alt="150x150" src="<?= base_url()?>assets/photo/berita/<?= $row->foto;?>" />
+                                    <div class="text">
+                                      <div class="inner"><?php echo $row->judul?></div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
 							</td>
 
 
@@ -96,7 +107,7 @@ if (!empty($info_hapus)) {
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 
-									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>berita/delete/<?php echo $row->id_berita ?>">
+									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/berita/hapus-berita/<?php echo $row->id_berita ?>"onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 								</div>

@@ -364,7 +364,7 @@
 			$konten['js']			= '';
 			$konten['konten'] 		= 'siswa/view_detail_siswa';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Detail siswa';
+			$konten['sub_judul'] 	= 'Detail Artikel Siswa';
 			$key = $id;
 			$konten['data']			= $this->model_dinamic->getWhere('tb_siswa','id_artikel',$key);
 			

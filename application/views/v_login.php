@@ -73,7 +73,7 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<img src="<?php echo base_url();?>assets/photo/logo.png ?>" width="100"><br>
+									<img src="<?php echo base_url();?>assets/photo/logo/logo.png ?>" width="100"><br>
 									<span class="red">SIAKAD</span>
 									<span class="white" id="id-text2">Application</span>
 								</h1>

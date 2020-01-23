@@ -4,6 +4,36 @@ td p  img{
 }
 </style>
 
+<?php
+$info = $this->session->flashdata('info');
+if (!empty($info)) {
+
+	echo "<div class='alert alert-success alert-dismissible'>";
+	echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>";
+	echo "</button>";
+	echo "<i class='icon fa fa-check'>";
+	echo "</i>";
+	echo $info;
+	echo "</div>";
+}
+?>
+
+<!-- INFO -->
+<?php
+$info_hapus = $this->session->flashdata('info_hapus');
+if (!empty($info_hapus)) {
+
+	echo "<div class='alert alert-success alert-dismissible'>";
+	echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>";
+	echo "</button>";
+	echo "&nbsp; <i class='icon fa fa-check'>";
+	echo "</i>";
+	echo $info_hapus;
+	echo "</div>";
+}
+?>
+
+
 <div class="row">
                   <div class="col-xs-12">
                     <h3 class="header smaller lighter blue"><?= $sub_judul?></h3>
@@ -32,7 +62,7 @@ td p  img{
                         <thead>
                           <tr>
 
-                            <th align="center">No</th>
+                            <th class="center">No</th>
                             <!-- <th>Kode </th> -->
                             <th class="col-md-1">Kategori</th>
                             <th class="col-md-2">Penulis</th>
@@ -54,13 +84,24 @@ td p  img{
                             foreach ($data as $row) {
                             ?>
                             <tr>
-                            <td align="center"><?php echo $no++; ?></td>
+                            <td class="center"><?php echo $no++; ?></td>
                             <!-- <td><?php echo $row->id_berita?></td> -->
                             <td><?php echo $row->nama_kat_artikel?></td>
                             <td><?php echo $row->nama?></td>
                             <td><?php echo $row->judul?></td>
-                            <td align="center">
-                              <img class="img-circle" width="70" height="70" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>>
+                            <td class="center">
+                            <div>
+                              <ul class="ace-thumbnails clearfix">
+                                <li class >
+                                  <a href="<?= base_url()?>assets/photo/berita/<?= $row->foto?>" data-rel="colorbox">
+                                    <img width="80" height="80" alt="150x150" src="<?= base_url()?>assets/photo/berita/<?= $row->foto;?>" />
+                                    <div class="text">
+                                      <div class="inner"><?php echo $row->judul?></div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
                            </td>
 
                            
@@ -82,7 +123,7 @@ td p  img{
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a  class="red hapus tooltip-info" href="#" id="show-option1" title="Hapus" data-rel="tooltip" onclick="myFunction(<?php echo $row->id_berita?>)">
+                                      <a  class="red hapus tooltip-info" href="<?php echo base_url();?>admin/berita/hapus-berita/<?php echo $row->id_berita?>" id="show-option1" title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>
