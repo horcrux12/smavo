@@ -13,8 +13,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
+  
 
   <!-- Bootstrap CSS File -->
   <link href="<?= base_url();?>assets2/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -23,18 +22,17 @@
   <link href="<?= base_url();?>assets2/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?= base_url();?>assets2/lib/animate/animate.min.css" rel="stylesheet">
   <link href="<?= base_url();?>assets2/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="<?= base_url();?>assets2/lib/owlcarousel/assets2/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?= base_url();?>assets2/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="<?= base_url();?>assets2/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
   <link href="<?= base_url();?>assets2/css/style.css" rel="stylesheet">
-  <link href="<?= base_url();?>assets2/css/style_calendar.css" rel="stylesheet">
-  <link href="<?= base_url();?>assets2/css/helper.css" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+  
+  <!-- CSS for this page -->
+  <?php echo $css;?>
 
   <!-- Slider CSS File -->
-  <link rel="stylesheet" href="<?= base_url();?>assets2/styleslider.css">
+  
   <!-- <link rel="stylesheet" href="css/owl.theme.default.css">
   <link rel="stylesheet" href="css/owl.carousel.css"> -->
 
@@ -144,7 +142,7 @@
     </div>
   </header><!-- #header -->
 
-<?php echo $contents;?>
+<?php $this->load->view($page)?>
 
   <!--==========================
     Footer
@@ -233,17 +231,18 @@
   <script src="<?= base_url();?>assets2/lib/waypoints/waypoints.min.js"></script>
   <script src="<?= base_url();?>assets2/lib/counterup/counterup.min.js"></script>
   <script src="<?= base_url();?>assets2/lib/owlcarousel/owl.carousel.min.js"></script>
-  
-  <!-- Isotope Filtering -->
   <script src="<?= base_url();?>assets2/lib/isotope/isotope.pkgd.min.js"></script>
-  
   <script src="<?= base_url();?>assets2/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="<?= base_url();?>assets2/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
   <script src="<?= base_url();?>assets2/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="<?= base_url();?>assets2/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-  <!-- Contact Form JavaScript File -->
   <script src="<?= base_url();?>assets2/js/main.js"></script>
+
+  
+  <!-- JS for this page -->
   <script src="<?= base_url();?>assets2/js/scripts.js"></script>
   <script src="<?= base_url();?>assets2/js/animated.headline.js"></script>
   <script src="<?= base_url();?>assets2/js/jquery.counterup.min.js"></script>
@@ -253,7 +252,7 @@
   
   <!-- Typed JS -->
   <script type="text/javascript" src="<?= base_url();?>assets2/lib/typed/typed.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
   
   <script type="text/javascript">
     var typed = new Typed ('#typed1', {

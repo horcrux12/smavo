@@ -433,6 +433,7 @@
           <img src="<?= base_url();?>assets2/img/clients/client-6.png" alt="">
           <img src="<?= base_url();?>assets2/img/clients/client-7.png" alt="">
           <img src="<?= base_url();?>assets2/img/clients/client-8.png" alt="">
+          <img src="<?= base_url();?>assets2/img/logo.png" alt="">
         </div>
 
       </div>
