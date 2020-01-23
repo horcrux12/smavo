@@ -45,7 +45,7 @@
                         <span class="profile-picture">
                           
 
-                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>>
+                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/profil/'.$row->foto.'');?>>
 
                           
                         </span>

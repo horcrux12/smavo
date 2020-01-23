@@ -110,7 +110,7 @@
 		//Upload image Summernote
 		function upload_image(){
 			if(isset($_FILES["image"]["name"])){
-				$config['upload_path'] = './assets/photo/';
+				$config['upload_path'] = './assets/photo/profil/';
 				$config['allowed_types'] = 'jpg|jpeg|png|gif';
 				$this->upload->initialize($config);
 				if(!$this->upload->do_upload('image')){
@@ -120,16 +120,16 @@
 					$data = $this->upload->data();
 					//Compress Image
 					$config['image_library']='gd2';
-					$config['source_image']='./assets/photo/'.$data['file_name'];
+					$config['source_image']='./assets/photo/profil/'.$data['file_name'];
 					$config['create_thumb']= FALSE;
 					$config['maintain_ratio']= TRUE;
 					$config['quality']= '60%';
 					$config['width']= 800;
 					$config['height']= 800;
-					$config['new_image']= './assets/photo/'.$data['file_name'];
+					$config['new_image']= './assets/photo/profil/'.$data['file_name'];
 					$this->load->library('image_lib', $config);
 					$this->image_lib->resize();
-					echo base_url().'assets/photo/'.$data['file_name'];
+					echo base_url().'assets/photo/profil/'.$data['file_name'];
 				}
 			}
 		}
@@ -146,7 +146,7 @@
 		public function simpan() // simpan data profil
 		{
 			
-		  $config['upload_path'] 	= './assets/photo/';
+		  $config['upload_path'] 	= './assets/photo/profil/';
 		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
 	      $config['encrypt_name']	= FALSE;
@@ -313,14 +313,12 @@
 		
 			if($query->num_rows()>0)
 				{
-					
+					$query=$query->result();
+					unlink('./assets/photo/profil/'.$query[0]->foto);
 					$this->model_profil->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
 				redirect('profil');
-
-
-
 } 
 	
 	}	

@@ -70,7 +70,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 			<div class="navbar-header pull-left">
 				<a href="<?php echo base_url();?>dashboard" class="navbar-brand">
 					<small>
-						<img src="<?php echo base_url();?>assets/photo/logo.png ?>" width="27">
+						<img src="<?php echo base_url();?>assets/photo/logo/logo.png ?>" width="27">
 						ADMIN - SMA NEGERI 2 CIBINONG
 					</small>
 				</a>

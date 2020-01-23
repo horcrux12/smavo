@@ -33,21 +33,21 @@ if(!empty($info_gagal))
   </div>
 
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Nama Penulis</label>
+    <label for="nama" class="col-sm-2 control-label">Nama Penulis</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama'); ?>"readonly>
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama');?>" readonly>
     </div>
   </div>
-
+  <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
   <div class="form-group">
     <label class="col-sm-2 control-label">Kategori</label>
     <div class="col-sm-8">
-      <select class="form-control" name="kode_kat" id="kode_kat">
+      <select class="form-control" name="kd_artikel" id="kd_artikel">
         <?php
         
         $kat  = $this->db->get('tb_kat_artikel');
         foreach ($kat->result() as $row) {
-          if($row->id_kat_artikel == $kode_kat){
+          if($row->id_kat_artikel == $kd_artikel){
             $selected = 'selected';
           }else{
             $selected = '';
@@ -59,23 +59,16 @@ if(!empty($info_gagal))
     </div>
   </div>
 
-                <?php
-                $key = $this->uri->segment(3);
-                $this->db->where('id_berita',$key);
-                $query = $this->db->get('tb_berita');
-                foreach ($query->result() as $row) {
-                ?>
-
-
+               
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto Utama</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
+              <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/berita/'.$file.'');?>> 
               <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file;?><br></font></i>
               </div>
               </div>   
-              <?php } ?>
+              
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
@@ -91,8 +84,8 @@ if(!empty($info_gagal))
       <textarea name="isi" id="isi" ><?php echo $isi;?></textarea>
     </div>
   </div>
-  <br>
-  </div>
+ 
+  
   
   <center>
   <div class="box-footer">

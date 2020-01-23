@@ -143,7 +143,7 @@
 
 		public function simpan() // simpan data guru
 		{
-		  $config['upload_path'] 	= './assets/photo/';
+		  $config['upload_path'] 	= './assets/photo/guru/';
 	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 	      $config['encrypt_name']	= FALSE;
 	     
@@ -152,7 +152,7 @@
 	      $this->upload->initialize($config);
 	 
 	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
+	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload,Silakan pilih foto yang lain');
 	         redirect('guru/tambah'); 
 	      } else {
 			
@@ -341,12 +341,11 @@
 			if($query->num_rows()>0)
 				{
 					$query=$query->result();
-					unlink('./assets/photo/'.$query[0]->foto);
+					unlink('./assets/photo/guru/'.$query[0]->foto);
 					$this->model_guru->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
 				redirect('guru');
-
 } 
 	
 	}	

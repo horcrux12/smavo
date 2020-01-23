@@ -144,7 +144,7 @@
 
 		public function simpan() // simpan data user
 		{
-		  $config['upload_path'] 		= './assets/photo/';
+		  $config['upload_path'] 		= './assets/photo/user/';
 	      $config['allowed_types'] 		= 'gif|jpg|jpeg|png';
 	      $config['encrypt_name']		= FALSE;
 	     
@@ -334,7 +334,8 @@
 		
 			if($query->num_rows()>0)
 				{
-
+					$query=$query->result();
+					unlink('./assets/photo/user/'.$query[0]->foto);
 					$this->model_user->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}

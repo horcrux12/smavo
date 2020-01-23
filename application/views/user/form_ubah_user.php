@@ -154,7 +154,7 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
+              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/user/'.$row->foto.'');?>> 
               <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
               <!-- <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i> -->

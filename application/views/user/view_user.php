@@ -99,8 +99,8 @@ if(!empty($info_hapus))
                            <div>
                               <ul class="ace-thumbnails clearfix">
                                 <li class >
-                                  <a href="<?= base_url()?>assets/photo/<?= $row->foto?>" data-rel="colorbox">
-                                    <img width="80" height="80" alt="150x150" src="<?= base_url()?>assets/photo/<?= $row->foto;?>" />
+                                  <a href="<?= base_url()?>assets/photo/user/<?= $row->foto?>" data-rel="colorbox">
+                                    <img width="80" height="80" alt="150x150" src="<?= base_url()?>assets/photo/user/<?= $row->foto;?>" />
                                     <div class="text">
                                       <div class="inner"><?php echo $row->nama?></div>
                                     </div>

@@ -89,3 +89,4 @@ $route['admin/siswa/ubah-siswa/(:any)'] = 'siswa/ubah/$1'; //ubah
 $route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail/$1'; //detail
 $route['admin/siswa/hapus-siswa/(:any)'] = 'siswa/delete/$1'; //hapus data
 $route['admin/siswa/kategori-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; //tampil detail kategori data
+
