@@ -34,33 +34,7 @@
 			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
 			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-			<script src="'.base_url().'assets/js/table.js"></script>
-			<script>
-				function myFunction(id) {
-				
-				Swal.fire({
-				title: '."'".'Are you sure?'."'".',
-				text: "You won'."'".'t be able to revert this!",
-				icon: '."'".'warning'."'".',
-				showCancelButton: true,
-				confirmButtonColor: '."'".'#3085d6'."'".',
-				cancelButtonColor: '."'".'#d33'."'".',
-				confirmButtonText: '."'".'Yes, delete it!'."'".',
-				
-				}).then((result) => {
-				if (result.value) {
-					Swal.fire(
-					'."'".'Deleted!'."'".',
-					'."'".'Your file has been deleted.'."'".',
-					'."'".'success'."'".'
-					),
-					function(){
-						window.location = "'.base_url().'admin/siswa/hapus-siswa/"+id;	
-					}
-				}
-				})
-			}
-				</script>';
+			<script src="'.base_url().'assets/js/table.js"></script>';
 
 			$konten['data']	= $this->model_siswa->tampil_siswa()->result();
 			
@@ -71,10 +45,27 @@
 
 
 		public function detail_kat_siswa($id){
-			$konten['css']			= '';
-				$konten['konten'] 		= 'siswa/view_siswa_kategori';
-				$konten['judul']		= 'Data Artikel Siswa';
-				$konten['js']			= '
+				
+				$konten['css']			= '';
+				
+				$search  = array(
+					"%20",
+					"%5E",
+					"%60" );
+				$replace = array(
+					" ",
+					"^",
+					"`");
+					$id = str_replace($search,$replace,$id);
+				$konten ['js'] = ''; 
+					
+				if ($id == "Tata Tertib" || $id == "Aturan Akademik") {
+					$konten['konten'] 		= 'siswa/view_details';
+						
+				}
+				else {
+					$konten['konten'] 		= 'siswa/view_siswa_kategori';
+					$konten['js']			= ''.$konten['js'].'
 				<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
 				<script src="'.base_url().'assets/js/dataTables.buttons.min.js"></script>
@@ -83,45 +74,28 @@
 				<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
 				<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
 				<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
-				<script src="'.base_url().'assets/js/table.js"></script>
-							
-			<script>
-				$(document).ready(function(){
-					var ini = $("#nahini").text();
-					if (ini = "Tidak Ada Data"){
-						$('."'".'#btn-detail'."'".').removeAttr('."'".'href'."'".');
-						$('."'".'#btn-ubah'."'".').removeAttr('."'".'href'."'".');
-						$('."'".'#show-option1'."'".').removeAttr('."'".'href'."'".');
-					}
-	
-					
-				});
-			</script> ';
+				<script src="'.base_url().'assets/js/table.js"></script>';
+				}
+			
 				
-			$search  = array(
-				"%20",
-				"%5E",
-				"%60" );
-			$replace = array(
-				" ",
-				"^",
-				"`");
-				$id = str_replace($search,$replace,$id);
+				$konten['judul']		= 'Data Artikel Siswa';
+				
 				
 				$data = $this->model_dinamic->getWhere ('tb_kat_siswa','nama_kat_siswa',$id)->result();
-	
 				$id = $data[0]->id_kat_siswa;
-	
 				$konten['data']	= $this->model_siswa->tampil_kategori_siswa($id)->result();
-	
-				
 				$subjudul = $this->model_dinamic->getWhere ('tb_kat_siswa','id_kat_siswa',$id)->result();
 				$konten['sub_judul'] 	= 'Data Artikel Siswa - '.$subjudul[0]->nama_kat_siswa.'';
 				$konten['judul_tambah'] = $subjudul[0]->nama_kat_siswa;
 				$konten['kd_judul'] = $subjudul[0]->id_kat_siswa;
-				// print_r($konten['data']); 
+
+				// print_r($konten['data']);
 				$this->load->view('v_dashboard',$konten);
 		}
+
+
+
+
 		public function tambah($id) // tambah Data Artikel Siswa
 		{
 			$konten['css']			= '
@@ -142,26 +116,7 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				<script src="'.base_url().'assets/js/inputtype.js"></script>
-				<script type="text/javascript">
-					$(function() {
-						const Toast = Swal.mixin({
-						toast: true,
-						position: '."'".'top-end'."'".',
-						showConfirmButton: false,
-						timer: 3000
-						});
-
-						$('."'".'.swalDefaultSuccess'."'".').click(function() {
-						Toast.fire({
-							type: '."'".'success'."'".',
-							title: '."'".'Data Berhasil di Simpan '."'".'
-						})
-						});
-						
-					});
-					</script>
-				';
+				<script src="'.base_url().'assets/js/inputtype.js"></script>';
 			$konten['data'] = $this->model_dinamic->getWhere ('tb_kat_siswa','id_kat_siswa',$id)->result();
 			$this->load->view('v_dashboard',$konten);
 		}
@@ -202,6 +157,8 @@
 			}
 		}
 
+
+
 		public function simpan() // simpan Data Artikel Siswa
 		{
 		  $config['upload_path'] 	= './assets/file/';
@@ -221,14 +178,9 @@
 		//   else {
 
 			$key = $this->input->post('kode');
-			$data['id_artikel'] 			= $this->input->post('kode');
-			$data['id_kat_siswa'] 			= $this->input->post('kd_siswa');
-			// if (! $this->input->post('kd_organisasi')) {
-			// 	$data['id_organisasi']	= null;
-			// }
-			// else{
-			// 	$data['id_organisasi'] =  $this->input->post('kd_organisasi');
-			// }
+			$data['id_artikel'] 		= $this->input->post('kode');
+			$data['id_kat_siswa'] 		= $this->input->post('kd_siswa');
+			$data['id_organisasi'] 		= $this->input->post('org');
 			$data['judul'] 				= $this->input->post('jdl');
 			$data['id_user'] 			= $this->input->post('kd_user');
 			$data['deskripsi'] 			= $this->input->post('isi');
@@ -240,23 +192,29 @@
 				if($query->num_rows()>0)
 				{
 					$this->model_siswa->getupdate($key,$data);
-					// $this->session->set_flashdata('info','Data berhasil di update');
+					$this->session->set_flashdata('info','Data berhasil di update');
 				}
 				else
 				{
 					// print_r($data);
-					$this->model_siswa->getinsert($data);
+					 $this->model_siswa->getinsert($data);
 					// $this->model_dinamic->input_data($galeri,'tb_galeri');
-					// $this->session->set_flashdata('info','Data berhasil di simpan');
+					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
 			$doto = $this->model_dinamic->getWhere('tb_kat_siswa','id_kat_siswa',$this->input->post('kd_siswa'))->result();
 			redirect('admin/siswa/kategori-siswa/'.$doto[0]->nama_kat_siswa.'','refresh');
 			}
 		
+
+
+
 		public function ambil_data_organisasi(){
 			$data = $this->model_dinamic->getData('tb_organisasi');
 			echo json_encode($data);
 		}
+
+
+
 
 		public function ubah($id) // Mengubah Data Artikel Siswa
 		{
@@ -272,7 +230,7 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				// <script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
+				<script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
 				<script>
 				jQuery(function($) {
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
@@ -326,15 +284,16 @@
 			$konten['sub_judul'] 	= 'Ubah Data Artikel Siswa';
 			$key = $id;
 			$this->db->where('id_artikel',$key);
-			$query = $this->db->get('tb_siswa');
-			if($query->num_rows()>0)
+			$konten['data'] = $this->db->get('tb_siswa');
+			if($konten['data']->num_rows()>0)
 			
 			{
 
-				foreach ($query->result() as $row )
+				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_artikel;
 						$konten['kd_siswa']		= $row->id_kat_siswa;
+						$konten['org']			= $row->id_organisasi;
 						$konten['jdl']			= $row->judul;
 						$konten['kd_user']		= $row->id_user;
 						$konten['isi']			= $row->deskripsi;
@@ -348,6 +307,7 @@
 				{
 						$konten['kode']			= "";
 						$konten['kd_siswa']		= "";
+						$konten['org']			= "";
 						$konten['jdl']			= "";
 						$konten['kd_user']		= "";
 						$konten['isi']			= "";
@@ -360,6 +320,7 @@
 
 		public function detail($id) // Detail Data Artikel Siswa
 		{
+
 			$konten['css']			= '';
 			$konten['js']			= '';
 			$konten['konten'] 		= 'siswa/view_detail_siswa';
@@ -372,26 +333,32 @@
 			if($konten['data']->num_rows()>0)
 			{
 
-				foreach ($konten['data']->result() as $row )
+				foreach ($query->result() as $row )
 					{
 						$konten['kode']			= $row->id_artikel;
 						$konten['kd_siswa']		= $row->id_kat_siswa;
+						$konten['org']			= $row->id_organisasi;
 						$konten['jdl']			= $row->judul;
 						$konten['kd_user']		= $row->id_user;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file']			= $row->foto;
-				
+						// $konten['tanggal']		= $row->tgl_update;
+						
+						
 					}
 				}
 				else
 				{
 						$konten['kode']			= "";
 						$konten['kd_siswa']		= "";
+						$konten['org']			= "";
 						$konten['jdl']			= "";
 						$konten['kd_user']		= "";
 						$konten['isi']			= "";
 						$konten['file']			= "";
-				}
+						// $konten['tanggal']		= "";
+			} 
+			
 			$kategori = $this->model_dinamic->getWhere ('tb_kat_siswa','id_kat_siswa',$konten['kd_siswa'])->result();
 			foreach ($kategori as $key) {
 				$konten ['nama_kategori'] = $key->nama_kat_siswa;

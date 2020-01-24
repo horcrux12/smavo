@@ -24,6 +24,7 @@
   </div>
   <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
 
+
   <div class="form-group">
     <label class="col-sm-2 control-label">Kategori Artikel</label>
     <div class="col-sm-8">
