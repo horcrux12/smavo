@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller {
 			$konten['judul']		= 'Beranda';
 			$konten['sub_judul'] 	= '';
 			$konten['js']			= '';
-			$this->load->view('v_dashboard',$konten);	
+			$this->load->view('v_dashboard',$konten);
 	}
 
 
@@ -29,5 +29,7 @@ class Dashboard extends CI_Controller {
 			$this->session->sess_destroy();
 			redirect('admin/login');
 		}
+
+		
 
 }
