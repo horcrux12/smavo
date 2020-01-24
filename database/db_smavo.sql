@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Jan 2020 pada 13.45
+-- Generation Time: 24 Jan 2020 pada 08.24
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -102,7 +102,7 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
-('GR001', '     ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'default.JPG'),
+('GR001', '       ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'AHMAD_RIJKON1.JPG'),
 ('GR002', ' ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.JPG'),
 ('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.JPG'),
 ('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.JPG'),
@@ -294,9 +294,9 @@ CREATE TABLE `tb_kontak` (
   `id_kontak` int(4) NOT NULL,
   `nama_pengirim` varchar(35) NOT NULL,
   `email_pengirim` varchar(35) NOT NULL,
-  `judul_pesan` varchar(40) NOT NULL,
+  `kategori_pesan` varchar(20) NOT NULL,
+  `judul_pesan` varchar(80) NOT NULL,
   `isi_pesan` text NOT NULL,
-  `id_status` enum('1','2') NOT NULL,
   `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

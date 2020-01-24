@@ -373,7 +373,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				// <script src="'.base_url().'assets/summernote-master/dist/summernote-cleaner.js"></script>
+				
 				<script>
 				jQuery(function($) {
 				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
