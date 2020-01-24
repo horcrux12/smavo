@@ -2070,7 +2070,8 @@ footer.site-footer {
     left: 0; }
     .calender-cont .fc-center h2 {
       font-size: 16px;
-      font-weight: 700; }
+      font-weight: 700;
+      padding-left: 18px; }
   .calender-cont td .fc-event {
     border: 0px solid transparent;
     padding: 1px; }
@@ -2098,7 +2099,8 @@ footer.site-footer {
       .calender-cont .fc-left .fc-button-group button:hover {
         background: #d8d8d8; }
   .calender-cont.widget-calender {
-    padding-top: 20px; }
+    padding-top: 20px;
+    padding-left: 10px; }
     .calender-cont.widget-calender td, .calender-cont.widget-calender th {
       font-size: 14px;
       border: 0px solid transparent; }

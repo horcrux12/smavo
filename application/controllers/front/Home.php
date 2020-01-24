@@ -24,7 +24,16 @@ class Home extends CI_Controller
 		  <link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
         $page_content['js'] = '';
        	$page_content['title'] = '';
-        $page_content['data'] = ''; 
+		
+		$berita = $this->model_dinamic->getData ('tb_berita');
+		$profil = $this->model_profil->tampil_profil()->result();
+		foreach ($profil as $key) {
+			$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
+		}
+		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3);
+		$page_content['data']['berita'] = $berita;
+		$page_content['data']['berita_limit'] = $limit_berita;
+		$page_content['data']['about'] = $about; 
 		
 		$this->load->view('front/template/app',$page_content);
 	}

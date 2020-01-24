@@ -120,13 +120,21 @@
               <li><a href="#">Aturan Akademik</a></li>
             </ul>
           </li>
-          <li class="menu-has-children"><a href="<?= base_url('berita');?>">Berita</a>
+          <li class="menu-has-children"><a href="#" data-scroll-nav="2">Berita</a>
             <ul>
+              <?php 
+                $data = $this->model_dinamic->getData('tb_kat_artikel');
+                foreach ($data as $key ) {?>
+                    <li><a href="<?= base_url('berita/kategori/');?><?php echo $key->nama_kat_artikel; ?>"><?php echo $key->nama_kat_artikel;?></a></li>
+              <?php }?>
+              <li><a href="<?= base_url('berita');?>">Semua berita</a></li>
+              </ul>
+            <!-- <ul>
               <li><a href="<?= base_url('berita/akademik');?>">Akademik</a></li>
               <li><a href="<?= base_url('berita/nonakademik');?>">Non-Akademik</a></li>
               <li><a href="<?= base_url('berita/umum');?>">Umum</a></li>
               <li><a href="<?= base_url('berita/beasiswa');?>">Beasiswa</a></li>
-            </ul>
+            </ul> -->
           </li>
           <li><a href="<?= base_url('galeri');?>">Galeri</a></li>
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
