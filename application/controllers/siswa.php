@@ -71,7 +71,7 @@
 
 
 		public function detail_kat_siswa($id){
-			$konten['css']			= '';
+				$konten['css']			= '';
 				$konten['konten'] 		= 'siswa/view_siswa_kategori';
 				$konten['judul']		= 'Data Artikel Siswa';
 				$konten['js']			= '

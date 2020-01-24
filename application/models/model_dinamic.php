@@ -13,10 +13,13 @@
 			return $query->result();
 		}
 
-		function getDataLimit ($table,$lim)
+		function getDataLimit ($table,$lim,$by)
 		{
 			$this->db->select('*');
-			$query = $this->db->get($table,$lim);
+			$this->db->from($table);
+			$this->db->order_by($by,'DESC');
+			$this->db->limit($lim);
+			$query = $this->db->get();
 			return $query->result();
 		}
 
