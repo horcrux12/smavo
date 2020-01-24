@@ -32,10 +32,10 @@
 				<a href="<?php echo base_url();?>kat_profil"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Profil</a>
 				<b class="arrow"></b>
 			</li> -->
-			<li class="">
+			<!-- <li class="">
 				<a href="<?php echo base_url();?>kat_siswa"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Siswa</a>
 				<b class="arrow"></b>
-			</li>
+			</li> -->
 			<li class="">
 				<a href="<?php echo base_url();?>kat_jab"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Jabatan</a>
 				<b class="arrow"></b>
@@ -114,7 +114,7 @@
 					</li>
 				</ul>
 				<li class="">
-					<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Siswa </span>
+					<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Kesiswaan </span>
 						<b class="arrow fa fa-angle-down"></b>
 					</a>
 						<b class="arrow"></b>
@@ -124,7 +124,7 @@
 							<b class="arrow"></b>
 						</li>
 						<li class="">
-							<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Kategori Artikel</span>
+							<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Artikel Siswa</span>
 								<b class="arrow fa fa-angle-down"></b>
 							</a>
 							<b class="arrow"></b>

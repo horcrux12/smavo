@@ -14,7 +14,7 @@ if (!empty($info_gagal)) {
 
 <!-- Kembali -->
 
-<a href="<?php echo base_url(); ?>siswa">
+<a href="<?php echo base_url(); ?>berita">
   <button type="button" class="btn btn-warning btn-sm pull-right">
     <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
     Kembali
@@ -22,11 +22,11 @@ if (!empty($info_gagal)) {
 </a>
 </i>
 
-<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/siswa/simpan" onsubmit="return cekform();">
+<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/simpan" onsubmit="return cekform();">
 
 
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Kode Artikel Siswa</label>
+    <label for="" class="col-sm-2 control-label">Kode berita</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
     </div>
@@ -42,50 +42,27 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label class="col-sm-2 control-label">Kategori</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="siswa" id="siswa" value="<?php echo $data[0]->nama_kat_siswa; ?>" readonly>
+      <input type="text" class="form-control" name="artikel" id="artikel" value="<?php echo $data[0]->nama_kat_artikel; ?>" readonly>
     </div>
   </div>
-  <input type="hidden" class="form-control" name="kd_siswa" id="kode_siswa" value="<?php echo $data[0]->id_kat_siswa; ?>">
-
-
-  <div class="form-group">
-              <label class="col-sm-2 control-label">Nama Organisasi</label>
-              <div class="col-lg-8">
-              <select class="form-control" name="org" id="org">
-              <option value="">-------- pilih salah satu -------</option>
-                          
-                          <?php
-
-                            $jbt  = $this->db->get('tb_organisasi');
-                            foreach ($jbt->result() as $row) {
-
-                            ?>            
-            
-            <option value="<?php echo $row->id_organisasi;?>"><?php echo $row->nama_organisasi;?></option>
-            <?php } ?>
-              </select>
-              </div>
-              </div>
-
+  <input type="hidden" class="form-control" name="kd_artikel" id="kode_artikel" value="<?php echo $data[0]->id_kat_artikel; ?>">
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">File</label>
+    <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept=""/>
-     
-     <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i>
+      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     </div>
   </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Artikel Siswa" >
+      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" >
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
+    <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
     <div class="col-sm-8">
       <textarea name="isi" id="isi" ></textarea>
     </div>
@@ -138,7 +115,7 @@ if (!empty($info_gagal)) {
       var data = new FormData();
       data.append("image", image);
       $.ajax({
-          url: "<?php echo base_url('siswa/upload_image')?>",
+          url: "<?php echo base_url('berita/upload_image')?>",
           cache: false,
           contentType: false,
           processData: false,
@@ -157,7 +134,7 @@ if (!empty($info_gagal)) {
       $.ajax({
           data: {src : src},
           type: "POST",
-          url: "<?php echo base_url('siswa/delete_image')?>",
+          url: "<?php echo base_url('berita/delete_image')?>",
           cache: false,
           success: function(response) {
               console.log(response);
@@ -172,16 +149,16 @@ $('form').submit(function (e) {
     e.preventDefault();
     setTimeout(function () {
         form.submit();
-    }, 3000); 
+    }, 1000); // in milliseconds
 });
 </script>
 <!-- <script>
   $(document).ready(function() {
     var selected = '';
 
-    if ($('#siswa').val() == "Non Akademik") {
+    if ($('#artikel').val() == "Non Akademik") {
       
-        $.getJSON("<?php echo base_url();?>/siswa/ambil_data_organisasi", function(data){
+        $.getJSON("<?php echo base_url();?>/berita/ambil_data_organisasi", function(data){
           selected += '<div class="form-group">'+
     '<label class="col-sm-2 control-label">nah ini</label>'+
     '<div class="col-sm-8">'+
