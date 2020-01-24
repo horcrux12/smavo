@@ -709,10 +709,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-col {
-  background: #fff;
   border-radius: 0 0 4px 4px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
+  padding-top: 37px;
 }
 
 #about .about-col .img {
@@ -724,29 +723,19 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-col .icon {
-  width: 64px;
-  height: 64px;
+  width: 100%;
   padding-top: 8px;
-  text-align: center;
-  position: absolute;
-  background-color: #18d26e;
   border-radius: 50%;
   text-align: center;
-  border: 4px solid #fff;
-  left: calc( 50% - 32px);
   bottom: -30px;
   transition: 0.3s;
 }
 
 #about .about-col i {
-  font-size: 36px;
+  font-size: 128px;
   line-height: 1;
-  color: #fff;
+  color: #000;
   transition: 0.3s;
-}
-
-#about .about-col:hover .icon {
-  background-color: #fff;
 }
 
 #about .about-col:hover i {
@@ -759,7 +748,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 700;
   font-size: 20px;
   padding: 0;
-  margin: 40px 0 12px 0;
+  margin: 15px 0 20px 0;
 }
 
 #about .about-col h2 a {
@@ -855,6 +844,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   align-items: center;
   justify-content: center;
   padding: 60px 0;
+}
+
+#services .description1 {
+  font-size: 14px;
+  margin-left: 60px;
+  line-height: 24px;
+  margin-bottom: 0;
 }
 
 
@@ -1195,6 +1191,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #clients .owl-dot.active {
   background-color: #18d26e;
 }
+
 
 /* Testimonials Section
 --------------------------------*/

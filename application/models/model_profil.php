@@ -52,28 +52,14 @@
 		 }
 
 
-		 public function tampil_profil() // 
+	public function tampil_profil() // 
 		{
 
-			$data	= " SELECT
-
-						tb_profil.id_info,
-						tb_kat_profil.nama_kat_profil,
-						-- tb_user.nama_user,
-						tb_profil.judul,
-						tb_profil.deskripsi,
-						tb_profil.foto,
-						tb_profil.tgl_update
-						
-
-						FROM 
-						tb_profil,tb_kat_profil
-
-						WHERE 
-
-						tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil";
-
-			return $this->db->query($data);
+		$this->db->select('tb_profil.*,tb_kat_profil.id_kat_profil as id_kat_profil, tb_kat_profil.nama_kat_profil, tb_user.id_user as id_user, tb_user.nama');
+		$this->db->from('tb_profil');
+		$this->db->join('tb_kat_profil','tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil');
+		$this->db->join('tb_user','tb_user.id_user=tb_profil.id_user');
+		return $this->db->get();
 
 	}
 

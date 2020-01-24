@@ -71,6 +71,21 @@ img {
   font-weight: 200;
   padding-bottom: 5px;
 }
+.berita {
+  position: relative;
+  line-height: 1;
+  border-right: 1px solid #eee;
+}
+
+.berita::before{
+  content: '';
+  width: 1px;
+  height: 35px;
+  background: #18D26E;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+}
 
 .bg-gray {
   background: #f7f7f7;

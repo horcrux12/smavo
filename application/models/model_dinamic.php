@@ -13,6 +13,13 @@
 			return $query->result();
 		}
 
+		function getDataLimit ($table,$lim)
+		{
+			$this->db->select('*');
+			$query = $this->db->get($table,$lim);
+			return $query->result();
+		}
+
 		function getWhere ($table,$field,$where){
 			$this->db->where($field,$where);
 			$query = $this->db->get($table);

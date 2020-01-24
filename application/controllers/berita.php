@@ -1,5 +1,4 @@
 	<?php
-
 use ___PHPSTORM_HELPERS\object;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -386,7 +385,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					//whitelist:"gif|png|jpg|jpeg"
 					//blacklist:"exe|php"
 					//onchange:""
-					//
 				});
 
 				$("#id-input-file-3").ace_file_input({

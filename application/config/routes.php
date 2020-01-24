@@ -54,12 +54,11 @@ $route['default_controller'] = 'front/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// ------------ FRONT END ----------
 // Berita
-// $route['berita'] = 'front/blog/index';
-// $route['berita/akademik'] = 'front/blog/akademik';
-// $route['berita/nonakademik'] = 'front/blog/nonakademik';
-// $route['berita/beasiswa'] = 'front/blog/beasiswa';
-// $route['berita/umum'] = 'front/blog/umum';
+$route['berita'] = 'front/blog/index';
+$route['berita/kategori/(:any)'] = 'front/blog/kategori/$1';
+$route['berita/detail/(:any)'] = 'front/blog/detail/$1';
 
 // // Galeri
 // $route['galeri'] = 'front/galeri';

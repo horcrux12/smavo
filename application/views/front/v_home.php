@@ -1,3 +1,16 @@
+  <style>
+    .owl-centered .owl-wrapper {
+      display: table !important;
+    }
+    .owl-centered .owl-item {
+      display: table-cell;
+      float: none;
+      vertical-align: middle;
+    }
+    .owl-centered .owl-item > div {
+      text-align: center;
+    }
+  </style>
   <section id="intro" data-scroll-index="0">
     <div class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
@@ -17,55 +30,21 @@
               </div>
             </div>
           </div>
-
+          
+          <!-- For Berita -->
+          <?php foreach ($data['berita_limit'] as $key) {?>
           <div class="carousel-item">
-            <div class="carousel-background"><img src="<?= base_url();?>assets2/img/intro-carousel/2.jpg" alt=""></div>
+            <div class="carousel-background"><img src="<?= base_url();?>assets/photo/berita/<?php echo $key->foto?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h3 class="animated fadeInLeft">We Are Creative</h3>
-                <h1 class="animated fadeInRight">The Way Of <span>Success</span></h1>
-                <p class="animated fadeInUp">A single place to share, curate and discover visual that tells a story.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animated zoomIn">Get Started</a>
+                <h3 class="animated fadeInLeft">Berita - SMAVO</h3>
+                <h1 class="animated fadeInRight"><?php echo $key->judul?></h1>
+                <p class="animated fadeInUp"><?php echo "".strip_tags(substr($key->deskripsi,0,30))."..." ?></p>
+                <a href="<?php echo base_url()?>berita/detail/<?php echo $key->id_berita?>" class="btn-get-started scrollto animated zoomIn">Selengkapnya</a>
               </div>
             </div>
           </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="<?= base_url();?>assets2/img/intro-carousel/3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h3 class="animated fadeInLeft">We Are Creative</h3>
-                <h1 class="animated fadeInRight">The Way Of <span>Success</span></h1>
-                <p class="animated fadeInUp">A single place to share, curate and discover visual that tells a story.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animated zoomIn">Get Started</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="<?= base_url();?>assets2/img/intro-carousel/4.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h3 class="animated fadeInLeft">We Are Creative</h3>
-                <h1 class="animated fadeInRight">The Way Of <span>Success</span></h1>
-                <p class="animated fadeInUp">A single place to share, curate and discover visual that tells a story.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animated zoomIn">Get Started</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="<?= base_url();?>assets2/img/intro-carousel/5.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h3 class="animated fadeInLeft">We Are Creative</h3>
-                <h1 class="animated fadeInRight">The Way Of <span>Success</span></h1>
-                <p class="animated fadeInUp">A single place to share, curate and discover visual that tells a story.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animated zoomIn">Get Started</a>
-              </div>
-            </div>
-          </div>
-
+          <?php }?>
         </div>
 
         <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
@@ -97,47 +76,38 @@
 
         <header class="section-header">
           <h3>SMAN 2 Cibinong</h3>
-        </header>
           <p>SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas.Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami.
           </p>
+        </header>
 
         <div class="row about-cols">
 
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
-              <div class="img">
-                <img src="<?= base_url();?>assets2/img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-              </div>
+                <div class="icon"><i class="ion-ios-paperplane-outline"></i></div>
               <h2 class="title"><a href="#">Our Mission</a></h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <?php echo $data['about']['Misi']['deskripsi']?>
               </p>
             </div>
           </div>
 
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="about-col">
-              <div class="img">
-                <img src="<?= base_url();?>assets2/img/about-plan.jpg" alt="" class="img-fluid">
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
               <h2 class="title"><a href="#">Our Plan</a></h2>
               <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              <?php echo $data['about']['Tujuan']['deskripsi']?>
               </p>
             </div>
           </div>
 
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
             <div class="about-col">
-              <div class="img">
-                <img src="<?= base_url();?>assets2/img/about-vision.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
+                <div class="icon"><i class="ion-ios-pie-outline"></i></div>
               <h2 class="title"><a href="#">Our Vision</a></h2>
               <p>
-                Terwujudnya Warga Sekolah yang Berakhlak Mulia, Mandiri, Berwawasan Lingkungan, dan Unggul  dalam IPTEKS (Ilmu Pengetahuan Teknologi dan Seni)
+              <?php echo $data['about']['Visi']['deskripsi']?>
               </p>
             </div>
           </div>
@@ -252,8 +222,7 @@
               <li data-filter=".non-akademik">Non-Akademik</li>
               <li data-filter=".beasiswa">Beasiswa</li>
             </ul>
-            <div class="row portfolio-container">
-             
+            <div class="row portfolio-container berita">
                 <div class="col-lg-4 portfolio-item akademik">
                   <div class="item text-center mb-md50">
                     <div class="post-img">
@@ -320,8 +289,7 @@
             </div>
           </div>
           <div class="col-lg-4">
-            
-
+            <br><br><br><br>
                 <div class="calender-cont widget-calender">
                   <div id="calendar"></div>
                 </div>
@@ -424,15 +392,34 @@
           <h3>Kemitraan</h3>
         </header>
 
-        <div class="owl-carousel clients-carousel">
-          <img src="<?= base_url();?>assets2/img/clients/client-1.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-2.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-3.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-4.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-5.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-6.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-7.png" alt="">
-          <img src="<?= base_url();?>assets2/img/clients/client-8.png" alt="">
+        <div class="owl-carousel clients-carousel owl-centered">
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-1.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-2.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-3.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-4.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-5.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-6.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-7.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/clients/client-8.png" alt="">
+          </div>
+          <div>
+            <img src="<?= base_url();?>assets2/img/logo.png" alt="">
+          </div>
         </div>
 
       </div>

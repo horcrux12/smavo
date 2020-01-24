@@ -9,7 +9,7 @@
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<script>;
-    	  document.location='http://localhost/admin/smavo/login'</script>";
+    	  document.location='".base_url()."admin/login'</script>";
 
 	
 		}
