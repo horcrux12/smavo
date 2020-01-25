@@ -14,7 +14,7 @@ if (!empty($info_gagal)) {
 
 <!-- Kembali -->
 
-<a href="<?php echo base_url(); ?>berita">
+<a href="<?php echo base_url(); ?>admin/berita">
   <button type="button" class="btn btn-warning btn-sm pull-right">
     <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
     Kembali

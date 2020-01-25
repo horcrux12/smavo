@@ -38,32 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script src="'.base_url().'assets/js/table.js"></script>
 			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
-			// <script>
-			// 	function myFunction(id) {
-				
-			// 	Swal.fire({
-			// 	title: '."'".'Are you sure?'."'".',
-			// 	text: "You won'."'".'t be able to revert this!",
-			// 	icon: '."'".'warning'."'".',
-			// 	showCancelButton: true,
-			// 	confirmButtonColor: '."'".'#3085d6'."'".',
-			// 	cancelButtonColor: '."'".'#d33'."'".',
-			// 	confirmButtonText: '."'".'Yes, delete it!'."'".',
-				
-			// 	}).then((result) => {
-			// 	if (result.value) {
-			// 		Swal.fire(
-			// 		'."'".'Deleted!'."'".',
-			// 		'."'".'Your file has been deleted.'."'".',
-			// 		'."'".'success'."'".'
-			// 		),
-			// 		function(){
-			// 			window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
-			// 		}
-			// 	}
-			// 	})
-			// }
-			// 	</script>
 			<script type="text/javascript">
 			jQuery(function($) {
 				var $overflow = '."''".';
@@ -158,32 +132,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					});
 				})
 			</script>
-			// 	<script>
-			// 		function myFunction(id) {
 					
-			// 		Swal.fire({
-			// 		title: '."'".'Are you sure?'."'".',
-			// 		text: "You won'."'".'t be able to revert this!",
-			// 		icon: '."'".'warning'."'".',
-			// 		showCancelButton: true,
-			// 		confirmButtonColor: '."'".'#3085d6'."'".',
-			// 		cancelButtonColor: '."'".'#d33'."'".',
-			// 		confirmButtonText: '."'".'Yes, delete it!'."'".',
-					
-			// 		}).then((result) => {
-			// 		if (result.value) {
-			// 			Swal.fire(
-			// 			'."'".'Deleted!'."'".',
-			// 			'."'".'Your file has been deleted.'."'".',
-			// 			'."'".'success'."'".'
-			// 			),
-			// 			function(){
-			// 				window.location = "'.base_url().'admin/berita/hapus-berita/"+id;	
-			// 			}
-			// 		}
-			// 		})
-			// 	}
-			// 		</script>			
 			<script>
 				$(document).ready(function(){
 					var ini = $("#nahini").text();
@@ -240,26 +189,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				<script src="'.base_url().'assets/js/inputtype.js"></script>
-				// <script type="text/javascript">
-				// 	$(function() {
-				// 		const Toast = Swal.mixin({
-				// 		toast: true,
-				// 		position: '."'".'top-end'."'".',
-				// 		showConfirmButton: false,
-				// 		timer: 3000
-				// 		});
-
-				// 		$('."'".'.swalDefaultSuccess'."'".').click(function() {
-				// 		Toast.fire({
-				// 			type: '."'".'success'."'".',
-				// 			title: '."'".'Data Berhasil di Simpan '."'".'
-				// 		})
-				// 		});
-						
-				// 	});
-				// 	</script>
-				';
+				<script src="'.base_url().'assets/js/inputtype.js"></script>';
 			$konten['data'] = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id)->result();
 			$this->load->view('v_dashboard',$konten);
 		}
@@ -305,7 +235,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  $config['upload_path'] 	= './assets/photo/berita/';
 		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
-	      $config['encrypt_name']	= FALSE;
+		  $config['encrypt_name']	= FALSE;
+		  $config['overwrite']		= true;
 	     
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);

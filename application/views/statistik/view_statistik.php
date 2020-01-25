@@ -1,61 +1,107 @@
 
 <?php 
 	  	
-	//   echo $ip_address ; 
-	//   echo '<br>';
-	//   echo $os;
-	//   echo '<br>';
-	//   echo $browser;
-	//   echo '<br>';
-	//   echo '<br>';
+	  // echo "Alamat IP : ".$ip_address ; 
+	  // echo '<br>';
+	  // echo "Nama Operating System : ".$os;
+	  // echo '<br>';
+	  // echo "Nama Browser : ". $browser;
+	  // echo '<br>';
+    // echo "Nama Laptop : ".$hostname;
 ?>
 
+        <div class="row">
+                  <div class="col-xs-12">
+                    <h3 class="header smaller lighter blue">Data Statistik Pengguna</h3>
+                    <div class="clearfix">
+                    <div class="table-header">
+                     Data Statistik Pengguna
+                    </div>
+                    <div>
+                      <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                        <thead>
+                          <tr>
 
-        
-<div class="col-md-12">
-            <!-- AREA CHART -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Statistik Pengguna</h3>
+                            <th class="center">No</th>
+                            <th class="center">Ip Address</th>
+                            <th class="center">Tanggal</th>
+                            <th class="center">Browser</th>
+                            <th colspan="3" class="center">Aksi</th> 
+                     </tr>
+                        </thead>
+                        <tbody>
+                            <?php
 
-                <div class="card-tools">
-                  
-                </div>
+                            $no=1;
+
+                            foreach ($data->result() as $row) {
+                              
+                            ?>
+
+                            <tr>
+                            <td class="center"><?php echo $no++; ?></td>
+                            <td><?php echo $row->ip_address?></td>
+                            <td><?php echo $row->tanggal?></td>
+                            <td><?php echo $row->browser?></td>
+                            
+                            <td class="center" > 
+                                <div class="hidden-sm hidden-xs action-buttons">
+                                      <a class="tooltip-info blue" href="#" title="Detail" data-rel="tooltip" >
+                                        <i class="fa fa-search-plus bigger-130"  ></i>
+                                      </a>
+                            </td> 
+
+                            <td class="center">
+                                
+                                <a class="tooltip-info green" href="#" title="Ubah" data-rel="tooltip">
+                                        <i class="fa fa-pencil bigger-130" ></i>
+                                      </a>
+                            </td>
+
+                           <td class="center">
+                                      <a class="tooltip-info red" href="#"
+                                     title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+
+                                        <i class=" fa fa-trash-o bigger-130" ></i>
+                                      </a>
+                           </td>
+                              </div>
+                          </tr>
+
+                          <?php } ?>
+
+                      </tbody>
+                  </table>
               </div>
+          </div>
+                      
+                            
+
+            <br>                  
+            <!-- AREA CHART -->
+            <div class="widget-box">
+											<div class="widget-header widget-header-flat widget-header-small">
+												<h5 class="widget-title">
+													<i class="ace-icon fa fa-signal"></i>
+													Statistik Pengguna
+                        </h5>
+              </div><br>
               <div class="card-body">
                 <div class="chart">
                   <canvas id="areaChart" style="min-height: 250px; height: 400px; max-height: 400px; max-width: 100%;"></canvas>
                 </div>
               </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
             
-			</div>
-          <!-- /.col (RIGHT) -->
-        
+      
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>			
 
-			
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
   $(function () {
-    /* ChartJS
-     * -------
-     * Here we will create a few charts using ChartJS
-     */
-
-    //--------------
-    //- AREA CHART -
-    //--------------
-
-    // Get context with jQuery - using jQuery's .get() method.
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July','Agustus','September','Oktober','November','Desember'],
       datasets: [
         {
           label               : 'Digital Goods',
@@ -66,7 +112,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
+          data                : [28, 48, 40, 19, 86, 27, 90, 77, 48, 40, 19, 86]
         },
         {
           label               : 'Electronics',
@@ -77,7 +123,7 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          data                : [65, 59, 80, 81, 56, 55, 40, 80, 65, 59, 80, 81]
         },
       ]
     }
@@ -107,120 +153,6 @@
       type: 'line',
       data: areaChartData, 
       options: areaChartOptions
-    })
-
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var lineChartData = jQuery.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartOptions.datasetFill = false
-
-    var lineChart = new Chart(lineChartCanvas, { 
-      type: 'line',
-      data: lineChartData, 
-      options: lineChartOptions
-    })
-
-    //-------------
-    //- DONUT CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-    var donutData        = {
-      labels: [
-          'Chrome', 
-          'IE',
-          'FireFox', 
-          'Safari', 
-          'Opera', 
-          'Navigator', 
-      ],
-      datasets: [
-        {
-          data: [700,500,400,600,300,100],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-        }
-      ]
-    }
-    var donutOptions     = {
-      maintainAspectRatio : false,
-      responsive : true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    var donutChart = new Chart(donutChartCanvas, {
-      type: 'doughnut',
-      data: donutData,
-      options: donutOptions      
-    })
-
-    //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-    var pieData        = donutData;
-    var pieOptions     = {
-      maintainAspectRatio : false,
-      responsive : true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    var pieChart = new Chart(pieChartCanvas, {
-      type: 'pie',
-      data: pieData,
-      options: pieOptions      
-    })
-
-    //-------------
-    //- BAR CHART -
-    //-------------
-    var barChartCanvas = $('#barChart').get(0).getContext('2d')
-    var barChartData = jQuery.extend(true, {}, areaChartData)
-    var temp0 = areaChartData.datasets[0]
-    var temp1 = areaChartData.datasets[1]
-    barChartData.datasets[0] = temp1
-    barChartData.datasets[1] = temp0
-
-    var barChartOptions = {
-      responsive              : true,
-      maintainAspectRatio     : false,
-      datasetFill             : false
-    }
-
-    var barChart = new Chart(barChartCanvas, {
-      type: 'bar', 
-      data: barChartData,
-      options: barChartOptions
-    })
-
-    //---------------------
-    //- STACKED BAR CHART -
-    //---------------------
-    var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
-    var stackedBarChartData = jQuery.extend(true, {}, barChartData)
-
-    var stackedBarChartOptions = {
-      responsive              : true,
-      maintainAspectRatio     : false,
-      scales: {
-        xAxes: [{
-          stacked: true,
-        }],
-        yAxes: [{
-          stacked: true
-        }]
-      }
-    }
-
-    var stackedBarChart = new Chart(stackedBarChartCanvas, {
-      type: 'bar', 
-      data: stackedBarChartData,
-      options: stackedBarChartOptions
     })
   })
 </script>

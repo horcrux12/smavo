@@ -95,20 +95,16 @@ if(!empty($info_hapus))
                             
                             <td class="center" > 
                                 <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="#" title="Detail" data-rel="tooltip" >
+                                      <a class="tooltip-info blue" href="<?php echo base_url();?>kat_organisasi/detail/<?php echo $row->id_organisasi?>" title="Detail" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
-                                  </td>
-
-                                
+                                  </td> 
 
                             <td class="center">
                                 
                                 <a class="tooltip-info green" href="<?php echo base_url();?>kat_organisasi/ubah/<?php echo $row->id_organisasi?>" title="Ubah" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
-
-
                             </td>
 
                            <td class="center">

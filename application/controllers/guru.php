@@ -67,7 +67,8 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';
 			$konten['data']			= $this->db->get('tb_guru');
-			$konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
+			// $konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
+			// print_r($konten['data']);
 			$this->load->view('v_dashboard',$konten);
 
 		}
@@ -146,7 +147,7 @@
 		  $config['upload_path'] 	= './assets/photo/guru/';
 	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 	      $config['encrypt_name']	= FALSE;
-	     
+		  $config['overwrite']			= true;
 	 
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
