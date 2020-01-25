@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Jan 2020 pada 08.24
+-- Generation Time: 25 Jan 2020 pada 18.02
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -23,12 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_about`
+--
+
+CREATE TABLE `tb_about` (
+  `id` int(4) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL,
+  `plan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
   `id_berita` char(16) NOT NULL,
   `id_kat_artikel` char(6) NOT NULL,
+  `id_organisasi` char(6) DEFAULT NULL,
   `judul` varchar(255) NOT NULL,
   `penulis` char(6) NOT NULL,
   `deskripsi` text NOT NULL,
@@ -40,8 +55,8 @@ CREATE TABLE `tb_berita` (
 -- Dumping data untuk tabel `tb_berita`
 --
 
-INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
-('BR23012020001', 'KTA001', 'tst', 'USR001', '<p>tegyfty</p>', 'DSC_0648.JPG', '2020-01-23 12:40:27');
+INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
+('BR25012020001', 'KTA002', NULL, 'hjgyt', 'USR001', '<p>hgy</p>', '_DSC0132.JPG', '2020-01-25 12:26:53');
 
 --
 -- Trigger `tb_berita`
@@ -78,7 +93,8 @@ CREATE TABLE `tb_galeri` (
 --
 
 INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
-(1, 'BR23012020001', 'DSC_0648.JPG');
+(1, 'BR23012020001', 'DSC_0648.JPG'),
+(2, 'BR25012020001', '_DSC0132.JPG');
 
 -- --------------------------------------------------------
 
@@ -102,10 +118,10 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
-('GR001', '       ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'AHMAD_RIJKON1.JPG'),
-('GR002', ' ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.JPG'),
-('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.JPG'),
-('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.JPG'),
+('GR001', '', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR002', '', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.jpg'),
+('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.jpg'),
+('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.jpg'),
 ('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP001', 'default.jpg'),
 ('GR006', '', 'Artanti, S.Si.', 'BANDUNG', '1972-06-12', 'JBT006', 'MP001', 'default.jpg'),
 ('GR007', '1963020819880310', 'Drs. Bambang Sumanto', 'KLATEN', '1963-02-08', 'JBT006', 'MP001', 'default.jpg'),
@@ -166,24 +182,24 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR062', '1982070720060410', 'Wawan Kurniawan, S.Sos.', 'JAKARTA', '1982-07-07', 'JBT006', 'MP001', 'default.jpg'),
 ('GR063', '1987010920150120', 'Yanuarita Nur Hanifa, S.Pd', 'TEMANGGUNG', '1987-01-09', 'JBT006', 'MP001', 'default.jpg'),
 ('GR064', '1962122019941220', 'Yayah Hartati, S.Pd.', 'KARAWANG', '1962-12-20', 'JBT006', 'MP001', 'default.jpg'),
-('GR065', '    ', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', 'MP020', 'AEF_SAEPUDIN1.JPG'),
-('GR066', ' ', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT010', 'MP020', 'AHMAD_RIJKON.JPG'),
-('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', 'MP020', 'default.jpg'),
-('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT010', 'MP020', 'default.jpg'),
-('GR069', '', 'Fitri Ihsani', 'BOGOR', '1987-06-29', 'JBT010', 'MP020', 'default.jpg'),
-('GR070', '', 'Galdis Dara Puspita', 'BOGOR', '1994-03-23', 'JBT010', 'MP020', 'default.jpg'),
-('GR071', '', 'Gryan Chessyco Zulfikar', 'Bogor', '1999-01-05', 'JBT010', 'MP020', 'default.jpg'),
-('GR072', '', 'Hendro', 'Jakarta', '1970-10-06', 'JBT010', 'MP020', 'default.jpg'),
-('GR073', '', 'Lukman Hakim', 'BOGOR', '1982-06-11', 'JBT010', 'MP020', 'default.jpg'),
-('GR074', '1966011219860310', 'Mardiono', 'JAKARTA', '1966-01-12', 'JBT010', 'MP020', 'default.jpg'),
-('GR075', '', 'Muhamad Sanusi', 'BOGOR', '1972-10-05', 'JBT010', 'MP020', 'default.jpg'),
-('GR076', '1964091519860310', 'Muhammad Ambyah', 'JAKARTA', '1964-09-15', 'JBT010', 'MP020', 'default.jpg'),
-('GR077', '', 'NENG ERNI HANDAYANI', 'PANDEGLANG', '1996-09-23', 'JBT010', 'MP020', 'default.jpg'),
-('GR078', '', 'Nurazizah Novalianty', 'Jakarta', '1998-11-13', 'JBT010', 'MP020', 'default.jpg'),
-('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', 'MP020', 'default.jpg'),
-('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', 'MP020', 'default.jpg'),
-('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT010', 'MP020', 'default.jpg'),
-('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT010', 'MP020', 'default.jpg');
+('GR065', '', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', NULL, 'default.jpg'),
+('GR066', '', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT010', NULL, 'default.jpg'),
+('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', NULL, 'default.jpg'),
+('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT010', NULL, 'default.jpg'),
+('GR069', '', 'Fitri Ihsani', 'BOGOR', '1987-06-29', 'JBT010', NULL, 'default.jpg'),
+('GR070', '', 'Galdis Dara Puspita', 'BOGOR', '1994-03-23', 'JBT010', NULL, 'default.jpg'),
+('GR071', '', 'Gryan Chessyco Zulfikar', 'Bogor', '1999-01-05', 'JBT010', NULL, 'default.jpg'),
+('GR072', '', 'Hendro', 'Jakarta', '1970-10-06', 'JBT010', NULL, 'default.jpg'),
+('GR073', '', 'Lukman Hakim', 'BOGOR', '1982-06-11', 'JBT010', NULL, 'default.jpg'),
+('GR074', '1966011219860310', 'Mardiono', 'JAKARTA', '1966-01-12', 'JBT010', NULL, 'default.jpg'),
+('GR075', '', 'Muhamad Sanusi', 'BOGOR', '1972-10-05', 'JBT010', NULL, 'default.jpg'),
+('GR076', '1964091519860310', 'Muhammad Ambyah', 'JAKARTA', '1964-09-15', 'JBT010', NULL, 'default.jpg'),
+('GR077', '', 'NENG ERNI HANDAYANI', 'PANDEGLANG', '1996-09-23', 'JBT010', NULL, 'default.jpg'),
+('GR078', '', 'Nurazizah Novalianty', 'Jakarta', '1998-11-13', 'JBT010', NULL, 'default.jpg'),
+('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', NULL, 'default.jpg'),
+('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', NULL, 'default.jpg'),
+('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT010', NULL, 'default.jpg'),
+('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT010', NULL, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -287,6 +303,19 @@ INSERT INTO `tb_kat_siswa` (`id_kat_siswa`, `nama_kat_siswa`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_kemitraan`
+--
+
+CREATE TABLE `tb_kemitraan` (
+  `id` int(4) NOT NULL,
+  `nama` varchar(40) NOT NULL,
+  `foto` tinytext NOT NULL,
+  `link_website` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_kontak`
 --
 
@@ -352,8 +381,7 @@ INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`) VALUES
 ('MP016', 'Seni Musik'),
 ('MP017', 'Sosiologi'),
 ('MP018', 'TIK'),
-('MP019', 'Bahasa Sunda'),
-('MP020', 'Tidak Ada');
+('MP019', 'Bahasa Sunda');
 
 -- --------------------------------------------------------
 
@@ -363,19 +391,22 @@ INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`) VALUES
 
 CREATE TABLE `tb_organisasi` (
   `id_organisasi` char(6) NOT NULL,
-  `nama_organisasi` varchar(25) NOT NULL
+  `nama_organisasi` varchar(35) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto` tinytext
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_organisasi`
 --
 
-INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`) VALUES
-('ORG001', 'Osis'),
-('ORG002', 'MPK'),
-('ORG003', 'Pramuka'),
-('ORG004', 'Paskibra'),
-('ORG005', 'PMR');
+INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`, `deskripsi`, `foto`) VALUES
+('ORG001', 'Osis', '', NULL),
+('ORG002', 'MPK', '', NULL),
+('ORG003', 'Pramuka', '', NULL),
+('ORG004', 'Paskibra', '', NULL),
+('ORG005', 'PMR', '', NULL),
+('ORG006', 'hjgjgyj', '<p>org</p><p><br></p>', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -405,7 +436,7 @@ INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskri
 ('PR13012020005', 'KTP005', 'USR001', 'Mars SMA Negeri 2 Cibinong', 'Mars Sekolah', 'logo.png', '2020-01-23 12:22:11'),
 ('PR13012020006', 'KTP006', 'USR001', 'Struktur Organisasi SMA Negeri 2 Cibinong', '<p>Berikut adalah bagan struktur organisasi SMA Negeri 2 Cibinong :</p><p><img src="			\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/image2.png" style="width: 50%;"><br></p>', 'logo.png', '2020-01-23 12:22:23'),
 ('PR13012020007', 'KTP007', 'USR001', 'Sambutan Kepala Sekolah SMA Negeri 2 Cibinong', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; text-align: center;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px; margin-right: auto; margin-left: auto; width: 227.124px;"><img class="aligncenter  wp-image-2067 note-float-left" src="http://sman2cibinong.sch.id/wp-content/uploads/2015/04/BAPAK-BAMBANG-SUPRIYADI.jpg" alt="BAPAK BAMBANG SUPRIYADI" width="259" height="389" style="text-align: justify; display: block; max-width: 100%; height: 341.125px; margin: 5px auto; float: left; width: 227.124px;"></span></font></p><div style="text-align: justify;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px;"><br></span></font></div><div style="text-align: justify;"><br></div><p></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Bismillahirahmanirahim</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Assalamualaikum Warahmatullahi Wabarakatuh</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Innal hamda lillah wa sholatu wa salamu ‘ala rasulillah, segala puji bagi Allah seru sekalian alam yang telah melimpahkan kenikmatan, menurunkan taufik, hidayah dan inayahnya sehingga  mampu melaksanakan tugas, mengemban amanah, dan mengembangkan dunia pendidikan hingga saat ini. Salam penghormatan bagi insan pilihan, kekasih al-Halim, Muhammad SAW yang penyantun.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas. Akhirnya cita-cita jadi sekolah impian masyarakat Kabupaten Bogor (sebagai Kabupaten Termaju di Indonesia) yaitu berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami dapat terwujud. Kami sudah bertekad untuk mewujudkan keinginan  itu dengan slogan “Man Jadda Wajada” siapa yang bersungguh-sunguh pasti akan berhasil. “Man Shobaru Zhafira” siapa yang bersabar akan beruntung. “Man Yazro Yahsud”  siapa yang menanam akan menuai yang ditanam. Kalimat inilah yang jadi motivasi untuk melakukan perubahan internal dan eksternal. Komitmen kami tidak mungkin terwujud tanpa bantuan, dorongan  dan motivasi dari pemerintah baik pusat maupun daerah melalui Kemendikbud, Dinas Pendidikan Provinsi Jawa Barat ataupun Dinas Pendidikan Kabupaten Bogor. Apalah artinya sebuah lembaga pendidikan tanpa adanya regulasi dan bantuan dari pengambil kebijakan terutama dalam pemenuhan standar sarana prasarana, standar pendidik dan tenaga kependidikan dan yang paling utama dan pertama standar biaya.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Anak – anakku yang saya cintai dan banggakan,</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">“Pendidikan adalah tiket ke masa depan. Hari esok dimiliki oleh orang-orang yang mempersiapkan dirinya sejak hari ini” – Malcolm X. “Pembelajaran tidak didapat dengan kebetulan. Ia harus dicari dengan semangat dan disimak dengan tekun” – Abigail Adams.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Filosofi pendidikan adalah “change” atau perubahan. Karenanya bila kita tidak mengikuti perubahan atau perkembangan pasti akan ketinggalan. Perlu memiliki sifat untuk selalu mau berjuang dan bekerja keras. Berjuang untuk mencapai prestasi akademis, berjuang untuk mendapatkan tempat di perguruan tinggi, berjuang untuk mendapatkan tempat yang layak di masyarakat dan tentu saja berjuang demi agama, kemajuan bangsa/negara dan kebahagian dunia/akherat. Mudah-mudahan dengan ilmu, bisa menjadi bekal untuk kehidupan kalian dimasa depan nanti. Kalian adalah siswa-siswi yang telah kami ajarkan nilai-nilai karakter budaya bangsa. Perlihatkanlah nilai-nilai itu kepada masyarakat luas agar itu menjadi ciri khas kita. Jagalah nama baik sekolah kita.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Dua kalimat bijak di atas mengimpirasi kita tentang pentingnya pendidikan. Saat ini pasti kalian semua sudah memantapkan diri untuk memilih perguruan tinggi, baik melalui jalur SNMPTN, SBMPTN maupun seleksi mandiri. Bagi kalian yang belum masuk ke perguruan tinggi yang kalian inginkan, jangan putus asa, teruslah semangat dalam menjalani proses belajar. Mungkin perguruan tinggi itulah yang menurut Allah SWT cocok untuk kalian. Ingat, tidak semua orang sukses dilihat dari mana perguruan tingginya, program studinya, semua orang bisa sukses asalkan orang tersebut berusaha secara sungguh–sungguh untuk memiliki kompensi baik pengetahuan, ketrampilan maupun kepribadian secara baik.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Selamat berjuang, anak-anakku, jadikan pengalaman belajar di SMAVO sebagai catatan perjalanan hidup yang kalian kenangkan dengan mengambil ibrah yang positif. Selamat mengisi kehidupan di masyarakat yang lebih luas, semoga Allah merahmati kita semua dengan kemudahan dan kebaikan hidup, sehingga kelak kita beruntung menjadi manusia yang ringan langkahnya menuju akhiratNya, amin.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Wassalamualaikum Warahmatullahi Wabarakatuh.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Kepala Sekolah</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"><strong>Dr. Bambang Supriyadi, M.Pd.</strong></p>', 'logo.png', '2020-01-23 12:22:32'),
-('PR13012020008', 'KTP008', 'USR001', 'Fasilitas SMA Negeri 2 Cibinong', 'Fasilitas SMA Negeri 2 Cibinong', 'logo.png', '2020-01-23 12:22:41'),
+('PR13012020008', 'KTP008', 'USR001', 'Fasilitas SMA Negeri 2 Cibinong', '<p>fasilitas</p>', '', '2020-01-25 13:14:35'),
 ('PR13012020009', 'KTP009', 'USR001', 'Kontak SMA Negeri 2 Cibinong', '<span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Jl. Karadenan No. 05</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Cibinong Bogor 16913 Jawa Barat</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Telp/Fax. (0251) 8654 347</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Email. info@sman2cibinong.sch.id</span>', 'logo.png', '2020-01-23 12:22:50');
 
 --
@@ -435,6 +466,7 @@ DELIMITER ;
 CREATE TABLE `tb_siswa` (
   `id_artikel` char(16) NOT NULL,
   `id_kat_siswa` char(6) NOT NULL,
+  `id_organisasi` char(6) DEFAULT NULL,
   `id_user` char(6) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
@@ -446,9 +478,9 @@ CREATE TABLE `tb_siswa` (
 -- Dumping data untuk tabel `tb_siswa`
 --
 
-INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_user`, `judul`, `deskripsi`, `foto`, `tanggal_update`) VALUES
-('SW22012020001', 'KTS002', 'USR001', 'hgyff', '<p>hjghjg,yhj</p>', 'daftar-guru-SMAN_2_CIBINONG-2020-01-20_15_28_14.xlsx', '2020-01-22 02:05:50'),
-('SW22012020002', 'KTS001', 'USR001', 'cas', '<p>fw</p>', '14_IRAWAN1.pdf', '2020-01-22 07:19:01');
+INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_organisasi`, `id_user`, `judul`, `deskripsi`, `foto`, `tanggal_update`) VALUES
+('SW24012020001', 'KTS003', NULL, 'USR001', 'Tata Tertib', 'tata tertib', '100-304-1-PB_3.pdf', '2020-01-24 13:25:11'),
+('SW24012020002', 'KTS004', NULL, 'USR001', 'Aturan Akademik', 'Aturan Akademik', '', '2020-01-25 12:31:11');
 
 --
 -- Trigger `tb_siswa`
@@ -471,6 +503,19 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_slider`
+--
+
+CREATE TABLE `tb_slider` (
+  `id` int(4) NOT NULL,
+  `judul_utama` varchar(100) NOT NULL,
+  `sub_judul` varchar(100) NOT NULL,
+  `deskripsi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_statistik`
 --
 
@@ -479,8 +524,102 @@ CREATE TABLE `tb_statistik` (
   `ip_address` varchar(20) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `hits` int(11) NOT NULL,
-  `online` varchar(15) NOT NULL
+  `online` varchar(15) NOT NULL,
+  `browser` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_statistik`
+--
+
+INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `online`, `browser`) VALUES
+(1, '', '2020-01-25 16:23:34', 0, '', NULL),
+(2, '', '2020-01-25 16:23:34', 0, '', NULL),
+(3, '', '2020-01-25 16:23:34', 0, '', NULL),
+(4, '', '2020-01-25 16:23:34', 0, '', NULL),
+(5, '', '2020-01-25 16:23:34', 0, '', NULL),
+(6, '', '2020-01-25 16:23:34', 0, '', NULL),
+(7, '', '2020-01-25 16:23:34', 0, '', NULL),
+(8, '', '2020-01-25 16:23:34', 0, '', NULL),
+(9, '', '2020-01-25 16:23:34', 0, '', NULL),
+(10, '', '2020-01-25 16:23:34', 0, '', NULL),
+(11, '', '2020-01-25 16:23:34', 0, '', NULL),
+(12, '', '2020-01-25 16:23:34', 0, '', NULL),
+(13, '', '2020-01-25 16:23:34', 0, '', NULL),
+(14, '', '2020-01-25 16:23:34', 0, '', NULL),
+(15, '', '2020-01-25 16:23:34', 0, '', NULL),
+(16, '', '2020-01-25 16:23:34', 0, '', NULL),
+(17, '', '2020-01-25 16:23:34', 0, '', NULL),
+(18, '', '2020-01-25 16:23:34', 0, '', NULL),
+(19, '', '2020-01-25 16:23:34', 0, '', NULL),
+(20, '', '2020-01-25 16:23:34', 0, '', NULL),
+(21, '', '2020-01-25 16:23:34', 0, '', NULL),
+(22, '', '2020-01-25 16:23:34', 0, '', NULL),
+(23, '', '2020-01-25 16:23:34', 0, '', NULL),
+(24, '', '2020-01-25 16:23:34', 0, '', NULL),
+(25, '', '2020-01-25 16:23:34', 0, '', NULL),
+(26, '', '2020-01-25 16:23:34', 0, '', NULL),
+(27, '', '2020-01-25 16:23:34', 0, '', NULL),
+(28, '', '2020-01-25 16:23:34', 0, '', NULL),
+(29, '', '2020-01-25 16:23:34', 0, '', NULL),
+(30, '', '2020-01-25 16:23:34', 0, '', NULL),
+(31, '', '2020-01-25 16:23:34', 0, '', NULL),
+(32, '', '2020-01-25 16:23:34', 0, '', NULL),
+(33, '', '2020-01-25 16:23:34', 0, '', NULL),
+(34, '', '2020-01-25 16:23:34', 0, '', NULL),
+(35, '', '2020-01-25 16:23:34', 0, '', NULL),
+(36, '', '2020-01-25 16:23:34', 0, '', NULL),
+(37, '', '2020-01-25 16:23:34', 0, '', NULL),
+(38, '', '2020-01-25 16:23:34', 0, '', NULL),
+(39, '', '2020-01-25 16:23:34', 0, '', NULL),
+(40, '', '2020-01-25 16:23:34', 0, '', NULL),
+(41, '', '2020-01-25 16:23:34', 0, '', NULL),
+(42, '', '2020-01-25 16:23:34', 0, '', NULL),
+(43, '', '2020-01-25 16:23:34', 0, '', NULL),
+(44, '', '2020-01-25 16:23:34', 0, '', NULL),
+(45, '', '2020-01-25 16:23:34', 0, '', NULL),
+(46, '', '2020-01-25 16:23:34', 0, '', NULL),
+(47, '', '2020-01-25 16:23:34', 0, '', NULL),
+(48, '', '2020-01-25 16:23:34', 0, '', NULL),
+(49, '', '2020-01-25 16:23:34', 0, '', NULL),
+(50, '', '2020-01-25 16:23:34', 0, '', NULL),
+(51, '', '2020-01-25 16:23:34', 0, '', NULL),
+(52, '', '2020-01-25 16:23:34', 0, '', NULL),
+(53, '', '2020-01-25 16:23:34', 0, '', NULL),
+(54, '', '2020-01-25 16:23:34', 0, '', NULL),
+(55, '', '2020-01-25 16:23:34', 0, '', NULL),
+(56, '', '2020-01-25 16:23:34', 0, '', NULL),
+(57, '', '2020-01-25 16:23:34', 0, '', NULL),
+(58, '', '2020-01-25 16:23:34', 0, '', NULL),
+(59, '', '2020-01-25 16:23:34', 0, '', NULL),
+(60, '', '2020-01-25 16:23:34', 0, '', NULL),
+(61, '', '2020-01-25 16:23:34', 0, '', NULL),
+(62, '', '2020-01-25 16:23:34', 0, '', NULL),
+(63, '', '2020-01-25 16:23:34', 0, '', NULL),
+(64, '', '2020-01-25 16:23:34', 0, '', NULL),
+(65, '', '2020-01-25 16:23:34', 0, '', NULL),
+(66, '', '2020-01-25 16:23:34', 0, '', NULL),
+(67, '', '2020-01-25 16:23:34', 0, '', NULL),
+(68, '', '2020-01-25 16:23:34', 0, '', NULL),
+(69, '', '2020-01-25 16:23:34', 0, '', NULL),
+(70, '', '2020-01-25 16:23:34', 0, '', NULL),
+(71, '', '2020-01-25 16:23:34', 0, '', NULL),
+(72, '', '2020-01-25 16:23:34', 0, '', NULL),
+(73, '', '2020-01-25 16:23:34', 0, '', NULL),
+(74, '', '2020-01-25 16:23:34', 0, '', NULL),
+(75, '', '2020-01-25 16:23:34', 0, '', NULL),
+(76, '', '2020-01-25 16:23:34', 0, '', NULL),
+(77, '', '2020-01-25 16:23:34', 0, '', NULL),
+(78, '', '2020-01-25 16:23:34', 0, '', NULL),
+(79, '', '2020-01-25 16:23:34', 0, '', NULL),
+(80, '', '2020-01-25 16:23:34', 0, '', NULL),
+(81, '', '2020-01-25 16:23:34', 0, '', NULL),
+(82, '', '2020-01-25 16:23:34', 0, '', NULL),
+(83, '', '2020-01-25 16:23:34', 0, '', NULL),
+(84, '', '2020-01-25 16:23:34', 0, '', NULL),
+(85, '', '2020-01-25 16:23:34', 0, '', NULL),
+(86, '', '2020-01-25 16:23:34', 0, '', NULL),
+(87, '', '2020-01-25 16:23:34', 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -503,12 +642,18 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `hak_akses`, `foto`) VALUES
 ('USR001', 'Muhammad Ridho Fauzi', 'super_admin', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrator', 'default1.jpg'),
-('USR002', 'Ramadhan', 'admin_publish', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Publish', 'default11.jpg'),
-('USR003', 'Raka Danu Umbara', 'admin_siswa', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Siswa', 'default111.jpg');
+('USR002', 'Ramadhan', 'admin_publish', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Publish', 'default1.jpg'),
+('USR003', 'Raka Danu Umbara', 'admin_siswa', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin Siswa', 'default1.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_about`
+--
+ALTER TABLE `tb_about`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_berita`
@@ -516,7 +661,8 @@ INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `hak_akses`, `
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`id_berita`),
   ADD KEY `id_kat_artikel` (`id_kat_artikel`),
-  ADD KEY `id_user` (`penulis`);
+  ADD KEY `id_user` (`penulis`),
+  ADD KEY `id_organisasi` (`id_organisasi`);
 
 --
 -- Indexes for table `tb_galeri`
@@ -558,6 +704,12 @@ ALTER TABLE `tb_kat_siswa`
   ADD PRIMARY KEY (`id_kat_siswa`);
 
 --
+-- Indexes for table `tb_kemitraan`
+--
+ALTER TABLE `tb_kemitraan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
@@ -589,7 +741,14 @@ ALTER TABLE `tb_profil`
 ALTER TABLE `tb_siswa`
   ADD PRIMARY KEY (`id_artikel`),
   ADD KEY `id_kat_siswa` (`id_kat_siswa`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_organisasi` (`id_organisasi`);
+
+--
+-- Indexes for table `tb_slider`
+--
+ALTER TABLE `tb_slider`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_statistik`
@@ -608,20 +767,35 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_about`
+--
+ALTER TABLE `tb_about`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `tb_kemitraan`
+--
+ALTER TABLE `tb_kemitraan`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
   MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tb_slider`
+--
+ALTER TABLE `tb_slider`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -631,14 +805,15 @@ ALTER TABLE `tb_statistik`
 --
 ALTER TABLE `tb_berita`
   ADD CONSTRAINT `tb_berita_ibfk_2` FOREIGN KEY (`id_kat_artikel`) REFERENCES `tb_kat_artikel` (`id_kat_artikel`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_berita_ibfk_4` FOREIGN KEY (`penulis`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_berita_ibfk_4` FOREIGN KEY (`penulis`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_berita_ibfk_5` FOREIGN KEY (`id_organisasi`) REFERENCES `tb_organisasi` (`id_organisasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `tb_jabatan` (`id_jabatan`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tb_jabatan` (`id_jabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tb_profil`
@@ -652,7 +827,8 @@ ALTER TABLE `tb_profil`
 --
 ALTER TABLE `tb_siswa`
   ADD CONSTRAINT `tb_siswa_ibfk_1` FOREIGN KEY (`id_kat_siswa`) REFERENCES `tb_kat_siswa` (`id_kat_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_siswa_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_siswa_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_siswa_ibfk_3` FOREIGN KEY (`id_organisasi`) REFERENCES `tb_organisasi` (`id_organisasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
