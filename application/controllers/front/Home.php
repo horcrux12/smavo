@@ -30,7 +30,7 @@ class Home extends CI_Controller
 		foreach ($profil as $key) {
 			$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
 		}
-		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3);
+		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3,'tanggal');
 		$page_content['data']['berita'] = $berita;
 		$page_content['data']['berita_limit'] = $limit_berita;
 		$page_content['data']['about'] = $about; 

@@ -107,7 +107,7 @@
                 <div class="icon"><i class="ion-ios-pie-outline"></i></div>
               <h2 class="title"><a href="#">Our Vision</a></h2>
               <p>
-              <?php echo $data['about']['Visi']['deskripsi']?>
+              <?php echo substr($data['about']['Visi']['deskripsi'],0,100) ?>
               </p>
             </div>
           </div>
