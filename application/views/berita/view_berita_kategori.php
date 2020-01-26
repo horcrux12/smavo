@@ -37,7 +37,7 @@ if (!empty($info_hapus)) {
 		<h3 class="header smaller lighter blue"><?= $sub_judul ?></h3>
 
 		<div class="clearfix mb-3">
-			<div class="pull-right tableTools-container">cobas</div>
+			<div class="pull-right tableTools-container"></div>
 			<a href="<?php echo base_url(); ?>admin/berita/tambah-berita/<?= $kd_judul ?>" class="btn btn-primary btn-small">
 				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Berita - <?= $judul_tambah ?></a><br><br>
 		</div>
