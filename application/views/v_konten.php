@@ -69,7 +69,7 @@
 
 
                 
-                <!-- <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <div class="row">
@@ -79,47 +79,47 @@
                                 <div class="col-xs-9 text-right">
                                      <h1>
                                          <?php 
-                                        $this->db->like('id_kat_profil', 'tb_kat_profil');
-                                        $this->db->from('id_kat_profil');
-                                        echo $this->db->count_all('tb_kat_profil');
+                                        $this->db->like('id_berita', 'tb_berita');
+                                        $this->db->from('id_berita');
+                                        echo $this->db->count_all('tb_berita');
                                         ?> 
                                     </h1>
-                                    <div>Kategori Artikel Profil</div>
+                                    <div>Berita</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_profil">
+                        <a href="<?php echo base_url();?>admin/berita">
                             <div class="panel-footer">
-                                <span class="pull-left">Detail Kategori Artikel Profil</span>
+                                <span class="pull-left">Detail Berita</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
                     </div>
-                </div> -->
+                </div>
                 
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-danger">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-pencil-square-o fa-5x"></i>
+                                    <i class="fa fa-inbox fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                      <h1>
                                         <?php 
-                                        $this->db->like('id_kat_siswa', 'tb_kat_siswa');
-                                        $this->db->from('id_kat_siswa');
-                                        echo $this->db->count_all('tb_kat_siswa');
+                                        $this->db->like('id_kontak', 'tb_kontak');
+                                        $this->db->from('id_kontak');
+                                        echo $this->db->count_all('tb_kontak');
                                         ?> 
                                     </h1>
-                                    <div>Kategori Artikel Siswa</div>
+                                    <div>Kotak Masuk Pesan</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_siswa">
+                        <a href="<?php echo base_url();?>pesan">
                             <div class="panel-footer">
-                                <span class="pull-left">Detail kategori Artikel Siswa</span>
+                                <span class="pull-left">Detail Kotak Masuk Pesan</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

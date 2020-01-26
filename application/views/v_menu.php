@@ -273,58 +273,38 @@
 
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Data Berita </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-
-								<li class="">
-								<a href="<?php echo base_url();?>berita">
-									<i class="menu-icon fa fa-caret-right"></i>
-									 Semua Artikel Berita
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-						<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text">
-								Kategori Berita
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
+		<a href="#" class="dropdown-toggle">
+			<i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Berita </span>
+			<b class="arrow fa fa-angle-down"></b>
+		</a>
+		<b class="arrow"></b>
+		<ul class="submenu">
+			<li class="">
+				<a href="<?php echo base_url('admin/berita');?>"><i class="menu-icon fa fa-caret-right"></i>Semua Artikel Berita</a>
+				<b class="arrow"></b>
+			</li>
+			<li class="">
+				<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Kategori Berita</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+				<ul class="submenu">
+					
+					<?php
+						$this->db->order_by('id_kat_artikel');
+				        $data = $this->db->get('tb_kat_artikel');
+						foreach ($data->result() as $row) {?>
 							<li class="">
-
-									<?php
-									$this->db->order_by('id_kat_artikel');
-							        $data = $this->db->get('tb_kat_artikel');
-									foreach ($data->result() as $row) {
-									  
-									?>
-								<a href="<?php echo base_url();?>kat_artikel/detail/<?php echo $row->id_kat_artikel?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-									<?php echo $row->nama_kat_artikel?>
-								</a>
-								<?php } ?>
-
-								<b class="arrow"></b>
-							</li>	
-						</ul>
-					</li>
+							<a href="<?php echo base_url();?>admin/berita/kategori-berita/<?php echo $row->nama_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
+								<?php echo $row->nama_kat_artikel?>
+							</a>
+							<b class="arrow"></b>
+						</li>
+					<?php } ?>
+							
 				</ul>
+			</li>
+		</ul>
 
 
 
@@ -362,7 +342,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="">
+					<!-- <li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -387,12 +367,12 @@
 							</li>
 
 						</ul>
-					</li>
+					</li> -->
 
 				<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Data Siswa </span>
+							<span class="menu-text"> Data Kesiswaan </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -414,7 +394,7 @@
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text">
-								Kategori Artikel 
+								Artikel Siswa
 							</span>
 
 							<b class="arrow fa fa-angle-down"></b>
