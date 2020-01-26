@@ -3,7 +3,7 @@
 	if ($this->session->userdata('hak_akses') === 'Administrator'):
  ?>
 <ul class="nav nav-list">
-	<li class="active">
+	<li>
 		<a href="<?php echo base_url();?>admin/dashboard">
 			<i class="menu-icon fa fa-home"></i><span class="menu-text"> Dashboard </span>
 		</a>
@@ -69,17 +69,19 @@
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
-					<li class="">
+					
 					<?php
 						$this->db->order_by('id_kat_artikel');
 				        $data = $this->db->get('tb_kat_artikel');
 						foreach ($data->result() as $row) {?>
+							<li class="">
 							<a href="<?php echo base_url();?>admin/berita/kategori-berita/<?php echo $row->nama_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
 								<?php echo $row->nama_kat_artikel?>
 							</a>
-					<?php } ?>
 							<b class="arrow"></b>
-					</li>	
+						</li>
+					<?php } ?>
+							
 				</ul>
 			</li>
 		</ul>
@@ -99,17 +101,19 @@
 						</a>
 						<b class="arrow"></b>
 						<ul class="submenu">
-							<li class="">
+							
 								<?php
 								$this->db->order_by('id_kat_profil');
 							    $data = $this->db->get('tb_kat_profil');
 								foreach ($data->result() as $row) {?>
+								<li class="">
 									<a href="<?php echo base_url();?>profil/detail/<?php echo $row->id_kat_profil?>"><i class="menu-icon fa fa-caret-right"></i>
 										<?php echo $row->nama_kat_profil?>
 									</a>
+									<b class="arrow"></b>
+								</li>
 								<?php } ?>
-								<b class="arrow"></b>
-							</li>
+								
 						</ul>
 					</li>
 				</ul>
@@ -129,19 +133,20 @@
 							</a>
 							<b class="arrow"></b>
 							<ul class="submenu">
-								<li class="">
+								
 									<?php
 									$this->db->order_by('id_kat_siswa');
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {?>
+									<li class="">
 										<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											<?php echo $row->nama_kat_siswa?>
-										</a>
+										</a>		
+										<b class="arrow"></b>
+									</li>
 								<?php } ?>
-
-								<b class="arrow"></b>
-							</li>	
+	
 
 						</ul>
 

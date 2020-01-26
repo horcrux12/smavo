@@ -150,7 +150,38 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<!-- ace scripts -->
 		<script src="<?= base_url();?>assets/js/ace-elements.min.js"></script>
 		<script src="<?= base_url();?>assets/js/ace.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				/** add active class and stay opened when selected */
+				var url = window.location;
+				
+				// for sidebar menu entirely but not cover treeview
+				$('ul.nav a').filter(function() {
+					return this.href == url;
+				}).parent().addClass('active');
 
+				// for treeview
+				$('ul.submenu a').filter(function() {
+					return this.href == url;
+				}).parent().addClass('active');
+
+				$('ul.submenu a').filter(function() {
+					return this.href == url;
+				}).parents(".nav > li").addClass('active open');
+
+				$('ul.submenu ul.submenu a').filter(function() {
+					return this.href == url;
+				}).parent().addClass('active');
+
+				$('ul.submenu ul.submenu a').filter(function() {
+					return this.href == url;
+				}).parents(".nav > li").addClass('active open');
+
+				$('ul.submenu ul.submenu a').filter(function() {
+					return this.href == url;
+				}).parents(".nav > li > ul.submenu > li").addClass('active open');
+			});
+		</script>
 		
 
 		<!-- inline scripts related to this page -->
