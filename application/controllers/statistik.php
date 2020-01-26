@@ -33,39 +33,23 @@ class Statistik extends CI_Controller {
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script src="'.base_url().'assets/js/table.js"></script>';
 			
-			//ambil data ip pengguna
-			$konten['browser'] = $this->agent->browser();
-			$konten['browser_version'] = $this->agent->version();
-			$konten['os'] = $this->agent->platform();
-			$konten['ip_address'] = $this->input->ip_address();
-			$konten['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-			
+			//ambil data ip address pengguna
+			$data['browser'] = $this->agent->browser();
+			$data['browser_version'] = $this->agent->version();
+			$data['os_name'] = $this->agent->platform();
+			$data['ip_address'] = $this->input->ip_address();
+			$data['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+
+			//simpan data ip address user ke db
+			$this->model_dinamic->input_data($data,'tb_statistik');
+			// print_r($data);
+
+			//ambil data dari db untuk ditampilkan
 			$konten['data']			= $this->db->get('tb_statistik');
 			$this->load->view('v_dashboard',$konten);	
 			
 	}
 
-	// public function simpan(){
-
-	// 		$ip_address      = $_SERVER['REMOTE_ADDR']; // Mendapatkan ip_address komputer user
-	// 		$tanggal = date("Ymd"); // Mendapatkan tanggal sekarang
-	// 		$waktu   = time(); //
-
-	// 		$cekip_address = $this->db->query("SELECT * FROM tb_statistik WHERE ip_address='$ip_address' AND tanggal='$tanggal'");
-
-	// 		if($query->num_rows($cekip_address)==0)
-
-	// 		{
-
-	// 			$this->db->query("INSERT INTO tb_statistik(ip_address, tanggal, hits, online) VALUES('$ip_address','$tanggal','1','$waktu')");
-				
-	// 		}
-	// 		else
-	// 		{
-	// 			$this->db->query("UPDATE tb_statistik SET hits=hits+1, online='$waktu' WHERE ip_address='$ip_address' AND tanggal='$tanggal'");
-	// 		}
-
-	// }
-
+	
 	
 }
