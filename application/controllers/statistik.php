@@ -7,7 +7,7 @@ class Statistik extends CI_Controller {
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<scrip_addresst>;
+    echo "<script>;
     	  document.location='".base_url()."admin/login'</script>";
 		}
 		$this->load->library('user_agent');
