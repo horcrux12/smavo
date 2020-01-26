@@ -33,6 +33,22 @@ if(!empty($info_hapus))
  
 }
 ?>
+
+<!-- INFO -->
+<?php 
+$info_gagal = $this->session->flashdata('info_gagal');
+if(!empty($info_gagal))
+{
+  echo "<div class='alert alert-danger alert-dismissible'>";
+  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
+  echo "</button>";
+  echo "<i class='icon fa fa-times'>"; 
+  echo "</i>";
+  echo $info_gagal;
+  echo "</div>";
+} 
+?>
+<!-- END INFO -->
 <!-- END INFO -->
 
             <div class="row">

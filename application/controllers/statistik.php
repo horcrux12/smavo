@@ -8,28 +8,39 @@ class Statistik extends CI_Controller {
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
     echo "<scrip_addresst>;
-    	  document.location='".base_url()."admin/login'</scrip_addresst>";
+    	  document.location='".base_url()."admin/login'</script>";
 		}
 		$this->load->library('user_agent');
 	}
 
 
 	public function index() {
-			$konten['css']			= '
-			<link rel="stylesheet" href="'.base_url().'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">';
+			$konten['css']			= '';
 			$konten['konten'] 		= 'statistik/view_statistik';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Statistik Pengunjung';
+			$konten['sub_judul'] 	= 'Data Statistik Pengguna';
 			$konten['js']			= '
 			<script src="'.base_url().'assets/plugins/chart.js/Chart.min.js"></script>
-			<script src="'.base_url().'assets/plugins/jquery/jquery.min.js"></script>
-			<script src="'.base_url().'assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>';
+			<script src="'.base_url().'assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.buttons.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.flash.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.html5.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
+			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+			<script src="'.base_url().'assets/js/table.js"></script>';
 			
+			//ambil data ip pengguna
 			$konten['browser'] = $this->agent->browser();
 			$konten['browser_version'] = $this->agent->version();
 			$konten['os'] = $this->agent->platform();
 			$konten['ip_address'] = $this->input->ip_address();
-
+			$konten['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+			
+			$konten['data']			= $this->db->get('tb_statistik');
 			$this->load->view('v_dashboard',$konten);	
 			
 	}

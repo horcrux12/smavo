@@ -49,7 +49,7 @@ if(!empty($info_hapus))
 
 
                       <a href="<?php echo base_url();?>admin/siswa/tambah-siswa/<?= $kd_judul?>" class="btn btn-primary btn-small">
-                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data siswa - <?= $judul_tambah?></a>
+                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Artikel Kesiswaan - <?= $judul_tambah?></a>
                   <br>
                 <br>
               </div>

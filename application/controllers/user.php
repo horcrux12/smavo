@@ -146,15 +146,18 @@
 		{
 		  $config['upload_path'] 		= './assets/photo/user/';
 	      $config['allowed_types'] 		= 'gif|jpg|jpeg|png';
-	      $config['encrypt_name']		= FALSE;
+		  $config['encrypt_name']		= FALSE;
+		  $config['overwrite']			= true;
+		
+ 
 	     
 	 
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
 	 
 	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
-	         redirect('user/tambah'); 
+	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload');
+	         redirect('user'); 
 	      } else {
 			
 			$key = $this->input->post('kode');

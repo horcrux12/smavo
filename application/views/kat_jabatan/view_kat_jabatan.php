@@ -34,7 +34,7 @@ if(!empty($info_hapus))
 ?>
 
 
-<div class="row">
+              <div class="row">
                   <div class="col-xs-12">
                     <h3 class="header smaller lighter blue">Data Jabatan</h3>
 

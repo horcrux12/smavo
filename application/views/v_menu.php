@@ -214,7 +214,7 @@
 			</li>
 			
 			<li class="">
-				<a href="<?php echo base_url();?>kat_siswa"><i class="menu-icon fa fa-caret-right"></i>Kemitraan</a>
+				<a href="#"><i class="menu-icon fa fa-caret-right"></i>Kemitraan</a>
 				<b class="arrow"></b>
 			</li>
 		</ul>

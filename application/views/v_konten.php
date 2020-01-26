@@ -272,14 +272,9 @@
                         </a>
                     </div>
                 </div>
-
-
             </div>
-
-
-
-
-                
+            <?php $this->load->view('statistik/v_statistik',$konten);?>
+          
 <!--  END HAK AKSES ADMIN  -->          
 
 
