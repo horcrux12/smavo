@@ -26,7 +26,10 @@
                             <th class="center">Ip Address</th>
                             <th class="center">Tanggal</th>
                             <th class="center">Browser</th>
-                            <th colspan="3" class="center">Aksi</th> 
+                            <th class="center">Hits</th>
+                            <th class="center">Hostname</th>
+                            <th class="center">OS Name </th>
+                            <!-- <th colspan="3" class="center">Aksi</th>  -->
                      </tr>
                         </thead>
                         <tbody>
@@ -41,30 +44,21 @@
                             <tr>
                             <td class="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->ip_address?></td>
-                            <td><?php echo $row->tanggal?></td>
-                            <td><?php echo $row->browser?></td>
+                            <td><?php echo $tanggal[]=$row->tanggal?></td>
+                            <td><?php echo $row->browser?> V<?php echo $row->browser_version?></td>
+                            <td><?php echo $hits[]=$row->hits?></td>
+                            <td><?php echo $row->hostname?></td>
+                            <td><?php echo $row->os_name?></td>
                             
-                            <td class="center" > 
-                                <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="#" title="Detail" data-rel="tooltip" >
-                                        <i class="fa fa-search-plus bigger-130"  ></i>
-                                      </a>
-                            </td> 
+                            
 
-                            <td class="center">
-                                
-                                <a class="tooltip-info green" href="#" title="Ubah" data-rel="tooltip">
-                                        <i class="fa fa-pencil bigger-130" ></i>
-                                      </a>
-                            </td>
-
-                           <td class="center">
+                           <!-- <td class="center">
                                       <a class="tooltip-info red" href="#"
                                      title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>
-                           </td>
+                           </td> -->
                               </div>
                           </tr>
 
@@ -101,8 +95,19 @@
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July','Agustus','September','Oktober','November','Desember'],
+      labels  : <?php echo json_encode($tanggal);?>,
       datasets: [
+        {
+          label               : 'Hits',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : <?php echo json_encode($hits);?>
+        },
         {
           label               : 'Digital Goods',
           backgroundColor     : 'rgba(60,141,188,0.9)',
@@ -112,18 +117,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90, 77, 48, 40, 19, 86]
-        },
-        {
-          label               : 'Electronics',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40, 80, 65, 59, 80, 81]
+          data                : <?php echo json_encode($hits);?>
         },
       ]
     }
