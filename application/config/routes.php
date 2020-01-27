@@ -101,3 +101,9 @@ $route['admin/pengaturan/slider/tambah-slider'] = 'slider/tambah';
 $route['admin/pengaturan/slider/simpan-slider'] = 'slider/simpan';
 $route['admin/pengaturan/slider/ubah-slider/(:num)'] = 'slider/ubah/$1';
 $route['admin/pengaturan/slider/hapus-slider/(:num)'] = 'slider/delete/$1';
+
+$route['admin/pengaturan/about'] = 'about';
+$route['admin/pengaturan/about/tambah-about'] = 'about/tambah';
+$route['admin/pengaturan/about/simpan-about'] = 'about/simpan';
+$route['admin/pengaturan/about/ubah-about/(:num)'] = 'about/ubah/$1';
+$route['admin/pengaturan/about/hapus-about/(:num)'] = 'about/delete/$1';

@@ -205,7 +205,7 @@
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url('#')?>"><i class="menu-icon fa fa-caret-right"></i>Deskripsi Singkat</a>
+				<a href="<?php echo base_url()?>admin/pengaturan/about"><i class="menu-icon fa fa-caret-right"></i>Deskripsi Singkat</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
