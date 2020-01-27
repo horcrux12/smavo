@@ -1,63 +1,25 @@
+<script type="text/javascript">
+  
+  function cekform(){
+
+      if(!$ ("#id-input-file-2").val())
+      {
+        alert('Foto tidak boleh kosong');
+        $("#id-input-file-2").focus();
+        return false;
+
+      }
+
+}
+      
+</script>
+
 <!-- hak akses admin -->   
 <?php 
   if ($this->session->userdata('hak_akses') === 'Administrator'):
  ?>
   
-  <!-- CEK FORM KOSONG -->
-<script type="text/javascript">
   
-  function cekform(){
-
-       if(!$ ("#kode").val())
-      {
-        alert('Maaf ID guru tidak boleh kosong');
-        $("#kode").focus();
-        return false;
-
-      }
-
-
-      if(!$ ("#nama").val())
-      {
-        alert('Maaf nama guru tidak boleh kosong');
-        $("#nama").focus();
-        return false;
-
-      }
-      
-      if(!$ ("#tempat").val())
-      {
-        alert('Maaf tempat lahir tidak boleh kosong');
-        $("#tempat").focus();
-        return false;
-
-      }
-
-      if(!$ ("#tanggal").val())
-      {
-        alert('Maaf tanggal lahir tidak boleh kosong');
-        $("#tanggal").focus();
-        return false;
-
-      }
-
-      if(!$ ("#jbt").val())
-      {
-        alert('Maaf jabatan tidak boleh kosong');
-        $("#jbt").focus();
-        return false;
-
-      }
-
-        if(!$ ("#file_name").val())
-      {
-        alert('Maaf foto tidak boleh kosong');
-        $("#file_name").focus();
-        return false;
-      }
-
-</script>
-
 
 
 <?php

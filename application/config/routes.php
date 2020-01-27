@@ -95,3 +95,9 @@ $route['admin/pengaturan/kemitraan/tambah-kemitraan'] = 'kemitraan/tambah';
 $route['admin/pengaturan/kemitraan/simpan-kemitraan'] = 'kemitraan/simpan';
 $route['admin/pengaturan/kemitraan/ubah-kemitraan/(:num)'] = 'kemitraan/ubah/$1';
 $route['admin/pengaturan/kemitraan/hapus-kemitraan/(:num)'] = 'kemitraan/delete/$1';
+
+$route['admin/pengaturan/slider'] = 'slider';
+$route['admin/pengaturan/slider/tambah-slider'] = 'slider/tambah';
+$route['admin/pengaturan/slider/simpan-slider'] = 'slider/simpan';
+$route['admin/pengaturan/slider/ubah-slider/(:num)'] = 'slider/ubah/$1';
+$route['admin/pengaturan/slider/hapus-slider/(:num)'] = 'slider/delete/$1';

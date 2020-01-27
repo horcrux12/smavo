@@ -27,6 +27,7 @@ class Home extends CI_Controller
 		
 		$berita = $this->model_dinamic->getData ('tb_berita');
 		$profil = $this->model_profil->tampil_profil()->result();
+		$slider = $this->model_dinamic->getData ('tb_slider');
 		foreach ($profil as $key) {
 			$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
 		}
@@ -34,6 +35,8 @@ class Home extends CI_Controller
 		$page_content['data']['berita'] = $berita;
 		$page_content['data']['berita_limit'] = $limit_berita;
 		$page_content['data']['about'] = $about; 
+		$page_content['data']['slider'] = $slider; 
+		
 		
 		$this->load->view('front/template/app',$page_content);
 	}

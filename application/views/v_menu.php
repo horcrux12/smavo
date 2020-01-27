@@ -201,7 +201,7 @@
 			<b class="arrow"></b>
 		<ul class="submenu">
 			<li class="">
-				<a href="<?php echo base_url('#')?>"><i class="menu-icon fa fa-caret-right"></i>Slider</a>
+				<a href="<?php echo base_url()?>admin/pengaturan/slider"><i class="menu-icon fa fa-caret-right"></i>Slider</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">

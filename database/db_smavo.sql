@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26 Jan 2020 pada 10.36
+-- Generation Time: 27 Jan 2020 pada 18.43
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -56,7 +56,10 @@ CREATE TABLE `tb_berita` (
 --
 
 INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
-('BR25012020001', 'KTA002', NULL, 'hjgyt', 'USR001', '<p>hgy</p>', '_DSC0132.JPG', '2020-01-25 12:26:53');
+('BR25012020001', 'KTA002', NULL, 'hjgyt', 'USR001', '<p>hgy</p>', '_DSC0132.JPG', '2020-01-25 12:26:53'),
+('BR26012020002', 'KTA001', NULL, 'juara', 'USR002', '<p>jua</p>', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg', '2020-01-26 09:45:41'),
+('BR27012020003', 'KTA002', NULL, 'Penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire antara SMA Negeri 2 Cibinong dan IFI Jakarta', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">Pada tanggal 10 Januari 2020, SMA Negeri 2 Cibinong dan IFI Jakarta melakukan penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire. Perjanjian ini menyepakati kerjasama antara sekolah dan IFI Jakarta selaku penyelenggara Ujian Kemampuan Berbahasa Prancis, untuk melaksanakan ujian DELF Scolaire dan melakukan pendampingan untuk &nbsp;membantu siswa dalam mempersiapkan diri dalam menghadapi ujian kemampuan berbahasa yang dikeluarkan oleh Kementrian Pendidikan Nasional Prancis dalam versi pelajar. Dengan adanya perjanjian ini, diharapkan siswa siswi SMA Negeri 2 Cibinong bisa mengikuti ujian dan&nbsp; mendapatkan sertifikat DELF sebagai bukti bahwa mereka bisa berkomunikasi dalam bahasa Prancis dan kemampuan tersebut diakui diseluruh dunia karena&nbsp; sertifikat DELF dikeluarkan oleh Kementrian Pendidikan Nasional Prancis.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4298" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" alt="IMG-20200114-WA0010" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4297" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4295" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4294" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" alt="IMG-20200114-WA0009" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4293" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" alt="IMG-20200114-WA0008" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4292" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" alt="IMG-20200114-WA0007" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4291" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" alt="IMG-20200114-WA0006" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p>', 'IMG-20200114-WA0009-805x503.jpg', '2020-01-27 12:07:04'),
+('BR27012020004', 'KTA002', NULL, 'Kunjungan Pihak Institut Francis di Indonesia ke Smavo', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Hari Selasa tanggal 4 Oktober 2019 tepatnya pukul 09. 20 WIB SMA Negeri 2 Cibinong mendapat kunjungan Ibu Tristia Wihatni (Manajer) dan Coline (natif) dari Institut Français d’ Indonésie (IFI) Thamrin Jakarta.Kunjungan tersebut merupakan bagian dari apresiasi IFI kepada siswa SMA Negeri 2 Cibinong, karena beberapa waktu yang lalu telah menjadi juara umum lomba Dikte dan Pengetahuan Umum Negara Prancis se-Jabodetabek (Muhammad Rahmansyah dan Gabrielle Ivanca kelas Bahasa angkatan 2018-2019). Juga semakin bertambahnya siswa SMAVO yang melanjutkan pendidikan ke Negara Mode nan Romantis itu. Maka pihak IFI akan memberikan layanan yang lebih kepada SMAVO salah satunya adalah dengan kunjungan natif ke sekolah bahkan ikut berkolaborasi dalam proses KBM di kelas untuk memberi motivasi dan wawasan bahwa kemampuan berbahasa asing dapat mengembangkan potensi dan kesempatan yang lebih di masa yang akan datang, terutama dalam bidang dunia kerja.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Coline merasa sangat bahagia dapat berkunjung dan mengenal lebih dekat lagi siswa yang belajar bahasa Prancis. Menurut beliau siswa SMAVO sangat antusias dan cepat tanggap dalam menerima pelajaran, terutama keramahtamahannya. Dan membuat beliau ingin kembali mengunjungi sekolah kami.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Mengingat SMA Negeri 2 Cibinong memiliki 17 kelas dari kelas X sampai kelas XII yang belajar bahasa Prancis (LM) kurang lebih ada sekitar 442 siswa, maka ibu Tristia merasa perlu menjembatani siswa yang berminat untuk melanjutkan pendidikan ke negara Prancis dengan mempermudah dan mewadahi ujian bahasa Prancis  DELF SCOLAIRE (yang merupakan salah satu persyaratannya). Beliau bersedia untuk menyelenggarakannya di SMAVO.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Tahun ini alumni ada tiga orang siswa yang sedang mempersiapkan untuk melanjutkan pendidikan ke Prancis: Muhammad Rahmansyah, Gabriella Ivanca dan Malahati. Semoga tahun-tahun ke depannya akan bertambah lagi alumni SMA Negeri 2 Cibinong yang akan melanjutkan pendidikan ke negara tersebut. <em>Merci beaucoup Mme Tia et Coline pour votre visite</em>..    </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4274 note-float-right" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" alt="DSC_0185_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: right; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4273" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" alt="DSC_0182_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4272" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" alt="DSC_0180_" width="3561" height="2358" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4271" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" alt="DSC_0192_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p>', 'DSC_0179_1-805x503.jpg', '2020-01-27 17:42:00');
 
 --
 -- Trigger `tb_berita`
@@ -94,7 +97,10 @@ CREATE TABLE `tb_galeri` (
 
 INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (1, 'BR23012020001', 'DSC_0648.JPG'),
-(2, 'BR25012020001', '_DSC0132.JPG');
+(2, 'BR25012020001', '_DSC0132.JPG'),
+(3, 'BR26012020002', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg'),
+(4, 'BR27012020003', 'IMG-20200114-WA0009-805x503.jpg'),
+(5, 'BR27012020004', 'DSC_0179_1-805x503.jpg');
 
 -- --------------------------------------------------------
 
@@ -118,8 +124,8 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
-('GR001', ' ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'DRS__AHMAD_SOBARI.JPG'),
-('GR002', '', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.jpg'),
+('GR001', '       ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', '_amsori.JPG'),
+('GR002', '    ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'AHMAD_RIJKON.JPG'),
 ('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.jpg'),
 ('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.jpg'),
 ('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP001', 'default.jpg'),
@@ -312,6 +318,13 @@ CREATE TABLE `tb_kemitraan` (
   `foto` tinytext NOT NULL,
   `link_website` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_kemitraan`
+--
+
+INSERT INTO `tb_kemitraan` (`id`, `nama`, `foto`, `link_website`) VALUES
+(1, 'hjgftf', '', '');
 
 -- --------------------------------------------------------
 
@@ -510,8 +523,16 @@ CREATE TABLE `tb_slider` (
   `id` int(4) NOT NULL,
   `judul_utama` varchar(100) NOT NULL,
   `sub_judul` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL
+  `deskripsi` text NOT NULL,
+  `foto` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_slider`
+--
+
+INSERT INTO `tb_slider` (`id`, `judul_utama`, `sub_judul`, `deskripsi`, `foto`) VALUES
+(1, 'Selamat Datang di Website Resmi ', 'SMA NEGERI 2 CIBINONG', '<div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Jl.&nbsp;Karadenan&nbsp;No.&nbsp;05&nbsp;Cibinong&nbsp;Kabupaten&nbsp;Bogor&nbsp;16913 -&nbsp;Jawa&nbsp;Barat </span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Telp:&nbsp;+62-251-8654347&nbsp;Fax:&nbsp;+62-251-8654347&nbsp;</span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Email:&nbsp;info@sman2cibinong.sch.id</span></div>', 'IMG_1137.jpg');
 
 -- --------------------------------------------------------
 
@@ -667,7 +688,29 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (130, '::1', '2020-01-26 09:20:49', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (131, '::1', '2020-01-26 09:20:53', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (132, '::1', '2020-01-26 09:22:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
-(133, '::1', '2020-01-26 09:35:19', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
+(133, '::1', '2020-01-26 09:35:19', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(134, '::1', '2020-01-26 09:56:49', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(135, '::1', '2020-01-26 09:57:02', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(136, '::1', '2020-01-26 10:01:26', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(137, '::1', '2020-01-26 11:58:35', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(138, '::1', '2020-01-26 13:02:10', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(139, '::1', '2020-01-26 14:35:28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(140, '::1', '2020-01-26 14:35:35', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(141, '::1', '2020-01-27 09:50:33', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(142, '::1', '2020-01-27 09:50:59', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(143, '::1', '2020-01-27 12:23:06', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(144, '::1', '2020-01-27 13:20:26', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(145, '::1', '2020-01-27 13:21:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(146, '::1', '2020-01-27 13:21:04', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(147, '::1', '2020-01-27 13:21:06', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(148, '::1', '2020-01-27 13:21:08', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(149, '::1', '2020-01-27 13:21:37', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(150, '::1', '2020-01-27 13:21:48', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(151, '::1', '2020-01-27 13:22:07', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(152, '::1', '2020-01-27 13:22:17', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(153, '::1', '2020-01-27 13:32:40', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(154, '::1', '2020-01-27 13:52:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(155, '::1', '2020-01-27 13:52:44', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -823,12 +866,12 @@ ALTER TABLE `tb_about`
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
 ALTER TABLE `tb_kemitraan`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --
@@ -838,12 +881,12 @@ ALTER TABLE `tb_kontak`
 -- AUTO_INCREMENT for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

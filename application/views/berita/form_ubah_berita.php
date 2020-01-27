@@ -1,3 +1,20 @@
+<script type="text/javascript">
+  
+  function cekform(){
+
+      if(!$ ("#id-input-file-2").val())
+      {
+        alert('Foto tidak boleh kosong');
+        $("#id-input-file-2").focus();
+        return false;
+
+      }
+
+}
+      
+</script>
+
+
 <?php
 $info_gagal = $this->session->flashdata('info_gagal');
 if(!empty($info_gagal))

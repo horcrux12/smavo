@@ -19,17 +19,21 @@
 
         <div class="carousel-inner" role="listbox">
 
+        <?php foreach ($data['slider'] as $key) { ?>
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="<?= base_url();?>assets2/img/CROP.jpg" alt=""></div>
+            <div class="carousel-background"><img src=<?php echo base_url('assets/photo/slider/'.$key->foto.'');?>> </div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h3 class="animated fadeInLeft">Selamat Datang di Website Resmi</h3>
-                <h1 class="animated fadeInRight">SMAN 2 Negeri <span>Cibinong</span></h1>
-                <p class="animated fadeInUp">Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913- Jawa Barat Telp: +62-251-8654347 Fax: +62-251-8654347 Email: info@sman2cibinong.sch.id</p>
+                <h3 class="animated fadeInLeft"><?php echo $key->judul_utama;?></h3>
+                <h1 class="animated fadeInRight"><span><?php echo $key->sub_judul;?></span></h1>
+                <!-- <p class="animated fadeInUp"><?php echo "".strip_tags($key->deskripsi)."" ?></p> -->
+                <h6 class="animated fadeInUp"><?php echo "".($key->deskripsi)."" ?></h6>
                 <!-- <a href="#featured-services" class="btn-get-started scrollto animated zoomIn">Get Started</a> -->
               </div>
             </div>
+            <?php } ?>
           </div>
+       
           
           <!-- For Berita -->
           <?php foreach ($data['berita_limit'] as $key) {?>
@@ -37,8 +41,8 @@
             <div class="carousel-background"><img src="<?= base_url();?>assets/photo/berita/<?php echo $key->foto?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h3 class="animated fadeInLeft">Berita - SMAVO</h3>
-                <h1 class="animated fadeInRight"><?php echo $key->judul?></h1>
+                <h3 class="animated fadeInRight">Berita - SMAVO</h3>
+                <h3 class="animated fadeInLeft"><b><?php echo $key->judul?></b></h3>
                 <p class="animated fadeInUp"><?php echo "".strip_tags(substr($key->deskripsi,0,30))."..." ?></p>
                 <a href="<?php echo base_url()?>berita/detail/<?php echo $key->id_berita?>" class="btn-get-started scrollto animated zoomIn">Selengkapnya</a>
               </div>
@@ -628,7 +632,7 @@
 
         </div>
 
-        <!-- <div class="form"> -->
+        <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
           <form action="" method="post" role="form" class="contactForm">
@@ -652,7 +656,7 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
-        <!-- </div> -->
+        </div>
 
       </div>
     </section><!-- #contact -->

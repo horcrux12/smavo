@@ -1,3 +1,18 @@
+<script type="text/javascript">
+  
+  function cekform(){
+
+      if(!$ ("#id-input-file-2").val())
+      {
+        alert('Foto tidak boleh kosong');
+        $("#id-input-file-2").focus();
+        return false;
+
+      }
+
+}
+      
+</script>
 <!-- Kembali -->
 
 <!-- <a href="<?php echo base_url(); ?>profil/detail">
