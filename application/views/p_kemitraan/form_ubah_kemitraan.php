@@ -14,66 +14,42 @@ if (!empty($info_gagal)) {
 
 <!-- Kembali -->
 
-<a href="<?php echo base_url(); ?>berita">
-  <button type="button" class="btn btn-warning btn-sm pull-right">
-    <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
-    Kembali
-  </button>
-</a>
-</i>
+<button type="button" class="btn btn-warning btn-sm pull-right" onclick="javascript:history.back()">
+  <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
+  Kembali
+</button>
 
-<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/berita/simpan" onsubmit="return cekform();">
+<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/pengaturan/kemitraan/simpan-kemitraan" onsubmit="return cekform();">
 
-
+  <input type="text" name="kode" value="<?php echo $kode;?>" hidden>
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Kode berita</label>
+    <label for="nama" class="col-sm-2 control-label">Nama Mitra</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
+      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $nama;?>">
     </div>
   </div>
-
-  <div class="form-group">
-    <label for="nama" class="col-sm-2 control-label">Nama Penulis</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $this->session->userdata('nama');?>" readonly>
-    </div>
-  </div>
-  <input type="hidden" class="form-control" name="kd_user" id="kode_user" value="<?php echo $this->session->userdata('id_user'); ?>">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Kategori</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="artikel" id="artikel" value="<?php echo $data[0]->nama_kat_artikel; ?>" readonly>
-    </div>
-  </div>
-  <input type="hidden" class="form-control" name="kd_artikel" id="kode_artikel" value="<?php echo $data[0]->id_kat_artikel; ?>">
-
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+      <img id="avatar" class="editable img-responsive" width="125px" src=<?php echo base_url('assets/photo/kemitraan/'.$foto.'');?>>
+      <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*" />
+      <i><font color="red">*Foto yang telah digunakan : <?php echo $foto;?><br></font></i>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Judul</label>
+    <label for="" class="col-sm-2 control-label">Link Mitra</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" >
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-2 control-label " for="isi">Isi Berita</label>
-    <div class="col-sm-8">
-      <textarea name="isi" id="isi" ></textarea>
+      <input type="text" class="form-control" name="link" id="link" value="<?php echo $link;?>">
     </div>
   </div>
   <br>
-  
+
   <center>
 
-    <div class="box-footer">
-      <button id="toggle" type="submit" class="btn btn-info btn-small swalDefaultSuccess"> Simpan</button>
-      <button type="reset" class="btn btn-danger btn-small">Batal</button>
+  <div class="box-footer">
+    <button type="submit" class="btn btn-info btn-small"> Simpan</button>
+    <button type="reset" class="btn btn-danger btn-small">Batal</button>
 </form>
 </div>
 </center>
@@ -89,68 +65,71 @@ if (!empty($info_gagal)) {
     $('#isi').summernote({
       height: "300px",
       styleWithSpan: false,
-      toolbar:[
-   
-        ['style',['style']],
-        ['font',['bold','italic','underline','clear']],
-        ['fontname',['fontname']],
-        ['color',['color']],
-        ['para',['ul','ol','paragraph']],
-        ['height',['height']],
-        ['table',['table']],
-        ['insert',['media','link','hr','picture']],
-        ['view',['fullscreen','codeview']],
-        ['help',['help']]
-    ],
-    callbacks: {
+      toolbar: [
+
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+        ['fontname', ['fontname']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['table', ['table']],
+        ['insert', ['media', 'link', 'hr', 'picture']],
+        ['view', ['fullscreen', 'codeview']],
+        ['help', ['help']]
+      ],
+      callbacks: {
         onImageUpload: function(image) {
-            uploadImage(image[0]);
+          uploadImage(image[0]);
         },
-        onMediaDelete : function(target) {
-            deleteImage(target[0].src);
+        onMediaDelete: function(target) {
+          deleteImage(target[0].src);
         }
-    }
-  });
-  function uploadImage(image) {
+      }
+    });
+
+    function uploadImage(image) {
       var data = new FormData();
       data.append("image", image);
       $.ajax({
-          url: "<?php echo base_url('berita/upload_image')?>",
-          cache: false,
-          contentType: false,
-          processData: false,
-          data: data,
-          type: "POST",
-          success: function(url) {
-              $('#isi').summernote("insertImage", url);
-          },
-          error: function(data) {
-              console.log(data);
-          }
+        url: "<?php echo base_url('berita/upload_image') ?>",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: data,
+        type: "POST",
+        success: function(url) {
+          $('#isi').summernote("insertImage", url);
+        },
+        error: function(data) {
+          console.log(data);
+        }
       });
-  }
+    }
 
-  function deleteImage(src) {
+    function deleteImage(src) {
       $.ajax({
-          data: {src : src},
-          type: "POST",
-          url: "<?php echo base_url('berita/delete_image')?>",
-          cache: false,
-          success: function(response) {
-              console.log(response);
-          }
+        data: {
+          src: src
+        },
+        type: "POST",
+        url: "<?php echo base_url('berita/delete_image') ?>",
+        cache: false,
+        success: function(response) {
+          console.log(response);
+        }
       });
-  }
-  }); 
+    }
+  });
 </script>
 <script>
-$('form').submit(function (e) {
+  $('form').submit(function(e) {
     var form = this;
     e.preventDefault();
-    setTimeout(function () {
-        form.submit();
+    setTimeout(function() {
+      form.submit();
     }, 1000); // in milliseconds
-});
+  });
 </script>
 <!-- <script>
   $(document).ready(function() {
@@ -158,7 +137,7 @@ $('form').submit(function (e) {
 
     if ($('#artikel').val() == "Non Akademik") {
       
-        $.getJSON("<?php echo base_url();?>/berita/ambil_data_organisasi", function(data){
+        $.getJSON("<?php echo base_url(); ?>/berita/ambil_data_organisasi", function(data){
           selected += '<div class="form-group">'+
     '<label class="col-sm-2 control-label">nah ini</label>'+
     '<div class="col-sm-8">'+

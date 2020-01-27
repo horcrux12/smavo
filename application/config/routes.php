@@ -89,3 +89,9 @@ $route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail/$1'; //detail
 $route['admin/siswa/hapus-siswa/(:any)'] = 'siswa/delete/$1'; //hapus data
 $route['admin/siswa/kategori-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; //tampil detail kategori data
 
+// Setting
+$route['admin/pengaturan/kemitraan'] = 'kemitraan';
+$route['admin/pengaturan/kemitraan/tambah-kemitraan'] = 'kemitraan/tambah';
+$route['admin/pengaturan/kemitraan/simpan-kemitraan'] = 'kemitraan/simpan';
+$route['admin/pengaturan/kemitraan/ubah-kemitraan/(:num)'] = 'kemitraan/ubah/$1';
+$route['admin/pengaturan/kemitraan/hapus-kemitraan/(:num)'] = 'kemitraan/delete/$1';

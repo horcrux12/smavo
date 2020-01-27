@@ -37,12 +37,12 @@ if (!empty($info_hapus)) {
 		<h3 class="header smaller lighter blue"><?= $sub_judul ?></h3>
 
 		<div class="clearfix mb-3">
-			<div class="pull-right tableTools-container">cobas</div>
-			<a href="<?php echo base_url(); ?>admin/berita/tambah-berita/<?= $kd_judul ?>" class="btn btn-primary btn-small">
-				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Berita - <?= $judul_tambah ?></a><br><br>
+			<div class="pull-right tableTools-container"></div>
+			<a href="<?php echo base_url(); ?>admin/pengaturan/kemitraan/tambah-kemitraan" class="btn btn-primary btn-small">
+				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah <?php echo $sub_judul ?></a><br><br>
 		</div>
 		<div class="table-header">
-			Data berita
+			<?php echo $sub_judul ?>
 		</div>
 
 		<!-- div.table-responsive -->
@@ -52,53 +52,40 @@ if (!empty($info_hapus)) {
 			<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th class="center">No</th>
-						<!-- <th>Kode </th> -->
-						<th class="col-md-1">Nama</th>
-						<th class="col-md-2">Foto</th>
-						<th class="col-md-4">Link Website</th>
-						<th class="col-md-1">Aksi</th>
+						<th width="50px" class="center">No</th>
+						<th>Nama</th>
+						<th class="center">Foto</th>
+						<th>Link Website</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					<?php
-					$no = 1;
-					foreach ($data as $row) :
-					?>
+					<?php $no = 1;
+					foreach ($data as $key) { ?>
 						<tr>
-							<td class="center"><?php echo $no++; ?></td>
-							<!-- <td><?php  ?></td> -->
-							<td><?php ?></td>
 							<td class="center">
-							<div>
-                              <ul class="ace-thumbnails clearfix">
-                                <li class >
-                                  <a href="<?= base_url()?>assets/photo/berita/<?= $row->foto?>" data-rel="colorbox">
-                                    <img width="80" height="80" alt="150x150" src="<?= base_url()?>assets/photo/berita/<?= $row->foto;?>" />
-                                    <div class="text">
-                                      <div class="inner"><?php echo $row->judul?></div>
-                                    </div>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
+								<?php echo $no++; ?>
 							</td>
-                            <td><?php ?></td>
+							<td hidden></td>
+							<td hidden></td>
+							<td><?php echo $key->nama ?></td>
+							<td class="center"><img src="<?php echo base_url() ?>assets/photo/kemitraan/<?php echo $key->foto ?>" height="60px" alt=""></td>
+							<td>
+								<a href="<?php echo $key->link_website ?>"><?php echo $key->link_website ?></a>
+							</td>
 							<td>
 								<div class="hidden-sm hidden-xs action-buttons">
-									<a class="blue tooltip-info" title="Detail" data-rel="tooltip" href="<?php echo base_url(); ?>admin/berita/detail-berita/<?php echo $row->id_berita ?>">
-										<i class="ace-icon fa fa-search-plus bigger-130"></i>
-									</a>
 
-									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>admin/berita/ubah-berita/<?php echo $row->id_berita ?>">
+									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/kemitraan/ubah-kemitraan/<?php echo $key->id?>">
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 
-									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/berita/hapus-berita/<?php echo $row->id_berita ?>"onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/kemitraan/hapus-kemitraan/<?php echo $key->id?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 								</div>
+
 								<div class="hidden-md hidden-lg">
 									<div class="inline pos-rel">
 										<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
@@ -134,9 +121,8 @@ if (!empty($info_hapus)) {
 								</div>
 							</td>
 						</tr>
-					<?php
-					endforeach;
-					?>
+					<?php $no++;
+					} ?>
 				</tbody>
 			</table>
 		</div>
