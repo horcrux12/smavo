@@ -42,7 +42,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h3 class="animated fadeInRight">Berita - SMAVO</h3>
-                <h3 class="animated fadeInLeft"><b><?php echo $key->judul?></b></h3>
+                <h2 class="animated fadeInLeft"><?php echo $key->judul?></h2>
                 <p class="animated fadeInUp"><?php echo "".strip_tags(substr($key->deskripsi,0,30))."..." ?></p>
                 <a href="<?php echo base_url()?>berita/detail/<?php echo $key->id_berita?>" class="btn-get-started scrollto animated zoomIn">Selengkapnya</a>
               </div>
