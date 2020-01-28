@@ -83,7 +83,7 @@
       <?php foreach ($data['about'] as $key) {?>
         <header class="section-header">
           <h3>SMAN 2 Cibinong</h3>
-          <p><?php echo "".html_entity_decode($key->deskripsi).""?></p>
+          <p><?php $a = str_replace("&nbsp"," ",$key->deskripsi);  echo $a;?></p>
         </header>
 
         <div class="row about-cols">
