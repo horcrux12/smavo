@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26 Jan 2020 pada 10.36
+-- Generation Time: 28 Jan 2020 pada 03.47
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -28,11 +28,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_about` (
   `id` int(4) NOT NULL,
-  `deskripsi` text NOT NULL,
   `visi` text NOT NULL,
   `misi` text NOT NULL,
-  `plan` text NOT NULL
+  `plan` text NOT NULL,
+  `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_about`
+--
+
+INSERT INTO `tb_about` (`id`, `visi`, `misi`, `plan`, `deskripsi`) VALUES
+(1, '<p style="line-height: 1.4;"><style="text-align: center;="" line-height:="" 1.4;"="" courier="" new",="" monospace;="" font-size:="" 14px;="" 19px;="" white-space:="" pre;"=""><span style="text-align: center;">Terwujudnya Warga Sekolah Yang Berakhlak Mulia, Mandiri, BerwawasanLingkungan, Dan Unggul Dalam Ipteks (Ilmu Pengetahuan Teknologi Dan Seni)</span><br></style="text-align:></p><p></p><p class="MsoNormal"><o:p></o:p></p><p></p>', '<ol><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Meningkatkan&nbsp; keimanan,dan ketakwaan untuk mewujudkan kepribadian yang&nbsp; utuh.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Meningkatkan&nbsp; penghayatan dan pengamalan terhadap ajaran agama yang dianut.</li><li style="margin-top: 10px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Mendorong seluruh elemen&nbsp; sekolah untuk mengenali potensi dirinya.</li></ol>', 'Tujuan', '<div style="text-align: center; line-height: 1.5;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan </div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas.</div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten,Propinsi, Nasional maupun Internasional, </div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">yang tidak meninggalkan budaya lokal yang bernuansa Islami.</div>');
 
 -- --------------------------------------------------------
 
@@ -56,7 +63,10 @@ CREATE TABLE `tb_berita` (
 --
 
 INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
-('BR25012020001', 'KTA002', NULL, 'hjgyt', 'USR001', '<p>hgy</p>', '_DSC0132.JPG', '2020-01-25 12:26:53');
+('BR25012020001', 'KTA002', NULL, 'hjgyt', 'USR001', '<p>hgy</p>', '_DSC0132.JPG', '2020-01-25 12:26:53'),
+('BR26012020002', 'KTA001', NULL, 'juara', 'USR002', '<p>jua</p>', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg', '2020-01-26 09:45:41'),
+('BR27012020003', 'KTA002', NULL, 'Penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire antara SMA Negeri 2 Cibinong dan IFI Jakarta', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">Pada tanggal 10 Januari 2020, SMA Negeri 2 Cibinong dan IFI Jakarta melakukan penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire. Perjanjian ini menyepakati kerjasama antara sekolah dan IFI Jakarta selaku penyelenggara Ujian Kemampuan Berbahasa Prancis, untuk melaksanakan ujian DELF Scolaire dan melakukan pendampingan untuk &nbsp;membantu siswa dalam mempersiapkan diri dalam menghadapi ujian kemampuan berbahasa yang dikeluarkan oleh Kementrian Pendidikan Nasional Prancis dalam versi pelajar. Dengan adanya perjanjian ini, diharapkan siswa siswi SMA Negeri 2 Cibinong bisa mengikuti ujian dan&nbsp; mendapatkan sertifikat DELF sebagai bukti bahwa mereka bisa berkomunikasi dalam bahasa Prancis dan kemampuan tersebut diakui diseluruh dunia karena&nbsp; sertifikat DELF dikeluarkan oleh Kementrian Pendidikan Nasional Prancis.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4298" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" alt="IMG-20200114-WA0010" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4297" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4295" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4294" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" alt="IMG-20200114-WA0009" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4293" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" alt="IMG-20200114-WA0008" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4292" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" alt="IMG-20200114-WA0007" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4291" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" alt="IMG-20200114-WA0006" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p>', 'IMG-20200114-WA0009-805x503.jpg', '2020-01-27 12:07:04'),
+('BR27012020004', 'KTA002', NULL, 'Kunjungan Pihak Institut Francis di Indonesia ke Smavo', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Hari Selasa tanggal 4 Oktober 2019 tepatnya pukul 09. 20 WIB SMA Negeri 2 Cibinong mendapat kunjungan Ibu Tristia Wihatni (Manajer) dan Coline (natif) dari Institut Français d’ Indonésie (IFI) Thamrin Jakarta.Kunjungan tersebut merupakan bagian dari apresiasi IFI kepada siswa SMA Negeri 2 Cibinong, karena beberapa waktu yang lalu telah menjadi juara umum lomba Dikte dan Pengetahuan Umum Negara Prancis se-Jabodetabek (Muhammad Rahmansyah dan Gabrielle Ivanca kelas Bahasa angkatan 2018-2019). Juga semakin bertambahnya siswa SMAVO yang melanjutkan pendidikan ke Negara Mode nan Romantis itu. Maka pihak IFI akan memberikan layanan yang lebih kepada SMAVO salah satunya adalah dengan kunjungan natif ke sekolah bahkan ikut berkolaborasi dalam proses KBM di kelas untuk memberi motivasi dan wawasan bahwa kemampuan berbahasa asing dapat mengembangkan potensi dan kesempatan yang lebih di masa yang akan datang, terutama dalam bidang dunia kerja.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Coline merasa sangat bahagia dapat berkunjung dan mengenal lebih dekat lagi siswa yang belajar bahasa Prancis. Menurut beliau siswa SMAVO sangat antusias dan cepat tanggap dalam menerima pelajaran, terutama keramahtamahannya. Dan membuat beliau ingin kembali mengunjungi sekolah kami.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Mengingat SMA Negeri 2 Cibinong memiliki 17 kelas dari kelas X sampai kelas XII yang belajar bahasa Prancis (LM) kurang lebih ada sekitar 442 siswa, maka ibu Tristia merasa perlu menjembatani siswa yang berminat untuk melanjutkan pendidikan ke negara Prancis dengan mempermudah dan mewadahi ujian bahasa Prancis  DELF SCOLAIRE (yang merupakan salah satu persyaratannya). Beliau bersedia untuk menyelenggarakannya di SMAVO.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Tahun ini alumni ada tiga orang siswa yang sedang mempersiapkan untuk melanjutkan pendidikan ke Prancis: Muhammad Rahmansyah, Gabriella Ivanca dan Malahati. Semoga tahun-tahun ke depannya akan bertambah lagi alumni SMA Negeri 2 Cibinong yang akan melanjutkan pendidikan ke negara tersebut. <em>Merci beaucoup Mme Tia et Coline pour votre visite</em>..    </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4274 note-float-right" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" alt="DSC_0185_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: right; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4273" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" alt="DSC_0182_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4272" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" alt="DSC_0180_" width="3561" height="2358" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4271" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" alt="DSC_0192_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p>', 'DSC_0179_1-805x503.jpg', '2020-01-27 17:42:00');
 
 --
 -- Trigger `tb_berita`
@@ -94,7 +104,10 @@ CREATE TABLE `tb_galeri` (
 
 INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (1, 'BR23012020001', 'DSC_0648.JPG'),
-(2, 'BR25012020001', '_DSC0132.JPG');
+(2, 'BR25012020001', '_DSC0132.JPG'),
+(3, 'BR26012020002', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg'),
+(4, 'BR27012020003', 'IMG-20200114-WA0009-805x503.jpg'),
+(5, 'BR27012020004', 'DSC_0179_1-805x503.jpg');
 
 -- --------------------------------------------------------
 
@@ -118,8 +131,8 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
-('GR001', ' ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'DRS__AHMAD_SOBARI.JPG'),
-('GR002', '', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'default.jpg'),
+('GR001', '       ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', '_amsori.JPG'),
+('GR002', '    ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'AHMAD_RIJKON.JPG'),
 ('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.jpg'),
 ('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.jpg'),
 ('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP001', 'default.jpg'),
@@ -313,6 +326,13 @@ CREATE TABLE `tb_kemitraan` (
   `link_website` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_kemitraan`
+--
+
+INSERT INTO `tb_kemitraan` (`id`, `nama`, `foto`, `link_website`) VALUES
+(1, 'hjgftf', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -435,7 +455,7 @@ INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskri
 ('PR13012020004', 'KTP004', 'USR001', 'Tujuan', '<p>Tujuan</p>', 'logo.png', '2020-01-23 12:22:00'),
 ('PR13012020005', 'KTP005', 'USR001', 'Mars SMA Negeri 2 Cibinong', 'Mars Sekolah', 'logo.png', '2020-01-23 12:22:11'),
 ('PR13012020006', 'KTP006', 'USR001', 'Struktur Organisasi SMA Negeri 2 Cibinong', '<p>Berikut adalah bagan struktur organisasi SMA Negeri 2 Cibinong :</p><p><img src="			\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/image2.png" style="width: 50%;"><br></p>', 'logo.png', '2020-01-23 12:22:23'),
-('PR13012020007', 'KTP007', 'USR001', 'Sambutan Kepala Sekolah SMA Negeri 2 Cibinong', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; text-align: center;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px; margin-right: auto; margin-left: auto; width: 227.124px;"><img class="aligncenter  wp-image-2067 note-float-left" src="http://sman2cibinong.sch.id/wp-content/uploads/2015/04/BAPAK-BAMBANG-SUPRIYADI.jpg" alt="BAPAK BAMBANG SUPRIYADI" width="259" height="389" style="text-align: justify; display: block; max-width: 100%; height: 341.125px; margin: 5px auto; float: left; width: 227.124px;"></span></font></p><div style="text-align: justify;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px;"><br></span></font></div><div style="text-align: justify;"><br></div><p></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Bismillahirahmanirahim</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Assalamualaikum Warahmatullahi Wabarakatuh</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Innal hamda lillah wa sholatu wa salamu ‘ala rasulillah, segala puji bagi Allah seru sekalian alam yang telah melimpahkan kenikmatan, menurunkan taufik, hidayah dan inayahnya sehingga  mampu melaksanakan tugas, mengemban amanah, dan mengembangkan dunia pendidikan hingga saat ini. Salam penghormatan bagi insan pilihan, kekasih al-Halim, Muhammad SAW yang penyantun.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas. Akhirnya cita-cita jadi sekolah impian masyarakat Kabupaten Bogor (sebagai Kabupaten Termaju di Indonesia) yaitu berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami dapat terwujud. Kami sudah bertekad untuk mewujudkan keinginan  itu dengan slogan “Man Jadda Wajada” siapa yang bersungguh-sunguh pasti akan berhasil. “Man Shobaru Zhafira” siapa yang bersabar akan beruntung. “Man Yazro Yahsud”  siapa yang menanam akan menuai yang ditanam. Kalimat inilah yang jadi motivasi untuk melakukan perubahan internal dan eksternal. Komitmen kami tidak mungkin terwujud tanpa bantuan, dorongan  dan motivasi dari pemerintah baik pusat maupun daerah melalui Kemendikbud, Dinas Pendidikan Provinsi Jawa Barat ataupun Dinas Pendidikan Kabupaten Bogor. Apalah artinya sebuah lembaga pendidikan tanpa adanya regulasi dan bantuan dari pengambil kebijakan terutama dalam pemenuhan standar sarana prasarana, standar pendidik dan tenaga kependidikan dan yang paling utama dan pertama standar biaya.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Anak – anakku yang saya cintai dan banggakan,</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">“Pendidikan adalah tiket ke masa depan. Hari esok dimiliki oleh orang-orang yang mempersiapkan dirinya sejak hari ini” – Malcolm X. “Pembelajaran tidak didapat dengan kebetulan. Ia harus dicari dengan semangat dan disimak dengan tekun” – Abigail Adams.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Filosofi pendidikan adalah “change” atau perubahan. Karenanya bila kita tidak mengikuti perubahan atau perkembangan pasti akan ketinggalan. Perlu memiliki sifat untuk selalu mau berjuang dan bekerja keras. Berjuang untuk mencapai prestasi akademis, berjuang untuk mendapatkan tempat di perguruan tinggi, berjuang untuk mendapatkan tempat yang layak di masyarakat dan tentu saja berjuang demi agama, kemajuan bangsa/negara dan kebahagian dunia/akherat. Mudah-mudahan dengan ilmu, bisa menjadi bekal untuk kehidupan kalian dimasa depan nanti. Kalian adalah siswa-siswi yang telah kami ajarkan nilai-nilai karakter budaya bangsa. Perlihatkanlah nilai-nilai itu kepada masyarakat luas agar itu menjadi ciri khas kita. Jagalah nama baik sekolah kita.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Dua kalimat bijak di atas mengimpirasi kita tentang pentingnya pendidikan. Saat ini pasti kalian semua sudah memantapkan diri untuk memilih perguruan tinggi, baik melalui jalur SNMPTN, SBMPTN maupun seleksi mandiri. Bagi kalian yang belum masuk ke perguruan tinggi yang kalian inginkan, jangan putus asa, teruslah semangat dalam menjalani proses belajar. Mungkin perguruan tinggi itulah yang menurut Allah SWT cocok untuk kalian. Ingat, tidak semua orang sukses dilihat dari mana perguruan tingginya, program studinya, semua orang bisa sukses asalkan orang tersebut berusaha secara sungguh–sungguh untuk memiliki kompensi baik pengetahuan, ketrampilan maupun kepribadian secara baik.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Selamat berjuang, anak-anakku, jadikan pengalaman belajar di SMAVO sebagai catatan perjalanan hidup yang kalian kenangkan dengan mengambil ibrah yang positif. Selamat mengisi kehidupan di masyarakat yang lebih luas, semoga Allah merahmati kita semua dengan kemudahan dan kebaikan hidup, sehingga kelak kita beruntung menjadi manusia yang ringan langkahnya menuju akhiratNya, amin.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Wassalamualaikum Warahmatullahi Wabarakatuh.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;">Kepala Sekolah</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify;"><strong>Dr. Bambang Supriyadi, M.Pd.</strong></p>', 'logo.png', '2020-01-23 12:22:32'),
+('PR13012020007', 'KTP007', 'USR001', 'Sambutan Kepala Sekolah SMA Negeri 2 Cibinong', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; text-align: center;"><img src="			\r\n		\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/berita/BAMBANG_SUPRIYADI.JPG" style="width: 362px; float: left; height: 542.45px;" class="note-float-left"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px; margin-right: auto; margin-left: auto; width: 227.124px;"></span></font></p><div style="text-align: justify;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px;"><br></span></font></div><div style="text-align: justify;"><br></div><p></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Bismillahirahmanirahim</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Assalamualaikum Warahmatullahi Wabarakatuh</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Innal hamda lillah wa sholatu wa salamu ‘ala rasulillah, segala puji bagi Allah seru sekalian alam yang telah melimpahkan kenikmatan, menurunkan taufik, hidayah dan inayahnya sehingga&nbsp; mampu melaksanakan tugas, mengemban amanah, dan mengembangkan dunia pendidikan hingga saat ini. Salam penghormatan bagi insan pilihan, kekasih al-Halim, Muhammad SAW yang penyantun.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang&nbsp; Nomor 20 tahun 2003 tentang Sisdiknas. Akhirnya cita-cita jadi sekolah impian masyarakat Kabupaten Bogor (sebagai Kabupaten Termaju di Indonesia) yaitu berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami dapat terwujud. Kami sudah bertekad untuk mewujudkan keinginan&nbsp; itu dengan slogan “Man Jadda Wajada” siapa yang bersungguh-sunguh pasti akan berhasil. “Man Shobaru Zhafira” siapa yang bersabar akan beruntung. “Man Yazro Yahsud”&nbsp; siapa yang menanam akan menuai yang ditanam. Kalimat inilah yang jadi motivasi untuk melakukan perubahan internal dan eksternal. Komitmen kami tidak mungkin terwujud tanpa bantuan, dorongan&nbsp; dan motivasi dari pemerintah baik pusat maupun daerah melalui Kemendikbud, Dinas Pendidikan Provinsi Jawa Barat ataupun Dinas Pendidikan Kabupaten Bogor. Apalah artinya sebuah lembaga pendidikan tanpa adanya regulasi dan bantuan dari pengambil kebijakan terutama dalam pemenuhan standar sarana prasarana, standar pendidik dan tenaga kependidikan dan yang paling utama dan pertama standar biaya.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Anak – anakku yang saya cintai dan banggakan,</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">“Pendidikan adalah tiket ke masa depan. Hari esok dimiliki oleh orang-orang yang mempersiapkan dirinya sejak hari ini” – Malcolm X. “Pembelajaran tidak didapat dengan kebetulan. Ia harus dicari dengan semangat dan disimak dengan tekun” – Abigail Adams.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Filosofi pendidikan adalah “change” atau perubahan. Karenanya bila kita tidak mengikuti perubahan atau perkembangan pasti akan ketinggalan. Perlu memiliki sifat untuk selalu mau berjuang dan bekerja keras. Berjuang untuk mencapai prestasi akademis, berjuang untuk mendapatkan tempat di perguruan tinggi, berjuang untuk mendapatkan tempat yang layak di masyarakat dan tentu saja berjuang demi agama, kemajuan bangsa/negara dan kebahagian dunia/akherat. Mudah-mudahan dengan ilmu, bisa menjadi bekal untuk kehidupan kalian dimasa depan nanti. Kalian adalah siswa-siswi yang telah kami ajarkan nilai-nilai karakter budaya bangsa. Perlihatkanlah nilai-nilai itu kepada masyarakat luas agar itu menjadi ciri khas kita. Jagalah nama baik sekolah kita.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Dua kalimat bijak di atas mengimpirasi kita tentang pentingnya pendidikan. Saat ini pasti kalian semua sudah memantapkan diri untuk memilih perguruan tinggi, baik melalui jalur SNMPTN, SBMPTN maupun seleksi mandiri. Bagi kalian yang belum masuk ke perguruan tinggi yang kalian inginkan, jangan putus asa, teruslah semangat dalam menjalani proses belajar. Mungkin perguruan tinggi itulah yang menurut Allah SWT cocok untuk kalian. Ingat, tidak semua orang sukses dilihat dari mana perguruan tingginya, program studinya, semua orang bisa sukses asalkan orang tersebut berusaha secara sungguh–sungguh untuk memiliki kompensi baik pengetahuan, ketrampilan maupun kepribadian secara baik.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Selamat berjuang, anak-anakku, jadikan pengalaman belajar di SMAVO sebagai catatan perjalanan hidup yang kalian kenangkan dengan mengambil ibrah yang positif. Selamat mengisi kehidupan di masyarakat yang lebih luas, semoga Allah merahmati kita semua dengan kemudahan dan kebaikan hidup, sehingga kelak kita beruntung menjadi manusia yang ringan langkahnya menuju akhiratNya, amin.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Wassalamualaikum Warahmatullahi Wabarakatuh.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Kepala Sekolah</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""><strong>Dr. Bambang Supriyadi, M.Pd.</strong></p>', 'logo2.png', '2020-01-28 00:44:30'),
 ('PR13012020008', 'KTP008', 'USR001', 'Fasilitas SMA Negeri 2 Cibinong', '<p>fasilitas</p>', '', '2020-01-25 13:14:35'),
 ('PR13012020009', 'KTP009', 'USR001', 'Kontak SMA Negeri 2 Cibinong', '<span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Jl. Karadenan No. 05</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Cibinong Bogor 16913 Jawa Barat</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Telp/Fax. (0251) 8654 347</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Email. info@sman2cibinong.sch.id</span>', 'logo.png', '2020-01-23 12:22:50');
 
@@ -456,6 +476,26 @@ END IF;
 END
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_sambutan`
+--
+
+CREATE TABLE `tb_sambutan` (
+  `id` int(4) NOT NULL,
+  `nama_kepsek` varchar(40) NOT NULL,
+  `sambutan` text NOT NULL,
+  `foto` tinytext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_sambutan`
+--
+
+INSERT INTO `tb_sambutan` (`id`, `nama_kepsek`, `sambutan`, `foto`) VALUES
+(1, 'Dr. Bambang Supriyadi, M.Pd.', '<span style="color: rgb(51, 51, 51); font-family: "Open Sans";">Selamat berjuang, anak-anakku, jadikan pengalaman belajar di SMAVO sebagai catatan perjalanan hidup yang kalian kenangkan dengan mengambil ibrah yang positif. Selamat mengisi kehidupan di masyarakat yang lebih luas, semoga Allah merahmati kita semua dengan kemudahan dan kebaikan hidup, sehingga kelak kita beruntung menjadi manusia yang ringan langkahnya menuju akhiratNya, amin.</span>', 'BAMBANG_SUPRIYADI.JPG');
 
 -- --------------------------------------------------------
 
@@ -510,8 +550,16 @@ CREATE TABLE `tb_slider` (
   `id` int(4) NOT NULL,
   `judul_utama` varchar(100) NOT NULL,
   `sub_judul` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL
+  `deskripsi` text NOT NULL,
+  `foto` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_slider`
+--
+
+INSERT INTO `tb_slider` (`id`, `judul_utama`, `sub_judul`, `deskripsi`, `foto`) VALUES
+(1, 'Selamat Datang di Website Resmi ', 'SMA NEGERI 2 CIBINONG', '<div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Jl.&nbsp;Karadenan&nbsp;No.&nbsp;05&nbsp;Cibinong&nbsp;Kabupaten&nbsp;Bogor&nbsp;16913 -&nbsp;Jawa&nbsp;Barat </span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Telp:&nbsp;+62-251-8654347&nbsp;Fax:&nbsp;+62-251-8654347&nbsp;</span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Email:&nbsp;info@sman2cibinong.sch.id</span></div>', 'IMG_1137.jpg');
 
 -- --------------------------------------------------------
 
@@ -667,7 +715,32 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (130, '::1', '2020-01-26 09:20:49', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (131, '::1', '2020-01-26 09:20:53', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (132, '::1', '2020-01-26 09:22:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
-(133, '::1', '2020-01-26 09:35:19', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
+(133, '::1', '2020-01-26 09:35:19', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(134, '::1', '2020-01-26 09:56:49', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(135, '::1', '2020-01-26 09:57:02', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(136, '::1', '2020-01-26 10:01:26', 0, '', 'Firefox', '72.0', 'DESKTOP-Q713SR9', 'Windows 10'),
+(137, '::1', '2020-01-26 11:58:35', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(138, '::1', '2020-01-26 13:02:10', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(139, '::1', '2020-01-26 14:35:28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(140, '::1', '2020-01-26 14:35:35', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(141, '::1', '2020-01-27 09:50:33', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(142, '::1', '2020-01-27 09:50:59', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(143, '::1', '2020-01-27 12:23:06', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(144, '::1', '2020-01-27 13:20:26', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(145, '::1', '2020-01-27 13:21:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(146, '::1', '2020-01-27 13:21:04', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(147, '::1', '2020-01-27 13:21:06', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(148, '::1', '2020-01-27 13:21:08', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(149, '::1', '2020-01-27 13:21:37', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(150, '::1', '2020-01-27 13:21:48', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(151, '::1', '2020-01-27 13:22:07', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(152, '::1', '2020-01-27 13:22:17', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(153, '::1', '2020-01-27 13:32:40', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(154, '::1', '2020-01-27 13:52:01', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(155, '::1', '2020-01-27 13:52:44', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(156, '::1', '2020-01-27 18:30:08', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(157, '::1', '2020-01-27 18:30:22', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(158, '::1', '2020-01-27 18:30:37', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -784,6 +857,12 @@ ALTER TABLE `tb_profil`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- Indexes for table `tb_sambutan`
+--
+ALTER TABLE `tb_sambutan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
@@ -818,32 +897,37 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_about`
 --
 ALTER TABLE `tb_about`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
 ALTER TABLE `tb_kemitraan`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
   MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tb_sambutan`
+--
+ALTER TABLE `tb_sambutan`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

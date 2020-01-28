@@ -95,3 +95,24 @@ $route['admin/pengaturan/kemitraan/tambah-kemitraan'] = 'kemitraan/tambah';
 $route['admin/pengaturan/kemitraan/simpan-kemitraan'] = 'kemitraan/simpan';
 $route['admin/pengaturan/kemitraan/ubah-kemitraan/(:num)'] = 'kemitraan/ubah/$1';
 $route['admin/pengaturan/kemitraan/hapus-kemitraan/(:num)'] = 'kemitraan/delete/$1';
+
+$route['admin/pengaturan/slider'] = 'slider';
+$route['admin/pengaturan/slider/tambah-slider'] = 'slider/tambah';
+$route['admin/pengaturan/slider/simpan-slider'] = 'slider/simpan';
+$route['admin/pengaturan/slider/ubah-slider/(:num)'] = 'slider/ubah/$1';
+$route['admin/pengaturan/slider/hapus-slider/(:num)'] = 'slider/delete/$1';
+
+
+$route['admin/pengaturan/about'] = 'about';
+$route['admin/pengaturan/about/tambah-about'] = 'about/tambah';
+$route['admin/pengaturan/about/simpan-about'] = 'about/simpan';
+$route['admin/pengaturan/about/ubah-about/(:num)'] = 'about/ubah/$1';
+$route['admin/pengaturan/about/hapus-about/(:num)'] = 'about/delete/$1';
+
+$route['admin/pengaturan/sambutan'] = 'sambutan';
+$route['admin/pengaturan/sambutan/tambah-sambutan'] = 'sambutan/tambah';
+$route['admin/pengaturan/sambutan/simpan-sambutan'] = 'sambutan/simpan';
+$route['admin/pengaturan/sambutan/ubah-sambutan/(:num)'] = 'sambutan/ubah/$1';
+$route['admin/pengaturan/sambutan/hapus-sambutan/(:num)'] = 'sambutan/delete/$1';
+
+

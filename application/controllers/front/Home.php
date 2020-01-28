@@ -25,15 +25,22 @@ class Home extends CI_Controller
         $page_content['js'] = '';
        	$page_content['title'] = '';
 		
-		$berita = $this->model_dinamic->getData ('tb_berita');
-		$profil = $this->model_profil->tampil_profil()->result();
-		foreach ($profil as $key) {
-			$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
-		}
+		$berita 	= $this->model_dinamic->getData ('tb_berita');
+		// $profil 	= $this->model_profil->tampil_profil()->result();
+		$slider 	= $this->model_dinamic->getData ('tb_slider');
+		$about 		= $this->model_dinamic->getData ('tb_about');
+		$sambutan 	= $this->model_dinamic->getData ('tb_sambutan');
+		// foreach ($profil as $key) {
+		// 	$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
+		// }
 		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3,'tanggal');
-		$page_content['data']['berita'] = $berita;
-		$page_content['data']['berita_limit'] = $limit_berita;
-		$page_content['data']['about'] = $about; 
+		$page_content['data']['berita'] 		= $berita;
+		$page_content['data']['berita_limit'] 	= $limit_berita;
+		// $page_content['data']['about'] 			= $about; 
+		$page_content['data']['slider'] 		= $slider; 
+		$page_content['data']['about'] 			= $about; 
+		$page_content['data']['sambutan'] 		= $sambutan; 
+		
 		
 		$this->load->view('front/template/app',$page_content);
 	}

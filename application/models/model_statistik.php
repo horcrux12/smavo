@@ -7,13 +7,16 @@
 		
 
 		function pengunjung(){
-			return $this->db->query("SELECT * FROM tb_statistik WHERE tanggal='".date("Y-m-d")."' GROUP BY ip_address");
+			$a=$this->db->query("SELECT * FROM tb_statistik WHERE tanggal='".date("Y-m-d")."' GROUP BY ip_address");
+			return $a;
 		}
 		function totalpengunjung(){
-			return $this->db->query("SELECT COUNT(hits) as total FROM tb_statistik");
+			$b=$this->db->query("SELECT COUNT(hits) as total FROM tb_statistik");
+			return $b;
 		}
 		function hits(){
-			return $this->db->query("SELECT SUM(hits) as total FROM tb_statistik WHERE tanggal='".date("Y-m-d")."' GROUP BY tanggal");
+			$c=$this->db->query("SELECT SUM(hits) as total FROM tb_statistik WHERE tanggal='".date("Y-m-d")."' GROUP BY tanggal");
+			return $c;
 		}
 		function totalhits(){
 			return $this->db->query("SELECT SUM(hits) as total FROM tb_statistik");
