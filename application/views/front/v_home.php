@@ -83,7 +83,7 @@
       <?php foreach ($data['about'] as $key) {?>
         <header class="section-header">
           <h3>SMAN 2 Cibinong</h3>
-          <p><?php echo $key->deskripsi?></p>
+          <p><?php echo "".html_entity_decode($key->deskripsi).""?></p>
         </header>
 
         <div class="row about-cols">
@@ -401,33 +401,13 @@
         </header>
 
         <div class="owl-carousel clients-carousel owl-centered">
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-1.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-2.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-3.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-4.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-5.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-6.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-7.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/clients/client-8.png" alt="">
-          </div>
-          <div>
-            <img src="<?= base_url();?>assets2/img/logo.png" alt="">
-          </div>
+          <?php foreach ($data['kemitraan'] as $key) {?>
+            <div>
+              <a href="<?php echo $key->link_website?>">
+              <img src="<?= base_url();?>assets/photo/kemitraan/<?php echo $key->foto?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama;?>">
+              </a>
+            </div>
+          <?php }?>
         </div>
 
       </div>

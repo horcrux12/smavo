@@ -26,6 +26,7 @@ class Home extends CI_Controller
        	$page_content['title'] = '';
 		
 		$berita 	= $this->model_dinamic->getData ('tb_berita');
+		$kemitraan  = $this->model_dinamic->getData ('tb_kemitraan');
 		// $profil 	= $this->model_profil->tampil_profil()->result();
 		$slider 	= $this->model_dinamic->getData ('tb_slider');
 		$about 		= $this->model_dinamic->getData ('tb_about');
@@ -36,6 +37,7 @@ class Home extends CI_Controller
 		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3,'tanggal');
 		$page_content['data']['berita'] 		= $berita;
 		$page_content['data']['berita_limit'] 	= $limit_berita;
+		$page_content['data']['kemitraan'] 		= $kemitraan;
 		// $page_content['data']['about'] 			= $about; 
 		$page_content['data']['slider'] 		= $slider; 
 		$page_content['data']['about'] 			= $about; 

@@ -34,7 +34,7 @@
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
     <div class="col-sm-8">
-      <textarea name="isi4" id="isi4" ><?php echo $isi4;?></textarea>
+      <textarea name="isi4" id="form-field-11" class="autosize-transition form-control" ><?php echo $isi4;?></textarea>
     </div>
   </div>
   <br>

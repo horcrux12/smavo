@@ -698,11 +698,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   z-index: 9;
 }*/
 
-#about p{
-  text-align: center;
-  padding-top: 20px;
-}
-
 #about .container {
   position: relative;
   z-index: 10;

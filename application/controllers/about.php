@@ -197,6 +197,7 @@
 						//console.log($(this).data("ace_input_files"));
 						//console.log($(this).data("ace_input_method"));
 					});
+					autosize($('."'".'textarea[class*=autosize]'."'".'));
 				});
 				</script>
 				';
