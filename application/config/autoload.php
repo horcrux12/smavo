@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('model_kemitraan','model_dinamic','model_pesan','model_statistik','model_guru','model_kat_artikel','model_kat_profil','model_slider','model_about','model_kat_siswa','model_kat_mapel','model_kat_jabatan','model_kat_organisasi','model_user','model_login','model_berita','model_profil','model_siswa',);
+$autoload['model'] = array('model_kemitraan','model_dinamic','model_pesan','model_statistik','model_guru','model_kat_artikel','model_kat_profil','model_slider','model_about','model_sambutan','model_kat_siswa','model_kat_mapel','model_kat_jabatan','model_kat_organisasi','model_user','model_login','model_berita','model_profil','model_siswa',);

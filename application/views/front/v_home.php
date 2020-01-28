@@ -76,12 +76,14 @@
       About Us Section
     ============================-->
     <section id="about" class="section-bg" >
+    
+    
       <div class="container" data-scroll-index="1">
 
+      <?php foreach ($data['about'] as $key) {?>
         <header class="section-header">
           <h3>SMAN 2 Cibinong</h3>
-          <p>SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas.Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami.
-          </p>
+          <p><?php echo $key->deskripsi?></p>
         </header>
 
         <div class="row about-cols">
@@ -89,29 +91,29 @@
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
                 <div class="icon"><i class="ion-ios-paperplane-outline"></i></div>
-              <h2 class="title"><a href="#">Our Mission</a></h2>
+              <h2 class="title"><a href="#">Our Vision</a></h2>
               <p>
-                <?php echo $data['about']['Misi']['deskripsi']?>
+              <?php echo $key->visi?>
               </p>
             </div>
           </div>
 
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="about-col">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              <h2 class="title"><a href="#">Our Plan</a></h2>
+                <div class="icon"><i class="ion-ios-pie-outline"></i></div>
+              <h2 class="title"><a href="#">Our Mision</a></h2>
               <p>
-              <?php echo $data['about']['Tujuan']['deskripsi']?>
+              <?php echo $key->misi?>
               </p>
             </div>
           </div>
 
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
             <div class="about-col">
-                <div class="icon"><i class="ion-ios-pie-outline"></i></div>
-              <h2 class="title"><a href="#">Our Vision</a></h2>
+            <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              <h2 class="title"><a href="#">Our Plan</a></h2>
               <p>
-              <?php echo substr($data['about']['Visi']['deskripsi'],0,100) ?>
+              <?php echo $key->plan?>
               </p>
             </div>
           </div>
@@ -119,6 +121,7 @@
         </div>
 
       </div>
+      <?php } ?>
     </section><!-- #about -->
 
     <!--==========================
@@ -127,6 +130,7 @@
     <section id="services">
       <div class="container">
 
+      <?php foreach ($data['sambutan'] as $key) {?>
         <header class="section-header wow fadeInUp">
           <h3>Sambutan Kepala Sekolah</h3>
         </header>
@@ -135,17 +139,17 @@
           <div class="col-lg-12">
             <div class="row"> 
               <div class="col-lg-3 col-md-4 box wow bounceInUp gambar" data-wow-duration="1.4s">
-                <img src="<?= base_url();?>assets2/img/head-master.png" class="srv-image" alt="">
-                <h3> Bapak Kepala Sekolah, S.Pd., M.Pd. </h3>
+                <img src=<?php echo base_url('assets/photo/sambutan/'.$key->foto.'');?> class="srv-image" alt="">
+                <h3> <?php echo $key->nama_kepsek?> </h3>
                 <h4> Kepala Sekolah SMAN 2 Cibinong</h4>
               </div>
               <div class="col-lg-9 box wow bounceInUp" data-wow-duration="1.4s">
-                <p class="description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi soluta praesentium nostrum, aliquam eos voluptate eaque laboriosam aliquid sed, quas quidem voluptatem nulla quisquam odit qui aspernatur, quo blanditiis. Repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eligendi odit temporibus similique voluptate quisquam, pariatur odio quas, atque nostrum, minima maiores voluptatem libero distinctio delectus id reiciendis ad obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolores voluptas nostrum. Expedita beatae, molestias similique tempora architecto, rerum, optio quasi corrupti nostrum voluptatem repudiandae velit? Enim fugit, quia sit!</p>
+                <p class="description"><?php echo $key->sambutan?></p>
               </div>
             </div>
           </div>
         </div>
-
+      <?php } ?>
       </div>
     </section><!-- #services -->
 

@@ -13,7 +13,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 		<!-- Ini Coba Pisah -->
 		<meta name="description" content="" />
-		<link rel="icon" href="<?php echo base_url();?>assets/photo/logo.png">
+		<link rel="icon" href="<?php echo base_url();?>assets/photo/logo/logo.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->

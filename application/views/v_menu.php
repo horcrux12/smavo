@@ -209,7 +209,7 @@
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url('#')?>"><i class="menu-icon fa fa-caret-right"></i>Sambutan Kepala Sekolah</a>
+				<a href="<?php echo base_url()?>admin/pengaturan/sambutan"><i class="menu-icon fa fa-caret-right"></i>Sambutan Kepala Sekolah</a>
 				<b class="arrow"></b>
 			</li>
 			
