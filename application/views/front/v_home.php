@@ -628,7 +628,7 @@
 
         </div>
 
-        <!-- <div class="form"> -->
+        <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
           <form action="" method="post" role="form" class="contactForm">
@@ -652,7 +652,7 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
-        <!-- </div> -->
+        </div>
 
       </div>
     </section><!-- #contact -->

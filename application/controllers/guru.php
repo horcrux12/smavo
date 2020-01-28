@@ -154,7 +154,7 @@
 	 
 	      if ( ! $this->upload->do_upload('file_name')){
 	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload,Silakan pilih foto yang lain');
-	         redirect('guru/tambah'); 
+	        //  redirect('guru/tambah'); 
 	      } else {
 			
 			$key = $this->input->post('kode');

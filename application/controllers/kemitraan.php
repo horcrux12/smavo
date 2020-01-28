@@ -69,7 +69,8 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
-				<script src="'.base_url().'assets/js/inputtype.js"></script>';
+				<script src="'.base_url().'assets/js/inputtype.js"></script>
+				';
 			// $konten['data'] = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id)->result();
 			$this->load->view('v_dashboard',$konten);
 		}
@@ -89,7 +90,6 @@
 
 	      if ( ! $this->upload->do_upload('file_name')){
 	        $this->session->set_flashdata('info_gagal','Tidak ada foto yang dipilih');
-	         redirect('admin/pengaturan/kemitraan/tambah-kemitraan'); 
 		  } 
 		  else {
 
@@ -105,6 +105,7 @@
 					
 					$this->model_kemitraan->getupdate($key,$data);
 					$this->session->set_flashdata('info','Data berhasil di update');
+					
 				}
 				else
 				{
@@ -112,7 +113,7 @@
 					$this->model_kemitraan->getinsert($data);
 					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
-			redirect('admin/pengaturan/kemitraan');
+				redirect('admin/pengaturan/kemitraan');
 			}
 		}
 
@@ -136,6 +137,7 @@
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/summernote-master/dist/summernote-lite.min.css" />
+				<link rel="stylesheet" href="'.base_url().'assets2/css/style.css" />
 				';
 			$konten['js']			= '
 				<script src="'.base_url().'assets/js/jquery-ui.custom.min.js"></script>
@@ -144,9 +146,93 @@
 				<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 				<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 				<script src="'.base_url().'assets/summernote-master/dist/summernote-lite.js"></script>
+				<script src="'.base_url().'assets2/contactform/contactform.js"></script>
+				<script src="'.base_url().'assets/validation/dist/jquery.validate.js"></script>
 				
 				<script>
 				jQuery(function($) {
+					$( "#signupForm1" ).validate( {
+						submitHandler: function () {
+							alert( "submitted!" );
+							$(form).submit();
+						},
+						rules: {
+							firstname1: "required",
+							lastname1: "required",
+							username1: {
+								required: true,
+								minlength: 2
+							},
+							password1: {
+								required: true,
+								minlength: 5
+							},
+							confirm_password1: {
+								required: true,
+								minlength: 5,
+								equalTo: "#password1"
+							},
+							email1: {
+								required: true,
+								email: true
+							},
+							agree1: "required"
+						},
+						messages: {
+							firstname1: "Please enter your firstname",
+							lastname1: "Please enter your lastname",
+							username1: {
+								required: "Please enter a username",
+								minlength: "Your username must consist of at least 2 characters"
+							},
+							password1: {
+								required: "Please provide a password",
+								minlength: "Your password must be at least 5 characters long"
+							},
+							confirm_password1: {
+								required: "Please provide a password",
+								minlength: "Your password must be at least 5 characters long",
+								equalTo: "Please enter the same password as above"
+							},
+							email1: "Please enter a valid email address",
+							agree1: "Please accept our policy"
+						},
+						errorElement: "em",
+						errorPlacement: function ( error, element ) {
+							// Add the `help-block` class to the error element
+							error.addClass( "help-block" );
+
+							// Add `has-feedback` class to the parent div.form-group
+							// in order to add icons to inputs
+							element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+
+							if ( element.prop( "type" ) === "checkbox" ) {
+								error.insertAfter( element.parent( "label" ) );
+							} else {
+								error.insertAfter( element );
+							}
+
+							// Add the span element, if doesnt exists, and apply the icon classes to it.
+							if ( !element.next( "span" )[ 0 ] ) {
+								$( "<span class='."'".'glyphicon glyphicon-remove form-control-feedback'."'".'></span>" ).insertAfter( element );
+							}
+						},
+						success: function ( label, element ) {
+							// Add the span element, if doesnt exists, and apply the icon classes to it.
+							if ( !$( element ).next( "span" )[ 0 ] ) {
+								$( "<span class='."'".'glyphicon glyphicon-ok form-control-feedback'."'".'></span>" ).insertAfter( $( element ) );
+							}
+						},
+						highlight: function ( element, errorClass, validClass ) {
+							$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+							$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+						},
+						unhighlight: function ( element, errorClass, validClass ) {
+							$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+							$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+						}
+					} );
+
 					$("#id-input-file-1 , #id-input-file-2").ace_file_input({
 						no_file:"No File ...",
 						btn_choose:"Choose",
@@ -157,6 +243,9 @@
 						//whitelist:"gif|png|jpg|jpeg"
 						//blacklist:"exe|php"
 						//onchange:""
+					}).validate({
+						rules: "required",
+						messages: "Please enter your firstname"
 					});
 
 					$("#id-input-file-3").ace_file_input({

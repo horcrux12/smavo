@@ -18,6 +18,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="<?= base_url();?>assets/css/bootstrap.min.css" />
+		
 		<link rel="stylesheet" href="<?= base_url();?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
