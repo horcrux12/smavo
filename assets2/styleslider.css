@@ -1092,12 +1092,18 @@ img {
 .blog .item .content .tag {
   color: #F24259;
   font-weight: 600;
+  font-size: 13px;
   margin-bottom: 10px;
   display: inline-block;
 }
 .blog .item .content h5 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.blog .item .content p {
+  font-size: 12px;
   margin-bottom: 15px;
 }
 

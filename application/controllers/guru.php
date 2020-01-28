@@ -36,6 +36,7 @@
 					reposition: true,
 					scalePhotos: true,
 					scrolling: false,
+					height : auto;
 					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
 					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
 					close: '."'".'&times;'."'".',

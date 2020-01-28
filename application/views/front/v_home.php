@@ -226,15 +226,16 @@
           <div class="col-lg-8 ">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".akademik">Akademik</li>
-              <li data-filter=".non-akademik">Non-Akademik</li>
-              <li data-filter=".beasiswa">Beasiswa</li>
+              <?php foreach ($data['kategori'] as $key) {?>
+                <li data-filter=".<?php echo str_replace(" ","-",$key->nama_kat_artikel)?>"><?php echo $key->nama_kat_artikel?></li>
+              <?php }?>
             </ul>
             <div class="row portfolio-container berita">
-                <div class="col-lg-4 portfolio-item akademik">
+              <?php foreach ($data['berita'] as $key) {?>
+                <div class="col-lg-4 portfolio-item <?php echo str_replace(" ","-",$key->nama_kat_artikel)?>">
                   <div class="item text-center mb-md50">
                     <div class="post-img">
-                      <img src="<?= base_url();?>assets2/img/blog/1.jpg" alt="">
+                      <img src="<?= base_url();?>assets/photo/berita/<?php echo $key->foto?>" alt="">
                       <div class="date">
                         <a href="#0">
                           <span>06</span>
@@ -244,13 +245,15 @@
                     </div>
                     <div class="content">
                       <span class="tag">
-                        <a href="#0">WordPress</a>
+                        <a href="#0"><?php echo $key->nama_kat_artikel?></a>
                       </span>
-                      <h5><a href="#0">48 Best WordPress Themes</a></h5>
-                      <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the dummy text ever</p>
+                      <h5><a href="#0"><?php echo $key->judul ?></a></h5>
+                      <p><?php $a = $key->deskripsi; echo substr(strip_tags($a),0,50) ?></p>
                     </div>
                   </div>
                 </div>
+              <?php }?>
+                
 
                 <div class="col-lg-4 portfolio-item non-akademik">
                   <div class="item text-center mb-md50">

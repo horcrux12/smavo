@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2020 at 05:22 AM
--- Server version: 10.1.13-MariaDB
+-- Generation Time: 28 Jan 2020 pada 06.22
+-- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_about`
+-- Struktur dari tabel `tb_about`
 --
 
 CREATE TABLE `tb_about` (
@@ -35,16 +35,16 @@ CREATE TABLE `tb_about` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_about`
+-- Dumping data untuk tabel `tb_about`
 --
 
 INSERT INTO `tb_about` (`id`, `visi`, `misi`, `plan`, `deskripsi`) VALUES
-(1, '<p style="line-height: 1.4;"><style="text-align: center;="" line-height:="" 1.4;"="" courier="" new",="" monospace;="" font-size:="" 14px;="" 19px;="" white-space:="" pre;"=""><span style="text-align: center;">Terwujudnya Warga Sekolah Yang Berakhlak Mulia, Mandiri, BerwawasanLingkungan, Dan Unggul Dalam Ipteks (Ilmu Pengetahuan Teknologi Dan Seni)</span><br></style="text-align:></p><p></p><p class="MsoNormal"><o:p></o:p></p><p></p>', '<ol><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Meningkatkan&nbsp; keimanan,dan ketakwaan untuk mewujudkan kepribadian yang&nbsp; utuh.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Meningkatkan&nbsp; penghayatan dan pengamalan terhadap ajaran agama yang dianut.</li><li style="margin-top: 10px; margin-bottom: 0px; margin-left: 10px; line-height: 1.4;">Mendorong seluruh elemen&nbsp; sekolah untuk mengenali potensi dirinya.</li></ol>', 'Tujuan', '<div style="text-align: center; line-height: 1.5;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan </div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">ISO 2001 seperti yang diamanatkan dalam Undang-Undang  Nomor 20 tahun 2003 tentang Sisdiknas.</div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten,Propinsi, Nasional maupun Internasional, </div><div style="text-align: center; line-height: 1.4;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"="">yang tidak meninggalkan budaya lokal yang bernuansa Islami.</div>');
+(1, 'Terwujudnya Warga Sekolah Yang Berakhlak Mulia, Mandiri, BerwawasanLingkungan, Dan Unggul Dalam Ipteks (Ilmu Pengetahuan Teknologi Dan Seni)', '1. Meningkatkan keimanan,dan ketakwaan untuk mewujudkan kepribadian yang utuh. \r\n2. Meningkatkan penghayatan dan pengamalan terhadap ajaran agama yang dianut. \r\n3. Mendorong seluruh elemen sekolah untuk mengenali potensi dirinya.', 'Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem ', 'SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang Nomor 20 tahun 2003 tentang Sisdiknas. Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten,Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami.');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_berita`
+-- Struktur dari tabel `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -59,7 +59,7 @@ CREATE TABLE `tb_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_berita`
+-- Dumping data untuk tabel `tb_berita`
 --
 
 INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`, `penulis`, `deskripsi`, `foto`, `tanggal`) VALUES
@@ -69,7 +69,7 @@ INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`
 ('BR27012020004', 'KTA002', NULL, 'Kunjungan Pihak Institut Francis di Indonesia ke Smavo', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Hari Selasa tanggal 4 Oktober 2019 tepatnya pukul 09. 20 WIB SMA Negeri 2 Cibinong mendapat kunjungan Ibu Tristia Wihatni (Manajer) dan Coline (natif) dari Institut Français d’ Indonésie (IFI) Thamrin Jakarta.Kunjungan tersebut merupakan bagian dari apresiasi IFI kepada siswa SMA Negeri 2 Cibinong, karena beberapa waktu yang lalu telah menjadi juara umum lomba Dikte dan Pengetahuan Umum Negara Prancis se-Jabodetabek (Muhammad Rahmansyah dan Gabrielle Ivanca kelas Bahasa angkatan 2018-2019). Juga semakin bertambahnya siswa SMAVO yang melanjutkan pendidikan ke Negara Mode nan Romantis itu. Maka pihak IFI akan memberikan layanan yang lebih kepada SMAVO salah satunya adalah dengan kunjungan natif ke sekolah bahkan ikut berkolaborasi dalam proses KBM di kelas untuk memberi motivasi dan wawasan bahwa kemampuan berbahasa asing dapat mengembangkan potensi dan kesempatan yang lebih di masa yang akan datang, terutama dalam bidang dunia kerja.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Coline merasa sangat bahagia dapat berkunjung dan mengenal lebih dekat lagi siswa yang belajar bahasa Prancis. Menurut beliau siswa SMAVO sangat antusias dan cepat tanggap dalam menerima pelajaran, terutama keramahtamahannya. Dan membuat beliau ingin kembali mengunjungi sekolah kami.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Mengingat SMA Negeri 2 Cibinong memiliki 17 kelas dari kelas X sampai kelas XII yang belajar bahasa Prancis (LM) kurang lebih ada sekitar 442 siswa, maka ibu Tristia merasa perlu menjembatani siswa yang berminat untuk melanjutkan pendidikan ke negara Prancis dengan mempermudah dan mewadahi ujian bahasa Prancis  DELF SCOLAIRE (yang merupakan salah satu persyaratannya). Beliau bersedia untuk menyelenggarakannya di SMAVO.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;">Tahun ini alumni ada tiga orang siswa yang sedang mempersiapkan untuk melanjutkan pendidikan ke Prancis: Muhammad Rahmansyah, Gabriella Ivanca dan Malahati. Semoga tahun-tahun ke depannya akan bertambah lagi alumni SMA Negeri 2 Cibinong yang akan melanjutkan pendidikan ke negara tersebut. <em>Merci beaucoup Mme Tia et Coline pour votre visite</em>..    </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4274 note-float-right" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0185_.jpg" alt="DSC_0185_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: right; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4273" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0182_.jpg" alt="DSC_0182_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4272" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0180_.jpg" alt="DSC_0180_" width="3561" height="2358" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4271" src="http://sman2cibinong.sch.id/wp-content/uploads/2019/10/DSC_0192_.jpg" alt="DSC_0192_" width="3696" height="2448" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: "Source Sans Pro", sans-serif;"> </p>', 'DSC_0179_1-805x503.jpg', '2020-01-27 17:42:00');
 
 --
--- Triggers `tb_berita`
+-- Trigger `tb_berita`
 --
 DELIMITER $$
 CREATE TRIGGER `tanggal` BEFORE INSERT ON `tb_berita` FOR EACH ROW BEGIN
@@ -89,7 +89,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_galeri`
+-- Struktur dari tabel `tb_galeri`
 --
 
 CREATE TABLE `tb_galeri` (
@@ -99,7 +99,7 @@ CREATE TABLE `tb_galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_galeri`
+-- Dumping data untuk tabel `tb_galeri`
 --
 
 INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
@@ -112,7 +112,7 @@ INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_guru`
+-- Struktur dari tabel `tb_guru`
 --
 
 CREATE TABLE `tb_guru` (
@@ -127,7 +127,7 @@ CREATE TABLE `tb_guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_guru`
+-- Dumping data untuk tabel `tb_guru`
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
@@ -217,7 +217,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jabatan`
+-- Struktur dari tabel `tb_jabatan`
 --
 
 CREATE TABLE `tb_jabatan` (
@@ -226,7 +226,7 @@ CREATE TABLE `tb_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_jabatan`
+-- Dumping data untuk tabel `tb_jabatan`
 --
 
 INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
@@ -248,7 +248,7 @@ INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kat_artikel`
+-- Struktur dari tabel `tb_kat_artikel`
 --
 
 CREATE TABLE `tb_kat_artikel` (
@@ -257,7 +257,7 @@ CREATE TABLE `tb_kat_artikel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kat_artikel`
+-- Dumping data untuk tabel `tb_kat_artikel`
 --
 
 INSERT INTO `tb_kat_artikel` (`id_kat_artikel`, `nama_kat_artikel`) VALUES
@@ -269,7 +269,7 @@ INSERT INTO `tb_kat_artikel` (`id_kat_artikel`, `nama_kat_artikel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kat_profil`
+-- Struktur dari tabel `tb_kat_profil`
 --
 
 CREATE TABLE `tb_kat_profil` (
@@ -278,7 +278,7 @@ CREATE TABLE `tb_kat_profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kat_profil`
+-- Dumping data untuk tabel `tb_kat_profil`
 --
 
 INSERT INTO `tb_kat_profil` (`id_kat_profil`, `nama_kat_profil`) VALUES
@@ -295,7 +295,7 @@ INSERT INTO `tb_kat_profil` (`id_kat_profil`, `nama_kat_profil`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kat_siswa`
+-- Struktur dari tabel `tb_kat_siswa`
 --
 
 CREATE TABLE `tb_kat_siswa` (
@@ -304,7 +304,7 @@ CREATE TABLE `tb_kat_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kat_siswa`
+-- Dumping data untuk tabel `tb_kat_siswa`
 --
 
 INSERT INTO `tb_kat_siswa` (`id_kat_siswa`, `nama_kat_siswa`) VALUES
@@ -316,7 +316,7 @@ INSERT INTO `tb_kat_siswa` (`id_kat_siswa`, `nama_kat_siswa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kemitraan`
+-- Struktur dari tabel `tb_kemitraan`
 --
 
 CREATE TABLE `tb_kemitraan` (
@@ -327,7 +327,7 @@ CREATE TABLE `tb_kemitraan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kemitraan`
+-- Dumping data untuk tabel `tb_kemitraan`
 --
 
 INSERT INTO `tb_kemitraan` (`id`, `nama`, `foto`, `link_website`) VALUES
@@ -343,7 +343,7 @@ INSERT INTO `tb_kemitraan` (`id`, `nama`, `foto`, `link_website`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kontak`
+-- Struktur dari tabel `tb_kontak`
 --
 
 CREATE TABLE `tb_kontak` (
@@ -357,7 +357,7 @@ CREATE TABLE `tb_kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Triggers `tb_kontak`
+-- Trigger `tb_kontak`
 --
 DELIMITER $$
 CREATE TRIGGER `tgl` BEFORE INSERT ON `tb_kontak` FOR EACH ROW BEGIN
@@ -377,7 +377,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_mapel`
+-- Struktur dari tabel `tb_mapel`
 --
 
 CREATE TABLE `tb_mapel` (
@@ -386,7 +386,7 @@ CREATE TABLE `tb_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_mapel`
+-- Dumping data untuk tabel `tb_mapel`
 --
 
 INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`) VALUES
@@ -413,7 +413,7 @@ INSERT INTO `tb_mapel` (`id_mapel`, `nama_mapel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_organisasi`
+-- Struktur dari tabel `tb_organisasi`
 --
 
 CREATE TABLE `tb_organisasi` (
@@ -424,7 +424,7 @@ CREATE TABLE `tb_organisasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_organisasi`
+-- Dumping data untuk tabel `tb_organisasi`
 --
 
 INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`, `deskripsi`, `foto`) VALUES
@@ -438,7 +438,7 @@ INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`, `deskripsi`, `f
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_profil`
+-- Struktur dari tabel `tb_profil`
 --
 
 CREATE TABLE `tb_profil` (
@@ -452,7 +452,7 @@ CREATE TABLE `tb_profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_profil`
+-- Dumping data untuk tabel `tb_profil`
 --
 
 INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskripsi`, `foto`, `tgl_update`) VALUES
@@ -467,7 +467,7 @@ INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskri
 ('PR13012020009', 'KTP009', 'USR001', 'Kontak SMA Negeri 2 Cibinong', '<span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Jl. Karadenan No. 05</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Cibinong Bogor 16913 Jawa Barat</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Telp/Fax. (0251) 8654 347</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Email. info@sman2cibinong.sch.id</span>', 'logo.png', '2020-01-23 12:22:50');
 
 --
--- Triggers `tb_profil`
+-- Trigger `tb_profil`
 --
 DELIMITER $$
 CREATE TRIGGER `tgl_update` BEFORE INSERT ON `tb_profil` FOR EACH ROW BEGIN
@@ -487,7 +487,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_sambutan`
+-- Struktur dari tabel `tb_sambutan`
 --
 
 CREATE TABLE `tb_sambutan` (
@@ -498,7 +498,7 @@ CREATE TABLE `tb_sambutan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_sambutan`
+-- Dumping data untuk tabel `tb_sambutan`
 --
 
 INSERT INTO `tb_sambutan` (`id`, `nama_kepsek`, `sambutan`, `foto`) VALUES
@@ -507,7 +507,7 @@ INSERT INTO `tb_sambutan` (`id`, `nama_kepsek`, `sambutan`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_siswa`
+-- Struktur dari tabel `tb_siswa`
 --
 
 CREATE TABLE `tb_siswa` (
@@ -522,7 +522,7 @@ CREATE TABLE `tb_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_siswa`
+-- Dumping data untuk tabel `tb_siswa`
 --
 
 INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_organisasi`, `id_user`, `judul`, `deskripsi`, `foto`, `tanggal_update`) VALUES
@@ -530,7 +530,7 @@ INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_organisasi`, `id_user`
 ('SW24012020002', 'KTS004', NULL, 'USR001', 'Aturan Akademik', 'Aturan Akademik', '', '2020-01-25 12:31:11');
 
 --
--- Triggers `tb_siswa`
+-- Trigger `tb_siswa`
 --
 DELIMITER $$
 CREATE TRIGGER `tanggal_update` BEFORE INSERT ON `tb_siswa` FOR EACH ROW BEGIN
@@ -550,7 +550,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_slider`
+-- Struktur dari tabel `tb_slider`
 --
 
 CREATE TABLE `tb_slider` (
@@ -562,7 +562,7 @@ CREATE TABLE `tb_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_slider`
+-- Dumping data untuk tabel `tb_slider`
 --
 
 INSERT INTO `tb_slider` (`id`, `judul_utama`, `sub_judul`, `deskripsi`, `foto`) VALUES
@@ -571,7 +571,7 @@ INSERT INTO `tb_slider` (`id`, `judul_utama`, `sub_judul`, `deskripsi`, `foto`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_statistik`
+-- Struktur dari tabel `tb_statistik`
 --
 
 CREATE TABLE `tb_statistik` (
@@ -587,7 +587,7 @@ CREATE TABLE `tb_statistik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_statistik`
+-- Dumping data untuk tabel `tb_statistik`
 --
 
 INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `online`, `browser`, `browser_version`, `hostname`, `os_name`) VALUES
@@ -752,7 +752,7 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -765,7 +765,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `hak_akses`, `foto`) VALUES
@@ -936,11 +936,11 @@ ALTER TABLE `tb_slider`
 ALTER TABLE `tb_statistik`
   MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tb_berita`
+-- Ketidakleluasaan untuk tabel `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD CONSTRAINT `tb_berita_ibfk_2` FOREIGN KEY (`id_kat_artikel`) REFERENCES `tb_kat_artikel` (`id_kat_artikel`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -948,21 +948,21 @@ ALTER TABLE `tb_berita`
   ADD CONSTRAINT `tb_berita_ibfk_5` FOREIGN KEY (`id_organisasi`) REFERENCES `tb_organisasi` (`id_organisasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_guru`
+-- Ketidakleluasaan untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tb_jabatan` (`id_jabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_profil`
+-- Ketidakleluasaan untuk tabel `tb_profil`
 --
 ALTER TABLE `tb_profil`
   ADD CONSTRAINT `tb_profil_ibfk_3` FOREIGN KEY (`id_kat_profil`) REFERENCES `tb_kat_profil` (`id_kat_profil`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_profil_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_siswa`
+-- Ketidakleluasaan untuk tabel `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
   ADD CONSTRAINT `tb_siswa_ibfk_1` FOREIGN KEY (`id_kat_siswa`) REFERENCES `tb_kat_siswa` (`id_kat_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
