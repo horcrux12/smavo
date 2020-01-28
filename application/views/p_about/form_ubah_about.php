@@ -13,28 +13,28 @@
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Visi</label>
     <div class="col-sm-8">
-      <textarea name="isi1" id="isi1" ><?php echo $isi1;?></textarea>
+      <textarea name="isi1" id="isi1" cols="100" rows="15"><?php echo $isi1;?></textarea>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Misi</label>
     <div class="col-sm-8">
-      <textarea name="isi2" id="isi2" ><?php echo $isi2;?></textarea>
+      <textarea name="isi2" id="isi2"cols="100" rows="15" ><?php echo $isi2;?></textarea>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Tujuan</label>
     <div class="col-sm-8">
-      <textarea name="isi3" id="isi3" ><?php echo $isi3;?></textarea>
+      <textarea name="isi3" id="isi3" cols="100" rows="15"><?php echo $isi3;?></textarea>
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
     <div class="col-sm-8">
-      <textarea name="isi4" id="isi4" ><?php echo $isi4;?></textarea>
+      <textarea name="isi4" id="isi4"cols="100" rows="15" ><?php echo $isi4;?></textarea>
     </div>
   </div>
   <br>
@@ -52,7 +52,7 @@
 <!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function() {
     $('#isi1').summernote({
       height: "300px",
@@ -315,4 +315,4 @@
       });
     }
   });
-</script>
+</script> -->
