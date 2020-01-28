@@ -13,6 +13,15 @@
 			return $query->result();
 		}
 
+		function getDataDESC ($table,$by)
+		{
+			$this->db->select('*');
+			$this->db->from($table);
+			$this->db->order_by($by,'DESC');
+			$query = $this->db->get();
+			return $query->result();
+		}
+
 		function getDataLimit ($table,$lim,$by)
 		{
 			$this->db->select('*');

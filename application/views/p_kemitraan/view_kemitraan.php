@@ -44,7 +44,6 @@ if (!empty($info_hapus)) {
 		<div class="table-header">
 			<?php echo $sub_judul ?>
 		</div>
-s
 		<!-- div.table-responsive -->
 
 		<!-- div.dataTables_borderWrap -->

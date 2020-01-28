@@ -52,12 +52,13 @@
 		 }
 
 
-		 public function tampil_berita() 
+		public function tampil_berita() 
 		{
 			$this->db->select('
 			tb_berita.*, tb_kat_artikel.id_kat_artikel AS id_kat_artikel, tb_kat_artikel.nama_kat_artikel, tb_user.id_user AS penulis, tb_user.nama
 		');
 		$this->db->from('tb_berita');
+		$this->db->order_by('tanggal','DESC');
 		// $this->db->where('tb_berita.id_kat_artikel',$where);
 		$this->db->join('tb_kat_artikel','tb_berita.id_kat_artikel = tb_kat_artikel.id_kat_artikel');
 		$this->db->join('tb_user','tb_berita.penulis = tb_user.id_user');
@@ -69,6 +70,7 @@
 				tb_berita.*, tb_kat_artikel.id_kat_artikel AS id_kat_artikel, tb_kat_artikel.nama_kat_artikel, tb_user.id_user AS penulis, tb_user.nama
 			');
 			$this->db->from('tb_berita');
+			$this->db->order_by('tanggal','DESC');
 			$this->db->where('tb_berita.id_kat_artikel',$where);
 			$this->db->join('tb_kat_artikel','tb_berita.id_kat_artikel = tb_kat_artikel.id_kat_artikel');
 			$this->db->join('tb_user','tb_berita.penulis = tb_user.id_user');
