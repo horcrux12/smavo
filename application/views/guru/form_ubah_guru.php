@@ -140,7 +140,7 @@ if(!empty($info_gagal))
             <option <?= $selected?> value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
             <?php } ?>
               </select>
-              <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i>
+              <!-- <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i> -->
               </div>
               </div>
               <br>
