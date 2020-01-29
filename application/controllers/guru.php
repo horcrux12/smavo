@@ -14,7 +14,6 @@
 		
 		public function index()
 		{
-			
 			$konten['css']			= '<link rel="stylesheet" href="'.base_url().'assets/css/colorbox.min.css" />';
 			$konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
@@ -36,6 +35,7 @@
 					reposition: true,
 					scalePhotos: true,
 					scrolling: false,
+					width : auto;
 					height : auto;
 					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
 					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
@@ -71,7 +71,6 @@
 			// $konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
 			// print_r($konten['data']);
 			$this->load->view('v_dashboard',$konten);
-
 		}
 
 
@@ -86,7 +85,6 @@
 			<script src="'.base_url().'assets/js/autosize.min.js"></script>
 			<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
 			<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
-			
 			
 			<script>
 				jQuery(function($) {

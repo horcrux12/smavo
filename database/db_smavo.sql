@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 Jan 2020 pada 06.22
+-- Generation Time: 29 Jan 2020 pada 05.36
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -89,6 +89,32 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_fasilitas`
+--
+
+CREATE TABLE `tb_fasilitas` (
+  `id` char(6) NOT NULL,
+  `id_kat_fasilitas` char(6) NOT NULL,
+  `foto` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_fasilitas`
+--
+
+INSERT INTO `tb_fasilitas` (`id`, `id_kat_fasilitas`, `foto`) VALUES
+('FSL001', 'FSL001', 'DSC_02271.jpg'),
+('FSL002', 'FSL001', 'DSC_0228.jpg'),
+('FSL003', 'FSL001', 'DSC_0244.jpg'),
+('FSL004', 'FSL001', 'DSC_0246.jpg'),
+('FSL005', 'FSL001', 'DSC_0250.jpg'),
+('FSL006', 'FSL002', 'DSC_00921.jpg'),
+('FSL007', 'FSL002', 'DSC_01071.jpg'),
+('FSL008', 'FSL002', 'DSC_0105.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_galeri`
 --
 
@@ -107,7 +133,8 @@ INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (2, 'BR25012020001', '_DSC0132.JPG'),
 (3, 'BR26012020002', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg'),
 (4, 'BR27012020003', 'IMG-20200114-WA0009-805x503.jpg'),
-(5, 'BR27012020004', 'DSC_0179_1-805x503.jpg');
+(5, 'BR27012020004', 'DSC_0179_1-805x503.jpg'),
+(6, 'BR28012020005', '201204031420564Zga.jpg');
 
 -- --------------------------------------------------------
 
@@ -131,14 +158,14 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_lahir`, `id_jabatan`, `id_mapel`, `foto`) VALUES
-('GR001', '       ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', '_amsori.JPG'),
-('GR002', '    ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP001', 'AHMAD_RIJKON.JPG'),
-('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT006', 'MP001', 'default.jpg'),
-('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP001', 'default.jpg'),
-('GR006', '', 'Artanti, S.Si.', 'BANDUNG', '1972-06-12', 'JBT006', 'MP001', 'default.jpg'),
-('GR007', '1963020819880310', 'Drs. Bambang Sumanto', 'KLATEN', '1963-02-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR008', '1969110819951210', 'DR.H. Bambang Supriyadi, M.Pd.', 'PURWOREJO', '1969-11-08', 'JBT006', 'MP001', 'default.jpg'),
+('GR001', '           ', 'Ahmad Sobari, S.Ag', 'BOGOR', '1969-11-11', 'JBT006', 'MP001', 'DRS__AHMAD_SOBARI.JPG'),
+('GR002', '      ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP005', 'AIRIS_RIZKIA.JPG'),
+('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT002', 'MP004', 'ANI_ROHAENI,_S_PD_,_M_PD.JPG'),
+('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT005', 'MP010', 'default.jpg'),
+('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP012', 'default.jpg'),
+('GR006', '', 'Artanti, S.Si.', 'BANDUNG', '1972-06-12', 'JBT006', 'MP011', 'ARTANTI.JPG'),
+('GR007', '1963020819880310', 'Drs. Bambang Sumanto', 'KLATEN', '1963-02-08', 'JBT006', 'MP007', 'DRS__BAMBANG_SUMANTO.JPG'),
+('GR008', '1969110819951210', 'DR.H. Bambang Supriyadi, M.Pd.', 'PURWOREJO', '1969-11-08', 'JBT001', 'MP002', 'BAMBANG_SUPRIYADI.JPG'),
 ('GR009', '', 'Budi Setiawan, S.Pd.', 'BOGOR', '1979-04-03', 'JBT006', 'MP001', 'default.jpg'),
 ('GR010', '1980051020121120', 'Chintalya Magdalena,S.T. M.M', 'JAKARTA', '1980-05-10', 'JBT006', 'MP001', 'default.jpg'),
 ('GR011', '1968120419910120', 'Cony Nugraheni,S.Pd', 'CILACAP', '1968-12-04', 'JBT006', 'MP001', 'default.jpg'),
@@ -269,6 +296,33 @@ INSERT INTO `tb_kat_artikel` (`id_kat_artikel`, `nama_kat_artikel`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_kat_fasilitas`
+--
+
+CREATE TABLE `tb_kat_fasilitas` (
+  `id` char(6) NOT NULL,
+  `nama_fasilitas` varchar(35) NOT NULL,
+  `deskripsi` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_kat_fasilitas`
+--
+
+INSERT INTO `tb_kat_fasilitas` (`id`, `nama_fasilitas`, `deskripsi`) VALUES
+('FSL001', 'Lapangan', '<p>lapanagan</p>'),
+('FSL002', 'Lab Biologi', '<p>Lab Biologi</p>'),
+('FSL003', 'Lab Fisika', 'Lab Fisika'),
+('FSL004', 'Lab Kimia', '<p>Lab Kimia</p>'),
+('FSL005', 'Lab Komputer', '<p>Lab Komputer</p>'),
+('FSL006', 'Ruang Kelas', '<p>ruang kelas</p>'),
+('FSL007', 'Perpustakaan', '<p>perpustkaan</p>'),
+('FSL008', 'Ruang UKS', '<p>uk</p>'),
+('FSL009', 'Taman', '<p>taman</p>');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_kat_profil`
 --
 
@@ -287,9 +341,8 @@ INSERT INTO `tb_kat_profil` (`id_kat_profil`, `nama_kat_profil`) VALUES
 ('KTP003', 'Misi'),
 ('KTP004', 'Tujuan'),
 ('KTP005', 'Mars Sekolah'),
-('KTP006', 'Struktur Organisai'),
+('KTP006', 'Struktur Organisasi'),
 ('KTP007', 'Sambutan'),
-('KTP008', 'Fasilitas'),
 ('KTP009', 'Kontak Kami');
 
 -- --------------------------------------------------------
@@ -428,6 +481,7 @@ CREATE TABLE `tb_organisasi` (
 --
 
 INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`, `deskripsi`, `foto`) VALUES
+('FSL001', 'Lapangan', '<p>lapangan1</p>', ''),
 ('ORG001', 'Osis', '', NULL),
 ('ORG002', 'MPK', '', NULL),
 ('ORG003', 'Pramuka', '', NULL),
@@ -463,7 +517,6 @@ INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskri
 ('PR13012020005', 'KTP005', 'USR001', 'Mars SMA Negeri 2 Cibinong', 'Mars Sekolah', 'logo.png', '2020-01-23 12:22:11'),
 ('PR13012020006', 'KTP006', 'USR001', 'Struktur Organisasi SMA Negeri 2 Cibinong', '<p>Berikut adalah bagan struktur organisasi SMA Negeri 2 Cibinong :</p><p><img src="			\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/image2.png" style="width: 50%;"><br></p>', 'logo.png', '2020-01-23 12:22:23'),
 ('PR13012020007', 'KTP007', 'USR001', 'Sambutan Kepala Sekolah SMA Negeri 2 Cibinong', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; text-align: center;"><img src="			\r\n		\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/berita/BAMBANG_SUPRIYADI.JPG" style="width: 362px; float: left; height: 542.45px;" class="note-float-left"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px; margin-right: auto; margin-left: auto; width: 227.124px;"></span></font></p><div style="text-align: justify;"><font color="#333333" face="Source Sans Pro, sans-serif"><span style="font-size: 15px;"><br></span></font></div><div style="text-align: justify;"><br></div><p></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Bismillahirahmanirahim</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Assalamualaikum Warahmatullahi Wabarakatuh</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Innal hamda lillah wa sholatu wa salamu ‘ala rasulillah, segala puji bagi Allah seru sekalian alam yang telah melimpahkan kenikmatan, menurunkan taufik, hidayah dan inayahnya sehingga&nbsp; mampu melaksanakan tugas, mengemban amanah, dan mengembangkan dunia pendidikan hingga saat ini. Salam penghormatan bagi insan pilihan, kekasih al-Halim, Muhammad SAW yang penyantun.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang&nbsp; Nomor 20 tahun 2003 tentang Sisdiknas. Akhirnya cita-cita jadi sekolah impian masyarakat Kabupaten Bogor (sebagai Kabupaten Termaju di Indonesia) yaitu berprestasi di tingkat Kabupaten, Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami dapat terwujud. Kami sudah bertekad untuk mewujudkan keinginan&nbsp; itu dengan slogan “Man Jadda Wajada” siapa yang bersungguh-sunguh pasti akan berhasil. “Man Shobaru Zhafira” siapa yang bersabar akan beruntung. “Man Yazro Yahsud”&nbsp; siapa yang menanam akan menuai yang ditanam. Kalimat inilah yang jadi motivasi untuk melakukan perubahan internal dan eksternal. Komitmen kami tidak mungkin terwujud tanpa bantuan, dorongan&nbsp; dan motivasi dari pemerintah baik pusat maupun daerah melalui Kemendikbud, Dinas Pendidikan Provinsi Jawa Barat ataupun Dinas Pendidikan Kabupaten Bogor. Apalah artinya sebuah lembaga pendidikan tanpa adanya regulasi dan bantuan dari pengambil kebijakan terutama dalam pemenuhan standar sarana prasarana, standar pendidik dan tenaga kependidikan dan yang paling utama dan pertama standar biaya.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Anak – anakku yang saya cintai dan banggakan,</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">“Pendidikan adalah tiket ke masa depan. Hari esok dimiliki oleh orang-orang yang mempersiapkan dirinya sejak hari ini” – Malcolm X. “Pembelajaran tidak didapat dengan kebetulan. Ia harus dicari dengan semangat dan disimak dengan tekun” – Abigail Adams.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Filosofi pendidikan adalah “change” atau perubahan. Karenanya bila kita tidak mengikuti perubahan atau perkembangan pasti akan ketinggalan. Perlu memiliki sifat untuk selalu mau berjuang dan bekerja keras. Berjuang untuk mencapai prestasi akademis, berjuang untuk mendapatkan tempat di perguruan tinggi, berjuang untuk mendapatkan tempat yang layak di masyarakat dan tentu saja berjuang demi agama, kemajuan bangsa/negara dan kebahagian dunia/akherat. Mudah-mudahan dengan ilmu, bisa menjadi bekal untuk kehidupan kalian dimasa depan nanti. Kalian adalah siswa-siswi yang telah kami ajarkan nilai-nilai karakter budaya bangsa. Perlihatkanlah nilai-nilai itu kepada masyarakat luas agar itu menjadi ciri khas kita. Jagalah nama baik sekolah kita.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Dua kalimat bijak di atas mengimpirasi kita tentang pentingnya pendidikan. Saat ini pasti kalian semua sudah memantapkan diri untuk memilih perguruan tinggi, baik melalui jalur SNMPTN, SBMPTN maupun seleksi mandiri. Bagi kalian yang belum masuk ke perguruan tinggi yang kalian inginkan, jangan putus asa, teruslah semangat dalam menjalani proses belajar. Mungkin perguruan tinggi itulah yang menurut Allah SWT cocok untuk kalian. Ingat, tidak semua orang sukses dilihat dari mana perguruan tingginya, program studinya, semua orang bisa sukses asalkan orang tersebut berusaha secara sungguh–sungguh untuk memiliki kompensi baik pengetahuan, ketrampilan maupun kepribadian secara baik.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Selamat berjuang, anak-anakku, jadikan pengalaman belajar di SMAVO sebagai catatan perjalanan hidup yang kalian kenangkan dengan mengambil ibrah yang positif. Selamat mengisi kehidupan di masyarakat yang lebih luas, semoga Allah merahmati kita semua dengan kemudahan dan kebaikan hidup, sehingga kelak kita beruntung menjadi manusia yang ringan langkahnya menuju akhiratNya, amin.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Wassalamualaikum Warahmatullahi Wabarakatuh.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"="">Kepala Sekolah</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: " source="" sans="" pro",="" sans-serif;="" font-size:="" 15px;="" text-align:="" justify;"=""><strong>Dr. Bambang Supriyadi, M.Pd.</strong></p>', 'logo2.png', '2020-01-28 00:44:30'),
-('PR13012020008', 'KTP008', 'USR001', 'Fasilitas SMA Negeri 2 Cibinong', '<p>fasilitas</p>', '', '2020-01-25 13:14:35'),
 ('PR13012020009', 'KTP009', 'USR001', 'Kontak SMA Negeri 2 Cibinong', '<span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Jl. Karadenan No. 05</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Cibinong Bogor 16913 Jawa Barat</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Telp/Fax. (0251) 8654 347</span><br style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;"><span style="font-family: &quot;Source Sans Pro&quot;, sans-serif; font-size: 15px;">Email. info@sman2cibinong.sch.id</span>', 'logo.png', '2020-01-23 12:22:50');
 
 --
@@ -747,7 +800,8 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (155, '::1', '2020-01-27 13:52:44', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (156, '::1', '2020-01-27 18:30:08', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (157, '::1', '2020-01-27 18:30:22', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
-(158, '::1', '2020-01-27 18:30:37', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
+(158, '::1', '2020-01-27 18:30:37', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(159, '::1', '2020-01-28 06:38:28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -793,6 +847,13 @@ ALTER TABLE `tb_berita`
   ADD KEY `id_organisasi` (`id_organisasi`);
 
 --
+-- Indexes for table `tb_fasilitas`
+--
+ALTER TABLE `tb_fasilitas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_kat_fasilitas` (`id_kat_fasilitas`);
+
+--
 -- Indexes for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
@@ -818,6 +879,12 @@ ALTER TABLE `tb_jabatan`
 --
 ALTER TABLE `tb_kat_artikel`
   ADD PRIMARY KEY (`id_kat_artikel`);
+
+--
+-- Indexes for table `tb_kat_fasilitas`
+--
+ALTER TABLE `tb_kat_fasilitas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_kat_profil`
@@ -909,12 +976,12 @@ ALTER TABLE `tb_about`
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
 ALTER TABLE `tb_kemitraan`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --
@@ -934,7 +1001,7 @@ ALTER TABLE `tb_slider`
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -946,6 +1013,12 @@ ALTER TABLE `tb_berita`
   ADD CONSTRAINT `tb_berita_ibfk_2` FOREIGN KEY (`id_kat_artikel`) REFERENCES `tb_kat_artikel` (`id_kat_artikel`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_berita_ibfk_4` FOREIGN KEY (`penulis`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_berita_ibfk_5` FOREIGN KEY (`id_organisasi`) REFERENCES `tb_organisasi` (`id_organisasi`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tb_fasilitas`
+--
+ALTER TABLE `tb_fasilitas`
+  ADD CONSTRAINT `tb_fasilitas_ibfk_1` FOREIGN KEY (`id_kat_fasilitas`) REFERENCES `tb_kat_fasilitas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tb_guru`

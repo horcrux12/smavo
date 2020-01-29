@@ -1,4 +1,10 @@
   <!-- hak akses admin -->
+  <style>
+   .ubah{
+      transform: rotate(90deg) !important
+       }
+  </style>
+  
   <?php 
     if ($this->session->userdata('hak_akses') === 'Administrator'):
  ?>
@@ -28,68 +34,49 @@
                   ( <?php echo $row->id_guru  ;?> )
                 </small>
               </h1>
-            </div><!-- /.page-header -->
-
-
-
-            <div class="row">
-              <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
-                <div class="clearfix">
-                  
-                  </div>
-                  </div>
-                </div>
-
-                
-
+            </div><br><br><br><!-- /.page-header -->
 
                 <div>
                   <div id="user-profile-1" class="user-profile row">
                     <div class="col-xs-12 col-sm-3 center">
                       <div>
-                        <span class="profile-picture">
-                          
-
-                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>>
-
-                          
+                      <?php
+                                $set = getimagesize(base_url().'assets/photo/guru/'.$row->foto);
+                                if ($set) {
+                                  // width
+                                  $ambilst = explode (" ",$set[3]);
+                                  $ambilsts = str_replace('width="',"",$ambilst[0]);
+                                  $ambilstst = str_replace('"',"",$ambilsts);
+                                  if($ambilstst > 1800){
+                                    
+                                    $ubahnya = "ubah";
+                                    // echo '';
+                                  }else{
+                                    
+                                    $ubahnya = "";
+                                  }
+                                }
+                                
+                              ?>  
+                        <span class="profile-picture <?= $ubahnya?>">
+                          <img id="avatar" width="300" class="editable img-responsive" src=<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>>
                         </span>
-
+                        
                         <div class="space-4"></div>
-
                         <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
                           <div class="inline position-relative">
-                            
-                              
-                              <span class="white"><?php echo $row->nama_lengkap;?></span>
-                            
-
+                            <span class="white"><?php echo $row->nama_lengkap;?></span>
                           </div>
                         </div>
                       </div>
-
-                      <div class="space-6"></div>
-
-
-
-                      <div class="profile-contact-info">
-                        
-
-                        <div class="space-6"></div>
-
-                        
-                      </div>
-
-                                          </div>
+                  </div>
+                                
 
                     <div class="col-xs-12 col-sm-9">
-                      <div class="center"></div>
-
-                      <div class="space-12"></div>
-
                       <div class="profile-user-info profile-user-info-striped">
+                        
                         <div class="profile-info-row">
+                          
                           <div class="profile-info-name"> ID Guru </div>
 
                           <div class="profile-info-value">
