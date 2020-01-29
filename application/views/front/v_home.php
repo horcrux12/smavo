@@ -253,50 +253,6 @@
                   </div>
                 </div>
               <?php }?>
-                
-
-                <div class="col-lg-4 portfolio-item non-akademik">
-                  <div class="item text-center mb-md50">
-                    <div class="post-img">
-                      <img src="<?= base_url();?>assets2/img/blog/2.jpg" alt="">
-                      <div class="date">
-                        <a href="#0">
-                          <span>06</span>
-                          <span>Aug</span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <span class="tag">
-                        <a href="#0">ThemeForest</a>
-                      </span>
-                      <h5><a href="#0">Managing Their Own Websites</a></h5>
-                      <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the dummy text ever</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 portfolio-item beasiswa">
-                  <div class="item text-center">
-                    <div class="post-img">
-                      <img src="<?= base_url();?>assets2/img/blog/3.jpg" alt="">
-                      <div class="date">
-                        <a href="#0">
-                          <span>06</span>
-                          <span>Aug</span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <span class="tag">
-                        <a href="#0">Trends</a>
-                      </span>
-                      <h5><a href="#0">Master These Awesome Skills</a></h5>
-                      <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the dummy text ever</p>
-                    </div>
-                  </div>
-                </div>
-
             </div>
           </div>
           <div class="col-lg-4">
@@ -305,6 +261,27 @@
                   <div id="calendar"></div>
                 </div>
           <!-- /.card -->
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-8">
+          <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="javascript:void(0);">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="javascript:void(0);">Next</a>
+                  </li>
+                </ul>
+              </nav>
           </div>
         </div>
       </div>
@@ -350,7 +327,6 @@
       </div>
     </section> 
     <!-- #facts -->
-
     <!--==========================
       Portfolio Section
     ============================-->

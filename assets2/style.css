@@ -39,15 +39,49 @@
 /* ----------------------------------------------------------------
      [ 01 Start Basic ]
 -----------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none !important;
+  list-style: none;
+}
+
+body {
+  color: #00000a;
+  line-height: 1.3;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  word-spacing: 1px;
+  margin: 0;
+}
 
 img {
   width: 100%;
   height: auto;
 }
 
+span, a, a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
 
 .section-head {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .section-head h4 {
   position: relative;
@@ -62,7 +96,7 @@ img {
   content: '';
   width: 1px;
   height: 35px;
-  background: #18D26E;
+  background: #F24259;
   position: absolute;
   left: -1px;
   bottom: 0;
@@ -70,21 +104,6 @@ img {
 .section-head h4 span {
   font-weight: 200;
   padding-bottom: 5px;
-}
-.berita {
-  position: relative;
-  line-height: 1;
-  border-right: 1px solid #eee;
-}
-
-.berita::before{
-  content: '';
-  width: 1px;
-  height: 35px;
-  background: #18D26E;
-  position: absolute;
-  right: -1px;
-  bottom: 0;
 }
 
 .bg-gray {
@@ -107,7 +126,7 @@ img {
 }
 
 .bg-img {
-  background-size: cover !important;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -245,12 +264,8 @@ img {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
-
-.navbar .navbar-nav .nav-link:hover{
-  color: #FFFF00 !important;
-}
 .navbar .navbar-nav .active {
-  color: #FFFF00 !important;
+  color: #F24259 !important;
 }
 
 .nav-scroll {
@@ -261,7 +276,6 @@ img {
   top: -100px;
   left: 0;
   width: 100%;
-  box-shadow: 0px 0px 30px 0 rgba(127, 137, 161, 0.25);
   -webkit-transition: -webkit-transform .5s;
   transition: -webkit-transform .5s;
   transition: transform .5s;
@@ -275,21 +289,6 @@ img {
 .nav-scroll .navbar-nav .nav-link {
   color: #222;
 }
-
-.nav-scroll .navbar-nav .active{
-  color: #DC143C !important;
-}
-
-.nav-scroll .navbar-nav .nav-link:hover{
-  color: #DC143C !important;
-}
-/*.navbar-nav .nav-link.nav-scroll :hover {
-  color: #FF0000;
-}
-.navbar-nav .nav-scroll .active{
-  color: #FF0000;
-}*/
-
 .nav-scroll .navbar-nav .logo {
   padding: 15px 0;
   color: #111;
@@ -297,28 +296,12 @@ img {
 
 .logo {
   padding: 15px 0;
-  width: 70px;
+  width: 100px;
 }
 
 /* ----------------------------------------------------------------
      [ End Navbar ]
 -----------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-     [ 03 Dropdown ]
------------------------------------------------------------------*/
-.dropdown{
-
-}
-
-.dropdown-toggle{
-
-}
-
-.dropdown-menu{
-
-}
-
 /* ----------------------------------------------------------------
      [ 03 Start Header ]
 -----------------------------------------------------------------*/
@@ -996,64 +979,10 @@ img {
 /* ----------------------------------------------------------------
      [ 13 Start Blog ]
 -----------------------------------------------------------------*/
-
-.blog {
-  padding: 60px 0;
-}
-
-.blog #portfolio-flters {
-  padding: 0;
-  margin: 5px 0 35px 0;
-  list-style: none;
-  text-align: center;
-}
-
-.blog #portfolio-flters li {
-  cursor: pointer;
-  margin: 0px 5px 0px 5px;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 12px;
-  line-height: 20px;
-  color: #666666;
-  border-radius: 4px;
-  text-transform: uppercase;
-  background: #fff;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  border-bottom: 1px solid #18d26e;
-}
-
-.blog #portfolio-flters li:hover,
-.blog #portfolio-flters li.filter-active {
-  background: #18d26e;
-  color: #fff;
-}
-
-.blog #portfolio-flters li:last-child {
-  margin-right: 0;
-}
-
-.blog .portfolio-wrap {
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.blog .portfolio-wrap:hover {
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
-}
-
-/*.blog .portfolio-item {
-  position: relative;
-  height: 360px;
-  overflow: hidden;
-}*/
-
 .blog .item {
-  -webkit-box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
-          box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
+  -webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+          box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
   border-radius: 5px;
-  margin-top: 16px;
 }
 .blog .item .post-img {
   position: relative;
@@ -1064,7 +993,6 @@ img {
           transform: scale(1.1);
 }
 .blog .item .post-img img {
-  border-radius: 4px 4px 0 0;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -1077,40 +1005,25 @@ img {
   color: #fff;
   padding: 10px 15px;
   text-align: center;
-} 
-
+}
 .blog .item .post-img .date span {
   display: block;
   font-weight: 700;
   font-size: 12px;
-  color: #fff;
 }
 .blog .item .content {
   padding: 40px 5px;
   background: #fff;
-  -webkit-box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
-          box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
 }
 .blog .item .content .tag {
   color: #F24259;
   font-weight: 600;
-  font-size: 13px;
   margin-bottom: 10px;
-  display: inline-block;
 }
 .blog .item .content h5 {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 15px;
-}
-
-.blog .item .content p {
-  font-size: 12px;
-  margin-bottom: 15px;
-}
-
-.blog .item .content h5 a{
-  color: #000;
 }
 
 .blog-nav {
@@ -1128,7 +1041,7 @@ img {
 
 .min-header {
   height: 50vh;
-  background: #f7f7f7;
+  background: #1c1c1c;
   position: relative;
 }
 .min-header .v-middle{
@@ -1493,7 +1406,26 @@ img {
 /* ----------------------------------------------------------------
      [ End Contact ]
 -----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 16 Start Footer ]
+-----------------------------------------------------------------*/
+footer {
+  background: #111;
+  padding: 80px 0;
+}
+footer .social a {
+  color: #777;
+  font-size: 18px;
+  margin: 15px 10px;
+}
+footer p {
+  color: #777;
+  font-weight: 700;
+}
 
+/* ----------------------------------------------------------------
+     [ End Footer ]
+-----------------------------------------------------------------*/
 /* ----------------------------------------------------------------
  	 [ 17 Responsive ]
 -----------------------------------------------------------------*/
