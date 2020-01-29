@@ -1,5 +1,11 @@
-<script type="text/javascript">
+<style>
+   .ubah{
+      transform: rotate(90deg) !important
+       }
+
+  </style>
   
+<script type="text/javascript">
   function cekform(){
 
       if(!$ ("#id-input-file-2").val())
@@ -67,7 +73,7 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">NIP/NUPTK</label>
               <div class="col-sm-5">
-              <input type="text" class="form-control" name="nip" id="nip"  value="<?php echo $nip; ?> ">
+              <input type="text" class="form-control" name="nip" id="nip"  value="<?php echo $nip; ?>" placeholder="Nomer Induk Pegawai">
               </div>
               </div>
 
@@ -137,6 +143,10 @@ if(!empty($info_gagal))
               <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i>
               </div>
               </div>
+              <br>
+              <br>
+
+                            
 
                 <?php
                 $key = $this->uri->segment(3);
@@ -144,13 +154,32 @@ if(!empty($info_gagal))
                 $query = $this->db->get('tb_guru');
                 foreach ($query->result() as $row) {
                 ?>
+                                
+                                <?php
+                                $set = getimagesize(base_url().'assets/photo/guru/'.$row->foto);
+                                if ($set) {
+                                  // width
+                                  $ambilst = explode (" ",$set[3]);
+                                  $ambilsts = str_replace('width="',"",$ambilst[0]);
+                                  $ambilstst = str_replace('"',"",$ambilsts);
+                                  if($ambilstst > 1800){
+                                    
+                                    $ubahnya = "ubah";
+                            
+                                  }else{
+                                    
+                                    $ubahnya = "";
+                                  }
+                                }
+                                
+                              ?>  
 
 
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="40%" src="<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>"> 
-              <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+              <img id="avatar" class="editable img-responsive <?= $ubahnya?>" width="50%" src="<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>"> 
+              <br><br><br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
               </div>
               </div>   
