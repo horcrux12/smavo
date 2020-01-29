@@ -1,11 +1,4 @@
 
-              <?php 
-              $data = $this->db->get('tb_statistik');
-              foreach ($data->result() as $row) { 
-              ?>
-              <?php $tanggal[]=$row->tanggal ?>
-              <?php $hits[]=$row->hits ?>
-              <?php } ?>
 
             <!-- AREA CHART -->
             <div class="widget-box">
@@ -30,7 +23,7 @@
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-      labels  : <?php echo json_encode($tanggal);?>,
+      labels  : <?php echo $year;?>,
       datasets: [
         {
           label               : 'Digital Goods',
@@ -41,7 +34,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : <?php echo json_encode($hits);?>
+          data                : <?php echo $hit;?>
         },
         {
           label               : 'Digital Goods',
@@ -52,7 +45,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : <?php echo json_encode($hits);?>
+          data                : <?php echo $hit;?>
         },
       ]
     }
