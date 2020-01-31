@@ -48,8 +48,6 @@ class Home extends CI_Controller
 		
 		$this->load->view('front/template/app',$page_content);
 	}
-	
-
 }
 
 ?>
