@@ -22,7 +22,7 @@
                         <thead>
                           <tr>
 
-                            <th class="center">No</th>
+                            <th class="center" width=20px;>No</th>
                             <th class="center">Ip Address</th>
                             <th class="center">Tanggal</th>
                             <th class="center">Browser</th>
@@ -95,7 +95,7 @@
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-      labels  : <?php echo json_encode($tanggal);?>,
+      labels  : <?php echo $year;?>,
       datasets: [
         {
           label               : 'Hits',
@@ -106,7 +106,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : <?php echo json_encode($hits);?>
+          data                : <?php echo $hit;?>
         },
         {
           label               : 'Digital Goods',
@@ -117,7 +117,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : <?php echo json_encode($hits);?>
+          data                : <?php echo $hit;?>
         },
       ]
     }

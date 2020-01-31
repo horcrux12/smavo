@@ -55,7 +55,7 @@
         $this->db->where($field,$where);
         $this->db->update($table,$data);
     	}
-
+			
     	public function delete_data($table,$field,$where) // menghapus data guru
 		{
 			$this->db->where($field,$where);

@@ -10,7 +10,8 @@ class Statistik extends CI_Controller {
     echo "<script>;
     	  document.location='".base_url()."admin/login'</script>";
 		}
-		$this->load->library('user_agent');
+		$this->load->helper('date');
+		
 	}
 
 
@@ -33,19 +34,40 @@ class Statistik extends CI_Controller {
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script src="'.base_url().'assets/js/table.js"></script>';
 			
-			//ambil data ip address pengguna
-			$data['browser'] = $this->agent->browser();
-			$data['browser_version'] = $this->agent->version();
-			$data['os_name'] = $this->agent->platform();
-			$data['ip_address'] = $this->input->ip_address();
-			$data['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-
-			//simpan data ip address user ke db
-			$this->model_dinamic->input_data($data,'tb_statistik');
-			// print_r($data);
-
 			//ambil data dari db untuk ditampilkan
 			$konten['data']			= $this->db->get('tb_statistik');
+			
+			
+			
+			$thn = date('Y');
+			$thn = $thn - 5;
+			for ($i=0; $i < 6; $i++) { 
+				$tahun[$i] = $this->model_statistik->hitCountYear($thn);
+				$year[$i]= strval($thn);
+				$thn++;
+			}
+			foreach ($tahun as $key) {
+				foreach ($key as $koy) {
+					if ($koy->hits == null) {
+						$hits[]= "0";
+					}
+					else {
+						$hits[]= $koy->hits;
+					}
+					
+				}
+			}
+			// print_r($year);
+			$year = json_encode($year);
+			$hits = json_encode($hits);
+			$konten['hit'] = $hits;
+			$konten['year'] = $year;
+
+			// print_r($year);
+			// $tahun = $this->model_statistik->hitCountYear('2015','2017');
+			// $tahun = $this->model_statistik->hitCountYear('2016');
+
+
 			$this->load->view('v_dashboard',$konten);	
 			
 	}

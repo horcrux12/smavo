@@ -9,7 +9,8 @@ class Home extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-        $this->load->helper('url');
+		$this->load->helper('url');
+		$this->load->library('user_agent');
 	}
 	
 	public function index (){
@@ -45,6 +46,27 @@ class Home extends CI_Controller
 		$page_content['data']['sambutan'] 		= $sambutan;
 		$page_content['data']['kategori'] 		= $kategori_A;  
 		
+
+		//ambil data ip address pengguna
+		$data['browser'] = $this->agent->browser();
+		$data['browser_version'] = $this->agent->version();
+		$data['os_name'] = $this->agent->platform();
+		$data['ip_address'] = $this->input->ip_address();
+		$data['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+
+		$data_ini = $this->model_statistik->DataThisDay($data['ip_address'],date('Y-m-d'));
+		
+		if ($data_ini->num_rows()>0) {
+			$data_ini = $data_ini->result();
+			$data_update['id_statistik'] = $data_ini[0]->id_statistik;
+			$data_update['hits'] = $data_ini[0]->hits + 1;
+			$this->model_dinamic->update_data('id_statistik',$data_update['id_statistik'],$data_update,'tb_statistik');
+		}
+		else {
+			$data['tanggal'] = date('Y-m-d');
+
+			$this->model_dinamic->input_data($data,'tb_statistik');
+		}
 		
 		$this->load->view('front/template/app',$page_content);
 	}
