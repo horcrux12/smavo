@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Jan 2020 pada 12.53
+-- Generation Time: 31 Jan 2020 pada 07.57
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -802,7 +802,9 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (157, '::1', '2020-01-28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (158, '::1', '2020-01-28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (159, '::1', '2020-01-28', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
-(160, '::1', '2020-01-29', 5426, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
+(160, '::1', '2020-01-29', 5426, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(161, '::1', '2020-01-30', 5, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(162, '::1', '2020-01-30', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -982,7 +984,7 @@ ALTER TABLE `tb_galeri`
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
 ALTER TABLE `tb_kemitraan`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tb_kontak`
 --
@@ -1002,7 +1004,7 @@ ALTER TABLE `tb_slider`
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
