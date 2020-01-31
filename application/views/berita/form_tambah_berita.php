@@ -55,6 +55,13 @@ if (!empty($info_gagal)) {
   </div>
 
   <div class="form-group">
+    <label class="col-sm-2 control-label">File Dokumen</label>
+    <div class="col-sm-8">
+      <input type="file" id="id-input-file-2" name="file_download" accept=""/>
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Berita" >
@@ -70,7 +77,6 @@ if (!empty($info_gagal)) {
   <br>
   
   <center>
-
     <div class="box-footer">
       <button id="toggle" type="submit" class="btn btn-info btn-small swalDefaultSuccess"> Simpan</button>
       <button type="reset" class="btn btn-danger btn-small">Batal</button>

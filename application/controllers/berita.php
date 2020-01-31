@@ -1,5 +1,4 @@
-	<?php
-use ___PHPSTORM_HELPERS\object;
+	<?php use ___PHPSTORM_HELPERS\object;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -232,58 +231,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		public function simpan() // simpan data berita
 		{
-		  $config['upload_path'] 	= './assets/photo/berita/';
-		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
-		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
-		  $config['encrypt_name']	= FALSE;
-		  $config['overwrite']		= true;
-	     
-	      $this->load->library('upload', $config);
-	      $this->upload->initialize($config);
-			
-		//   print_r($this->upload->do_upload('file_name'));
-
-	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Tidak ada foto yang dipilih');
-	         redirect('admin/berita/tambah-berita/'.$this->input->post('kd_artikel').''); 
-		  } 
-		  else {
-
-			$key = $this->input->post('kode');
-			$data['id_berita'] 			= $this->input->post('kode');
-			$data['id_kat_artikel'] 	= $this->input->post('kd_artikel');
-			// if (! $this->input->post('kd_organisasi')) {
-			// 	$data['id_organisasi']	= null;
-			// }
-			// else{
-			// 	$data['id_organisasi'] =  $this->input->post('kd_organisasi');
-			// }
-			$data['judul'] 				= $this->input->post('jdl');
-			$data['penulis'] 			= $this->input->post('kd_user');
-			$data['deskripsi'] 			= $this->input->post('isi');
-			$data['foto'] 				= $this->upload->data('file_name');
-			$galeri['id_berita']		= $this->input->post('kode');
-			$galeri['foto']				= $this->upload->data('file_name');
-			
-			$this->load->model('model_berita');
-			$query = $this->model_berita->getdata($key);
-				if($query->num_rows()>0)
-				{
-					$this->model_berita->getupdate($key,$data);
-					$this->session->set_flashdata('info','Data berhasil di update');
+				$config['upload_path'] 	  		 = './assets/file/';
+				$config['allowed_types'] 		 = 'docx|pdf|xlsx|pptx|zip|rar';
+				$config['encrypt_name']			 = FALSE;
+				$config['overwrite'] 			 = TRUE;
+				$this->load->library('upload', $config);
+				$this->upload->initialize($config);
+				if (!$this->upload->do_upload('file_download')) {
+					$this->upload->display_errors();
+					return FALSE;
+				}else{
+					unset($config);
+					$config['upload_path'] 		= './assets/photo/berita/';
+					$config['allowed_types'] 	= 'gif|jpg|jpeg|png';
+					$config['encrypt_name']		= FALSE;
+					$config['overwrite']		= true;
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if (!$this->upload->do_upload('file_name')) {
+						$this->upload->display_errors();
+						return FALSE;
+					} else {
+							$key = $this->input->post('kode');
+							$data['id_berita'] 			= $this->input->post('kode');
+							$data['id_kat_artikel'] 	= $this->input->post('kd_artikel');
+							// if (! $this->input->post('kd_organisasi')) {
+							// 	$data['id_organisasi']	= null;
+							// }
+							// else{
+							// 	$data['id_organisasi'] =  $this->input->post('kd_organisasi');
+							// }
+							$data['judul'] 				= $this->input->post('jdl');
+							$data['penulis'] 			= $this->input->post('kd_user');
+							$data['deskripsi'] 			= $this->input->post('isi');
+							$data['foto'] 				= $this->upload->data('file_name');
+							$data['file'] 				= $this->upload->data('file_download');
+							$galeri['id_berita']		= $this->input->post('kode');
+							$galeri['foto']				= $this->upload->data('file_name');
+						
+						
+							$this->load->model('model_berita');
+							$query = $this->model_berita->getdata($key);
+								if($query->num_rows()>0)
+								{
+									$this->model_berita->getupdate($key,$data);
+									$this->session->set_flashdata('info','Data berhasil di update');
+								}
+								else
+								{
+									echo '<pre>';
+									print_r($data);
+									echo '</pre>';
+									// $this->model_berita->getinsert($data);
+									// $this->model_dinamic->input_data($galeri,'tb_galeri');
+									// $this->session->set_flashdata('info','Data berhasil di simpan');
+							}
+						$doto = $this->model_dinamic->getWhere('tb_kat_artikel','id_kat_artikel',$this->input->post('kd_artikel'))->result();
+						// redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'','refresh');
 				}
-				else
-				{
-					// print_r($data);
-					$this->model_berita->getinsert($data);
-					$this->model_dinamic->input_data($galeri,'tb_galeri');
-					$this->session->set_flashdata('info','Data berhasil di simpan');
-				}
-			$doto = $this->model_dinamic->getWhere('tb_kat_artikel','id_kat_artikel',$this->input->post('kd_artikel'))->result();
-			redirect('admin/berita/kategori-berita/'.$doto[0]->nama_kat_artikel.'','refresh');
 			}
 		}
-
+		
 		public function ambil_data_organisasi(){
 			$data = $this->model_dinamic->getData('tb_organisasi');
 			echo json_encode($data);
@@ -405,7 +413,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_berita;
-						$konten['kd_artikel']		= $row->id_kat_artikel;
+						$konten['kd_artikel']	= $row->id_kat_artikel;
 						$konten['jdl']			= $row->judul;
 						$konten['user']			= $row->penulis;
 						$konten['isi']			= $row->deskripsi;
@@ -416,7 +424,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				else
 				{
 						$konten['kode']			= "";
-						$konten['kd_artikel']		= "";
+						$konten['kd_artikel']	= "";
 						$konten['jdl']			= "";
 						$konten['user']			= "";
 						$konten['isi']			= "";
