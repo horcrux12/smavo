@@ -22,10 +22,10 @@
 		}
 
 		function hitCountThisDay($day){
-			// $this->db->select('*');
+			$this->db->select('*');
 			$this->db->from('tb_statistik');
 			$this->db->where('tanggal',$day);
-			$this->db->select_sum('hits');
+			// $this->db->select_sum('hits');
 			return $this->db->get()->result();
 		}
 		

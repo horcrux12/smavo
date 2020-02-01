@@ -104,7 +104,7 @@ class Home extends CI_Controller
 		$slider 	= $this->model_dinamic->getData ('tb_slider');
 		$about 		= $this->model_dinamic->getData ('tb_about');
 		$sambutan 	= $this->model_dinamic->getData ('tb_sambutan');
-		$kunjungan['now']  	= $this->model_statistik->hitCountThisDay(date('Y m d'));
+		$kunjungan['now']  	= $this->model_statistik->hitCountThisDay(date('Y-m-d'));
 		$kunjungan['month'] = $this->model_statistik->hitCountMount(date('m'),date('Y'));
 		$kunjungan['year'] 	= $this->model_statistik->hitCountYear(date('Y'));
 
@@ -123,7 +123,7 @@ class Home extends CI_Controller
 		$page_content['data']['kunjungan'] 		= $kunjungan;  
 		
 		// echo "<pre>";
-		// print_r($kunjungan);
+		// print_r($kunjungan['now']);
 		// echo "</pre>";
 		$this->load->view('front/template/app',$page_content);
 	}
