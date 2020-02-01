@@ -79,13 +79,25 @@ if(!empty($info_gagal))
                
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto Utama</label>
-              <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/berita/'.$file.'');?>> 
+              <div class="col-sm-8">
+              <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/berita/'.$file_name.'');?>> 
               <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
-              <i><font color="red">*Foto yang telah digunakan : <?php echo $file;?><br></font></i>
+              <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font></i><br>
+              <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
               </div>
               </div>   
-              
+
+            <div class="form-group">
+            <label class="col-sm-2 control-label">File Dokumen</label>
+            <div class="col-sm-8">
+              <input type="file" id="id-input-file-2-2" name="file_download" accept=""/>
+              <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i><br>
+              <i><font color="red">*Jika tidak ada, kosongkan saja</font></i><br>
+              <i><font color="red">*File yang telah terupload : <?php echo $file_download;?><br></font></i>
+            </div>
+          </div>
+
+                      
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>

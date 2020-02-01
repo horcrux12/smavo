@@ -27,10 +27,10 @@
 
       }
 
-      if(!$ ("#isi").val())
+      if(!$ ("#isi2").val())
       {
         alert('Maaf deskripsi tidak boleh kosong');
-        $("#isi").focus();
+        $("#isi2").focus();
         return false;
 
       }
@@ -93,7 +93,6 @@
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 <!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
-
 <script type="text/javascript">
   $(document).ready(function() {
     $('#isi').summernote({
@@ -125,7 +124,7 @@
       var data = new FormData();
       data.append("image", image);
       $.ajax({
-          url: "<?php echo base_url('kat_organisasi/upload_image')?>",
+          url: "<?php echo base_url('berita/upload_image')?>",
           cache: false,
           contentType: false,
           processData: false,
@@ -144,7 +143,7 @@
       $.ajax({
           data: {src : src},
           type: "POST",
-          url: "<?php echo base_url('kat_organisasi/delete_image')?>",
+          url: "<?php echo base_url('berita/delete_image')?>",
           cache: false,
           success: function(response) {
               console.log(response);
