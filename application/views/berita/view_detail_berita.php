@@ -35,7 +35,7 @@
         <span class="profile-picture">
 
 
-          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/berita/' . $file . ''); ?>>
+          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/berita/' . $file_name . ''); ?>>
 
 
         </span>
@@ -104,6 +104,23 @@
             <span class="editable" id="username"><?php echo $isi; ?></span>
           </div>
         </div>
+
+        <div class="profile-info-row">
+          <div class="profile-info-name"> Nama Dokumen </div>
+
+          <div class="profile-info-value">
+            <span class="editable" id="username"><?php echo $file_download;?></span>
+          </div>
+        </div>
+
+        <div class="profile-info-row">
+          <div class="profile-info-name"> Download File</div>
+
+          <div class="profile-info-value">
+            <span class="editable" id="username"><a href="<?php echo base_url('assets/file/'. $file_download .'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a></span>
+          </div>
+        </div>
+
 
         <?php foreach ($data->result() as $row) { ?>
         <div class="profile-info-row">

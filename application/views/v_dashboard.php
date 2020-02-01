@@ -183,8 +183,6 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 				}).parents(".nav > li > ul.submenu > li").addClass('active open');
 			});
 		</script>
-		
-
 		<!-- inline scripts related to this page -->
 
 	</body>
