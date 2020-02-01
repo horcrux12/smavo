@@ -19,11 +19,14 @@ class Home extends CI_Controller
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/style_calendar.css" rel="stylesheet">
-  		<link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
+		  <link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
+		  <link href="'.base_url().'assets2/css/plyr.css" rel="stylesheet">
 
 		  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 		  <link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
-        $page_content['js'] = '';
+		$page_content['js'] = '<script src="'.base_url().'assets2/js/iso.js"></script>
+		<script src="'.base_url().'assets2/js/jquery.stellar.min.js"></script>
+		<script src="'.base_url().'assets2/js/plyr.js"></script>';
        	$page_content['title'] = '';
 		
 		$berita 	= $this->model_berita->tampil_berita()->result();

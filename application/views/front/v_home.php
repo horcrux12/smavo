@@ -213,73 +213,81 @@
     <section class="blog section-padding " data-scroll-index="2">
       <div class="container">
         <div class="row">
-
-          <div class="section-head col-sm-8 wow fadeInUp">
-            <h4>
-              <span>Berita</span>
-              Terkini
-            </h4>
-          </div>
-          <div class="section-head col-sm-4 wow fadeInUp">
-            <h4>
-              <span>Kalender</span>
-              Sekolah
-            </h4>
-          </div>
-          <div class="col-lg-8 ">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <?php foreach ($data['kategori'] as $key) { ?>
-                <li data-filter=".<?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>"><?php echo $key->nama_kat_artikel ?></li>
-              <?php } ?>
-            </ul>
-            <div class="row portfolio-container berita" id="portfolio-container">
-              <?php foreach ($data['berita'] as $key) { ?>
-                <div class="col-lg-4 portfolio-item <?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>">
-                  <div class="item text-center mb-md50">
-                    <div class="post-img">
-                      <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" alt="">
-                      <div class="date">
-                        <a href="#0">
-                          <span>06</span>
-                          <span>Aug</span>
-                        </a>
+          <div class="col-sm-8">
+            <div class="section-head col-sm-12 wow fadeInUp">
+              <h4>
+                <span>Berita</span>
+                Terkini
+              </h4>
+            </div>
+            <div class="col-lg-12">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <?php foreach ($data['kategori'] as $key) { ?>
+                  <li data-filter=".<?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>"><?php echo $key->nama_kat_artikel ?></li>
+                <?php } ?>
+              </ul>
+              <div class="row portfolio-container berita" id="portfolio-container">
+                <?php foreach ($data['berita'] as $key) { ?>
+                  <div class="col-lg-4 portfolio-item <?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>">
+                    <div class="item text-center mb-md50">
+                      <div class="post-img">
+                        <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" alt="">
+                        <div class="date">
+                          <a href="#0">
+                            <span>06</span>
+                            <span>Aug</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <span class="tag">
+                          <a href="#0"><?php echo $key->nama_kat_artikel ?></a>
+                        </span>
+                        <h5><a href="#0"><?php echo $key->judul ?></a></h5>
+                        <p><?php $a = $key->deskripsi;
+                            echo substr(strip_tags($a), 0, 50) ?></p>
                       </div>
                     </div>
-                    <div class="content">
-                      <span class="tag">
-                        <a href="#0"><?php echo $key->nama_kat_artikel ?></a>
-                      </span>
-                      <h5><a href="#0"><?php echo $key->judul ?></a></h5>
-                      <p><?php $a = $key->deskripsi;
-                          echo substr(strip_tags($a), 0, 50) ?></p>
-                    </div>
                   </div>
-                </div>
-              <?php } ?>
+                <?php } ?>
+              </div>
             </div>
+            <div class="col-lg-12" id=pagination style="padding-top: 30px;">
+            <nav aria-label="...">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a>
+                </li>
+
+              </ul>
+            </nav>
           </div>
-          <div class="col-lg-4">
+          </div>
+          <div class="col-sm-4">
+            <div class="section-head col-sm-12 wow fadeInUp">
+              <h4>
+                <span>Kalender</span>
+                Sekolah
+              </h4>
+            </div>
+            <div class="col-lg-12">
             <br><br><br><br>
             <div class="calender-cont widget-calender">
               <div id="calendar"></div>
             </div>
             <!-- /.card -->
           </div>
+          </div>
+        </div>
+        <div class="row">
+          
+          
         </div>
         <br>
         <br>
         <div class="row">
-          <div class="col-lg-8" id=pagination>
-            <nav aria-label="...">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a>
-                </li>
-                
-              </ul>
-            </nav>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -333,35 +341,23 @@
         <header class="section-header">
           <h3 class="section-title">Our Video</h3>
         </header>
-
-        <!-- <div class="row">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div> -->
-
-        <div class="row portfolio-container">
-          <div class="col-lg-8 col-md-8 portfolio-item wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?= base_url(); ?>assets2/img/portfolio/app1.jpg" class="img-fluid" alt="">
-                <a href="<?= base_url(); ?>assets2/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
-              </div>
+        <div class="row" style="padding-top: 30px;">
+          <div class="col-lg-12 col-md-12 wow fadeInUp text-center">
+            <div class="plyr__video-embed" id="player">
+            <iframe
+                src="https://www.youtube.com/embed/qhgyI-DMpAI"
+                allowfullscreen
+                allowtransparency
+                allow="autoplay"
+            ></iframe>
+              <!-- <iframe width="1195" height="672" src="https://www.youtube.com/embed/qhgyI-DMpAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
+            <!-- <div class="embed-responsive embed-responsive-16by9" id=players>
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qhgyI-DMpAI"></iframe>
+            </div> -->
           </div>
         </div>
-
+        
       </div>
     </section><!-- #portfolio -->
 
