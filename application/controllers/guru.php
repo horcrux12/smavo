@@ -14,16 +14,63 @@
 		
 		public function index()
 		{
-			
-			$konten['css']			= '';
-			$konten['js']			= '';
+			$konten['css']			= '<link rel="stylesheet" href="'.base_url().'assets/css/colorbox.min.css" />';
+			$konten['js']			= '
+			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.buttons.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.flash.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.html5.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
+			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+			<script src="'.base_url().'assets/js/table.js"></script>
+			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
+			<script type="text/javascript">
+			jQuery(function($) {
+				var $overflow = '."''".';
+				var colorbox_params = {
+					rel: "colorbox",
+					reposition: true,
+					scalePhotos: true,
+					scrolling: false,
+					width : auto;
+					height : auto;
+					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
+					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
+					close: '."'".'&times;'."'".',
+					current: '."'".'{current} of {total}'."'".',
+					maxWidth: '."'".'100%'."'".',
+					maxHeight: '."'".'100%'."'".',
+					onOpen: function() {
+						$overflow = document.body.style.overflow;
+						document.body.style.overflow = '."'".'hidden'."'".';
+					},
+					onClosed: function() {
+						document.body.style.overflow = $overflow;
+					},
+					onComplete: function() {
+						$.colorbox.resize();
+					}
+				};
+
+				$('."'".'.ace-thumbnails [data-rel="colorbox"]'."'".').colorbox(colorbox_params);
+				$("#cboxLoadingGraphic").html("<i class='."'".'ace-icon fa fa-spinner orange fa-spin'."'".'></i>"); //let'."'".'s add a custom loading icon
+
+
+				$(document).one('."'".'ajaxloadstart.page'."'".', function(e) {
+					$('."'".'#colorbox, #cboxOverlay'."'".').remove();
+				});
+			})
+		</script>';
 			$konten['konten'] 		= 'guru/view_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';
 			$konten['data']			= $this->db->get('tb_guru');
-			$konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
+			// $konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
+			// print_r($konten['data']);
 			$this->load->view('v_dashboard',$konten);
-
 		}
 
 
@@ -40,51 +87,52 @@
 			<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 			
 			<script>
-			$("#id-input-file-1 , #id-input-file-2").ace_file_input({
-				no_file:"No File ...",
-				btn_choose:"Choose",
-				btn_change:"Change",
-				droppable:false,
-				onchange:null,
-				thumbnail:false //| true | large
-				//whitelist:"gif|png|jpg|jpeg"
-				//blacklist:"exe|php"
-				//onchange:""
-				//
-			});
+				jQuery(function($) {
+				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
+					no_file:"No File ...",
+					btn_choose:"Choose",
+					btn_change:"Change",
+					droppable:false,
+					onchange:null,
+					thumbnail:false //| true | large
+					//whitelist:"gif|png|jpg|jpeg"
+					//blacklist:"exe|php"
+					//onchange:""
+					//
+				});
 
-			$("#id-input-file-3").ace_file_input({
-				style: "well",
-				btn_choose: "Drop files here or click to choose",
-				btn_change: null,
-				no_icon: "ace-icon fa fa-cloud-upload",
-				droppable: true,
-				thumbnail: "small"//large | fit
-				//,icon_remove:null//set null, to hide remove/reset button
-				/**,before_change:function(files, dropped) {
-					//Check an example below
-					//or examples/file-upload.html
-					return true;
-				}*/
-				/**,before_remove : function() {
-					return true;
-				}*/
-				,
-				preview_error : function(filename, error_code) {
-					//name of the file that failed
-					//error_code values
-					//1 = "FILE_LOAD_FAILED",
-					//2 = "IMAGE_LOAD_FAILED",
-					//3 = "THUMBNAIL_FAILED"
-					//alert(error_code);
-				}
-		
-			}).on("change", function(){
-				//console.log($(this).data("ace_input_files"));
-				//console.log($(this).data("ace_input_method"));
+				$("#id-input-file-3").ace_file_input({
+					style: "well",
+					btn_choose: "Drop files here or click to choose",
+					btn_change: null,
+					no_icon: "ace-icon fa fa-cloud-upload",
+					droppable: true,
+					thumbnail: "small"//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = "FILE_LOAD_FAILED",
+						//2 = "IMAGE_LOAD_FAILED",
+						//3 = "THUMBNAIL_FAILED"
+						//alert(error_code);
+					}
+			
+				}).on("change", function(){
+					//console.log($(this).data("ace_input_files"));
+					//console.log($(this).data("ace_input_method"));
+				});
 			});
-			</script>
-			';
+				</script>';
 			$konten['konten'] 		= 'guru/form_tambah_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Tambah Data guru';
@@ -95,20 +143,17 @@
 
 		public function simpan() // simpan data guru
 		{
-		  $config['upload_path'] 	= './assets/photo/';
+		  $config['upload_path'] 	= './assets/photo/guru/';
 	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
-	      $config['max_size'] 		= 5000;
-	      $config['max_width'] 		= 5000;
-	      $config['max_height'] 	= 5000;
 	      $config['encrypt_name']	= FALSE;
-	     
+		  $config['overwrite']			= true;
 	 
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
 	 
 	      if ( ! $this->upload->do_upload('file_name')){
-	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload atau foto melebihi 2500x2500 pixel. Silakan pilih foto yang lain');
-	         redirect('guru/tambah'); 
+	        $this->session->set_flashdata('info_gagal','Foto Gagal Diupload,Silakan pilih foto yang lain');
+	        //  redirect('guru/tambah'); 
 	      } else {
 			
 			$key = $this->input->post('kode');
@@ -146,7 +191,63 @@
 
 		public function ubah() // Mengubah data guru
 		{
+			$konten['css']			= '
+				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
+				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />';
+			$konten['js']			= '
+			<script src="'.base_url().'assets/js/jquery-ui.custom.min.js"></script>
+			<script src="'.base_url().'assets/js/chosen.jquery.min.js"></script>
+			<script src="'.base_url().'assets/js/autosize.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.inputlimiter.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.maskedinput.min.js"></script>
 			
+			<script>
+				jQuery(function($) {
+				$("#id-input-file-1 , #id-input-file-2").ace_file_input({
+					no_file:"No File ...",
+					btn_choose:"Choose",
+					btn_change:"Change",
+					droppable:false,
+					onchange:null,
+					thumbnail:false //| true | large
+					//whitelist:"gif|png|jpg|jpeg"
+					//blacklist:"exe|php"
+					//onchange:""
+					//
+				});
+
+				$("#id-input-file-3").ace_file_input({
+					style: "well",
+					btn_choose: "Drop files here or click to choose",
+					btn_change: null,
+					no_icon: "ace-icon fa fa-cloud-upload",
+					droppable: true,
+					thumbnail: "small"//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = "FILE_LOAD_FAILED",
+						//2 = "IMAGE_LOAD_FAILED",
+						//3 = "THUMBNAIL_FAILED"
+						//alert(error_code);
+					}
+			
+				}).on("change", function(){
+					//console.log($(this).data("ace_input_files"));
+					//console.log($(this).data("ace_input_method"));
+				});
+			});
+				</script>';
 			$konten['konten'] 		= 'guru/form_ubah_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data guru';
@@ -187,7 +288,8 @@
 
 		public function detail() // Detail data guru
 		{
-			
+			$konten['css']			= '';
+			$konten['js']			= '';
 			$konten['konten'] 		= 'guru/view_detail_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail guru';
@@ -238,12 +340,12 @@
 		
 			if($query->num_rows()>0)
 				{
-
+					$query=$query->result();
+					unlink('./assets/photo/guru/'.$query[0]->foto);
 					$this->model_guru->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
 				redirect('guru');
-
 } 
 	
 	}	

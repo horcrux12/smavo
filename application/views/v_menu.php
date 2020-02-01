@@ -3,8 +3,8 @@
 	if ($this->session->userdata('hak_akses') === 'Administrator'):
  ?>
 <ul class="nav nav-list">
-	<li class="active">
-		<a href="<?php echo base_url();?>dashboard">
+	<li>
+		<a href="<?php echo base_url();?>admin/dashboard">
 			<i class="menu-icon fa fa-home"></i><span class="menu-text"> Dashboard </span>
 		</a>
 		<b class="arrow"></b>
@@ -29,13 +29,13 @@
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>kat_profil"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Profil</a>
+				<a href="<?php echo base_url();?>kat_fasilitas"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Fasiitas</a>
 				<b class="arrow"></b>
 			</li>
-			<li class="">
+			<!-- <li class="">
 				<a href="<?php echo base_url();?>kat_siswa"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Siswa</a>
 				<b class="arrow"></b>
-			</li>
+			</li> -->
 			<li class="">
 				<a href="<?php echo base_url();?>kat_jab"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Jabatan</a>
 				<b class="arrow"></b>
@@ -50,6 +50,8 @@
 			</li>
 		</ul>
 	</li>
+
+	
 	<li class="">
 		<a href="#" class="dropdown-toggle">
 			<i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Berita </span>
@@ -58,7 +60,7 @@
 		<b class="arrow"></b>
 		<ul class="submenu">
 			<li class="">
-				<a href="<?php echo base_url();?>berita"><i class="menu-icon fa fa-caret-right"></i>Semua Artikel Berita</a>
+				<a href="<?php echo base_url('admin/berita');?>"><i class="menu-icon fa fa-caret-right"></i>Semua Artikel Berita</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
@@ -67,17 +69,19 @@
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
-					<li class="">
+					
 					<?php
 						$this->db->order_by('id_kat_artikel');
 				        $data = $this->db->get('tb_kat_artikel');
 						foreach ($data->result() as $row) {?>
-							<a href="<?php echo base_url();?>kat_artikel/detail/<?php echo $row->id_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
+							<li class="">
+							<a href="<?php echo base_url();?>admin/berita/kategori-berita/<?php echo $row->nama_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
 								<?php echo $row->nama_kat_artikel?>
 							</a>
-					<?php } ?>
 							<b class="arrow"></b>
-					</li>	
+						</li>
+					<?php } ?>
+							
 				</ul>
 			</li>
 		</ul>
@@ -87,32 +91,63 @@
 				</a>
 					<b class="arrow"></b>
 				<ul class="submenu">
-					<li class="">
+					<!-- <li class="">
 						<a href="<?php echo base_url();?>profil"><i class="menu-icon fa fa-caret-right"></i>Semua Artikel Profil</a>
 						<b class="arrow"></b>
-					</li>
+					</li> -->
 					<li class="">
 						<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Kategori Artikel</span>
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 						<b class="arrow"></b>
 						<ul class="submenu">
-							<li class="">
+							
 								<?php
 								$this->db->order_by('id_kat_profil');
 							    $data = $this->db->get('tb_kat_profil');
 								foreach ($data->result() as $row) {?>
-									<a href="<?php echo base_url();?>kat_profil/detail/<?php echo $row->id_kat_profil?>"><i class="menu-icon fa fa-caret-right"></i>
+								<li class="">
+									<a href="<?php echo base_url();?>profil/detail/<?php echo $row->id_kat_profil?>"><i class="menu-icon fa fa-caret-right"></i>
 										<?php echo $row->nama_kat_profil?>
 									</a>
+									<b class="arrow"></b>
+								</li>
 								<?php } ?>
-								<b class="arrow"></b>
-							</li>
+						</ul>
+						
+						<ul class="submenu">
+								<li class="">
+								<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-caret-right"></i><span class="menu-text">Fasilitas</span>
+									</a>
+									<b class="arrow"></b>
+									<ul class="submenu">
+									<li class="">
+
+									<a href="<?php echo base_url();?>fasilitas"><i class="menu-icon fa fa-caret-right"></i>
+										Semua Fasilitas
+									</a>
+									<b class="arrow"></b>
+								</li>
+							
+								<?php
+								$this->db->order_by('id');
+							    $data = $this->db->get('tb_kat_fasilitas');
+								foreach ($data->result() as $row) {?>
+								<li class="">
+									<a href="<?php echo base_url();?>fasilitas/detail_kat_fasilitas/<?php echo $row->id?>"><i class="menu-icon fa fa-caret-right"></i>
+										<?php echo $row->nama_fasilitas?>
+									</a>
+									<b class="arrow"></b>
+								</li>
+								<?php } ?>
+						</ul>
+								</li>
+								
 						</ul>
 					</li>
 				</ul>
 				<li class="">
-					<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Siswa </span>
+					<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Kesiswaan </span>
 						<b class="arrow fa fa-angle-down"></b>
 					</a>
 						<b class="arrow"></b>
@@ -122,24 +157,25 @@
 							<b class="arrow"></b>
 						</li>
 						<li class="">
-							<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Kategori Artikel</span>
+							<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Artikel Siswa</span>
 								<b class="arrow fa fa-angle-down"></b>
 							</a>
 							<b class="arrow"></b>
 							<ul class="submenu">
-								<li class="">
+								
 									<?php
 									$this->db->order_by('id_kat_siswa');
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {?>
-										<a href="<?php echo base_url();?>kat_siswa/detail/<?php echo $row->id_kat_siswa?>">
+									<li class="">
+										<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											<?php echo $row->nama_kat_siswa?>
-										</a>
+										</a>		
+										<b class="arrow"></b>
+									</li>
 								<?php } ?>
-
-								<b class="arrow"></b>
-							</li>	
+	
 
 						</ul>
 
@@ -177,14 +213,41 @@
 						<b class="arrow"></b>
 					</li>
 
-			<li class="">
+			<!-- <li class="">
 						<a href="<?php echo base_url();?>sistem">
 							<i class="menu-icon fa fa-info-circle"></i>
 							<span class="menu-text"> Tentang Sistem </span>
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+					</li> -->
+
+					<li class="">
+		<a href="#" class="dropdown-toggle">
+			<i class="menu-icon fa fa-gear"></i><span class="menu-text">Pengaturan</span>
+			<b class="arrow fa fa-angle-down"></b>
+		</a>
+			<b class="arrow"></b>
+		<ul class="submenu">
+			<li class="">
+				<a href="<?php echo base_url()?>admin/pengaturan/slider"><i class="menu-icon fa fa-caret-right"></i>Slider</a>
+				<b class="arrow"></b>
+			</li>
+			<li class="">
+				<a href="<?php echo base_url()?>admin/pengaturan/about"><i class="menu-icon fa fa-caret-right"></i>Deskripsi Singkat</a>
+				<b class="arrow"></b>
+			</li>
+			<li class="">
+				<a href="<?php echo base_url()?>admin/pengaturan/sambutan"><i class="menu-icon fa fa-caret-right"></i>Sambutan Kepala Sekolah</a>
+				<b class="arrow"></b>
+			</li>
+			
+			<li class="">
+				<a href="<?php echo base_url()?>admin/pengaturan/kemitraan"><i class="menu-icon fa fa-caret-right"></i>Kemitraan</a>
+				<b class="arrow"></b>
+			</li>
+		</ul>
+	</li>
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
@@ -239,69 +302,49 @@
 
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Data Berita </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-
-								<li class="">
-								<a href="<?php echo base_url();?>berita">
-									<i class="menu-icon fa fa-caret-right"></i>
-									 Semua Artikel Berita
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-						<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text">
-								Kategori Berita
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-
-									<?php
-									$this->db->order_by('id_kat_artikel');
-							        $data = $this->db->get('tb_kat_artikel');
-									foreach ($data->result() as $row) {
-									  
-									?>
-								<a href="<?php echo base_url();?>kat_artikel/detail/<?php echo $row->id_kat_artikel?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-									<?php echo $row->nama_kat_artikel?>
-								</a>
-								<?php } ?>
-
-								<b class="arrow"></b>
-							</li>	
-						</ul>
-					</li>
-				</ul>
-
-
-
+		<a href="#" class="dropdown-toggle">
+			<i class="menu-icon fa fa-list"></i><span class="menu-text"> Data Berita </span>
+			<b class="arrow fa fa-angle-down"></b>
+		</a>
+		<b class="arrow"></b>
+		<ul class="submenu">
 			<li class="">
+				<a href="<?php echo base_url('admin/berita');?>"><i class="menu-icon fa fa-caret-right"></i>Semua Artikel Berita</a>
+				<b class="arrow"></b>
+			</li>
+			<li class="">
+				<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Kategori Berita</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+				<ul class="submenu">
+					
+					<?php
+						$this->db->order_by('id_kat_artikel');
+				        $data = $this->db->get('tb_kat_artikel');
+						foreach ($data->result() as $row) {?>
+							<li class="">
+							<a href="<?php echo base_url();?>admin/berita/kategori-berita/<?php echo $row->nama_kat_artikel?>"><i class="menu-icon fa fa-caret-right"></i>
+								<?php echo $row->nama_kat_artikel?>
+							</a>
+							<b class="arrow"></b>
+						</li>
+					<?php } ?>
+							
+				</ul>
+			</li>
+		</ul>
+
+
+
+			<!-- <li class="">
 						<a href="<?php echo base_url();?>sistem">
 							<i class="menu-icon fa fa-info-circle"></i>
 							<span class="menu-text"> Tentang Sistem </span>
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+					</li> -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
@@ -328,7 +371,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="">
+					<!-- <li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -353,12 +396,12 @@
 							</li>
 
 						</ul>
-					</li>
+					</li> -->
 
 				<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Data Siswa </span>
+							<span class="menu-text"> Data Kesiswaan </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -380,13 +423,14 @@
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text">
-								Kategori Artikel 
+								Artikel Siswa
 							</span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 
 						<b class="arrow"></b>
+
 
 						<ul class="submenu">
 							<li class="">
@@ -397,7 +441,7 @@
 									foreach ($data->result() as $row) {
 									  
 									?>
-								<a href="<?php echo base_url();?>kat_siswa/detail/<?php echo $row->id_kat_siswa?>">
+								<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									<?php echo $row->nama_kat_siswa?>
 								</a>
@@ -414,14 +458,14 @@
 
 			</ul><!-- /.nav-list -->
 
-			<li class="">
+			<!-- <li class="">
 						<a href="<?php echo base_url();?>sistem">
 							<i class="menu-icon fa fa-info-circle"></i>
 							<span class="menu-text"> Tentang Sistem </span>
 						</a>
 
 						<b class="arrow"></b>
-					</li>
+					</li> -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

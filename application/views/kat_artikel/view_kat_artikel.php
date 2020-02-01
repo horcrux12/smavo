@@ -64,10 +64,10 @@ if(!empty($info_hapus))
                           <tr>
 
                             <th>#</th>
-                            <th align="center">No</th>
-                            <th align="center">Id Kategori</th>
-                            <th align="center">Nama Kategori</th>
-                            <th colspan="4" align="center">Aksi</th>
+                            <th class="center">No</th>
+                            <th class="center">Id Kategori</th>
+                            <th class="center">Nama Kategori</th>
+                            <th colspan="4" class="center">Aksi</th>
 
 
                             
@@ -75,7 +75,7 @@ if(!empty($info_hapus))
                         </thead>
 
                         <tbody>
-                          <tr>
+                          
 
 
                                         <!-- MENAMPILKAN DATA KATEGORI ARTIKEL-->
@@ -87,36 +87,36 @@ if(!empty($info_hapus))
                               
                             ?>
 
-                            
+                            <tr>  
                             <td>#</td>
-                            <td align="center"><?php echo $no++; ?></td>
+                            <td class="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_kat_artikel?></td>
                             <td><?php echo $row->nama_kat_artikel?></td>
                             
-                            <td align="center" > 
+                            <td class="center" > 
                                 <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="blue" href="#" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a class="tooltip-info blue" href="#"  title="Detail" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
                                   </td>
 
                                 
 
-                            <td align="center">
+                            <td class="center">
                                 
-                                <a class="green" href="<?php echo base_url();?>kat_artikel/ubah/<?php echo $row->id_kat_artikel?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>kat_artikel/ubah/<?php echo $row->id_kat_artikel?>"  title="Edit"  data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
 
                             </td>
 
-                           <td align="center">
+                           <td class="center">
                              
 
                                       
-                                      <a class="red" href="<?php echo base_url();?>kat_artikel/delete/<?php echo $row->id_kat_artikel?>"
-                                      id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>kat_artikel/delete/<?php echo $row->id_kat_artikel?>"
+                                      title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
                                       </a>

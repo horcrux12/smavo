@@ -1,50 +1,16 @@
-<?php
-$info = $this->session->flashdata('info');
-if(!empty($info))
-
-{
-
-  echo "<div class='alert alert-success alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
-  echo "</button>";
-  echo "<i class='icon fa fa-check'>"; 
-  echo "</i>";
-  echo $info;
-  echo "</div>";
- 
+<style>
+td p  img{
+  width: 590px !important
 }
-?>
-
-<!-- INFO -->
-<?php
-$info_hapus = $this->session->flashdata('info_hapus');
-if(!empty($info_hapus))
-
-{
-
-  echo "<div class='alert alert-success alert-dismissible'>";
-  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
-  echo "</button>";
-  echo "&nbsp; <i class='icon fa fa-check'>"; 
-  echo "</i>";
-  echo $info_hapus;
-  echo "</div>";
- 
-}
-?>
-
+</style>
 
 <div class="row">
                   <div class="col-xs-12">
-                    <h3 class="header smaller lighter blue">DATA ARTIKEL SISWA</h3>
+                    <h3 class="header smaller lighter blue"><?= $sub_judul?></h3>
 
                     <div class="clearfix">
 
-                      <div class="pull-right tableTools-container"></div>
-
-
-                      <a href="<?php echo base_url();?>siswa/tambah" class="btn btn-primary btn-small">
-                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Artikel Siswa</a>
+                      <div class="pull-right tableTools-container"></div>                    
                   <br>
                 <br>
               </div>
@@ -63,12 +29,14 @@ if(!empty($info_hapus))
                         <thead>
                           <tr>
 
-                            <th>#</th>
-                            <th align="center">No</th>
-                            <th>Kode </th>
-                            <th>Kategori</th>
-                            <th colspan="2">Isi siswa</th>
-                            <th>Aksi</th>
+                            <th class="center">No</th>
+                            <!-- <th>Kode </th> -->
+                            <th class="col-md-1">Kategori</th>
+                            <th class="col-md-2">Penulis</th>
+                            <th class="col-md-4">Judul</th>
+                            <th class="col-md-1">File</th>
+                            <th class="col-md-3">Deskripsi</th>
+                            <th class="col-md-1">Aksi</th>
 
 
                             
@@ -76,49 +44,45 @@ if(!empty($info_hapus))
                         </thead>
 
                         <tbody>
-                          <tr>
+                          
 
 
                                         <!-- MENAMPILKAN DATA siswa-->
                             <?php
 
                             $no=1;
-
-                            
-                            foreach ($data->result() as $row) {
-                              
+                            foreach ($data as $row) {
                             ?>
-                            
-                            
-                            <td>#</td>
-                            <td align="center"><?php echo $no++; ?></td>
-                            <td><?php echo $row->id_siswa?></td>
-                            <td><?php echo $row->id_kat_artikel?></td>
-                            <td><?php echo $row->penulis?></td>
+                            <tr>
+                            <td class="center"><?php echo $no++; ?></td>
+                            <!-- <td><?php echo $row->id_artikel?></td> -->
+                            <td><?php echo $row->nama_kat_siswa?></td>
+                            <td><?php echo $row->nama?></td>
+                            <td><?php echo $row->judul?></td>
+                            <td class="center">
+                            <a href="<?php echo base_url('assets/file/'.$row->foto.'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a>
+                           </td>
+
                            
-                            <td colspan="2">
+                            <td>
                                              <?php $data=$row->deskripsi;
                                              $cut=substr($data,0,200);
                                              echo $cut;
                                   echo " .... " ?>  
                                   <br>
-                            <a href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_siswa?>"> ( Selanjutnya )</a> </td>
-                            
-                            
-                            
+                            <a href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_artikel?>"></a> </td>
                            
-                           
-                           <td align="center">
+                           <td class="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="blue" href="<?php echo base_url();?>siswa/detail/<?php echo $row->id_siswa?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
+                                      <a id="btn-detail" class="blue" href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->id_artikel?>" id="show-option3" title="Detail"  class="tooltip-info" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a class="green" href="<?php echo base_url();?>siswa/ubah/<?php echo $row->id_siswa?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
+                                      <a id="btn-ubah" class="green" href="<?php echo base_url();?>admin/siswa/ubah-siswa/<?php echo $row->id_artikel?>" id="show-option2" title="Edit" class="tooltip-info" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a class="red" href="<?php echo base_url();?>siswa/delete/<?php echo $row->id_siswa?>"
+                                      <a  class="red" href="<?php echo base_url();?>siswa/delete/<?php echo $row->id_artikel?>"
                                       id="show-option1" title="Hapus" class="tooltip-info" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>

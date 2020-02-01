@@ -1,63 +1,31 @@
+<style>
+   .ubah{
+      transform: rotate(90deg) !important
+       }
+
+  </style>
+  
+<script type="text/javascript">
+  function cekform(){
+
+      if(!$ ("#id-input-file-2").val())
+      {
+        alert('Foto tidak boleh kosong');
+        $("#id-input-file-2").focus();
+        return false;
+
+      }
+
+}
+      
+</script>
+
 <!-- hak akses admin -->   
 <?php 
   if ($this->session->userdata('hak_akses') === 'Administrator'):
  ?>
   
-  <!-- CEK FORM KOSONG -->
-<script type="text/javascript">
   
-  function cekform(){
-
-       if(!$ ("#kode").val())
-      {
-        alert('Maaf ID guru tidak boleh kosong');
-        $("#kode").focus();
-        return false;
-
-      }
-
-
-      if(!$ ("#nama").val())
-      {
-        alert('Maaf nama guru tidak boleh kosong');
-        $("#nama").focus();
-        return false;
-
-      }
-      
-      if(!$ ("#tempat").val())
-      {
-        alert('Maaf tempat lahir tidak boleh kosong');
-        $("#tempat").focus();
-        return false;
-
-      }
-
-      if(!$ ("#tanggal").val())
-      {
-        alert('Maaf tanggal lahir tidak boleh kosong');
-        $("#tanggal").focus();
-        return false;
-
-      }
-
-      if(!$ ("#jbt").val())
-      {
-        alert('Maaf jabatan tidak boleh kosong');
-        $("#jbt").focus();
-        return false;
-
-      }
-
-        if(!$ ("#file_name").val())
-      {
-        alert('Maaf foto tidak boleh kosong');
-        $("#file_name").focus();
-        return false;
-      }
-
-</script>
-
 
 
 <?php
@@ -105,7 +73,7 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">NIP/NUPTK</label>
               <div class="col-sm-5">
-              <input type="text" class="form-control" name="nip" id="nip" value="<?php echo $nip;?>">
+              <input type="text" class="form-control" name="nip" id="nip"  value="<?php echo $nip; ?>" placeholder="Nomer Induk Pegawai">
               </div>
               </div>
 
@@ -132,16 +100,21 @@ if(!empty($info_gagal))
               <label class="col-sm-2 control-label">Jabatan</label>
               <div class="col-lg-3">
               <select class="form-control" name="jbt" id="jbt">
-              <option value="">-------- pilih salah satu -------</option>
+              <option  value="">-------- pilih salah satu -------</option>
                           
-                          <?php
-
-                            $jbt  = $this->db->get('tb_jabatan');
-                            foreach ($jbt->result() as $row) {
-
-                            ?>            
+                          
+                            <?php
+        
+                            $kat  = $this->db->get('tb_jabatan');
+                            foreach ($kat->result() as $row) {
+                              if($row->id_jabatan == $jbt){
+                                $selected = 'selected';
+                              }else{
+                                $selected = '';
+                              }
+                            ?>     
             
-            <option value="<?php echo $row->id_jabatan;?>"><?php echo $row->nama_jabatan;?></option>
+            <option <?= $selected?> value="<?php echo $row->id_jabatan;?>"><?php echo $row->nama_jabatan;?></option>
             <?php } ?>
               </select>
               </div>
@@ -153,19 +126,27 @@ if(!empty($info_gagal))
               <select class="form-control" name="mapel" id="mapel">
               <option value="">-------- pilih salah satu -------</option>
                           
-                          <?php
+                         
+                <?php
+                $kat  = $this->db->get('tb_mapel');
+                foreach ($kat->result() as $row) {
+                  if($row->id_mapel== $mapel){
+                    $selected = 'selected';
+                  }else{
+                    $selected = '';
+                  }
+                ?>   
 
-                            $mapel  = $this->db->get('tb_mapel');
-                            foreach ($mapel->result() as $row) {
-
-                            ?>            
-            
-            <option value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
+            <option <?= $selected?> value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
             <?php } ?>
               </select>
-              <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i>
+              <!-- <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i> -->
               </div>
               </div>
+              <br>
+              <br>
+
+                            
 
                 <?php
                 $key = $this->uri->segment(3);
@@ -173,15 +154,33 @@ if(!empty($info_gagal))
                 $query = $this->db->get('tb_guru');
                 foreach ($query->result() as $row) {
                 ?>
+                                
+                                <?php
+                                $set = getimagesize(base_url().'assets/photo/guru/'.$row->foto);
+                                if ($set) {
+                                  // width
+                                  $ambilst = explode (" ",$set[3]);
+                                  $ambilsts = str_replace('width="',"",$ambilst[0]);
+                                  $ambilstst = str_replace('"',"",$ambilsts);
+                                  if($ambilstst > 1800){
+                                    
+                                    $ubahnya = "ubah";
+                            
+                                  }else{
+                                    
+                                    $ubahnya = "";
+                                  }
+                                }
+                                
+                              ?>  
 
 
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
-              <br><br><input type="file" class="form-control" name="file_name" id="file_name" value="<?php echo $file_name;?>">
+              <img id="avatar" class="editable img-responsive <?= $ubahnya?>" width="50%" src="<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>"> 
+              <br><br><br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
-              <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i>
               </div>
               </div>   
               <?php } ?>

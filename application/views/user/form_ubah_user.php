@@ -1,10 +1,5 @@
-<!-- hak akses admin -->   
-<?php 
-  if ($this->session->userdata('hak_akses') == 'Administrator'):
- ?>
-  
   <!-- CEK FORM KOSONG -->
-<script type="text/javascript">
+  <script type="text/javascript">
   
   function cekform(){
 
@@ -49,16 +44,24 @@
 
       }
 
-        if(!$ ("#file_name").val())
+        if(!$ ("#id-input-file-2").val())
       {
         alert('Maaf foto tidak boleh kosong');
-        $("#file_name").focus();
+        $("#id-input-file-2").focus();
         return false;
       }
 
   }
 
 </script>
+
+
+<!-- hak akses admin -->   
+<?php 
+  if ($this->session->userdata('hak_akses') == 'Administrator'):
+ ?>
+  
+
 
 
 
@@ -116,7 +119,7 @@ if(!empty($info_gagal))
               <label for="" class="col-sm-2 control-label">Username</label>
               <div class="col-sm-5">
               <input type="text" class="form-control" name="user" id="user" value="<?php echo $user;?>">
-              <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i>
+              <!-- <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i> -->
               </div>
               </div>
              
@@ -124,7 +127,7 @@ if(!empty($info_gagal))
               <label for="" class="col-sm-2 control-label">Password</label>
               <div class="col-sm-5">
               <input type="password" class="form-control" name="pass" id="pass" value="<?php echo $pass;?>">
-              <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i>
+              <!-- <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i> -->
               </div>
               </div>
 
@@ -154,10 +157,10 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/'.$row->foto.'');?>> 
-              <br><br><input type="file" class="form-control" name="file_name" id="file_name" value="<?php echo $file_name;?>">
+              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/user/'.$row->foto.'');?>> 
+              <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
-              <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i>
+              <!-- <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i> -->
               </div>
               </div>   
               <?php } ?>

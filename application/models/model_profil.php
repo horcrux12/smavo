@@ -52,23 +52,25 @@
 		 }
 
 
-		 public function tampil_profil() // join tb_jabatan, tb_profil dan tb_mapel
+	public function tampil_profil() // 
 		{
 
-			$data	= " SELECT
-
-						tb_profil.id_info,
-						
-
-						FROM 
-						tb_profil,tb_kat_artikel
-
-						WHERE 
-
-						tb_kat_artikel.id_kat_artikel=tb_profil.id_kat_artikel";
-
-			return $this->db->query($data);
+		$this->db->select('tb_profil.*,tb_kat_profil.id_kat_profil as id_kat_profil, tb_kat_profil.nama_kat_profil, tb_user.id_user as id_user, tb_user.nama');
+		$this->db->from('tb_profil');
+		$this->db->join('tb_kat_profil','tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil');
+		$this->db->join('tb_user','tb_user.id_user=tb_profil.id_user');
+		return $this->db->get();
 
 	}
-		
+
+	public function tampil_profile_where($a){
+		$this->db->select('tb_profil.*,tb_kat_profil.id_kat_profil as id_kat_profil, tb_kat_profil.nama_kat_profil, tb_user.id_user as id_user, tb_user.nama');
+		$this->db->from('tb_profil');
+		$this->db->join('tb_kat_profil','tb_kat_profil.id_kat_profil=tb_profil.id_kat_profil');
+		$this->db->join('tb_user','tb_user.id_user=tb_profil.id_user');
+		$this->db->where('tb_profil.id_kat_profil',$a);
+		return $this->db->get();
+
+
+	}	
 }

@@ -71,6 +71,21 @@ img {
   font-weight: 200;
   padding-bottom: 5px;
 }
+.berita {
+  position: relative;
+  line-height: 1;
+  border-right: 1px solid #eee;
+}
+
+.berita::before{
+  content: '';
+  width: 1px;
+  height: 35px;
+  background: #18D26E;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+}
 
 .bg-gray {
   background: #f7f7f7;
@@ -1035,8 +1050,8 @@ img {
 }*/
 
 .blog .item {
-  -webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-          box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
+          box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
   border-radius: 5px;
   margin-top: 16px;
 }
@@ -1073,16 +1088,24 @@ img {
 .blog .item .content {
   padding: 40px 5px;
   background: #fff;
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
+          box-shadow: 0px 5px 20px 0px rgba(148, 146, 245, 0.15);
 }
 .blog .item .content .tag {
   color: #F24259;
   font-weight: 600;
+  font-size: 13px;
   margin-bottom: 10px;
   display: inline-block;
 }
 .blog .item .content h5 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.blog .item .content p {
+  font-size: 12px;
   margin-bottom: 15px;
 }
 

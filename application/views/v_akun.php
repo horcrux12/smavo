@@ -11,7 +11,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 	</a>
 	<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 		<li>
-			<a href="<?php echo base_url();?>dashboard/logout" onclick="return confirm('Apakah anda yakin ingin keluar dari sistem ini?')">
+			<a href="<?php echo base_url();?>admin/logout" onclick="return confirm('Apakah anda yakin ingin keluar dari sistem ini?')">
 			<i class="ace-icon fa fa-close"></i>Logout</a>
 		</li>		
 	</ul>

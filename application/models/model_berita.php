@@ -52,27 +52,30 @@
 		 }
 
 
-		 public function tampil_berita() // join tb_jabatan, tb_berita dan tb_mapel
+		public function tampil_berita() 
 		{
-
-			$data	= " SELECT
-
-						tb_berita.id_berita,
-						tb_kat_artikel.nama_kat_artikel,
-						tb_berita.foto,
-						tb_berita.penulis,
-						tb_berita.deskripsi
-
-					
-						FROM 
-						tb_berita,tb_kat_artikel
-
-						WHERE 
-
-						tb_kat_artikel.id_kat_artikel=tb_berita.id_kat_artikel";
-
-			return $this->db->query($data);
-
-	}
+			$this->db->select('
+			tb_berita.*, tb_kat_artikel.id_kat_artikel AS id_kat_artikel, tb_kat_artikel.nama_kat_artikel, tb_user.id_user AS penulis, tb_user.nama
+		');
+		$this->db->from('tb_berita');
+		$this->db->order_by('id_berita','DESC');
+		// $this->db->where('tb_berita.id_kat_artikel',$where);
+		$this->db->join('tb_kat_artikel','tb_berita.id_kat_artikel = tb_kat_artikel.id_kat_artikel');
+		$this->db->join('tb_user','tb_berita.penulis = tb_user.id_user');
+		$query = $this->db->get();
+		return $query;
+		}
+		public function tampil_kategori_berita($where){
+			$this->db->select('
+				tb_berita.*, tb_kat_artikel.id_kat_artikel AS id_kat_artikel, tb_kat_artikel.nama_kat_artikel, tb_user.id_user AS penulis, tb_user.nama
+			');
+			$this->db->from('tb_berita');
+			$this->db->order_by('tanggal','DESC');
+			$this->db->where('tb_berita.id_kat_artikel',$where);
+			$this->db->join('tb_kat_artikel','tb_berita.id_kat_artikel = tb_kat_artikel.id_kat_artikel');
+			$this->db->join('tb_user','tb_berita.penulis = tb_user.id_user');
+			$query = $this->db->get();
+			return $query;
+		}
 		
 }
