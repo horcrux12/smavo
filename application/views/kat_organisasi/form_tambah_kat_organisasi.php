@@ -90,7 +90,7 @@
             </center>
 
 
-            <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 <!-- <script src="<?php echo base_url(); ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 
 
@@ -152,4 +152,13 @@
       });
   }
   }); 
+</script>
+<script>
+$('form').submit(function (e) {
+    var form = this;
+    e.preventDefault();
+    setTimeout(function () {
+        form.submit();
+    }, 1000); // in milliseconds
+});
 </script>
