@@ -60,8 +60,11 @@ $route['berita'] = 'front/blog/index';
 $route['berita/kategori/(:any)'] = 'front/blog/kategori/$1';
 $route['berita/detail/(:any)'] = 'front/blog/detail/$1';
 
-// // Galeri
-// $route['galeri'] = 'front/galeri';
+// Fasilitas
+$route['fasilitas'] = 'front/fasilitas';
+
+// Galeri
+$route['galeri'] = 'front/galeri';
 
 //------------- ADMIN ---------------
 

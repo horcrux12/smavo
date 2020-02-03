@@ -27,7 +27,7 @@
   <link href="<?= base_url(); ?>assets2/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="<?= base_url(); ?>assets2/css/style.css" rel="stylesheet">
+ 
 
   <!-- CSS for this page -->
   <?php echo $css; ?>
@@ -55,7 +55,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <!-- <div class="loading">
+  <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -64,7 +64,7 @@
         <div></div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- End Loading ====
       ======================================= -->
@@ -83,7 +83,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="<?= base_url(); ?>home">Home</a></li>
+          <li class="menu-active"><a href="<?= base_url(); ?>">Home</a></li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="1">Profil</a>
             <ul>
               <li><a href="#">Sambutan Kepala Sekolah</a></li>
@@ -93,9 +93,28 @@
               <li><a href="#">Mars Sekolah</a></li>
               <li><a href="#">Struktur Organisasi</a></li>
               <li><a href="#">Staff dan Guru</a></li>
-              <li><a href="#">Fasilitas</a></li>
+              <li><a href="<?php echo base_url();?>fasilitas">Fasilitas</a></li>
             </ul>
           </li>
+          
+          <li class="menu-has-children"><a href="#" data-scroll-nav="2">Berita</a>
+            <ul>
+              <?php
+              $data = $this->model_dinamic->getData('tb_kat_artikel');
+              foreach ($data as $key) { ?>
+                <li><a href="<?= base_url('berita/kategori/'); ?><?php echo $key->nama_kat_artikel; ?>"><?php echo $key->nama_kat_artikel; ?></a></li>
+              <?php } ?>
+              <li><a href="<?= base_url('berita'); ?>">Semua berita</a></li>
+            </ul>
+            <!-- <ul>
+              <li><a href="<?= base_url('berita/akademik'); ?>">Akademik</a></li>
+              <li><a href="<?= base_url('berita/nonakademik'); ?>">Non-Akademik</a></li>
+              <li><a href="<?= base_url('berita/umum'); ?>">Umum</a></li>
+              <li><a href="<?= base_url('berita/beasiswa'); ?>">Beasiswa</a></li>
+            </ul> -->
+          </li>
+          <li><a href="<?= base_url('galeri'); ?>">Galeri</a></li>
+          <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
               <li class="menu-has-children"><a href="#">Organisasi</a>
@@ -126,24 +145,6 @@
               <li><a href="#">Aturan Akademik</a></li>
             </ul>
           </li>
-          <li class="menu-has-children"><a href="#" data-scroll-nav="2">Berita</a>
-            <ul>
-              <?php
-              $data = $this->model_dinamic->getData('tb_kat_artikel');
-              foreach ($data as $key) { ?>
-                <li><a href="<?= base_url('berita/kategori/'); ?><?php echo $key->nama_kat_artikel; ?>"><?php echo $key->nama_kat_artikel; ?></a></li>
-              <?php } ?>
-              <li><a href="<?= base_url('berita'); ?>">Semua berita</a></li>
-            </ul>
-            <!-- <ul>
-              <li><a href="<?= base_url('berita/akademik'); ?>">Akademik</a></li>
-              <li><a href="<?= base_url('berita/nonakademik'); ?>">Non-Akademik</a></li>
-              <li><a href="<?= base_url('berita/umum'); ?>">Umum</a></li>
-              <li><a href="<?= base_url('berita/beasiswa'); ?>">Beasiswa</a></li>
-            </ul> -->
-          </li>
-          <li><a href="<?= base_url('galeri'); ?>">Galeri</a></li>
-          <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="5">Kontak</a>
             <ul>
               <li><a href="#">Kontak Kami</a></li>
@@ -166,12 +167,12 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3>BizPage</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+          <div class="col-lg-4 col-md-8 footer-info">
+            <h3>SMAVO</h3>
+            <p>SMAVO atau SMA Negeri 2 Cibinong, berdiri tahun 1994 berletak di Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913- Jawa Barat Indonesia dan hingga kini sekolah ini terus melakukan perkembangan dibidang akademik dan non-akademik untuk menunjang kebutuhan pendidikan bagi seluruh warga Indonesia</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-8 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
@@ -182,14 +183,14 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+          <div class="col-lg-4 col-md-8 footer-contact">
+            <h4>Kontak Kami</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Jl. Karadenan No. 05 Cibinong <br>
+              Kabupaten Bogor 16913-Jawa Barat<br>
+              Indonesia <br>
+              <strong>Telp: </strong> +62 251 8654347<br>
+              <strong>Email:</strong> info@sman2cibinong.sch.id<br>
             </p>
 
             <div class="social-links">
@@ -202,21 +203,13 @@
 
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-
         </div>
       </div>
     </div>
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+        &copy; Copyright 2020 <a href="<?php echo base_url();?>">SMA Negeri 2 Cibinong</a> Theme by : <strong>BizPage</strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -250,42 +243,9 @@
   <script src="<?= base_url(); ?>assets2/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="<?= base_url(); ?>assets2/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="<?= base_url(); ?>assets2/js/main.js"></script>
 
-
-  <!-- JS for this page -->
-  <script src="<?= base_url(); ?>assets2/js/scripts.js"></script>
-  <script src="<?= base_url(); ?>assets2/js/animated.headline.js"></script>
-  <script src="<?= base_url(); ?>assets2/js/jquery.counterup.min.js"></script>
-
-  <!-- Scroll To -->
-  <script type="text/javascript" src="<?= base_url(); ?>assets2/js/scrollIt.min.js"></script>
-
-  <!-- Typed JS -->
-  <script type="text/javascript" src="<?= base_url(); ?>assets2/lib/typed/typed.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
-
-  <script type="text/javascript">
-    var typed = new Typed('#typed1', {
-      strings: ["SMAN 2 Cibinong", "Berakhlak Mulia", "Mandiri", "Berwawasan Lingkungan", "Unggul dalam IPTEKS"],
-      loop: true,
-      typeSpeed: 40,
-      backSpeed: 60,
-      startDelay: 1000,
-      backDelay: 2000
-    });
-  </script>
-
-  <script>
-    $(function() {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
-
-  
   <?php echo $js;?>
   <!-- <script src="<?= base_url(); ?>assets2/js/coba_iso.js"></script> -->
   

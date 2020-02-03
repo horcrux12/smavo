@@ -15,9 +15,11 @@ class Home extends CI_Controller
 	
 	public function index (){
 		$page_content['page'] = 'front/v_home';
+		// CSS
 		$page_content['css'] = '
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
+		<link href="'.base_url().'assets2/css/style.css" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/style_calendar.css" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/plyr.css" rel="stylesheet">
@@ -25,7 +27,11 @@ class Home extends CI_Controller
 		<link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
 		
-		$page_content['js'] = '<script src="'.base_url().'assets2/js/iso.js"></script>
+		// JavaScript
+		$page_content['js'] = '
+		<script src="'.base_url().'assets2/contactform/contactform.js"></script>
+		<script src="'.base_url().'assets2/js/main.js"></script>
+		<script src="'.base_url().'assets2/js/iso.js"></script>
 		<script src="'.base_url().'assets2/js/jquery.stellar.min.js"></script>
 		<script src="'.base_url().'assets2/js/plyr.js"></script>
 
@@ -40,6 +46,12 @@ class Home extends CI_Controller
 		<!-- Typed JS -->
 		<script type="text/javascript" src="'.base_url().'assets2/lib/typed/typed.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+
+		<script>
+			$(function() {
+			$('."'".'[data-toggle="tooltip"]'."'".').tooltip()
+			})
+		</script>
 
 		<script type="text/javascript">
 			var typed = new Typed('."'".'#typed1'."'".', {
@@ -61,7 +73,7 @@ class Home extends CI_Controller
 		<!-- Calendar -->
 		<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-		<script src="<?= base_url(); ?>assets2/js/fullcalendar-init.js"></script>
+		<script src="'.base_url().'assets2/js/fullcalendar-init.js"></script>
 		<script>
 			// Change "{}" to your options:
 			// https://github.com/sampotts/plyr/#options
@@ -107,7 +119,9 @@ class Home extends CI_Controller
 		$kunjungan['now']  	= $this->model_statistik->hitCountThisDay(date('Y-m-d'));
 		$kunjungan['month'] = $this->model_statistik->hitCountMount(date('m'),date('Y'));
 		$kunjungan['year'] 	= $this->model_statistik->hitCountYear(date('Y'));
-
+		$firstday = date('Y-m-d', strtotime("Monday -1 week")); //senin di tanggal ini
+		$toweeks = date('Y-m-d', strtotime('+6 days', strtotime($firstday))); //minggu ditanggal ini
+		$kunjungan['week']	= $this->model_statistik->hitCountThisWeeks($firstday,$toweeks);
 		// foreach ($profil as $key) {
 		// 	$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
 		// } 
@@ -121,9 +135,9 @@ class Home extends CI_Controller
 		$page_content['data']['sambutan'] 		= $sambutan;
 		$page_content['data']['kategori'] 		= $kategori_A;  
 		$page_content['data']['kunjungan'] 		= $kunjungan;  
-		
+				
 		// echo "<pre>";
-		// print_r($kunjungan['now']);
+		// print_r($kunjungan);
 		// echo "</pre>";
 		$this->load->view('front/template/app',$page_content);
 	}
