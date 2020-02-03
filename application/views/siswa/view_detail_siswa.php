@@ -1,6 +1,6 @@
 <!-- Kembali -->
 
-<a href="<?php echo base_url(); ?>siswa">
+<a href="<?php echo base_url(); ?>admin/siswa">
   <button type="button" class="btn btn-warning btn-sm pull-right">
     <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
     Kembali

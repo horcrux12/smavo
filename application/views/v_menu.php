@@ -368,7 +368,7 @@
 ?>
 
 <ul class="nav nav-list">
-					<li class="active">
+					<li class="">
 						<a href="<?php echo base_url();?>admin/dashboard">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Dashboard </span>
@@ -439,22 +439,24 @@
 
 
 						<ul class="submenu">
-							<li class="">
-
+							
 									<?php
 									$this->db->order_by('id_kat_siswa');
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {
 									  
 									?>
+									<li class="">
+
 								<a href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->nama_kat_siswa?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									<?php echo $row->nama_kat_siswa?>
 								</a>
-								<?php } ?>
-
+								
 								<b class="arrow"></b>
 							</li>	
+								<?php } ?>
+
 
 						</ul>
 

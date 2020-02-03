@@ -46,7 +46,7 @@ if (!empty($info_gagal)) {
     </div>
   </div>
   <input type="hidden" class="form-control" name="kd_artikel" id="kode_artikel" value="<?php echo $data[0]->id_kat_artikel; ?>">
-
+  <div id="nahini"></div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
@@ -161,7 +161,7 @@ $('form').submit(function (e) {
     }, 1000); // in milliseconds
 });
 </script>
-<!-- <script>
+<script>
   $(document).ready(function() {
     var selected = '';
 
@@ -169,9 +169,10 @@ $('form').submit(function (e) {
       
         $.getJSON("<?php echo base_url();?>/berita/ambil_data_organisasi", function(data){
           selected += '<div class="form-group">'+
-    '<label class="col-sm-2 control-label">nah ini</label>'+
+    '<label class="col-sm-2 control-label">Organisasi</label>'+
     '<div class="col-sm-8">'+
-      '<select class="form-control" name="organisasi" id="organisasi">';
+      '<select class="form-control" name="organisasi" id="organisasi">'+
+          '<option value="">---- PIlih Salah Satu ----</option>';
           $.each( data, function( i, val ) {
           selected += '<option value="'+data[i].id_organisasi+'">'+data[i].nama_organisasi+'</option>';
           
@@ -183,4 +184,4 @@ $('form').submit(function (e) {
         })
     }
   });
-</script> -->
+</script>
