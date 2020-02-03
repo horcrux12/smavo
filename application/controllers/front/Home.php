@@ -19,37 +19,63 @@ class Home extends CI_Controller
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/style_calendar.css" rel="stylesheet">
-		  <link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
-		  <link href="'.base_url().'assets2/css/plyr.css" rel="stylesheet">
+		<link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
+		<link href="'.base_url().'assets2/css/plyr.css" rel="stylesheet">
 
-		  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-		  <link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
+		<link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
+		
 		$page_content['js'] = '<script src="'.base_url().'assets2/js/iso.js"></script>
 		<script src="'.base_url().'assets2/js/jquery.stellar.min.js"></script>
-		<script src="'.base_url().'assets2/js/plyr.js"></script>';
-       	$page_content['title'] = '';
-		
-		$berita 	= $this->model_berita->tampil_berita()->result();
-		$kemitraan  = $this->model_dinamic->getData ('tb_kemitraan');
-		$kategori_A	= $this->model_dinamic->getData('tb_kat_artikel');
-		// $profil 	= $this->model_profil->tampil_profil()->result();
-		$slider 	= $this->model_dinamic->getData ('tb_slider');
-		$about 		= $this->model_dinamic->getData ('tb_about');
-		$sambutan 	= $this->model_dinamic->getData ('tb_sambutan');
-		// foreach ($profil as $key) {
-		// 	$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
-		// } 
-		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3,'tanggal');
-		$page_content['data']['berita'] 		= $berita;
-		$page_content['data']['berita_limit'] 	= $limit_berita;
-		$page_content['data']['kemitraan'] 		= $kemitraan;
-		// $page_content['data']['about'] 			= $about; 
-		$page_content['data']['slider'] 		= $slider; 
-		$page_content['data']['about'] 			= $about; 
-		$page_content['data']['sambutan'] 		= $sambutan;
-		$page_content['data']['kategori'] 		= $kategori_A;  
-		
+		<script src="'.base_url().'assets2/js/plyr.js"></script>
 
+		<!-- JS for this page -->
+		<script src="'.base_url().'assets2/js/scripts.js"></script>
+		<script src="'.base_url().'assets2/js/animated.headline.js"></script>
+		<script src="'.base_url().'assets2/js/jquery.counterup.min.js"></script>
+
+		<!-- Scroll To -->
+		<script type="text/javascript" src="'.base_url().'assets2/js/scrollIt.min.js"></script>
+
+		<!-- Typed JS -->
+		<script type="text/javascript" src="'.base_url().'assets2/lib/typed/typed.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+
+		<script type="text/javascript">
+			var typed = new Typed('."'".'#typed1'."'".', {
+			strings: ["SMAN 2 Cibinong", "Berakhlak Mulia", "Mandiri", "Berwawasan Lingkungan", "Unggul dalam IPTEKS"],
+			loop: true,
+			typeSpeed: 40,
+			backSpeed: 60,
+			startDelay: 1000,
+			backDelay: 2000
+			});
+		</script>
+
+		<script>
+			$(function() {
+			$('."'".'[data-toggle="tooltip"]'."'".').tooltip()
+			})
+		</script>
+
+		<!-- Calendar -->
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+		<script src="<?= base_url(); ?>assets2/js/fullcalendar-init.js"></script>
+		<script>
+			// Change "{}" to your options:
+			// https://github.com/sampotts/plyr/#options
+			// document.getElementById("player").addEventListener("mouseover", mouseOver);
+			// document.getElementById("player").addEventListener("mouseout", mouseOut);
+			var config = {} ;
+			// function mouseOver() { 
+			//   config 
+			const player = new Plyr('."'".'#player'."'".', config);
+			// Expose player so it can be used from the console
+			window.player = player;
+		</script>';
+		$page_content['title'] = '';
+		   
 		//ambil data ip address pengguna
 		$data['browser'] = $this->agent->browser();
 		$data['browser_version'] = $this->agent->version();
@@ -71,6 +97,34 @@ class Home extends CI_Controller
 			$this->model_dinamic->input_data($data,'tb_statistik');
 		}
 		
+		$berita 	= $this->model_berita->tampil_berita()->result();
+		$kemitraan  = $this->model_dinamic->getData ('tb_kemitraan');
+		$kategori_A	= $this->model_dinamic->getData('tb_kat_artikel');
+		// $profil 	= $this->model_profil->tampil_profil()->result();
+		$slider 	= $this->model_dinamic->getData ('tb_slider');
+		$about 		= $this->model_dinamic->getData ('tb_about');
+		$sambutan 	= $this->model_dinamic->getData ('tb_sambutan');
+		$kunjungan['now']  	= $this->model_statistik->hitCountThisDay(date('Y-m-d'));
+		$kunjungan['month'] = $this->model_statistik->hitCountMount(date('m'),date('Y'));
+		$kunjungan['year'] 	= $this->model_statistik->hitCountYear(date('Y'));
+
+		// foreach ($profil as $key) {
+		// 	$about[$key->nama_kat_profil] = array('deskripsi' => $key->deskripsi );
+		// } 
+		$limit_berita = $this->model_dinamic->getDataLimit ('tb_berita',3,'tanggal');
+		$page_content['data']['berita'] 		= $berita;
+		$page_content['data']['berita_limit'] 	= $limit_berita;
+		$page_content['data']['kemitraan'] 		= $kemitraan;
+		// $page_content['data']['about'] 			= $about; 
+		$page_content['data']['slider'] 		= $slider; 
+		$page_content['data']['about'] 			= $about; 
+		$page_content['data']['sambutan'] 		= $sambutan;
+		$page_content['data']['kategori'] 		= $kategori_A;  
+		$page_content['data']['kunjungan'] 		= $kunjungan;  
+		
+		// echo "<pre>";
+		// print_r($kunjungan['now']);
+		// echo "</pre>";
 		$this->load->view('front/template/app',$page_content);
 	}
 }

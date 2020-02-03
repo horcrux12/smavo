@@ -285,36 +285,10 @@
     })
   </script>
 
-  <!-- Calendar -->
-  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-  <script src="<?= base_url(); ?>assets2/js/fullcalendar-init.js"></script>
+  
   <?php echo $js;?>
   <!-- <script src="<?= base_url(); ?>assets2/js/coba_iso.js"></script> -->
-  <script>
-    // Change "{}" to your options:
-    // https://github.com/sampotts/plyr/#options
-    // document.getElementById("player").addEventListener("mouseover", mouseOver);
-    // document.getElementById("player").addEventListener("mouseout", mouseOut);
-    var config = {} ;
-    // function mouseOver() { 
-    //   config 
-    const player = new Plyr('#player', config);
-    // Expose player so it can be used from the console
-    window.player = player;
-  </script>
-  <script>
-  $(document).ready(function() {
-    var video_url;
-      $('#players iframe').hover(function(){
-        $(this).data('src-orig', $(this).attr('src'));
-        $(this).attr('src', $(this).data('src-orig')+'&autoplay=1&mute=1');
-      }, function(){
-        $(this).attr('src', $(this).data('src-orig'));
-      });
-  })
-  </script>
-
+  
 </body>
 
 </html>
