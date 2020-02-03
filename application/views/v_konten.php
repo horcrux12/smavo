@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_artikel">
+                        <a href="<?php echo base_url();?>admin/kategori-artikel">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Kategori Artikel</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>pesan">
+                        <a href="<?php echo base_url();?>admin/kategori-pesan">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Kotak Masuk Pesan</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_jab">
+                        <a href="<?php echo base_url();?>admin/kategori-jabatan">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Kategori Jabatan</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>guru">
+                        <a href="<?php echo base_url();?>admin/guru">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Guru dan Staff Karyawan</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_organisasi">
+                        <a href="<?php echo base_url();?>admin/kategori-organisasi">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Kategori Organisasi</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -234,7 +234,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>kat_mapel">
+                        <a href="<?php echo base_url();?>admin/kategori-mapel">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Mata Pelajaran</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -263,7 +263,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>user">
+                        <a href="<?php echo base_url();?>admin/administrator">
                             <div class="panel-footer">
                                 <span class="pull-left">Detail Administrator</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

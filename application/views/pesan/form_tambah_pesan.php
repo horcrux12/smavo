@@ -1,6 +1,6 @@
 
     <!-- Kembali -->
-      <a href="<?php echo base_url();?>pesan">
+      <a href="<?php echo base_url();?>admin/kategori-pesan">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>Kembali</button>
       </a>
@@ -8,7 +8,7 @@
       <!-- end kembali -->
    
              
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>pesan/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/kategori-pesan/simpan-pesan" onsubmit="return cekform();">
 
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Nama Pengirim</label>

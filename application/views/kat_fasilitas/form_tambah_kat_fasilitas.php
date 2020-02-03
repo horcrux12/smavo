@@ -41,7 +41,7 @@
 <!-- END CEK FORM KOSONG -->
 
     <!-- Kembali -->
-      <a href="<?php echo base_url();?>kat_fasilitas">
+      <a href="<?php echo base_url();?>admin/kategori-fasilitas">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>Kembali</button>
       </a>
@@ -49,7 +49,7 @@
       <!-- end kembali -->
    
              
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>kat_fasilitas/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/kategori-fasilitas/simpan-fasilitas" onsubmit="return cekform();">
 
               
               <div class="form-group">

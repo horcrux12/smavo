@@ -43,7 +43,7 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      <a href="<?php echo base_url();?>kat_organisasi/tambah" class="btn btn-primary btn-small">
+                      <a href="<?php echo base_url();?>admin/kategori-organisasi/tambah-organisasi" class="btn btn-primary btn-small">
                     <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Organisasi</a>
                   <br>
                 <br>
@@ -95,14 +95,14 @@ if(!empty($info_hapus))
                             
                             <td class="center" > 
                                 <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="<?php echo base_url();?>kat_organisasi/detail/<?php echo $row->id_organisasi?>" title="Detail" data-rel="tooltip" >
+                                      <a class="tooltip-info blue" href="<?php echo base_url();?>admin/kategori-organisasi/detail-organisasi/<?php echo $row->id_organisasi?>" title="Detail" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
                                   </td> 
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>kat_organisasi/ubah/<?php echo $row->id_organisasi?>" title="Ubah" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-organisasi/ubah-organisasi/<?php echo $row->id_organisasi?>" title="Ubah" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
                             </td>
@@ -111,7 +111,7 @@ if(!empty($info_hapus))
                              
 
                                       
-                                      <a class="tooltip-info red" href="<?php echo base_url();?>kat_organisasi/delete/<?php echo $row->id_organisasi?>"
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>admin/kategori-organisasi/hapus-organisasi/<?php echo $row->id_organisasi?>"
                                      title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>

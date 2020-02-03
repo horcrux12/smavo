@@ -1,7 +1,7 @@
     
 
   <!-- Kembali -->
-  <a href="<?php echo base_url();?>kat_organisasi">
+  <a href="<?php echo base_url();?>admin/kategori-organisasi">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>Kembali</button>
       </a>

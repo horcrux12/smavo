@@ -17,19 +17,19 @@
 			<b class="arrow"></b>
 		<ul class="submenu">
 			<li class="">
-				<a href="<?php echo base_url();?>guru"><i class="menu-icon fa fa-caret-right"></i>Data Guru</a>
+				<a href="<?php echo base_url();?>admin/guru"><i class="menu-icon fa fa-caret-right"></i>Data Guru</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>kat_mapel"><i class="menu-icon fa fa-caret-right"></i>Data Mata Pelajaran</a>
+				<a href="<?php echo base_url();?>admin/kategori-mapel"><i class="menu-icon fa fa-caret-right"></i>Data Mata Pelajaran</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>kat_artikel"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Artikel</a>
+				<a href="<?php echo base_url();?>admin/kategori-artikel"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Artikel</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>kat_fasilitas"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Fasiitas</a>
+				<a href="<?php echo base_url();?>admin/kategori-fasilitas"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Fasiitas</a>
 				<b class="arrow"></b>
 			</li>
 			<!-- <li class="">
@@ -37,15 +37,15 @@
 				<b class="arrow"></b>
 			</li> -->
 			<li class="">
-				<a href="<?php echo base_url();?>kat_jab"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Jabatan</a>
+				<a href="<?php echo base_url();?>admin/kategori-jabatan"><i class="menu-icon fa fa-caret-right"></i>Data Kategori Jabatan</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>kat_organisasi"><i class="menu-icon fa fa-caret-right"></i>Data Organisasi</a>
+				<a href="<?php echo base_url();?>admin/kategori-organisasi"><i class="menu-icon fa fa-caret-right"></i>Data Organisasi</a>
 				<b class="arrow"></b>
 			</li>
 			<li class="">
-				<a href="<?php echo base_url();?>galeri"><i class="menu-icon fa fa-caret-right"></i>Data Galeri</a>
+				<a href="<?php echo base_url();?>admin/galeri"><i class="menu-icon fa fa-caret-right"></i>Data Galeri</a>
 				<b class="arrow"></b>
 			</li>
 		</ul>
@@ -107,7 +107,7 @@
 							    $data = $this->db->get('tb_kat_profil');
 								foreach ($data->result() as $row) {?>
 								<li class="">
-									<a href="<?php echo base_url();?>profil/detail/<?php echo $row->id_kat_profil?>"><i class="menu-icon fa fa-caret-right"></i>
+									<a href="<?php echo base_url();?>admin/profil/detail-profil/<?php echo $row->id_kat_profil?>"><i class="menu-icon fa fa-caret-right"></i>
 										<?php echo $row->nama_kat_profil?>
 									</a>
 									<b class="arrow"></b>
@@ -123,7 +123,7 @@
 									<ul class="submenu">
 									<li class="">
 
-									<a href="<?php echo base_url();?>fasilitas"><i class="menu-icon fa fa-caret-right"></i>
+									<a href="<?php echo base_url();?>admin/fasilitas"><i class="menu-icon fa fa-caret-right"></i>
 										Semua Fasilitas
 									</a>
 									<b class="arrow"></b>
@@ -134,7 +134,7 @@
 							    $data = $this->db->get('tb_kat_fasilitas');
 								foreach ($data->result() as $row) {?>
 								<li class="">
-									<a href="<?php echo base_url();?>fasilitas/detail_kat_fasilitas/<?php echo $row->id?>"><i class="menu-icon fa fa-caret-right"></i>
+									<a href="<?php echo base_url();?>admin/fasilitas/detail-fasilitas/<?php echo $row->id?>"><i class="menu-icon fa fa-caret-right"></i>
 										<?php echo $row->nama_fasilitas?>
 									</a>
 									<b class="arrow"></b>
@@ -153,7 +153,7 @@
 						<b class="arrow"></b>
 					<ul class="submenu">
 						<li class="">
-							<a href="<?php echo base_url();?>siswa"><i class="menu-icon fa fa-pencil-square-o"></i>Semua Artikel Siswa</a>
+							<a href="<?php echo base_url();?>admin/siswa"><i class="menu-icon fa fa-pencil-square-o"></i>Semua Artikel Siswa</a>
 							<b class="arrow"></b>
 						</li>
 						<li class="">
@@ -168,7 +168,7 @@
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {?>
 									<li class="">
-										<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
+										<a href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->nama_kat_siswa?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											<?php echo $row->nama_kat_siswa?>
 										</a>		
@@ -186,7 +186,7 @@
 			</ul><!-- /.nav-list -->
 
 			<li class="">
-						<a href="<?php echo base_url();?>pesan">
+						<a href="<?php echo base_url();?>admin/kategori-pesan">
 							<i class="menu-icon fa  fa-envelope"></i>
 							<span class="menu-text"> Kotak Masuk </span>
 							<span class="badge badge-danger">5</span>
@@ -196,7 +196,7 @@
 					</li>
 
 			<li class="">
-						<a href="<?php echo base_url();?>statistik">
+						<a href="<?php echo base_url();?>admin/statistik-pengguna">
 							<i class="menu-icon fa fa-bar-chart-o"></i>
 							<span class="menu-text"> Statistik Pengguna </span>
 						</a>
@@ -205,7 +205,7 @@
 					</li>
 
 			<li class="">
-						<a href="<?php echo base_url();?>user">
+						<a href="<?php echo base_url();?>admin/administrator">
 							<i class="menu-icon fa fa-users"></i>
 							<span class="menu-text"> Administrator </span>
 						</a>
@@ -256,6 +256,8 @@
 <!-- end if akses administrator -->
 
 
+
+
 <!-- hak akses admin publish -->
 <?php 
 	elseif ($this->session->userdata('hak_akses') === 'Admin Publish'):
@@ -263,7 +265,7 @@
 
 <ul class="nav nav-list">
 					<li class="active">
-						<a href="<?php echo base_url();?>dashboard">
+						<a href="<?php echo base_url();?>admin/dashboard">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -287,7 +289,7 @@
 
 							
 							<li class="">
-								<a href="<?php echo base_url();?>kat_artikel">
+								<a href="<?php echo base_url();?>admin/kategori-artikel">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Data Kategori Artikel
 								</a>
@@ -356,6 +358,10 @@
 
 
 
+
+
+
+
 <!-- hak akses admin_siswa -->
 <?php 
 	if ($this->session->userdata('hak_akses') === 'Admin Siswa'):
@@ -363,7 +369,7 @@
 
 <ul class="nav nav-list">
 					<li class="active">
-						<a href="<?php echo base_url();?>dashboard">
+						<a href="<?php echo base_url();?>admin/dashboard">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -411,7 +417,7 @@
 						<ul class="submenu">
 
 								<li class="">
-								<a href="<?php echo base_url();?>siswa	">
+								<a href="<?php echo base_url();?>admin/siswa	">
 									<i class="menu-icon fa fa-pencil-square-o"></i>
 									 Semua Artikel Siswa
 								</a>
@@ -441,7 +447,7 @@
 									foreach ($data->result() as $row) {
 									  
 									?>
-								<a href="<?php echo base_url();?>siswa/detail_kat_siswa/<?php echo $row->nama_kat_siswa?>">
+								<a href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->nama_kat_siswa?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									<?php echo $row->nama_kat_siswa?>
 								</a>

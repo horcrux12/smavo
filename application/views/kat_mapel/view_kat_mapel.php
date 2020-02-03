@@ -43,7 +43,7 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      <a href="<?php echo base_url();?>kat_mapel/tambah" class="btn btn-primary btn-small">
+                      <a href="<?php echo base_url();?>admin/kategori-mapel/tambah-mapel" class="btn btn-primary btn-small">
                     <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Mata Pelajaran</a>
                   <br>
                 <br>
@@ -104,7 +104,7 @@ if(!empty($info_hapus))
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>kat_mapel/ubah/<?php echo $row->id_mapel?>"  title="Ubah"  data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-mapel/ubah-mapel/<?php echo $row->id_mapel?>"  title="Ubah"  data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
@@ -115,7 +115,7 @@ if(!empty($info_hapus))
                              
 
                                       
-                                      <a class="tooltip-info red" href="<?php echo base_url();?>kat_mapel/delete/<?php echo $row->id_mapel?>"
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>admin/kategori-mapel/hapus-mapel/<?php echo $row->id_mapel?>"
                                        title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>

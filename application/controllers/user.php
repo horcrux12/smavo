@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 
 	
 		}
@@ -149,9 +149,6 @@
 		  $config['encrypt_name']		= FALSE;
 		  $config['overwrite']			= true;
 		
- 
-	     
-	 
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
 	 
@@ -183,7 +180,7 @@
 				$this->model_user->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
-			redirect('user');
+			redirect('admin/administrator');
 		
 
 		} 
@@ -191,7 +188,7 @@
 
 	}
 
-		public function ubah() // Mengubah data user
+		public function ubah($id) // Mengubah data user
 		{
 			$konten['css']			= '
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
@@ -254,7 +251,7 @@
 			$konten['konten'] 		= 'user/form_ubah_user';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data user';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_user',$key);
 			$query = $this->db->get('tb_user');
 			if($query->num_rows()>0)
@@ -285,7 +282,7 @@
 				$this->load->view('v_dashboard',$konten);
 }
 
-		public function detail() // Detail data user
+		public function detail($id) // Detail data user
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
@@ -293,7 +290,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail user';
 			
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_user',$key);
 			$query = $this->db->get('tb_user');
 			if($query->num_rows()>0)
@@ -327,11 +324,11 @@
 			} 
 
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_user');
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_user',$key);
 			$query = $this->db->get('tb_user');
 		
@@ -342,7 +339,7 @@
 					$this->model_user->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('user');
+				redirect('admin/administrator');
 
 } 
 	

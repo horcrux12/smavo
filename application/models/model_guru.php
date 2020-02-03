@@ -52,31 +52,45 @@
 		 }
 
 
-		 public function guru() // join tb_jabatan, tb_guru dan tb_mapel
+	// 	 public function guru() // join tb_jabatan, tb_guru dan tb_mapel
+	// 	{
+
+	// 		$data	= " SELECT
+
+	// 					tb_guru.id_guru,
+	// 					tb_guru.nip,
+	// 					tb_guru.nama_lengkap,
+	// 					tb_guru.tempat_lahir,
+	// 					tb_guru.tgl_lahir,
+	// 					tb_jabatan.nama_jabatan,
+	// 					tb_mapel.nama_mapel,
+	// 					tb_guru.foto
+
+
+	// 					FROM 
+	// 					tb_guru,tb_jabatan,tb_mapel
+
+	// 					WHERE 
+
+	// 					tb_jabatan.id_jabatan=tb_guru.id_jabatan and 
+	// 					tb_mapel.id_mapel=tb_guru.id_mapel";
+
+	// 		return $this->db->query($data);
+
+	// }
+
+	public function tampil_guru() 
 		{
-
-			$data	= " SELECT
-
-						tb_guru.id_guru,
-						tb_guru.nip,
-						tb_guru.nama_lengkap,
-						tb_guru.tempat_lahir,
-						tb_guru.tgl_lahir,
-						tb_jabatan.nama_jabatan,
-						tb_mapel.nama_mapel,
-						tb_guru.foto
-
-
-						FROM 
-						tb_guru,tb_jabatan,tb_mapel
-
-						WHERE 
-
-						tb_jabatan.id_jabatan=tb_guru.id_jabatan and 
-						tb_mapel.id_mapel=tb_guru.id_mapel";
-
-			return $this->db->query($data);
-
-	}
+			$this->db->select('
+			tb_guru.*, tb_mapel.id_mapel AS id_mapel, tb_mapel.nama_mapel, tb_jabatan.id_jabatan AS jabatan, tb_jabatan.nama_jabatan
+		');
+		$this->db->from('tb_guru');
+		// $this->db->order_by('id_guru','DESC');
+		$this->db->join('tb_mapel','tb_guru.id_mapel = tb_mapel.id_mapel');
+		$this->db->join('tb_jabatan','tb_guru.id_jabatan = tb_jabatan.id_jabatan');
+		$query = $this->db->get();
+		return $query;
+		}
+	
 		
 }

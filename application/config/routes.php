@@ -88,6 +88,7 @@ $route['admin/siswa/ubah-siswa/(:any)'] = 'siswa/ubah/$1'; //ubah
 $route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail/$1'; //detail
 $route['admin/siswa/hapus-siswa/(:any)'] = 'siswa/delete/$1'; //hapus data
 $route['admin/siswa/kategori-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; //tampil detail kategori data
+$route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; 
 
 // Setting
 $route['admin/pengaturan/kemitraan'] = 'kemitraan';
@@ -102,7 +103,6 @@ $route['admin/pengaturan/slider/simpan-slider'] = 'slider/simpan';
 $route['admin/pengaturan/slider/ubah-slider/(:num)'] = 'slider/ubah/$1';
 $route['admin/pengaturan/slider/hapus-slider/(:num)'] = 'slider/delete/$1';
 
-
 $route['admin/pengaturan/about'] = 'about';
 $route['admin/pengaturan/about/tambah-about'] = 'about/tambah';
 $route['admin/pengaturan/about/simpan-about'] = 'about/simpan';
@@ -115,4 +115,96 @@ $route['admin/pengaturan/sambutan/simpan-sambutan'] = 'sambutan/simpan';
 $route['admin/pengaturan/sambutan/ubah-sambutan/(:num)'] = 'sambutan/ubah/$1';
 $route['admin/pengaturan/sambutan/hapus-sambutan/(:num)'] = 'sambutan/delete/$1';
 
+
+//kategori artikel
+$route['admin/kategori-artikel'] = 'kat_artikel';
+$route['admin/kategori-artikel/tambah-artikel'] = 'kat_artikel/tambah';
+$route['admin/kategori-artikel/simpan-artikel'] = 'kat_artikel/simpan';
+$route['admin/kategori-artikel/ubah-artikel/(:any)'] = 'kat_artikel/ubah/$1';
+$route['admin/kategori-artikel/hapus-artikel/(:any)'] = 'kat_artikel/delete/$1';
+
+//kategori guru
+$route['admin/guru'] = 'guru';
+$route['admin/guru/tambah-guru'] = 'guru/tambah';
+$route['admin/guru/simpan-guru'] = 'guru/simpan';
+$route['admin/guru/ubah-guru/(:any)'] = 'guru/ubah/$1';
+$route['admin/guru/hapus-guru/(:any)'] = 'guru/delete/$1';
+$route['admin/guru/detail-guru/(:any)'] = 'guru/detail/$1'; 
+
+//mapel
+$route['admin/kategori-mapel'] = 'kat_mapel';
+$route['admin/kategori-mapel/tambah-mapel'] = 'kat_mapel/tambah';
+$route['admin/kategori-mapel/simpan-mapel'] = 'kat_mapel/simpan';
+$route['admin/kategori-mapel/ubah-mapel/(:any)'] = 'kat_mapel/ubah/$1';
+$route['admin/kategori-mapel/hapus-mapel/(:any)'] = 'kat_mapel/delete/$1';
+$route['admin/kategori-mapel/detail-mapel/(:any)'] = 'kat_mapel/detail/$1'; 
+
+//kategori fasilitas
+$route['admin/kategori-fasilitas'] = 'kat_fasilitas';
+$route['admin/kategori-fasilitas/tambah-fasilitas'] = 'kat_fasilitas/tambah';
+$route['admin/kategori-fasilitas/simpan-fasilitas'] = 'kat_fasilitas/simpan';
+$route['admin/kategori-fasilitas/ubah-fasilitas/(:any)'] = 'kat_fasilitas/ubah/$1';
+$route['admin/kategori-fasilitas/hapus-fasilitas/(:any)'] = 'kat_fasilitas/delete/$1';
+$route['admin/kategori-fasilitas/detail-fasilitas/(:any)'] = 'kat_fasilitas/detail/$1'; 
+
+//fasilitas
+$route['admin/fasilitas'] = 'fasilitas';
+$route['admin/fasilitas/tambah-fasilitas/(:any)'] = 'fasilitas/tambah/$1';
+$route['admin/fasilitas/ubah-fasilitas/(:any)'] = 'fasilitas/ubah/$1';
+$route['admin/fasilitas/hapus-fasilitas/(:any)'] = 'fasilitas/delete/$1';
+$route['admin/fasilitas/detail-fasilitas/(:any)'] = 'fasilitas/detail_kat_fasilitas/$1'; 
+
+
+//jabatan
+$route['admin/kategori-jabatan'] = 'kat_jab';
+$route['admin/kategori-jabatan/tambah-jabatan'] = 'kat_jab/tambah';
+$route['admin/kategori-jabatan/simpan-jabatan'] = 'kat_jab/simpan';
+$route['admin/kategori-jabatan/ubah-jabatan/(:any)'] = 'kat_jab/ubah/$1';
+$route['admin/kategori-jabatan/hapus-jabatan/(:any)'] = 'kat_jab/delete/$1';
+$route['admin/kategori-jabatan/detail-jabatan/(:any)'] = 'kat_jab/detail/$1'; 
+
+
+//organisasi
+$route['admin/kategori-organisasi'] = 'kat_organisasi';
+$route['admin/kategori-organisasi/tambah-organisasi'] = 'kat_organisasi/tambah';
+$route['admin/kategori-organisasi/simpan-organisasi'] = 'kat_organisasi/simpan';
+$route['admin/kategori-organisasi/ubah-organisasi/(:any)'] = 'kat_organisasi/ubah/$1';
+$route['admin/kategori-organisasi/hapus-organisasi/(:any)'] = 'kat_organisasi/delete/$1';
+$route['admin/kategori-organisasi/detail-organisasi/(:any)'] = 'kat_organisasi/detail/$1'; 
+
+
+//galeri
+$route['admin/galeri'] = 'galeri';
+$route['admin/galeri/tambah-galeri'] = 'galeri/tambah';
+$route['admin/galeri/simpan-galeri'] = 'galeri/simpan';
+$route['admin/galeri/ubah-galeri/(:any)'] = 'galeri/ubah/$1';
+$route['admin/galeri/hapus-galeri/(:any)'] = 'galeri/delete/$1';
+$route['admin/galeri/detail-galeri/(:any)'] = 'galeri/detail/$1'; 
+
+//profil
+$route['admin/profil'] = 'profil';
+$route['admin/profil/tambah-profil'] = 'profil/tambah';
+$route['admin/profil/simpan-profil'] = 'profil/simpan';
+$route['admin/profil/ubah-profil/(:any)'] = 'profil/ubah/$1';
+$route['admin/profil/hapus-profil/(:any)'] = 'profil/delete/$1';
+$route['admin/profil/detail-profil/(:any)'] = 'profil/detail/$1'; 
+
+//pesan
+$route['admin/kategori-pesan'] = 'pesan';
+$route['admin/kategori-pesan/tambah-pesan'] = 'pesan/tambah';
+$route['admin/kategori-pesan/simpan-pesan'] = 'pesan/simpan';
+$route['admin/kategori-pesan/ubah-pesan/(:any)'] = 'pesan/ubah/$1';
+$route['admin/kategori-pesan/hapus-pesan/(:any)'] = 'pesan/delete/$1';
+$route['admin/kategori-pesan/detail-pesan/(:any)'] = 'pesan/detail/$1'; 
+
+//statistik 
+$route['admin/statistik-pengguna'] = 'statistik';
+
+//administrator
+$route['admin/administrator'] = 'user';
+$route['admin/administrator/tambah-administrator'] = 'user/tambah';
+$route['admin/administrator/simpan-administrator'] = 'user/simpan';
+$route['admin/administrator/ubah-administrator/(:any)'] = 'user/ubah/$1';
+$route['admin/administrator/hapus-administrator/(:any)'] = 'user/delete/$1';
+$route['admin/administrator/detail-administrator/(:any)'] = 'user/detail/$1'; 
 

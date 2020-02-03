@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>;
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 
 	
 		}

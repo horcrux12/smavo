@@ -59,7 +59,7 @@ if(!empty($info_gagal))
 
                       <div class="pull-right tableTools-container"></div>
 
-                        <a href="<?php echo base_url();?>user/tambah" class="btn btn-primary btn-small">
+                        <a href="<?php echo base_url();?>admin/administrator/tambah-administrator" class="btn btn-primary btn-small">
                     <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data User</a>
                       <br>
                     <br>
@@ -127,15 +127,15 @@ if(!empty($info_gagal))
                            </td>
                            <td class="center">
                               <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="<?php echo base_url();?>user/detail/<?php echo $row->id_user?>"  title="Detail"  data-rel="tooltip" >
+                                      <a class="tooltip-info blue" href="<?php echo base_url();?>admin/administrator/detail-administrator/<?php echo $row->id_user?>"  title="Detail"  data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
 
-                                      <a class="tooltip-info green" href="<?php echo base_url();?>user/ubah/<?php echo $row->id_user?>" title="Edit"  data-rel="tooltip">
+                                      <a class="tooltip-info green" href="<?php echo base_url();?>admin/administrator/ubah-administrator/<?php echo $row->id_user?>" title="Edit"  data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
 
-                                      <a class="tooltip-info red" href="<?php echo base_url();?>user/delete/<?php echo $row->id_user?>"
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>admin/administrator/hapus-administrator/<?php echo $row->id_user?>"
                                        title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>

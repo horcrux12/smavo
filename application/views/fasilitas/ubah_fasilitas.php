@@ -33,7 +33,7 @@
 
     <!-- Kembali -->
      
-      <a href="<?php echo base_url();?>kat_fasilitas">
+      <a href="<?php echo base_url();?>admin/fasilitas">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  

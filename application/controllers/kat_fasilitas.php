@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 	
 		}
 
@@ -105,7 +105,7 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-		public function ubah()
+		public function ubah($id)
 		{
 			
 			$konten['css']			= '
@@ -171,7 +171,7 @@
 			$konten['konten'] 		= 'kat_fasilitas/ubah_kat_fasilitas';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data fasilitas';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id',$key);
 			$query = $this->db->get('tb_kat_fasilitas');
 			if($query->num_rows()>0)
@@ -260,24 +260,25 @@
 
 				$this->model_kat_fasilitas->getupdate($key,$data);
 				$this->session->set_flashdata('info','Data berhasil di update');
-				redirect('kat_fasilitas');
+				redirect('admin/kategori-fasilitas');
 			}
 			else
 			{
 				$this->model_kat_fasilitas->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
-				redirect('kat_fasilitas');
+				redirect('admin/kategori-fasilitas');
 			}
 			
 		}
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_kat_fasilitas');
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id',$key);
 			$query = $this->db->get('tb_kat_fasilitas');
+		
 		
 			if($query->num_rows()>0)
 				{
@@ -286,7 +287,7 @@
 					$this->model_kat_fasilitas->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('kat_fasilitas');
+				redirect('admin/kategori-fasilitas');
 	}
 
 

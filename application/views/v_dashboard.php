@@ -8,7 +8,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 <head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>ADMIN - SMA NEGERI 2 CIBINONG</title>
+		<title>ADMINISTRATOR - SMA NEGERI 2 CIBINONG</title>
 
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 		<!-- Ini Coba Pisah -->
@@ -69,7 +69,7 @@ if ($cekin === 'Administrator' || $cekin === 'Admin Siswa' || $cekin === 'Admin 
 			</button>
 
 			<div class="navbar-header pull-left">
-				<a href="<?php echo base_url();?>dashboard" class="navbar-brand">
+				<a href="<?php echo base_url();?>admin/dashboard" class="navbar-brand">
 					<small>
 						<img src="<?php echo base_url();?>assets/photo/logo/logo.png ?>" width="27">
 						ADMIN - SMA NEGERI 2 CIBINONG
