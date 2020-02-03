@@ -46,7 +46,7 @@
         <div class="icon">7</div>
         <div class="title">Nemo pariatur</div>
         <div class="content">
-            <div class="heart-icon">&hearts;</div>
+            <div class="heart-icon"><img src="<?php echo base_url();?>assets2/cin.png" width="150" height="150"></div>
         </div>
     </div>
 </div>
