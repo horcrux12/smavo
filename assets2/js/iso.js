@@ -30,40 +30,53 @@ var portfolioIsotope = $('.portfolio-container').isotope({
         $(this).parent().attr("data-pager",page);
         item++;
     });
-    // alert(position);
- }
 
- function CreatePager(params) {
-     
+    if (pages !== 0) {
+      $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a></li>')
+      $(".pagination").append('<li class="page-item number active" data-pager="'+1+'"><a class="page-link" href="javascript:void(0);">'+1+'</a></li>');
+      for (var i = 1; i < pages; i++) {
+        
+        $(".pagination").append('<li class="page-item number" data-pager="'+(i+1)+'"><a class="page-link" href="javascript:void(0);">'+(i+1)+'</a></li>');
+        
+      }
+      $(".pagination").append('<li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>');
+    }
+    
+    // alert(position);
  }
 
   Pager();
   portfolioIsotope.isotope({ filter: '[data-pager = "1"]' });
-
-  $('.pagination').append('<li class="page-item active"><a class="page-link" href="javascript:void(0);">'+1+'</a></li>');
-
-  $('.pagination').append('<li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>');
+  pageOnClick();
 
   $('#portfolio-flters li').on( 'click', function() {
     $("#portfolio-flters li").removeClass('filter-active');
     $(this).addClass('filter-active');
 
     //remove and update data pager
-    $(".portfolio-item").removeAttr("data-pager");
+    $(".portfolio-item").removeAttr('data-pager');
+    $(".pagination").empty();
     // $(".portfolio-item"+$(this).data("filter")).attr("data-pager","2");  
     
-    var position = $(this).attr("data-filter");
+    var position = $(this).attr('data-filter');
     Pager (position);
     
     portfolioIsotope.isotope({ filter: $(this).data('filter')+'[data-pager = "1"]' });
     // portfolioIsotope.isotope({ filter: '[data-pager = "1"]' });
 
     // alert(numberofItem)
-
     // alert ('.portfolio-item'+$(this).data("filter"));
+    pageOnClick();
     
   });
   
-  
+  function pageOnClick() {
+    $('.pagination li.number').on('click', function() {
+      $('.pagination li.number').removeClass('active');
+      $(this).addClass('active');
+
+      portfolioIsotope.isotope({filter:'[data-pager ="'+$(this).data('pager')+'"]'}); 
+    });
+  }
  
 // coba();

@@ -78,8 +78,6 @@
       About Us Section
     ============================-->
     <section id="about" class="section-bg">
-
-
       <div class="container" data-scroll-index="1">
 
         <?php foreach ($data['about'] as $key) { ?>
@@ -94,7 +92,7 @@
             <div class="col-md-4 wow fadeInUp">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-paperplane-outline"></i></div>
-                <h2 class="title"><a href="#">Our Vision</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Vision</a></h2>
                 <p>
                   <?php echo $key->visi ?>
                 </p>
@@ -104,7 +102,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-pie-outline"></i></div>
-                <h2 class="title"><a href="#">Our Mision</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Mision</a></h2>
                 <p>
                   <?php echo $key->misi ?>
                 </p>
@@ -114,7 +112,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                <h2 class="title"><a href="#">Our Plan</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Plan</a></h2>
                 <p>
                   <?php echo $key->plan ?>
                 </p>
@@ -159,7 +157,7 @@
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="call-to-action" class="wow fadeIn">
+    <section id="call-to-action" class="wow fadeIn" style="background-image: url('<?php echo base_url()?>assets2/img/batik.jpg')">
       <div class="container text-center">
         <h3>Selamat Datang di Website SMAN 2 Cibinong</h3>
         <h1><span id="typed1"></span></h1>
@@ -256,10 +254,6 @@
             <div class="col-lg-12" id=pagination style="padding-top: 30px;">
             <nav aria-label="...">
               <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a>
-                </li>
-
               </ul>
             </nav>
           </div>
@@ -313,7 +307,7 @@
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">274</span>
+            <span data-toggle="counter-up"><?php echo $data['kunjungan']['week'][0]->hits?></span>
             <p>Weeks Ago</p>
           </div>
 
@@ -389,8 +383,8 @@
       <div class="container">
 
         <div class="section-header">
-          <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3>Kontak Kami</h3>
+          <p>Untuk info lebih lanjut dan pengajuan pertanyaan seputar SMA Negeri 2 Cibinong dapat langsung menghubungi kami dibawah ini:</p>
         </div>
 
         <div class="row contact-info">
@@ -399,7 +393,7 @@
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+              <address>Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913-Jawa Barat Indonesia</address>
             </div>
           </div>
 
@@ -407,7 +401,7 @@
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+              <p><a href="tel:+155895548855"> +62 251 8654347</a></p>
             </div>
           </div>
 
@@ -415,7 +409,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:info@example.com">info@sman2cibinong.sch.id</a></p>
             </div>
           </div>
 
