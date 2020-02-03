@@ -23,7 +23,7 @@
 </a>
 </i> -->
 
-<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>profil/simpan" onsubmit="return cekform();">
+<form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/profil/simpan-profil" onsubmit="return cekform();">
 
 
   <div class="form-group">
@@ -61,21 +61,15 @@
     </div>  
   </div>
         
-                <?php
-                $key = $this->uri->segment(3);
-                $this->db->where('id_info',$key);
-                $query = $this->db->get('tb_profil');
-                foreach ($query->result() as $row) {
-                ?>
     <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
-    <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/profil/'.$row->foto.'');?>> 
+    <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/profil/'.$file.'');?>> 
     <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
     <i><font color="red">*Foto yang telah digunakan : <?php echo $file;?><br></font></i>
     </div>
   </div>
-  <?php } ?>
+  
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul</label>

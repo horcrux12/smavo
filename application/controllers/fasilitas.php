@@ -7,8 +7,9 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
+
 	
 		}
 
@@ -156,7 +157,7 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-		public function ubah()
+		public function ubah($id)
 		{
 			
 			$konten['css']			= '
@@ -222,7 +223,7 @@
 			$konten['konten'] 		= 'fasilitas/ubah_fasilitas';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data fasilitas';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id',$key);
 			$query = $this->db->get('tb_fasilitas');
 			if($query->num_rows()>0)
@@ -311,22 +312,22 @@
 
 				$this->model_fasilitas->getupdate($key,$data);
 				$this->session->set_flashdata('info','Data berhasil di update');
-				redirect('fasilitas');
+				redirect('admin/fasilitas');
 			}
 			else
 			{
 				$this->model_fasilitas->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
-				redirect('fasilitas');
+				redirect('admin/fasilitas');
 			}
 			
 		}
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_fasilitas');
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id',$key);
 			$query = $this->db->get('tb_fasilitas');
 		
@@ -337,11 +338,11 @@
 					$this->model_fasilitas->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('fasilitas');
+				redirect('admin/fasilitas');
 	}
 
 
-	public function Detail()
+	public function Detail($id)
 		{
 			
 			$konten['css']			= '';
@@ -350,7 +351,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail Data fasilitas';
 			$konten['data']			= $this->model_fasilitas->fasilitas_all(); 
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id',$key);
 			$query = $this->db->get('tb_fasilitas');
 		

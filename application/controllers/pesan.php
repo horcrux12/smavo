@@ -7,9 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
-	
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 		}
 
 	}
@@ -47,14 +46,14 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-		public function ubah()
+		public function ubah($id)
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
 			$konten['konten'] 		= 'pesan/ubah_pesan';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Pesan';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_kontak',$key);
 			$query = $this->db->get('tb_kontak');
 			if($query->num_rows()>0)
@@ -104,16 +103,16 @@
 			{
 				$this->model_pesan->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
-				redirect('pesan');
+				redirect('admin/pesan');
 			}
 			
 		}
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_pesan');
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_kontak',$key);
 			$query = $this->db->get('tb_kontak');
 		
@@ -127,7 +126,7 @@
 	}
 
 
-	public function detail() // Detail data pesan
+	public function detail($id) // Detail data pesan
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
@@ -135,7 +134,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail pesan';
 			// $konten['data']			= $this->model_pesan->pesan(); /// me-load function tampil pesan hasil join table
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_kontak',$key);
 			$query = $this->db->get('tb_kontak');
 			if($query->num_rows()>0)

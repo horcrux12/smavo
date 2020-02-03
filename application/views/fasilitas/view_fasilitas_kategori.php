@@ -38,7 +38,7 @@ if (!empty($info_hapus)) {
 
 		<div class="clearfix mb-3">
 			<div class="pull-right tableTools-container"></div>
-			<a href="<?php echo base_url(); ?>fasilitas/tambah/<?= $kd_judul ?>" class="btn btn-primary btn-small">
+			<a href="<?php echo base_url(); ?>admin/fasilitas/tambah-fasilitas/<?= $kd_judul ?>" class="btn btn-primary btn-small">
 				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data fasilitas - <?= $judul_tambah ?></a><br><br>
 		</div>
 		<div class="table-header">
@@ -96,11 +96,11 @@ if (!empty($info_hapus)) {
 										<i class="ace-icon fa fa-search-plus bigger-130"></i>
 									</a> -->
 
-									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>fasilitas/Ubah/<?php echo $row->id ?>">
+									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>admin/fasilitas/ubah-fasilitas/<?php echo $row->id ?>">
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 
-									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>fasilitas/delete/<?php echo $row->id ?>"onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/fasilitas/hapus-fasilitas/<?php echo $row->id ?>"onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 								</div>

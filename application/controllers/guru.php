@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-            $url=base_url();
-            redirect($url);
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
         }
   }
 		
@@ -68,7 +68,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';
 			$konten['data']			= $this->db->get('tb_guru');
-			// $konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
+			$konten['data']			= $this->model_guru->tampil_guru();
 			// print_r($konten['data']);
 			$this->load->view('v_dashboard',$konten);
 		}
@@ -163,7 +163,12 @@
 			$data['tempat_lahir'] 				= $this->input->post('tempat');
 			$data['tgl_lahir'] 					= $this->input->post('tanggal');
 			$data['id_jabatan'] 				= $this->input->post('jbt');
-			$data['id_mapel'] 					= $this->input->post('mapel');
+			if (!$this->input->post('mapel')) {
+				$data['id_mapel'] 				= null;
+			}else {
+				$data['id_mapel'] 					= $this->input->post('mapel');
+
+			}
 			$data['foto'] 						= $this->upload->data('file_name'); 
 			
 			
@@ -181,7 +186,7 @@
 				$this->model_guru->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
-			redirect('guru');
+			redirect('admin/guru');
 		
 
 		} 
@@ -189,7 +194,7 @@
 
 	}
 
-		public function ubah() // Mengubah data guru
+		public function ubah($id) // Mengubah data guru
 		{
 			$konten['css']			= '
 				<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
@@ -251,7 +256,7 @@
 			$konten['konten'] 		= 'guru/form_ubah_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data guru';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_guru',$key);
 			$query = $this->db->get('tb_guru');
 			if($query->num_rows()>0)
@@ -286,21 +291,20 @@
 				$this->load->view('v_dashboard',$konten);
 }
 
-		public function detail() // Detail data guru
+		public function detail($id) // Detail data guru
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
 			$konten['konten'] 		= 'guru/view_detail_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail guru';
-			$konten['data']			= $this->model_guru->guru(); /// me-load function tampil guru hasil join table
-			$key = $this->uri->segment(3);
-			$this->db->where('id_guru',$key);
-			$query = $this->db->get('tb_guru');
-			if($query->num_rows()>0)
+			$konten['data']			= $this->model_guru->tampil_guru();
+			$key = $id;
+			$konten['data']			= $this->model_dinamic->getWhere('tb_guru','id_guru',$key);
+			if($konten['data']->num_rows()>0)
 			{
 
-				foreach ($query->result() as $row )
+				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_guru;
 						$konten['nip']			= $row->nip;
@@ -330,11 +334,11 @@
 			} 
 
 
-		public function delete()
+		public function delete($id)
 		{
 			
-			$this->load->model('model_guru');
-			$key = $this->uri->segment(3);
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_guru','id_guru',$id);
 			$this->db->where('id_guru',$key);
 			$query = $this->db->get('tb_guru');
 		
@@ -345,7 +349,7 @@
 					$this->model_guru->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('guru');
+				redirect('admin/guru');
 } 
 	
 	}	

@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>;
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 
 	
 		}
@@ -178,13 +178,13 @@
 				$this->session->set_flashdata('info','Data berhasil di simpan');
 			}
 			
-			redirect('profil/detail/'.$data['id_kat_profil'].'');
+			redirect('admin/profil/detail-profil/'.$data['id_kat_profil'].'');
 		}
 	
 	
 
 
-		public function ubah() // Mengubah data profil
+		public function ubah($id) // Mengubah data profil
 		{
 			$konten['css']			= '<link rel="stylesheet" href="'.base_url().'assets/css/jquery-ui.custom.min.css" />
 	<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
@@ -249,7 +249,7 @@
 			$konten['konten'] 		= 'profil/form_ubah_profil';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Profil';
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_info',$key);
 			$query = $this->db->get('tb_profil');
 			if($query->num_rows()>0)
@@ -302,11 +302,11 @@
 				} 
 
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_profil');
-			$key = $this->uri->segment(3);
+			$key = $id;
 			$this->db->where('id_info',$key);
 			$query = $this->db->get('tb_profil');
 			
@@ -318,7 +318,7 @@
 					$this->model_profil->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('profil');
+				redirect('admin/profil');
 } 
 	
 	}	

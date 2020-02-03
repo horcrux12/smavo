@@ -41,7 +41,7 @@
 
     <!-- Kembali -->
      
-      <a href="<?php echo base_url();?>kat_organisasi">
+      <a href="<?php echo base_url();?>admin/kategori-organisasi">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
@@ -49,7 +49,7 @@
       </a>
       </i>
     
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>kat_organisasi/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/kategori-organisasi/simpan-organisasi" onsubmit="return cekform();">
 
 
            

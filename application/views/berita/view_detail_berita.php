@@ -122,7 +122,7 @@
         </div>
 
 
-        <?php foreach ($data->result() as $row) { ?>
+        <?php foreach ($query->result() as $row) { ?>
         <div class="profile-info-row">
           <div class="profile-info-name"> Tanggal Update </div>
 

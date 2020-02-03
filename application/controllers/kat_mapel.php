@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
+	echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 	
 		}
 
@@ -47,14 +47,15 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-		public function ubah()
+		public function ubah($id)
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_mapel/ubah_kat_mapel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Mapel';
-			$key = $this->uri->segment(3);
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_mapel','id_mapel',$id);
 			$this->db->where('id_mapel',$key);
 			$query = $this->db->get('tb_mapel');
 			if($query->num_rows()>0)
@@ -96,22 +97,23 @@
 
 				$this->model_kat_mapel->getupdate($key,$data);
 				$this->session->set_flashdata('info','Data berhasil di update');
-				redirect('kat_mapel');
+				redirect('admin/kategori-mapel');
 			}
 			else
 			{
 				$this->model_kat_mapel->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
-				redirect('kat_mapel');
+				redirect('admin/kategori-mapel');
 			}
 			
 		}
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_kat_mapel');
-			$key = $this->uri->segment(3);
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_mapel','id_mapel',$id);
 			$this->db->where('id_mapel',$key);
 			$query = $this->db->get('tb_mapel');
 		
@@ -121,7 +123,7 @@
 					$this->model_kat_mapel->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('kat_mapel');
+				redirect('admin/kategori-mapel');
 	}
 	
 }	

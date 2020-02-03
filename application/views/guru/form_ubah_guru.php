@@ -51,7 +51,7 @@ if(!empty($info_gagal))
 
     <!-- Kembali -->
      
-      <a href="<?php echo base_url();?>guru">
+      <a href="<?php echo base_url();?>admin/guru">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
@@ -59,7 +59,7 @@ if(!empty($info_gagal))
       </a>
       </i>
     
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>guru/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/guru/simpan-guru" onsubmit="return cekform();">
 
 
            
@@ -148,15 +148,9 @@ if(!empty($info_gagal))
 
                             
 
-                <?php
-                $key = $this->uri->segment(3);
-                $this->db->where('id_guru',$key);
-                $query = $this->db->get('tb_guru');
-                foreach ($query->result() as $row) {
-                ?>
-                                
+                    
                                 <?php
-                                $set = getimagesize(base_url().'assets/photo/guru/'.$row->foto);
+                                $set = getimagesize(base_url().'assets/photo/guru/'.$file_name);
                                 if ($set) {
                                   // width
                                   $ambilst = explode (" ",$set[3]);
@@ -178,12 +172,12 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive <?= $ubahnya?>" width="50%" src="<?php echo base_url('assets/photo/guru/'.$row->foto.'');?>"> 
+              <img id="avatar" class="editable img-responsive <?= $ubahnya?>" width="50%" src="<?php echo base_url('assets/photo/guru/'.$file_name.'');?>"> 
               <br><br><br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
               </div>
               </div>   
-              <?php } ?>
+              
 
      <center> 
 <div class="box-footer">    

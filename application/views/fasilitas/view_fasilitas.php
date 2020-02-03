@@ -112,7 +112,7 @@ if(!empty($info_hapus))
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>fasilitas/ubah/<?php echo $row->id?>" title="Ubah" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/fasilitas/ubah-fasilitas/<?php echo $row->id?>" title="Ubah" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
                             </td>
@@ -121,7 +121,7 @@ if(!empty($info_hapus))
                              
 
                                       
-                                      <a class="tooltip-info red" href="<?php echo base_url();?>fasilitas/delete/<?php echo $row->id?>"
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>admin/fasilitas/hapus-fasilitas/<?php echo $row->id?>"
                                      title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>

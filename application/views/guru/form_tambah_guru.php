@@ -75,7 +75,7 @@ if(!empty($info_gagal))
 
 
     <!-- Kembali -->
-      <a href="<?php echo base_url();?>guru">
+      <a href="<?php echo base_url();?>admin/guru">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>Kembali</button>
       </a>
@@ -83,7 +83,7 @@ if(!empty($info_gagal))
       <!-- end kembali -->
    
              
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>guru/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/guru/simpan-guru" onsubmit="return cekform();">
 
               
               <div class="form-group">
@@ -155,6 +155,7 @@ if(!empty($info_gagal))
 
                             ?>            
             
+            <!-- <option value=""></option> -->
             <option value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
             <?php } ?>
               </select>

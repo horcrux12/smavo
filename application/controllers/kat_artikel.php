@@ -7,8 +7,8 @@
     parent::__construct();
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
-    echo "<script>alert('Waktu Anda Telah Habis,Silakan Login Terlebih Dahulu');
-    	  document.location='http://localhost/smavo/login'</script>";
+		echo "<script>;
+		document.location='".base_url()."admin/login'</script>";
 	
 		}
 
@@ -47,14 +47,15 @@
 			$this->load->view('v_dashboard',$konten);
 		}
 
-		public function ubah()
+		public function ubah($id)
 		{
 			$konten['css']			= '';
 			$konten['js']			= '';
 			$konten['konten'] 		= 'kat_artikel/ubah_kat_artikel';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Artikel';
-			$key = $this->uri->segment(3);
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id);
 			$this->db->where('id_kat_artikel',$key);
 			$query = $this->db->get('tb_kat_artikel');
 			if($query->num_rows()>0)
@@ -96,22 +97,23 @@
 
 				$this->model_kat_artikel->getupdate($key,$data);
 				$this->session->set_flashdata('info','Data berhasil di update');
-				redirect('kat_artikel');
+				redirect('admin/kategori-artikel');
 			}
 			else
 			{
 				$this->model_kat_artikel->getinsert($data);
 				$this->session->set_flashdata('info','Data berhasil di simpan');
-				redirect('kat_artikel');
+				redirect('admin/kategori-artikel');
 			}
 			
 		}
 
-		public function delete()
+		public function delete($id)
 		{
 			
 			$this->load->model('model_kat_artikel');
-			$key = $this->uri->segment(3);
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_kat_artikel','id_kat_artikel',$id);
 			$this->db->where('id_kat_artikel',$key);
 			$query = $this->db->get('tb_kat_artikel');
 		
@@ -121,7 +123,7 @@
 					$this->model_kat_artikel->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('kat_artikel');
+				redirect('admin/kategori-artikel');
 	}
 	
 }	

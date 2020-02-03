@@ -5,27 +5,20 @@
 
    <!-- Kembali -->
      
-      <a href="<?php echo base_url();?>user">
+      <a href="<?php echo base_url();?>admin/administrator">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
       </button>
       </a>
       </i>          
-            <?php
-            $key = $this->uri->segment(3);
-            $this->db->where('id_user',$key);
-            $query = $this->db->get('tb_user');
-            foreach ($query->result() as $row) {
-            ?>
-
-
+            
             <div class="page-header">
               <h1>
-                <?php echo $row->nama;?>
+                <?php echo $nama;?>
                 <small>
                   <i class="ace-icon fa fa-angle-double-right"></i> Dengan ID User
-                  ( <?php echo $row->id_user  ;?> )
+                  ( <?php echo $kode  ;?> )
                 </small>
               </h1>
             </div><!-- /.page-header -->
@@ -51,7 +44,7 @@
                         <span class="profile-picture">
                           
 
-                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/user/'.$row->foto.'');?>>
+                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/user/'.$file_name.'');?>>
 
                           
                         </span>
@@ -62,7 +55,7 @@
                           <div class="inline position-relative">
                             
                               
-                              <span class="white"><?php echo $row->nama;?></span>
+                              <span class="white"><?php echo $nama;?></span>
                             
 
                           </div>
@@ -93,7 +86,7 @@
                           <div class="profile-info-name"> ID User </div>
 
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $row->id_user;?></span>
+                            <span class="editable" id="username"><?php echo $kode;?></span>
                           </div>
                         </div>
 
@@ -102,7 +95,7 @@
                         <div class="profile-info-name"> Nama Lengkap </div>
 
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $row->nama;?></span>
+                            <span class="editable" id="username"><?php echo $nama;?></span>
                           </div>
 
                         
@@ -110,7 +103,7 @@
                           <div class="profile-info-name"> Username </div>
 
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $row->username?></span>
+                            <span class="editable" id="username"><?php echo $user?></span>
                           </div>
                           </div>
 
@@ -119,7 +112,7 @@
                           <div class="profile-info-row">
                           <div class="profile-info-name"> Hak Akses </div>
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $row->hak_akses?></span>
+                            <span class="editable" id="username"><?php echo $hak?></span>
                            
                           </div>
                           </div>
@@ -133,7 +126,5 @@
                       </div>
                     </div>
                   </div>
-<?php } ?>
-
 <!--   end hak akses admin -->
 <?php endif; ?>

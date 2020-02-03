@@ -88,7 +88,7 @@ if(!empty($info_gagal))
 
     <!-- Kembali -->
      
-      <a href="<?php echo base_url();?>user">
+      <a href="<?php echo base_url();?>admin/administrator">
       <button type="button" class="btn btn-warning btn-sm pull-right">
       <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
       Kembali  
@@ -96,7 +96,7 @@ if(!empty($info_gagal))
       </a>
       </i>
     
-           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>user/simpan" onsubmit="return cekform();">
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/administrator/simpan-administrator" onsubmit="return cekform();">
 
 
            
@@ -146,24 +146,16 @@ if(!empty($info_gagal))
               </div>
               </div>
 
-                <?php
-                $key = $this->uri->segment(3);
-                $this->db->where('id_user',$key);
-                $query = $this->db->get('tb_user');
-                foreach ($query->result() as $row) {
-                ?>
-
-
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Foto</label>
               <div class="col-sm-5">
-              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/user/'.$row->foto.'');?>> 
+              <img id="avatar" class="editable img-responsive" width="40%" src=<?php echo base_url('assets/photo/user/'.$file_name.'');?>> 
               <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
               <!-- <i><font color="red">*Foto hanya berekstensi .*gif|jpg|jpeg|png, dengan ukuran maksimal 2500x2500 px</font></i> -->
               </div>
               </div>   
-              <?php } ?>
+            
 
      <center> 
 <div class="box-footer">    

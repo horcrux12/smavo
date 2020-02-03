@@ -43,7 +43,7 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      <a href="<?php echo base_url();?>pesan/tambah" class="btn btn-primary btn-small">
+                      <a href="<?php echo base_url();?>admin/kategori-pesan/tambah-pesan" class="btn btn-primary btn-small">
                     <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Kotak Masuk</a>
                   <br>
                 <br>
@@ -95,7 +95,7 @@ if(!empty($info_hapus))
                             
                             <td class="center" > 
                                 <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="<?php echo base_url();?>pesan/detail/<?php echo $row->id_kontak?>"  title="Detail" data-rel="tooltip" >
+                                      <a class="tooltip-info blue" href="<?php echo base_url();?>admin/kategori-pesan/detail-pesan/<?php echo $row->id_kontak?>"  title="Detail" data-rel="tooltip" >
                                         <i class="fa fa-search-plus bigger-130"  ></i>
                                       </a>
                                   </td>
@@ -104,7 +104,7 @@ if(!empty($info_hapus))
                              
 
                                       
-                                      <a class="tooltip-info red" href="<?php echo base_url();?>pesan/delete/<?php echo $row->id_kontak?>"
+                                      <a class="tooltip-info red" href="<?php echo base_url();?>admin/kategori-pesan/hapus-pesan/<?php echo $row->id_kontak?>"
                                        title="Hapus" data-rel="tooltip" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 
                                         <i class=" fa fa-trash-o bigger-130" ></i>
