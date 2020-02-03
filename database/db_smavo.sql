@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01 Feb 2020 pada 11.30
+-- Generation Time: 03 Feb 2020 pada 15.30
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -138,7 +138,8 @@ INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (5, 'BR27012020004', 'DSC_0179_1-805x503.jpg'),
 (6, 'BR28012020005', '201204031420564Zga.jpg'),
 (7, 'BR31012020005', 'BAB_III_LANDASAN_TEORI.pdf'),
-(8, 'BR31012020005', 'BAB_III_LANDASAN_TEORI.pdf');
+(8, 'BR31012020005', 'BAB_III_LANDASAN_TEORI.pdf'),
+(9, 'BR03022020006', 'DSC_0439-min.jpg');
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,7 @@ CREATE TABLE `tb_kat_fasilitas` (
 --
 
 INSERT INTO `tb_kat_fasilitas` (`id`, `nama_fasilitas`, `deskripsi`) VALUES
-('FSL001', 'Lapangan', '<p>lapanagan</p>'),
+('FSL001', 'Lapangan', '<p>lapangan</p>'),
 ('FSL002', 'Lab Biologi', '<p>Lab Biologi</p>'),
 ('FSL003', 'Lab Fisika', 'Lab Fisika'),
 ('FSL004', 'Lab Kimia', '<p>Lab Kimia</p>'),
@@ -488,8 +489,7 @@ INSERT INTO `tb_organisasi` (`id_organisasi`, `nama_organisasi`, `deskripsi`, `f
 ('ORG001', 'Osis', '', NULL),
 ('ORG002', 'MPK', '', NULL),
 ('ORG003', 'Pramuka', '', NULL),
-('ORG004', 'Paskibra', '', NULL),
-('ORG005', 'PMR', '', NULL);
+('ORG004', 'Paskibra', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -513,7 +513,7 @@ CREATE TABLE `tb_profil` (
 
 INSERT INTO `tb_profil` (`id_info`, `id_kat_profil`, `id_user`, `judul`, `deskripsi`, `foto`, `tgl_update`) VALUES
 ('PR13012020001', 'KTP001', 'USR001', 'Sejarah SMA Negeri 2 Cibinong', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">SMA Negeri 2 Cibinong resmi berdiri berdasarkan Surat Keputusan Departemen Pendidikan dan Kebudayaan No. 0260/0/1994 tanggal 5 Oktober 1994. Peresmiannya baru dilaksanakan di Bogor pada tanggal 24 Desember 1994 oleh Bapak Drs. H.S Yusupadi yang pada saat itu menjabat sebagai Kepala Kantor Wilayah Pendidikan dan Kebudayaan Propinsi Jawa Barat.Dalam proses pembentukannya SMA Negeri 2 Cibinong untuk pertama kalinya memiliki formasi siswa kelas I sebanyak 3 kelas yang tadinya merupakan Kelas Jauh SMAN 1 Cibinong yang terletak di Jl. Mayor Oking . Kedua sekolah tersebut secara bersamaan dipimpin oleh Bapak Drs. Irlan Sumadi (1993-1995) begitu juga para pendidik dan staf Tata Usahanya merupakan pembauran dari dua lembaga tersebut. Pada tahun 1994 jumlah guru yang diangkat sebanyak 19 orang dan TU-nya 1 orang. Sarana yang dimiliki pada saat itu terdiri dari Ruang Perkantoran, Ruang Guru, Ruang perpustakaan dan tiga ruang kelas.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Periode selanjutnya SMA Negeri 2 Cibinong dipimpin oleh Bapak Drs. U. Ali Muchtar (1995-1996) dan pada saat itu pertama kalinya SMA Negeri 2 Cibinong meluluskan generasi pertama alumni SMA Negeri 2 Cibinong. Pimpinan SMA Negeri 2 Cibinong yang  ketiga yaitu Bapak Drs. Ali Rochman (1997-1999) dimana SMA Negeri 2 Cibinong mulai dilirik eksistensinya ditambah dengan sarana prasarana sekolah yang semakin bertambah.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Periode berikutnya SMA Negeri 2 Cibinong dipimpin oleh Ibu Dra. Hj. Tati Sumiati (1999-2005). Pada masa ini SMAN 2 Cibinong mulai unjuk dalam berbagai prestasi baik akademik dan non akademik. Animo masyarakat untuk menitipkan putra putrinya untuk bersekolah d SMA Negeri 2 Cibinong semakin tinggi. Sekolah dengan satu shift mulai diberlakukan.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Dra. Hj. Komariah (2005-2006) merupakan pemimpin SMA Negeri 2 Cibinong yang ke lima. Dalam kepemimpinanya semakin ditanamkan bahwa akhlak mulia dan budi pekerti yang tinggi merupakan salah satu unggulan SMA Negeri 2 Cibinong.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;"> Pemimpin berikutnya  di SMA Negeri 2 Cibinong adalah Dra. Hj. Zuraidah, MM (2006-2011). Beliau memberikan banyak perubahan inovatif dalam bidang pendidikan antara lain Full Day School, Moving Class, Sister School, School Based IT, Adaption and Adoption Of Curriculum of Cambridge dan peningkatan dalam bidang sarana dan prasarana. SMA Negeri 2 Cibinong semakin menonjol dalam berbagai prestasi baik akademik maupun non akademik seperti juara OSN, O2SN serta yang membanggakan lagi adalah banyaknya siswa yang diterima di PTN maupun PT di luar negeri. Bahkan ditambah lagi dengan diberi kepercayaan oleh pemerintah pusat untuk ditunjuk sebagai Rintisan Sekolah Bertaraf Internasional (RSBI) untuk wilayah Kabupaten Bogor yang dirintis sejak tahun 2007. SMA Negeri 2 Cibinong tidak henti-hentinya berbenah diri, diantaranya dengan membangun beberapa ruang kelas, ruang kelas yang lama diganti dengan membangun ruang kelas baru, sehingga sekarang wajah SMA Negeri 2 Cibinong semakin cantik dan sampai saat ini semua bangunan lama sudah berubah dengan bangunan baru.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Bapak Drs. Hidayat, MM (2011-2013) merupakan pemimpin SMA Negeri 2 Cibinong yang ke tujuh dimana pada periode ini SMA Negeri 2 Cibinong sebagai RSBI menjadi SBI. Prestasi siswa maupun prestasi para alumni semakin membanggakan. Berbagai kejuaraan ditoreh, juara umum OSN tingkat Kabupaten secara berturut-turut sampai dengan tingkat nasional  dan 90% siswa diterima di PTN baik melalui jalur tulis maupun jalur undangan.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Saat ini SMA Negeri 2 Cibinong dipimpin oleh Bapak Dr. Bambang Supriyadi, M.Pd (2014-sekarang) dan beliau senantiasa meningkatkan prestasi dalam berbagai bidang baik akademik maupun non akademik. Berbagai program peningkatan mutu pendidikan tengah dikembangkan dan SMAN 2 Cibinong semakin hari semakin mendapat kepercayaan dari masyarakat dan pemerintah daerah.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-family: "Source Sans Pro", sans-serif; font-size: 15px; text-align: justify; line-height: 1.5;">Generasi demi generasi terus silih berganti menyempurnakan dan menyemarakkan perjalanan SMA Negeri 2 Cibinong dengan segala suka dukanya hingga sekarang ini. Hal ini yang akan menjadikan SMA Negeri 2 Cibinong sekolah unggulan di Kabupaten Bogor  maupun di Propinsi Jawa Barat.</p><div><br></div>', 'logo.png', '2020-01-23 12:21:00'),
-('PR13012020002', 'KTP002', 'USR001', 'Visi SMA Negeri 2 Cibinong', '<p>TERWUJUDNYA WARGA SEKOLAH  YANG  BERAKHLAK MULIA,  MANDIRI,  BERWAWASAN LINGKUNGAN, DAN UNGGUL DALAM  IPTEKS (ILMU PENGETAHUAN TEKNOLOGI DAN SENI)<span style="text-align: center;"></span></p>', 'logo.png', '2020-01-23 12:21:35'),
+('PR13012020002', 'KTP002', 'USR001', 'Visi SMA Negeri 2 Cibinonghu', '<p>TERWUJUDNYA WARGA SEKOLAH  YANG  BERAKHLAK MULIA,  MANDIRI,  BERWAWASAN LINGKUNGAN, DAN UNGGUL DALAM  IPTEKS (ILMU PENGETAHUAN TEKNOLOGI DAN SENI)<span style="text-align: center;"></span></p>', 'DSC_0439-min.jpg', '2020-02-03 10:16:52'),
 ('PR13012020003', 'KTP003', 'USR001', 'Misi SMA Negeri 2 Cibinong', '<ol><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan&nbsp; keimanan,dan ketakwaan untuk mewujudkan kepribadian yang&nbsp; utuh.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan&nbsp; penghayatan dan pengamalan terhadap ajaran agama yang dianut.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Mendorong seluruh elemen&nbsp; sekolah untuk mengenali potensi dirinya.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan&nbsp; kualitas&nbsp; Sumber Daya Manusia (SDM) seluruh elemen sekolah.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan PBM&nbsp; (Proses Belajar mengajar) yang inovatif dan kreatif berdasarkan semangat keunggulan secara efektif dan efisien.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan bimbingan dan konseling kepada peserta didik secara intensif.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan kualitas lulusan yang&nbsp; memiliki sikap, pengetahuan, dan keterampilan&nbsp; yang seimbang&nbsp; dan kompetitif.</li><li style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px;">Meningkatkan&nbsp; jumlah&nbsp; lulusan yang melanjutkan ke perguruan tinggi negeri terbaik di dalam dan di luar negeri.</li></ol>', 'logo.png', '2020-01-23 12:21:49'),
 ('PR13012020004', 'KTP004', 'USR001', 'Tujuan', '<p>Tujuan</p>', 'logo.png', '2020-01-23 12:22:00'),
 ('PR13012020005', 'KTP005', 'USR001', 'Mars SMA Negeri 2 Cibinong', 'Mars Sekolah', 'logo.png', '2020-01-23 12:22:11'),
@@ -808,7 +808,8 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (161, '::1', '2020-01-30', 5, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (162, '::1', '2020-01-30', 0, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (163, '::1', '2020-01-31', 1, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
-(164, '::1', '2020-02-01', 6, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
+(164, '::1', '2020-02-01', 17, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
+(165, '::1', '2020-02-03', 7, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -983,7 +984,7 @@ ALTER TABLE `tb_about`
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
@@ -993,7 +994,7 @@ ALTER TABLE `tb_kemitraan`
 -- AUTO_INCREMENT for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
-  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_sambutan`
 --
@@ -1008,7 +1009,7 @@ ALTER TABLE `tb_slider`
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
