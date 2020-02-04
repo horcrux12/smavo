@@ -126,7 +126,7 @@ if(!empty($info_gagal))
               <div class="form-group">
               <label for="" class="col-sm-2 control-label">Password</label>
               <div class="col-sm-5">
-              <input type="password" class="form-control" name="pass" id="pass" value="<?php echo $pass;?>">
+              <input type="password" class="form-control" name="pass" id="pass" value="<?php echo md5($pass);?>">
               <!-- <i><font color="red">*Maksimal menggunakan 20 Huruf</font></i> -->
               </div>
               </div>
@@ -159,7 +159,7 @@ if(!empty($info_gagal))
 
      <center> 
 <div class="box-footer">    
-<button type="submit" class="btn btn-info btn-small">Ubah</button>
+<button type="submit" class="btn btn-info btn-small">Simpan</button>
 <button type="reset"  class="btn btn-danger btn-small">Batal</button>
    </form>
       </div>

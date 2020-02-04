@@ -171,7 +171,7 @@ $('form').submit(function (e) {
           selected += '<div class="form-group">'+
     '<label class="col-sm-2 control-label">Organisasi</label>'+
     '<div class="col-sm-8">'+
-      '<select class="form-control" name="organisasi" id="organisasi">'+
+      '<select class="form-control" name="kd_organisasi" id="kd_organisasi">'+
           '<option value="">---- PIlih Salah Satu ----</option>';
           $.each( data, function( i, val ) {
           selected += '<option value="'+data[i].id_organisasi+'">'+data[i].nama_organisasi+'</option>';

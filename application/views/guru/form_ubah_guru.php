@@ -46,9 +46,6 @@ if(!empty($info_gagal))
 ?>
 
     
-    
-  
-
     <!-- Kembali -->
      
       <a href="<?php echo base_url();?>admin/guru">
@@ -140,7 +137,7 @@ if(!empty($info_gagal))
             <option <?= $selected?> value="<?php echo $row->id_mapel;?>"><?php echo $row->nama_mapel;?></option>
             <?php } ?>
               </select>
-              <!-- <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i> -->
+              <i><font color="red">*Jika tidak ada, silakan dikosongkan</font></i>
               </div>
               </div>
               <br>
@@ -181,7 +178,7 @@ if(!empty($info_gagal))
 
      <center> 
 <div class="box-footer">    
-<button type="submit" class="btn btn-info btn-small">Ubah</button>
+<button type="submit" class="btn btn-info btn-small">Simpan</button>
 <button type="reset"  class="btn btn-danger btn-small">Batal</button>
    </form>
       </div>

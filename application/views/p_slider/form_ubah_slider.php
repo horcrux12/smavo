@@ -27,7 +27,7 @@
               <label for="" class="col-sm-2 control-label">Foto Utama</label>
               <div class="col-sm-8">
               <img id="avatar" class="editable img-responsive" width="60%" src=<?php echo base_url('assets/photo/slider/'.$foto.'');?>> 
-              <br><input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+              <br><input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*" required/>
               <i><font color="red">*Foto yang telah digunakan : <?php echo $foto;?><br></font></i>
               </div>
               </div>   

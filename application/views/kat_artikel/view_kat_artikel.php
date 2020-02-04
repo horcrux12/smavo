@@ -63,7 +63,8 @@ if(!empty($info_hapus))
                         <thead>
                           <tr>
 
-                            <th>#</th>
+                         `  <th class="hidden"></th>
+                            <th class="hidden"></th>
                             <th class="center">No</th>
                             <th class="center">Id Kategori</th>
                             <th class="center">Nama Kategori</th>
@@ -88,18 +89,13 @@ if(!empty($info_hapus))
                             ?>
 
                             <tr>  
-                            <td>#</td>
-                            <td class="center"><?php echo $no++; ?></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td width="50px" class="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_kat_artikel?></td>
                             <td><?php echo $row->nama_kat_artikel?></td>
                             
-                            <td class="center" > 
-                                <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="tooltip-info blue" href="#"  title="Detail" data-rel="tooltip" >
-                                        <i class="fa fa-search-plus bigger-130"  ></i>
-                                      </a>
-                                  </td>
-
+                            
                                 
 
                             <td class="center">

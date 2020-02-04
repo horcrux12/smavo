@@ -63,9 +63,9 @@ if(!empty($info_hapus))
                         <thead>
                           <tr>
 
-                            <th>#</th>
-                            <th class="center">No</th>
-                            <th class="center">Id Organisasi</th>
+                            <th class="hidden"></th>
+                            <th width="50px" class="center">No</th>
+                            <th width="130px" class="center">Id Organisasi</th>
                             <th class="center">Nama Organisasi</th>
                             <th colspan="4" class="center">Aksi</th>
 
@@ -88,7 +88,7 @@ if(!empty($info_hapus))
                             ?>
 
                             <tr>
-                            <td>#</td>
+                            <td class="hidden"></td>
                             <td class="center"><?php echo $no++; ?></td>
                             <td><?php echo $row->id_organisasi?></td>
                             <td><?php echo $row->nama_organisasi?></td>
@@ -102,7 +102,7 @@ if(!empty($info_hapus))
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-organisasi/ubah-organisasi/<?php echo $row->id_organisasi?>" title="Ubah" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-organisasi/ubah-organisasi/<?php echo $row->id_organisasi?>" title="Edit" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
                             </td>

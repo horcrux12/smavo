@@ -11,10 +11,7 @@
     echo "<script>;
     	  document.location='".base_url()."admin/login'</script>";
 
-	
 		}
-
-
 	}
 		
 		public function index()
@@ -68,6 +65,22 @@
 
 		}
 
-
+		public function delete($id)
+		{
+			
+			$this->load->model('model_dinamic');
+			$key = $id;
+			$query = $this->model_dinamic->getWhere ('tb_galeri','id_galeri',$id);
+			$this->db->where('id_galeri',$key);
+			$query = $this->db->get('tb_galeri');
+			if($query->num_rows()>0)
+				{
+					$query=$query->result();
+					unlink('./assets/photo/galeri/'.$query[0]->foto);
+					$this->model_berita->getdelete($key);
+					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
+				}
+				redirect('admin/galeri');
+	}
 		
 }	

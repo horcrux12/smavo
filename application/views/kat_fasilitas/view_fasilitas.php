@@ -64,7 +64,7 @@ if(!empty($info_hapus))
                           <tr>
 
                             <th hidden></th>
-                            <th class="center">No</th>
+                            <th width="50px" class="center">No</th>
                             <th class="center">Id fasilitas</th>
                             <th class="center">Nama fasilitas</th>
                             <th colspan="4" class="center">Aksi</th>
@@ -102,7 +102,7 @@ if(!empty($info_hapus))
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-fasilitas/ubah-fasilitas/<?php echo $row->id?>" title="Ubah" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/kategori-fasilitas/ubah-fasilitas/<?php echo $row->id?>" title="Edit" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
                             </td>

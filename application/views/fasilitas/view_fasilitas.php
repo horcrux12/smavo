@@ -112,7 +112,7 @@ if(!empty($info_hapus))
 
                             <td class="center">
                                 
-                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/fasilitas/ubah-fasilitas/<?php echo $row->id?>" title="Ubah" data-rel="tooltip">
+                                <a class="tooltip-info green" href="<?php echo base_url();?>admin/fasilitas/ubah-fasilitas/<?php echo $row->id?>" title="Edit" data-rel="tooltip">
                                         <i class="fa fa-pencil bigger-130" ></i>
                                       </a>
                             </td>

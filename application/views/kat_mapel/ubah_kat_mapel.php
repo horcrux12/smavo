@@ -52,7 +52,7 @@
 
      <center> 
 <div class="box-footer">    
-<button type="submit" class="btn btn-info btn-small">Ubah</button>
+<button type="submit" class="btn btn-info btn-small">Simpan</button>
 <button type="reset"  class="btn btn-danger btn-small">Batal</button>
    </form>
       </div>

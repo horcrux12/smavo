@@ -1,4 +1,4 @@
-<div>
+<div class="center">
 	<ul class="ace-thumbnails clearfix">
 		<?php foreach ($data as $key) :?>
 		<li>

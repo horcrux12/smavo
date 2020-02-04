@@ -412,6 +412,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{
 						$konten['kode']				= $row->id_berita;
 						$konten['kd_artikel']		= $row->id_kat_artikel;
+						$konten['kd_organisasi']		= $row->id_organisasi;
 						$konten['jdl']				= $row->judul;
 						$konten['user']				= $row->penulis;
 						$konten['isi']				= $row->deskripsi;
