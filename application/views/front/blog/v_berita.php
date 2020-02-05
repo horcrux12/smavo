@@ -1,13 +1,9 @@
 <html>
     <head>
-    <!-- Core Style Css -->
-        <!-- <link rel="stylesheet" href="../../../templates/bemax/css/plugins.css">
-        <link rel="stylesheet" href="../../../templates/bemax/css/style.css">
-        <link rel="stylesheet" href="../../../templates/bemax/css/custom.css"> -->
         <body>
         <div class="moduletable">
 							
-                            <section id="home" class=" bread_crumb min-header bg-img" data-overlay-dark="5" style="background-image: url(<?php base_url(); ?>images/crop.jpg)" data-stellar-background-ratio="0.5">
+                            <section id="home" class=" bread_crumb min-header bg-img" data-overlay-dark="5" style="background-image: url(<?= base_url();?>assets2/img/newspaper.jpg)" data-stellar-background-ratio="0.5">
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="v-middle mt-30">
@@ -22,18 +18,10 @@
                                 </div>
                             </section>
                             
-                    
-                    
-                    
                             </div>
-                        
-                            
-                                
                             <section class="blogs">
                                 <div class="container">
                                     <div class="row">
-                                        
-                    
                                                             <div id="content" class="col-md-8">
                                                 <!-- Begin Content -->
                                                 <div id="system-message-container">
@@ -49,10 +37,10 @@
                                 
                                 <!-- K2 Plugins: K2BeforeDisplay -->
                                             <div class="post">
-                                                                                    <!-- Item Image -->
+                                <!-- Item Image -->
                                     <div class="post-img">
                                         <a class="full-width" href="4-managing-their-own-websites.html" title="Managing Their Own Websites">
-                                            <img src="../../../media/k2/items/cache/2ff2ba0051687eef5ca0459cf942940c_L.jpg" alt="Managing Their Own Websites" style="width:100%; height:auto;" />
+                                            <img src="<?= base_url();?>assets2/img/newspaper.jpg" alt="Managing Their Own Websites" style="width:100%; height:auto;" />
                                         </a>
                                     </div>
                                                     <div class="content">
@@ -81,8 +69,6 @@
                                                                                         <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/joomla">joomla</a>, 
                                                                                 </li>
                                                 
-                                                
-                                                 
                                             </ul>
                                         </div>
                     
@@ -96,91 +82,19 @@
                                                             <p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown pis simply dummy text of the and type setting industry. Lorem Ipsum has Lorem Ipsum is simply dummy text been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></p>
                                                                         </div>
                                             
-                                                                                                                <div class="share-post">
-                                                                        <span>Share Post</span>
-                                                                        <ul>
-                                                                                                                                    <li>
-                                                                                <a href="http://www.facebook.com/sharer.php?u=http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/item/4-managing-their-own-websites" onClick="javascript:window.open(this.href,
-                                                                                    '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=220,width=600');return false;">
-                                                                                    <i class="icofont icofont-social-facebook"></i>
-                                                                                </a>
-                                                                            </li>
-                                                                                                                                                                                            <li>
-                                                                                <a href="https://twitter.com/share?url=http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/item/4-managing-their-own-websites" onClick="javascript:window.open(this.href,
-                                                                                    '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;" >
-                                                                                    <i class="icofont icofont-social-twitter"></i>
-                                                                                </a>
-                                                                            </li>
-                                                                                                                                                                                            <!-- Google +1 Button -->
-                                                                            <li>
-                                                                                <a href="https://plus.google.com/share?url=http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/item/4-managing-their-own-websites" onClick="javascript:window.open(this.href,
-                                                                                    '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                                                                                    <i class="icofont icofont-social-google-plus"></i>
-                                                                                </a>
-                                                                            </li>
-                                                                                                                                </ul>
-                                                                    </div>
-                                                                
-                                                                <div class="clr"></div>
+                                                             
                     
                                             <div class="extra-info">
-                                                
-                                                    
-                                                                
-                                                      <!-- Plugins: BeforeDisplayContent -->
-                                                      
-                                                      <!-- K2 Plugins: K2BeforeDisplayContent -->
-                                                                                
-                    
-                                                    <div class="clr"></div>
-                    
-                                                    
-                                                      <!-- Plugins: AfterDisplayContent -->
-                                                      
-                                                      <!-- K2 Plugins: K2AfterDisplayContent -->
-                                                      
-                                                      
-                                                    
-                    
-                                                                                    <div class="clr"></div>
-                    
-                                                                                    <!-- Author Block -->
                                                     <div class="itemAuthorBlock">
-                                                                                            <img class="itemAuthorAvatar" src="../../../media/k2/users/1.jpg" alt="Super User" />
-                                                        
-                                                        <div class="itemAuthorDetails">
-                                                            <h6 class="itemAuthorName">
-                                                                <a rel="author" href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/user/334-superuser">Super User</a>
-                                                            </h6>
-                    
-                                                                                                    <p>Lorem Ipsum has Lorem Ipsum is simply dummy text been the industry's standard dummy text ever since the 1500s.</p>
-                                                            
-                                                                                                    <span class="itemAuthorUrl"><i class="k2icon-globe"></i> <a rel="me" href="http://www.companyname.com/" target="_blank">www.companyname.com</a></span>
-                                                                                                    
-                                                                                                    
-                                                            
-                                                            <div class="clr"></div>
-                    
-                                                            <!-- K2 Plugins: K2UserDisplay -->
-                                                            
-                                                            <div class="clr"></div>
+                                                        <div class="itemAuthorDetails"> 
                                                         </div>
-                                                        <div class="clr"></div>
                                                     </div>
                                                     
-                    
-                    
-                                                    
-                                                    <div class="clr"></div>
-                    
-                                                    
-                                                    <div class="clr"></div>
-                    
                                                     <div class="blog-articles-nav">
                                                         <div class="row">
                                                             <!-- Previous Post -->
                                                             <div class="col-md-6 prev-post">
-                                                                                                                                                                    <a href="3-30-best-joomla-themes.html"> <i class="icofont icofont-long-arrow-left"></i> 30 Best Joomla Themes</a>
+                                                                                                                                                                    <!-- <a href="3-30-best-joomla-themes.html"> <i class="icofont icofont-long-arrow-left"></i> 30 Best Joomla Themes</a> -->
                                                                                                                                                         </div>
                                                             <!-- Next Post -->
                                                             <div class="col-md-6 next-post text-right">
@@ -194,33 +108,24 @@
                                 <div class="comments-area mb-80">
                                                         
                     
-                                                                                            <!-- Item comments -->
+                                                       <!-- Item comments -->
                                                         <a name="itemCommentsAnchor" id="itemCommentsAnchor"></a>
                                                         <div class="itemCommentslist">
-                                                            
-                    
-                                                                                                </div>
-                                                </div><!-- /.comments-area -->
-                                                    
-                                                
-                    
-                                                
-                                                                            <div class="itemCommentsLoginFirst">Login to post comments</div>
-                                                                                    </div>
+                                            </div>
+                                                </div><!-- /.comments-area -->         
+                             </div>
                     </div>
-                    
-                    
-                    
-                    <!-- End K2 Item Layout -->
-                    
-                    <!-- JoomlaWorks "K2" (v2.8.0) | Learn more about K2 at http://getk2.org -->
                     
                     
                                                 <!-- End Content -->
                                         </div>
                                                                 <div id="sidebar" class="sidebar2 pd_tb col-xs-12 col-md-4">
-                                                <div class="side-bar">
-                                                <!-- Begin Right Sidebar -->
+                                 
+                                                                <div class="side-bar">
+
+
+                                                
+                   <!-- Begin Right Sidebar -->
                                                   
                     <div id="k2ModuleBox108" class="widget search k2SearchBlock">
                         
@@ -233,6 +138,8 @@
                             <div class="moduletable">
                                             
                     <div id="k2ModuleBox122" class="widget ">
+
+                    
                             <div class="widget-title">
                             <h6>Categories</h6>
                         </div>
@@ -254,22 +161,7 @@
                                 <div class="moduletable">
                                             
                     <div id="k2ModuleBox124" class="widget k2TagCloudBlock">
-                            <div class="widget-title">
-                            <h6>Tags</h6>
-                        </div>
-                             <ul>
-                                <li>
-                            <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/blog" style="font-size:100%" title="1 items tagged with blog">
-                                blog		</a>
-                        </li>
-                                    <li>
-                            <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/joomla" style="font-size:100%" title="1 items tagged with joomla">
-                                joomla		</a>
-                        </li>
-                                </ul>
-                        <div class="clr"></div>
-                    </div>
-                            </div>
+                            
                                 <div class="moduletable">
                                             
                     <div id="k2ModuleBox107" class="widget k2ItemsBlock">
@@ -280,170 +172,57 @@
                         
                           <ul>
                             <li class="even">
-                    
-                          <!-- Plugins: BeforeDisplay -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplay -->
-                          
-                          
+    
                                 <a class="moduleItemTitle" href="1-48-best-wordpress-themes.html">48 Best WordPress Themes</a>
-                          
-                          
-                          <!-- Plugins: AfterDisplayTitle -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayTitle -->
-                          
-                          <!-- Plugins: BeforeDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplayContent -->
-                          
-                          
-                          
+
                           <div class="clr"></div>
                     
                           
                           <div class="clr"></div>
                     
-                          <!-- Plugins: AfterDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayContent -->
-                          
-                          
-                          
-                          
-                          
-                                
-                                
-                                
-                          <!-- Plugins: AfterDisplay -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplay -->
                           
                           <div class="clr"></div>
                         </li>
                             <li class="odd">
                     
-                          <!-- Plugins: BeforeDisplay -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplay -->
-                          
+            
                           
                                 <a class="moduleItemTitle" href="2-master-these-awesome-skills.html">Master These Awesome Skills</a>
                           
                           
-                          <!-- Plugins: AfterDisplayTitle -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayTitle -->
-                          
-                          <!-- Plugins: BeforeDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplayContent -->
-                          
-                          
-                          
+                      
                           <div class="clr"></div>
                     
                           
                           <div class="clr"></div>
                     
-                          <!-- Plugins: AfterDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayContent -->
-                          
-                          
-                          
-                          
-                          
-                                
-                                
-                                
-                          <!-- Plugins: AfterDisplay -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplay -->
+                
                           
                           <div class="clr"></div>
                         </li>
                             <li class="even">
-                    
-                          <!-- Plugins: BeforeDisplay -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplay -->
                           
                           
                                 <a class="moduleItemTitle" href="3-30-best-joomla-themes.html">30 Best Joomla Themes</a>
                           
                           
-                          <!-- Plugins: AfterDisplayTitle -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayTitle -->
-                          
-                          <!-- Plugins: BeforeDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplayContent -->
-                          
-                          
-                          
                           <div class="clr"></div>
                     
                           
                           <div class="clr"></div>
-                    
-                          <!-- Plugins: AfterDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayContent -->
-                          
-                          
-                          
-                          
-                          
-                                
-                                
-                                
-                          <!-- Plugins: AfterDisplay -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplay -->
+                 
                           
                           <div class="clr"></div>
                         </li>
                             <li class="odd lastItem">
-                    
-                          <!-- Plugins: BeforeDisplay -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplay -->
                           
                           
                                 <a class="moduleItemTitle" href="4-managing-their-own-websites.html">Managing Their Own Websites</a>
-                          
-                          
-                          <!-- Plugins: AfterDisplayTitle -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayTitle -->
-                          
-                          <!-- Plugins: BeforeDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2BeforeDisplayContent -->
-                          
-                          
-                          
+                 
                           <div class="clr"></div>
                     
                           
                           <div class="clr"></div>
-                    
-                          <!-- Plugins: AfterDisplayContent -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplayContent -->
-                          
-                          
-                          
-                          
-                          
-                                
-                                
-                                
-                          <!-- Plugins: AfterDisplay -->
-                          
-                          <!-- K2 Plugins: K2AfterDisplay -->
                           
                           <div class="clr"></div>
                         </li>
@@ -453,29 +232,25 @@
                         
                         
                     </div>
-                            </div>
+                        </div>
                                 <div class="moduletable">
                                             
                     <div id="k2ModuleBox106" class="widget k2LatestCommentsBlock">
                             <div class="widget-title">
                             <h6>Latest Comments</h6>
-                        </div>
-                        
-                        
-                        
+                        </div>  
                     </div>
-                            </div>
+                 </div>
                         
-                                                <!-- End Right Sidebar -->
+    <!-- End Right Sidebar -->
+
+
                                                 </div>
                                             </div>
-                                        
-                                        
                                     </div>
                                 </div>
-                            </section>
+                    </section>
         </body>
     </head>
 </html>
-        <!-- custom scripts -->
-        <!-- <script src="'.base_url().'assets2/js/script.js"></script> -->
+       
