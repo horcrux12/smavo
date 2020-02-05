@@ -1,20 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300,500,700');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  line-height: 1.5;
-}
-body {
-  background: #1c1c1c;
-}
 .custom-accordion {
-  background: #8A6552;
+  background: #00C85D;
   color: #FFFFFF;
   font-family: 'Sunflower', sans-serif;
   padding-bottom: 2rem;
+  margin-bottom: 15px;
 }
 .custom-accordion > .item {
   padding: 1rem 2rem;
@@ -22,7 +12,7 @@ body {
   max-width: 30rem;
 }
 .custom-accordion > .item:last-of-type {
-  background: #462521;
+  background: #009344;
   text-align: center;
   border-radius: .5rem;
 }
@@ -33,7 +23,7 @@ body {
   padding-bottom: 2rem;
 }
 .custom-accordion > .item > .icon {
-  color: #462521;
+  color: #009344;
   font-size: 2rem;
 }
 .custom-accordion > .item > .title {
@@ -49,6 +39,8 @@ body {
     max-height: 1000px;
     overflow: hidden;
     padding-bottom: 0;
+    margin-bottom: 35px;
+
   }
   .custom-accordion > .item {
     display: table-cell;
@@ -62,7 +54,7 @@ body {
   .custom-accordion > .item:hover:not(:last-of-type) {
     transform: scaleX(2) translateX(-1px);
     box-shadow: 0 0 3rem #301916;
-    background: #8A6552;
+    background: #00C85D;
     border-color: transparent;
   }
   .custom-accordion > .item:hover + .item {
@@ -70,13 +62,13 @@ body {
   }
   .custom-accordion > .item:hover + .item:last-of-type {
     opacity: .1;
-    background: #8A6552;
+    background: #00C85D;
   }
   .custom-accordion > .item:not(:last-of-type) {
-    border-right: 1px solid #462521;
+    border-right: 1px solid #009344;
   }
   .custom-accordion > .item:last-of-type {
-    background: #462521;
+    background: #009344;
     width: 25%;
     border-radius: 0;
   }
@@ -100,7 +92,8 @@ body {
   }
   .custom-accordion > .item:hover:not(:last-of-type) > .title {
     transform: scaleX(0.5) translateX(-50%);
-    background: #CA2E55;
+    background: #009344;
+    height: 30px;
     text-align: center;
     padding: 0;
   }
@@ -108,6 +101,35 @@ body {
     transform: translateX(-50%);
     left: 50%;
   }
+  .text a{
+    color: white;
+  }
+  .title a{
+    color: white;
+  }
+
+  .custom-accordion .btn-more-detail {
+    font-family: 'Sunflower', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 32px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+    background: #18d26e;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .custom-accordion .btn-more-detail:hover {
+    background: #fff;
+    color: #18d26e;
+  }
+
   .custom-accordion > .item:hover:not(:last-of-type) > .content {
     opacity: 1;
   }
@@ -146,7 +168,7 @@ body {
     transition: all 0.3s cubic-bezier(0.8, 0.16, 0.42, 0.89);
     opacity: 0;
     padding: 1rem;
-    pointer-events: none;
+    /* pointer-events: none; */
   }
 }
 .heart-icon {

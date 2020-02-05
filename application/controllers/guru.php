@@ -35,8 +35,6 @@
 					reposition: true,
 					scalePhotos: true,
 					scrolling: false,
-					width : auto;
-					height : auto;
 					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
 					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
 					close: '."'".'&times;'."'".',
@@ -146,7 +144,7 @@
 		  $config['upload_path'] 	= './assets/photo/guru/';
 	      $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 	      $config['encrypt_name']	= FALSE;
-		  $config['overwrite']			= true;
+		  $config['overwrite']		= true;
 	 
 	      $this->load->library('upload', $config);
 	      $this->upload->initialize($config);
@@ -170,8 +168,14 @@
 
 			}
 			$data['foto'] 						= $this->upload->data('file_name'); 
-			
-			
+			// $datas = $this->upload->data();
+			// $datass = base_url().'assets/photo/guru/'.$data['foto'];
+			// print_r($datass);
+			// $image = create_img()
+			// echo "<pre>";
+			// imagerotate($datass,90,0);
+			// echo "</pre>";
+
 			$this->load->model('model_guru');
 			$query = $this->model_guru->getdata($key);
 			if($query->num_rows()>0)

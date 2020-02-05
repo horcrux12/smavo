@@ -55,7 +55,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <div class="loading">
+  <!-- <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -64,7 +64,7 @@
         <div></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- End Loading ====
       ======================================= -->
@@ -92,7 +92,7 @@
               <li><a href="#">Tujuan</a></li>
               <li><a href="#">Mars Sekolah</a></li>
               <li><a href="#">Struktur Organisasi</a></li>
-              <li><a href="#">Staff dan Guru</a></li>
+              <li><a href="<?php echo base_url();?>guru">Staff dan Guru</a></li>
               <li><a href="<?php echo base_url();?>fasilitas">Fasilitas</a></li>
             </ul>
           </li>
@@ -247,7 +247,6 @@
   <!-- Template Main Javascript File -->
 
   <?php echo $js;?>
-  <!-- <script src="<?= base_url(); ?>assets2/js/coba_iso.js"></script> -->
   
 </body>
 
