@@ -33,6 +33,11 @@ if(!empty($info_hapus))
  
 }
 ?>
+<style>
+  #ubah{
+    transform: rotate(90deg)
+  }
+</style>
 <!-- END INFO -->
 
             <div class="row">
@@ -109,11 +114,6 @@ if(!empty($info_hapus))
                                   if($ambilstst > 1800){
                                     
                                     $ubahnya = "ubah";
-                                    echo '<style>
-                                    #ubah{
-                                      transform: rotate(90deg)
-                                    }
-                                  </style>';
                                   }else{
                                     
                                     $ubahnya = "";

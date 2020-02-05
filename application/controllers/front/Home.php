@@ -32,7 +32,6 @@ class Home extends CI_Controller
 		<script src="'.base_url().'assets2/contactform/contactform.js"></script>
 		<script src="'.base_url().'assets2/js/main.js"></script>
 		<script src="'.base_url().'assets2/js/iso.js"></script>
-		<script src="'.base_url().'assets2/js/jquery.stellar.min.js"></script>
 		<script src="'.base_url().'assets2/js/plyr.js"></script>
 
 		<!-- JS for this page -->
@@ -41,7 +40,6 @@ class Home extends CI_Controller
 		<script src="'.base_url().'assets2/js/jquery.counterup.min.js"></script>
 
 		<!-- Scroll To -->
-		<script type="text/javascript" src="'.base_url().'assets2/js/scrollIt.min.js"></script>
 
 		<!-- Typed JS -->
 		<script type="text/javascript" src="'.base_url().'assets2/lib/typed/typed.min.js"></script>

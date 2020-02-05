@@ -6,7 +6,7 @@
 						<div class="text-center col-md-12">
 							<h5>Here is Our Latest News</h5>
 							<div class="path">
-								<span><a href="<?= base_url('home')?>">Home</a></span>
+								<span><a href="<?= base_url()?>">Home</a></span>
 								<span><a href="#0"><?= $title?></a></span>
 							</div>
 						</div>

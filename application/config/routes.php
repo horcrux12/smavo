@@ -56,7 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // ------------ FRONT END ----------
 // Berita
-$route['berita'] = 'front/blog/index';
+$route['berita'] = 'front/blog';
 $route['berita/kategori/(:any)'] = 'front/blog/kategori/$1';
 $route['berita/detail/(:any)'] = 'front/blog/detail/$1';
 
@@ -65,6 +65,9 @@ $route['fasilitas'] = 'front/fasilitas';
 
 // Galeri
 $route['galeri'] = 'front/galeri';
+
+// Guru dan Staff
+$route['guru'] = 'front/staff';
 
 //------------- ADMIN ---------------
 

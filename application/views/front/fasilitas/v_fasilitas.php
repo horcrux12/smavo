@@ -1,86 +1,47 @@
-
 <section id="team">
-      <div class="container" style="padding-top: 130px;">
-        <div class="section-header wow fadeInUp">
-          <h3>Team</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+  <div class="container" style="padding-top: 130px;">
+    <div class="section-header wow fadeInUp">
+      <h3>Fasilitas</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+    </div>
+
+    <div class="row">
+      <div class="custom-accordion">
+        <?php $no=1; foreach ($data as $key) { ?>
+          <?php if ($no == 6) : $no=1?>
+          <div class="item">
+            <div class="icon"></div>
+            <div class="title">
+              <a href=""><?php echo $key->nama_fasilitas ?></a>
+            </div>
+            <div class="content">
+              <?php echo $key->deskripsi ?>
+              <a href="#" class="btn-more-detail">Selengkapnya</a>
+            </div>
+          </div>
+          </div>
+          <div class="custom-accordion">
+          <?php else :?>
+          <div class="item">
+            <div class="icon"></div>
+            <div class="title">
+              <div class="text"><a href=""><?php echo $key->nama_fasilitas ?></a></div>
+            </div>
+            <div class="content">
+              <?php echo $key->deskripsi ?><br>
+              <a href="#" class="btn-more-detail">More Details</a>
+            </div>
+          </div>
+          <?php endif?>
+        <?php $no++; } ?>
+        <div class="item">
+          <div class="icon"></div>
+          <div class="title">Nemo pariatur</div>
+          <div class="content">
+            <div class="heart-icon"><img src="<?php echo base_url(); ?>assets2/img/logo.png" width="80"></div>
+          </div>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <div class="member">
-              <img src="<?php echo base_url();?>assets2/img/team-1.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="member">
-              <img src="<?php echo base_url();?>assets2/img/team-2.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="member">
-              <img src="<?php echo base_url();?>assets2/img/team-3.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="<?php echo base_url();?>assets2/img/team-4.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- #team -->
+    </div>
+  </div>
+</section><!-- #team -->
