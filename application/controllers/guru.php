@@ -68,7 +68,6 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';
 			$konten['data']			= $this->db->get('tb_guru');
-			$konten['data']			= $this->model_guru->tampil_guru();
 			// print_r($konten['data']);
 			$this->load->view('v_dashboard',$konten);
 		}
