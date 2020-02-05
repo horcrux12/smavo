@@ -245,6 +245,9 @@
   <!-- Contact Form JavaScript File -->
 
   <!-- Template Main Javascript File -->
+  
+  <script src="<?php echo base_url()?>assets2/js/jquery.stellar.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url()?>assets2/js/scrollIt.min.js"></script>
 
   <?php echo $js;?>
   
