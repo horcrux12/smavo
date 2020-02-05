@@ -46,6 +46,23 @@ class Blog extends CI_Controller
 		$data ['title'] = "Umum";
 		$this->template->load('front/template/app','front/blog/v_blog_det',$data);
 	}
+
+	public function detail()
+	{
+			$page_content['page'] ='front/blog/v_berita';
+			$page_content['css'] ='<link href="'.base_url().'assets2/css/style1.css" rel="stylesheet">
+								   <link href="'.base_url().'assets2/css/style.css" rel="stylesheet">
+								   <link href="'.base_url().'assets2/css/custom.css" rel="stylesheet">
+								   <link href="'.base_url().'assets2/css/plugins.css" rel="stylesheet">
+								   <link href="'.base_url().'assets2/styleslider.css" rel="stylesheet">';
+
+			$page_content['js'] ='<script src="'.base_url().'assets2/js/main.js"></script>
+								  <script src="'.base_url().'assets2/js/scripts.js"></script>';
+            $page_content['title'] ='Umum';
+
+            $this->load->view('front/template/app',$page_content);
+            
+	}
 }
 
 ?>
