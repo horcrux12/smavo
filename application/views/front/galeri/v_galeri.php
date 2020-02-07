@@ -1,17 +1,17 @@
-<section id="home" class="min-header bg-img" data-overlay-dark="5" data-background="<?= base_url();?>assets2/img/galeri-bg.jpg" data-stellar-background-ratio="0.5" style="margin-top: 90px;">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="v-middle mt-30">
-        <div class="text-center col-md-12">
-          <h5>Here is Our Galeri</h5>
-          <div class="path">
-            <span><a href="<?= base_url()?>">Home</a></span>
-            <span><a href="#0"><?= $title?></a></span>
-          </div>
+<section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url(); ?>assets2/img/back.jpg" data-stellar-background-ratio="0.5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="v-middle mt-30">
+                <div class="text-center col-md-12">
+                    <h5>Galeri SMAN 2 Cibinong</h5>
+                    <div class="path">
+                        <span><a href="<?= base_url() ?>">Home</a></span>
+                        <span><a href="#0"><?= $title ?></a></span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <section id="portfolio"  class="section-bg" data-scroll-index="3">
   <div class="container">

@@ -1,19 +1,19 @@
 <!-- ====== Header ======  -->
-		<section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url();?>assets2/img/newspaper.jpg" data-stellar-background-ratio="0.5">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="v-middle mt-30">
-						<div class="text-center col-md-12">
-							<h5>Here is Our Latest News</h5>
-							<div class="path">
-								<span><a href="<?= base_url()?>">Home</a></span>
-								<span><a href="#0"><?= $title?></a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+<section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url(); ?>assets2/img/back.jpg" data-stellar-background-ratio="0.5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="v-middle mt-30">
+                <div class="text-center col-md-12">
+                    <h5>Berita Terkini SMAN 2 Cibinong</h5>
+                    <div class="path">
+                        <span><a href="<?= base_url() ?>">Home</a></span>
+                        <span><a href="#0"><?= $title ?></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 		<!-- ====== End Header ======  -->
 
 		<!--====== Blog ======-->
@@ -214,16 +214,10 @@
 
 					<div class="col-md-4">
 						<div class="side-bar">
-							<div class="widget search">
-								<form>
-									<input type="search" name="" placeholder="Type here ...">
-									<button type="submite"><i class="fa fa-search" aria-hidden="true"></i></button>
-								</form>
-							</div>
 
 							<div class="widget">
 								<div class="widget-title">
-									<h6>Recent Posts</h6>
+									<h6>Berita Terbaru</h6>
 								</div>
 								<ul>
 									<li><a href="#0">Top WordPress Themes and Plugins for Hotels.</a></li>
@@ -234,26 +228,10 @@
 								</ul>
 							</div>
 
-							<div class="widget">
-								<div class="widget-title">
-									<h6>Recent Comments</h6>
-								</div>
-							</div>
 
 							<div class="widget">
 								<div class="widget-title">
-									<h6>Archives</h6>
-								</div>
-								<ul>
-									<li><a href="#0">January 2018</a></li>
-									<li><a href="#0">February 2018</a></li>
-									<li><a href="#0">March 2018</a></li>
-								</ul>
-							</div>
-
-							<div class="widget">
-								<div class="widget-title">
-									<h6>Categories</h6>
+									<h6>Karya Cipta Siswa</h6>
 								</div>
 								<ul>
 									<li><a href="#0">WordPress</a></li>
@@ -263,13 +241,11 @@
 
 							<div class="widget">
 								<div class="widget-title">
-									<h6>Meta</h6>
+									<h6>Kategori Berita</h6>
 								</div>
 								<ul>
-									<li><a href="#0">Log in</a></li>
-									<li><a href="#0">Entries RSS</a></li>
-									<li><a href="#0">Comments RSS</a></li>
-									<li><a href="#0">WordPress.org</a></li>
+									<li><a href="#0">WordPress</a></li>
+									<li><a href="#0">ThemeForest</a></li>
 								</ul>
 							</div>
 

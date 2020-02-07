@@ -108,7 +108,9 @@ img {
 
 .bg-img {
   background-size: cover !important;
-  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .section-padding {
@@ -1111,8 +1113,12 @@ img {
   font-weight: 500;
 }
 
+.path a {
+  color: #fff;
+}
+
 .min-header {
-  height: 50vh;
+  height: 60vh;
   background: #f7f7f7;
   position: relative;
 }
@@ -1122,7 +1128,7 @@ img {
 .min-header h5 {
   font-weight: 700;
   letter-spacing: 1px;
-  color: #ccc;
+  color: #fff;
   margin-bottom: 15px;
 }
 .min-header .path{
@@ -1189,8 +1195,8 @@ img {
   transition: all .5s;
 }
 .blogs .posts .post .content .butn:hover {
-  background: #F24259;
-  border-color: #F24259;
+  background: #18d26e;
+  border-color: #18d26e;
   color: #fff;
 }
 .blogs .posts .post .share-post {

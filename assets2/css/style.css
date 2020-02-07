@@ -540,6 +540,23 @@ h6 {
   background: url(../img/bg3.jpg) fixed center center;
   background-size: cover;
   padding: 60px 0;
+  position: relative;
+}
+
+#call-to-action::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(57, 57, 57, 0.24);
+  z-index: 9;
+}
+
+#call-to-action .container {
+  position: relative;
+  z-index: 10;
 }
 
 /*#about {
