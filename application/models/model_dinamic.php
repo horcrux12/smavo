@@ -41,7 +41,6 @@
 		function getDataWhere ($table,$field,$where)
 		{
 			$this->db->select('*');
-			$this->db->from($table);
 			$this->db->where($field,$where);
 			$query = $this->db->get($table);
 			return $query->result();

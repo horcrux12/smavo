@@ -25,6 +25,18 @@
   <link href="<?= base_url(); ?>assets2/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="<?= base_url(); ?>assets2/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="<?= base_url(); ?>assets2/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets2/css/style_loading.css" rel="stylesheet">
+
+  <?php 
+    if (current_url()==base_url()) {
+      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foots.css".'"'." rel=".'"'."stylesheet".'"'.">
+      ";
+    }
+    else {
+      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foot.css".'"'." rel=".'"'."stylesheet".'"'.">
+      ";
+    }
+  ?>
 
   <!-- Main Stylesheet File -->
  
@@ -55,7 +67,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <!-- <div class="loading">
+  <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -64,7 +76,7 @@
         <div></div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- End Loading ====
       ======================================= -->
@@ -247,7 +259,9 @@
   <!-- Template Main Javascript File -->
   
   <script src="<?php echo base_url()?>assets2/js/jquery.stellar.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url()?>assets2/js/scrollIt.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets2/js/scrollIt.min.js"></script>
+  
+  <script src="<?php echo base_url()?>assets2/js/loading.js"></script>
 
   <?php echo $js;?>
   
