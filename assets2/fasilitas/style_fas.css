@@ -1,0 +1,107 @@
+.ftco-section {
+    padding: 4em 0;}
+    .ftco-section.ftco-section-2 {
+      padding: 6em 0;  
+      box-shadow: 4px 9px 16px 1px rgba(29, 30, 30, 0.54); }
+
+#carousel .heading-section {
+color: #fff; }
+
+.card{
+    margin: 4em 0;
+    border: none;
+}
+
+.text-container{
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 465px;
+    transition: 0.3s all ease-in-out;
+    box-shadow: 0px 15px 45px -9px rgba(0,0,0,0.20);
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.card .text-container {
+	transition: 0.3s all ease-in-out;
+	bottom: 0;
+}
+
+.card:hover .text-container {
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.06);
+	bottom: -4px;
+}
+
+
+/**
+ * 13.2 Blog - Masonry 2
+ */
+
+.card .text-container {
+ 	transition: 0.3s all ease-in-out;
+ 	bottom: 0;
+ }
+
+.card:hover .text-container {
+ 	bottom: -2px;
+ }
+
+ .card .post-content-container {
+	/* transition: 0.3s all ease-in-out; */
+	/* box-shadow: 0px 15px 45px -9px rgba(0,0,0,0.20); */
+	overflow: hidden;
+	position: relative;
+	}
+
+.post-item:hover .post-content-container {
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.06);
+}
+
+.masonry2 .post-item.slick-slide .post-content-container {
+	box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.05);
+}
+
+.masonry2 .post-item.slick-slide:hover .post-content-container {
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.06);
+}
+
+.val{
+    weight: 444px;
+}
+
+.post-text{
+    position: relative;
+    z-index: 100;
+    padding: 0;
+}
+
+.post-img{
+    padding: 0;
+}
+
+.carousel{
+    max-height: 100%;
+}
+
+.card-block{
+    align-items: center;
+    position: relative;
+}
+
+#carousel p {
+color: rgba(255, 255, 255, 0.7); }
+
+#carousel .carousel-control-prev span, #carousel .carousel-control-next span {
+color: #fff;
+font-size: 40px; }
+
+@media (min-width: 1250px){
+    .container {
+        max-width: 1200px;
+    }
+}
