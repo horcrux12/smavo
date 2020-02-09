@@ -69,6 +69,28 @@ $route['galeri'] = 'front/galeri';
 // Guru dan Staff
 $route['guru'] = 'front/staff';
 
+// Struktur
+$route['struktur'] = 'front/struktur';
+
+// Mars
+$route['mars'] = 'front/mars';
+
+// Tujuan
+$route['tujuan'] = 'front/tujuan';
+
+// Visi Misi
+$route['vismis'] = 'front/vismis';
+
+// Sejarah
+$route['sejarah'] = 'front/sejarah';
+
+// Sambutan
+$route['sambutan'] = 'front/sambutan';
+
+
+
+
+
 //------------- ADMIN ---------------
 
 $route['admin/login'] = 'login';

@@ -33,7 +33,7 @@
       ";
     }
     else {
-      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foot.css".'"'." rel=".'"'."stylesheet".'"'.">
+      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foots.css".'"'." rel=".'"'."stylesheet".'"'.">
       ";
     }
   ?>
@@ -98,12 +98,12 @@
           <li class="menu-active"><a href="<?= base_url(); ?>">Home</a></li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="1">Profil</a>
             <ul>
-              <li><a href="#">Sambutan Kepala Sekolah</a></li>
-              <li><a href="#">Sejarah</a></li>
-              <li><a href="#">Visi dan Misi</a></li>
-              <li><a href="#">Tujuan</a></li>
-              <li><a href="#">Mars Sekolah</a></li>
-              <li><a href="#">Struktur Organisasi</a></li>
+              <li><a href="<?php echo base_url();?>sambutan">Sambutan Kepala Sekolah</a></li>
+              <li><a href="<?php echo base_url();?>sejarah">Sejarah</a></li>
+              <li><a href="<?php echo base_url();?>vismis">Visi dan Misi</a></li>
+              <li><a href="<?php echo base_url();?>tujuan">Tujuan</a></li>
+              <li><a href="<?php echo base_url();?>mars">Mars Sekolah</a></li>
+              <li><a href="<?php echo base_url();?>struktur">Struktur Organisasi</a></li>
               <li><a href="<?php echo base_url();?>guru">Staff dan Guru</a></li>
               <li><a href="<?php echo base_url();?>fasilitas">Fasilitas</a></li>
             </ul>
@@ -129,29 +129,7 @@
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
-              <li class="menu-has-children"><a href="#">Organisasi</a>
-                <ul>
-                  <li class="menu-has-children"><a href="#">Olahraga</a>
-                    <ul>
-                      <li><a href="#">Futsal</a></li>
-                      <li><a href="#">Karate</a></li>
-                      <li><a href="#">Taekwondo</a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">OSIS</a></li>
-                  <li><a href="#">ROHIS</a></li>
-                  <li><a href="#">PRAMUKA</a></li>
-                  <li><a href="#">TIFAN</a></li>
-                  <li><a href="#">Paduan Suara</a></li>
-                  <li><a href="#">SFC</a></li>
-                  <li><a href="#">SCC</a></li>
-                  <li><a href="#">Drama/Teater</a></li>
-                  <li><a href="#">Arumba/Angklung</a></li>
-                  <li><a href="#">SJC</a></li>
-                  <li><a href="#">Mading</a></li>
-                </ul>
-              </li>
+              <li><a href="#">Organisasi</a></li>
               <li><a href="#">Karya Cipta</a></li>
               <li><a href="#">Tata Tertib</a></li>
               <li><a href="#">Aturan Akademik</a></li>

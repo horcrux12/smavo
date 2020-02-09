@@ -9,11 +9,12 @@
             $page_content['page'] ='front/guru/v_guru';
             $page_content['css'] ='
             <link href="'.base_url().'assets2/css/style.css" rel="stylesheet">
-		    <link href="'.base_url().'assets2/styleslider.css" rel="stylesheet">';
+            <link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
+            <link href="'.base_url().'assets2/styleslider.css" rel="stylesheet">';
             $page_content['js'] ='
 		    <script src="'.base_url().'assets2/js/main.js"></script>
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
-            $page_content['title'] ='';
+            $page_content['title'] ='Staff dan Guru';
 
             $jabatan = $this->model_dinamic->getData('tb_jabatan');
 

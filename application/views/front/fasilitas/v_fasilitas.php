@@ -1,4 +1,4 @@
-<section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url(); ?>assets2/img/newspaper.jpg" data-stellar-background-ratio="0.5">
+<section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url(); ?>assets2/img/back.jpg" data-stellar-background-ratio="0.5">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="v-middle mt-30">
