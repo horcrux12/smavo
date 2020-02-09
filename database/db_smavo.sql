@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Feb 2020 pada 05.49
+-- Generation Time: 09 Feb 2020 pada 15.41
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -19,36 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_smavo`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `calendar`
---
-
-CREATE TABLE `calendar` (
-  `id` int(11) NOT NULL,
-  `title` varchar(126) DEFAULT NULL,
-  `description` text,
-  `color` varchar(24) DEFAULT NULL,
-  `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL,
-  `create_at` datetime DEFAULT NULL,
-  `create_by` varchar(64) DEFAULT NULL,
-  `modified_at` datetime DEFAULT NULL,
-  `modified_by` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `calendar`
---
-
-INSERT INTO `calendar` (`id`, `title`, `description`, `color`, `start_date`, `end_date`, `create_at`, `create_by`, `modified_at`, `modified_by`) VALUES
-(1, 'HUT SMAVO KE-18', 'kjgtftdtyftftyftyftyftfhjfjgfgfhgfghfghfnhc', '#FFD700', '2020-02-18', '2020-02-19', '2020-02-07 14:40:22', NULL, '2020-02-07 14:41:20', NULL),
-(5, 'hghgjhghg', 'jhgjhvhvykv', '#40E0D0', '2020-02-26', '2020-02-27', '2020-02-07 14:43:16', NULL, NULL, NULL),
-(6, 'kjhgf', 'jmhnbcv', '#40E0D0', '2020-02-21', '2020-02-22', '2020-02-07 14:43:37', NULL, NULL, NULL),
-(7, 'test', 'test', '#0071c5', '2020-02-28', '2020-02-29', '2020-02-07 15:03:53', NULL, NULL, NULL),
-(8, 'yyyy', 'yyyy', '#008000', '2020-02-26', '2020-02-28', '2020-02-09 05:11:45', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,6 +92,32 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_calendar`
+--
+
+CREATE TABLE `tb_calendar` (
+  `id` int(11) NOT NULL,
+  `title` varchar(126) DEFAULT NULL,
+  `description` text,
+  `color` varchar(24) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `create_by` varchar(64) DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `modified_by` varchar(64) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_calendar`
+--
+
+INSERT INTO `tb_calendar` (`id`, `title`, `description`, `color`, `start_date`, `end_date`, `create_at`, `create_by`, `modified_at`, `modified_by`) VALUES
+(1, 'sidang', '', '#FFD700', '2020-02-03', '2020-02-07', '2020-02-09 14:50:23', NULL, '2020-02-09 15:04:17', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_fasilitas`
 --
 
@@ -187,12 +183,10 @@ CREATE TABLE `tb_galeri` (
 
 INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (1, 'BR23012020001', 'DSC_0648.JPG'),
-(2, 'BR25012020001', '_DSC0132.JPG'),
 (3, 'BR26012020002', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg'),
 (4, 'BR27012020003', 'IMG-20200114-WA0009-805x503.jpg'),
 (10, 'BR04022020006', 'OPSI_2018_(2).jpeg'),
 (11, 'BR04022020007', 'OSN_TK_PROVINSI_(3).JPG'),
-(15, 'BR08022020010', '1.jpg'),
 (16, 'BR08022020010', 'WhatsApp_Image_2020-02-07_at_15_17_58.jpeg');
 
 -- --------------------------------------------------------
@@ -233,72 +227,72 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR014', '1966040319941220', 'Diyah Nursela, S.Pd.', 'SUMEDANG', '1966-04-03', 'JBT006', 'MP012', 'DIYAH_NURSELA.JPG'),
 ('GR015', '1968020319970220', 'Dra Dwi Kartika Rini R, M.Pd.', 'SURABAYA', '1968-02-03', 'JBT006', 'MP006', 'DRA__DWI_KARTIKA.JPG'),
 ('GR016', '1967082719970220', 'Dwi Rokhmiyatun, S.Pd.', 'KEBUMEN', '1967-08-27', 'JBT006', 'MP009', 'DWI_ROKHMIYATUN.JPG'),
-('GR017', '1970020619951220', 'Elita Sari, S.Pd.', 'BOGOR', '1970-02-06', 'JBT006', 'MP008', 'HJ__ERLINA_ALIZAR.JPG'),
-('GR018', '1961010219851220', 'Hj. Erlina Alizar, S.Pd.M.Pd.', 'JAKARTA', '1961-01-02', 'JBT006', 'MP001', 'default.jpg'),
-('GR019', '1967051419941210', 'Fadjar Djaja Wirawan, S.Pd.', 'PACITAN', '1967-05-14', 'JBT006', 'MP001', 'default.jpg'),
+('GR017', '1970020619951220', 'Elita Sari, S.Pd.', 'BOGOR', '1970-02-06', 'JBT006', 'MP016', 'ELITA-SARI_edit.jpg'),
+('GR018', '1961010219851220', 'Hj. Erlina Alizar, S.Pd.M.Pd.', 'JAKARTA', '1961-01-02', 'JBT006', 'MP008', 'HJ__ERLINA_ALIZAR.JPG'),
+('GR019', '1967051419941210', 'Fadjar Djaja Wirawan, S.Pd.', 'PACITAN', '1967-05-14', 'JBT006', 'MP015', 'FADJAR-DJAJA_EDIT.jpg'),
 ('GR020', '', 'Fatmawati, S.Pd.I', 'Bogor', '1985-10-28', 'JBT006', 'MP001', 'default.jpg'),
-('GR021', '1970010419941220', 'Helfy Maryamul Ilfa, S.Pd., M.Pd.', 'TASIKMALAYA', '1970-01-04', 'JBT006', 'MP001', 'default.jpg'),
-('GR022', '1974091120000320', 'Heni Handayani, M.Pd.', 'BOGOR', '1974-09-11', 'JBT006', 'MP001', 'default.jpg'),
-('GR023', '', 'Ichsan,S.Pd.', 'JAKARTA', '1987-08-09', 'JBT006', 'MP001', 'default.jpg'),
-('GR024', '', 'Iis Sugiarti, S.Pd.M.Pd.', 'MAJALENGKA', '1989-12-21', 'JBT006', 'MP001', 'default.jpg'),
-('GR025', '1968021119941220', 'Ilmia Fathonah, S.Pd.,M.Pd.', 'JAKARTA', '1968-02-11', 'JBT006', 'MP001', 'default.jpg'),
-('GR026', '', 'Imania Bidari, S.Pd.', 'TANGERANG', '1992-12-03', 'JBT006', 'MP001', 'default.jpg'),
-('GR027', '1967020819960120', 'Dra. Ina Marlina, M.Pd.', 'BOGOR', '1967-02-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR028', '', 'Jahid Hisyamuddin', 'BOGOR', '1981-12-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR029', '1970021519941220', 'Dra Kristiana Kusumaningrum K, M.Pd.', 'Lampung', '1970-02-15', 'JBT006', 'MP001', 'default.jpg'),
-('GR030', '1980120320090220', 'Lina Yudiastuti, S.Si.', 'Klaten', '1980-12-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR021', '1970010419941220', 'Helfy Maryamul Ilfa, S.Pd., M.Pd.', 'TASIKMALAYA', '1970-01-04', 'JBT006', 'MP005', 'default.jpg'),
+('GR022', '1974091120000320', 'Heni Handayani, M.Pd.', 'BOGOR', '1974-09-11', 'JBT006', 'MP005', 'HENI_HANDAYANI.JPG'),
+('GR023', '', 'Ichsan,S.Pd.', 'JAKARTA', '1987-08-09', 'JBT006', 'MP012', 'ICHSAN.JPG'),
+('GR024', '', 'Iis Sugiarti, S.Pd.M.Pd.', 'MAJALENGKA', '1989-12-21', 'JBT006', 'MP019', 'IIS_SUGIARTI.JPG'),
+('GR025', '1968021119941220', 'Ilmia Fathonah, S.Pd.,M.Pd.', 'JAKARTA', '1968-02-11', 'JBT006', 'MP002', 'ILMIA_FATHONA.JPG'),
+('GR026', '', 'Imania Bidari, S.Pd.', 'TANGERANG', '1992-12-03', 'JBT006', 'MP006', 'IMANIA_BIDARI.JPG'),
+('GR027', '1967020819960120', 'Dra. Ina Marlina, M.Pd.', 'BOGOR', '1967-02-08', 'JBT003', 'MP003', 'DRA__INA_MARLINA.JPG'),
+('GR028', '', 'Jahid Hisyamuddin', 'BOGOR', '1981-12-08', 'JBT006', NULL, 'default.jpg'),
+('GR029', '1970021519941220', 'Dra Kristiana Kusumaningrum K, M.Pd.', 'Lampung', '1970-02-15', 'JBT006', 'MP011', 'DRA__KRISTIANA.JPG'),
+('GR030', '1980120320090220', 'Lina Yudiastuti, S.Si.', 'Klaten', '1980-12-03', 'JBT006', 'MP013', 'default.jpg'),
 ('GR031', '', 'Liwah Lidyawati', 'Jakarta', '1971-02-14', 'JBT006', 'MP001', 'default.jpg'),
-('GR032', '1966030119941210', 'Drs. M.rusli', 'BOGOR', '1966-03-01', 'JBT006', 'MP001', 'default.jpg'),
-('GR033', '1968062619941220', 'Margaretha Sumartining  S,S.Pd.', 'MAGELANG', '1968-06-26', 'JBT006', 'MP001', 'default.jpg'),
-('GR034', '', 'Mariyana Septi Nugraheni , S.Pd.', 'JAKARTA', '1987-09-07', 'JBT006', 'MP001', 'default.jpg'),
-('GR035', '', 'Masitoh Noer, S.Pd', 'Jakarta', '1993-12-03', 'JBT006', 'MP001', 'default.jpg'),
+('GR032', '1966030119941210', 'Drs. M.rusli', 'BOGOR', '1966-03-01', 'JBT006', 'MP010', 'DRS__M__RUSLI.JPG'),
+('GR033', '1968062619941220', 'Margaretha Sumartining  S,S.Pd.', 'MAGELANG', '1968-06-26', 'JBT006', 'MP013', 'MARGARETHA_SUMARTININGSIH.JPG'),
+('GR034', '', 'Mariyana Septi Nugraheni , S.Pd.', 'JAKARTA', '1987-09-07', 'JBT006', 'MP010', 'MARIYANA_SEPTI.JPG'),
+('GR035', '', 'Masitoh Noer, S.Pd', 'Jakarta', '1993-12-03', 'JBT006', 'MP010', 'MASITOH_NOER.JPG'),
 ('GR036', '1992031120190320', 'Mimi Jamilah', 'Bogor', '1992-03-11', 'JBT006', 'MP001', 'default.jpg'),
 ('GR037', '', 'Muhamad', 'Bogor', '1983-07-07', 'JBT006', 'MP001', 'default.jpg'),
-('GR038', '', 'Muhamad Yusup, S.Pd.', 'BOGOR', '1983-09-30', 'JBT006', 'MP001', 'default.jpg'),
-('GR039', '', 'Muthia Nurhidayah Ashfaar,SH., MH.', 'BOGOR', '1985-11-03', 'JBT006', 'MP001', 'default.jpg'),
-('GR040', '1966072419941220', 'Dra. Nani Suryani , M.Pd', 'BOGOR', '1966-07-24', 'JBT006', 'MP001', 'default.jpg'),
-('GR041', '', 'Nurlaela, S.Si', 'BOGOR', '1994-08-15', 'JBT006', 'MP001', 'default.jpg'),
+('GR038', '', 'Muhamad Yusup, S.Pd.', 'BOGOR', '1983-09-30', 'JBT006', 'MP002', 'M__YUSUP,_S_PD.JPG'),
+('GR039', '', 'Muthia Nurhidayah Ashfaar,SH., MH.', 'BOGOR', '1985-11-03', 'JBT006', 'MP010', 'default.jpg'),
+('GR040', '1966072419941220', 'Dra. Nani Suryani , M.Pd', 'BOGOR', '1966-07-24', 'JBT006', 'MP004', 'DRA__NANI_SURYANI.JPG'),
+('GR041', '', 'Nurlaela, S.Si', 'BOGOR', '1994-08-15', 'JBT006', 'MP006', 'NURLAELA.JPG'),
 ('GR042', '', 'Nurmawati', 'BOGOR', '1975-04-11', 'JBT006', 'MP001', 'default.jpg'),
-('GR043', '', 'Raharjo, S.Pd.', 'BANDUNG', '1985-12-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR044', '1990121920190310', 'RAMLAN SULTON, S.Pd.I', 'Bogor', '1990-12-19', 'JBT006', 'MP001', 'default.jpg'),
-('GR045', '', 'Ranti Mustika K', 'Purwakarta', '1978-03-08', 'JBT006', 'MP001', 'default.jpg'),
-('GR046', '1991081120190320', 'Rizki, S.Pd.', 'Bandung', '1991-08-11', 'JBT006', 'MP001', 'default.jpg'),
-('GR047', '1967082720031220', 'Rr. Tatra Sudhawati , M.Pd.', 'MAGELANG', '1967-08-27', 'JBT006', 'MP001', 'default.jpg'),
-('GR048', '', 'Rudi Zaenudin, S. Kom.', 'BOGOR', '1970-06-02', 'JBT006', 'MP001', 'default.jpg'),
-('GR049', '1966021219941220', 'Dra. Sapmi Rahmawati, M.Pd.', 'BANDUNG', '1966-02-12', 'JBT006', 'MP001', 'default.jpg'),
-('GR050', '1964052219910110', 'Sari Ismono,S.Pd.', 'YOGYAKARTA', '1964-05-22', 'JBT006', 'MP001', 'default.jpg'),
-('GR051', '', 'Sari Rahayu Hidayat, S.Pd.', 'BOGOR', '1993-06-23', 'JBT006', 'MP001', 'default.jpg'),
-('GR052', '1965031119980220', 'Hj. Seerly Handayani, SE.,M.Pd.', 'BOGOR', '1965-03-11', 'JBT006', 'MP001', 'default.jpg'),
+('GR043', '', 'Raharjo, S.Pd.', 'BANDUNG', '1985-12-08', 'JBT006', 'MP006', 'RAHARJO.JPG'),
+('GR044', '1990121920190310', 'RAMLAN SULTON, S.Pd.I', 'Bogor', '1990-12-19', 'JBT006', 'MP001', 'ramlan_sulton.JPG'),
+('GR045', '', 'Ranti Mustika K, S.Pd', 'Purwakarta', '1978-03-08', 'JBT006', 'MP004', 'RANTI_MUSTIKA,_S_PD.JPG'),
+('GR046', '1991081120190320', 'Rizki, S.Pd.', 'Bandung', '1991-08-11', 'JBT006', 'MP006', 'rizki.JPG'),
+('GR047', '1967082720031220', 'Rr. Tatra Sudhawati , M.Pd.', 'MAGELANG', '1967-08-27', 'JBT006', 'MP006', 'RR__RARA_TATRA.JPG'),
+('GR048', '', 'Rudi Zaenudin, S. Kom.', 'BOGOR', '1970-06-02', 'JBT006', 'MP018', 'RUDI_ZAENUDIN.JPG'),
+('GR049', '1966021219941220', 'Dra. Sapmi Rahmawati, M.Pd.', 'BANDUNG', '1966-02-12', 'JBT006', 'MP014', 'DRA__SAPMI_RAHMAWATI.JPG'),
+('GR050', '1964052219910110', 'Sari Ismono,S.Pd.', 'YOGYAKARTA', '1964-05-22', 'JBT006', 'MP003', 'SARI_ISMONO,_S_PD.JPG'),
+('GR051', '', 'Sari Rahayu Hidayat, S.Pd.', 'BOGOR', '1993-06-23', 'JBT006', 'MP005', 'default.jpg'),
+('GR052', '1965031119980220', 'Hj. Seerly Handayani, SE.,M.Pd.', 'BOGOR', '1965-03-11', 'JBT006', 'MP008', 'default.jpg'),
 ('GR053', '1972110620140710', 'Selamat Riyadi', 'BOGOR', '1972-11-06', 'JBT006', 'MP001', 'default.jpg'),
 ('GR054', '1967050419900220', 'Sri Rohayati, M.Pd.', 'Tasikmalaya', '1967-05-04', 'JBT006', 'MP001', 'default.jpg'),
-('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP001', 'default.jpg'),
-('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT006', 'MP001', 'default.jpg'),
-('GR057', '1968122819951220', 'Dra. Sumitri , M.Pd.', 'KLATEN', '1968-12-28', 'JBT006', 'MP001', 'default.jpg'),
-('GR058', '', 'Syamsi  Jawawi Wahyudi, S.Pd.', 'CIANJUR', '1991-05-14', 'JBT006', 'MP001', 'default.jpg'),
-('GR059', '1974091320090220', 'Tatat Rahmalia, S.Pd.M.Pd.', 'BOGOR', '1974-09-13', 'JBT006', 'MP001', 'default.jpg'),
-('GR060', '1987112720190310', 'Teguh Satya Pratama, S.Pd.', 'Bogor', '1987-11-27', 'JBT006', 'MP001', 'default.jpg'),
-('GR061', '1967101019900220', 'Hj. Tintin Sugiharti, S.Pd., M.Pd.', 'CIAMIS', '1967-10-10', 'JBT006', 'MP001', 'default.jpg'),
-('GR062', '1982070720060410', 'Wawan Kurniawan, S.Sos.', 'JAKARTA', '1982-07-07', 'JBT006', 'MP001', 'default.jpg'),
-('GR063', '1987010920150120', 'Yanuarita Nur Hanifa, S.Pd', 'TEMANGGUNG', '1987-01-09', 'JBT006', 'MP001', 'default.jpg'),
-('GR064', '1962122019941220', 'Yayah Hartati, S.Pd.', 'KARAWANG', '1962-12-20', 'JBT006', 'MP001', 'default.jpg'),
-('GR065', '', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', NULL, 'default.jpg'),
-('GR066', '', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT010', NULL, 'default.jpg'),
-('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', NULL, 'default.jpg'),
-('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT010', NULL, 'default.jpg'),
-('GR069', '', 'Fitri Ihsani', 'BOGOR', '1987-06-29', 'JBT010', NULL, 'default.jpg'),
-('GR070', '', 'Galdis Dara Puspita', 'BOGOR', '1994-03-23', 'JBT010', NULL, 'default.jpg'),
-('GR071', '', 'Gryan Chessyco Zulfikar', 'Bogor', '1999-01-05', 'JBT010', NULL, 'default.jpg'),
-('GR072', '', 'Hendro', 'Jakarta', '1970-10-06', 'JBT010', NULL, 'default.jpg'),
-('GR073', '', 'Lukman Hakim', 'BOGOR', '1982-06-11', 'JBT010', NULL, 'default.jpg'),
-('GR074', '1966011219860310', 'Mardiono', 'JAKARTA', '1966-01-12', 'JBT010', NULL, 'default.jpg'),
-('GR075', '', 'Muhamad Sanusi', 'BOGOR', '1972-10-05', 'JBT010', NULL, 'default.jpg'),
-('GR076', '1964091519860310', 'Muhammad Ambyah', 'JAKARTA', '1964-09-15', 'JBT010', NULL, 'default.jpg'),
-('GR077', '', 'NENG ERNI HANDAYANI', 'PANDEGLANG', '1996-09-23', 'JBT010', NULL, 'default.jpg'),
-('GR078', '', 'Nurazizah Novalianty', 'Jakarta', '1998-11-13', 'JBT010', NULL, 'default.jpg'),
-('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', NULL, 'default.jpg'),
-('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', NULL, 'default.jpg'),
-('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT010', NULL, 'default.jpg'),
-('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT010', NULL, 'default.jpg');
+('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP004', 'default.jpg'),
+('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT006', 'MP006', 'SUDARYANA.JPG'),
+('GR057', '1968122819951220', 'Dra. Sumitri , M.Pd.', 'KLATEN', '1968-12-28', 'JBT006', 'MP013', 'DRA__SUMITRI.JPG'),
+('GR058', '', 'Syamsi  Jawawi Wahyudi, S.Pd.', 'CIANJUR', '1991-05-14', 'JBT006', 'MP002', 'syamsi.JPG'),
+('GR059', '1974091320090220', 'Tatat Rahmalia, S.Pd.M.Pd.', 'BOGOR', '1974-09-13', 'JBT006', 'MP014', 'TATAT_RAHMALIA.JPG'),
+('GR060', '1987112720190310', 'Teguh Satya Pratama, S.Pd.', 'Bogor', '1987-11-27', 'JBT006', 'MP012', 'teguh.JPG'),
+('GR061', '1967101019900220', 'Hj. Tintin Sugiharti, S.Pd., M.Pd.', 'CIAMIS', '1967-10-10', 'JBT006', 'MP003', 'TINTIN_SUGIHARTI,_S_PD_,_M_PD.JPG'),
+('GR062', '1982070720060410', 'Wawan Kurniawan, S.Sos.', 'JAKARTA', '1982-07-07', 'JBT006', 'MP017', 'WAWAN_KURNIAWAN.JPG'),
+('GR063', '1987010920150120', 'Yanuarita Nur Hanifa, S.Pd', 'TEMANGGUNG', '1987-01-09', 'JBT006', 'MP017', 'YANUARITA_NUR_HANIFA.JPG'),
+('GR064', '1962122019941220', 'Yayah Hartati, S.Pd.', 'KARAWANG', '1962-12-20', 'JBT006', 'MP009', 'YAYAH_HARTATI.JPG'),
+('GR065', '', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', NULL, 'AEF_SAEPUDIN.JPG'),
+('GR066', '', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT012', NULL, 'AHMAD_RIJKON.JPG'),
+('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', NULL, 'DADAH_SOPIAH.JPG'),
+('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT012', NULL, 'ENDING_SUHANDI.JPG'),
+('GR069', '', 'Fitri Ihsani, S.Sos', 'BOGOR', '1987-06-29', 'JBT010', NULL, 'FITRI_IHSANI.JPG'),
+('GR070', '', 'Galdis Dara Puspita, A.Md.Si', 'BOGOR', '1994-03-23', 'JBT009', NULL, 'GALDIS_DARA_PUSPITA.JPG'),
+('GR071', '', 'Gryan Chessyco Zulfikar', 'Bogor', '1999-01-05', 'JBT016', NULL, 'GRYAN_CHESSYCO.JPG'),
+('GR072', '', 'Hendro, S.Kom', 'Jakarta', '1970-10-06', 'JBT016', NULL, 'default.jpg'),
+('GR073', '', 'Lukman Hakim', 'BOGOR', '1982-06-11', 'JBT011', NULL, 'LUKMAN_HAKIM.JPG'),
+('GR074', '1966011219860310', 'Mardiono, S.Pd', 'JAKARTA', '1966-01-12', 'JBT007', NULL, 'MARDIONO.JPG'),
+('GR075', '', 'Muhamad Sanusi', 'BOGOR', '1972-10-05', 'JBT012', NULL, 'MUHAMMAD_SANUSI.JPG'),
+('GR076', '1964091519860310', 'Muhammad Ambyah, S.Sos', 'JAKARTA', '1964-09-15', 'JBT010', NULL, 'MUHAMMAD_AMBYAH.JPG'),
+('GR077', '', 'NENG ERNI HANDAYANI, S.Si', 'PANDEGLANG', '1996-09-23', 'JBT008', NULL, 'NENG_ERNI.JPG'),
+('GR078', '', 'Nurazizah Novalianty', 'Jakarta', '1998-11-13', 'JBT016', NULL, 'NURAZIZAH_NOVALIANTY.JPG'),
+('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', NULL, 'SURADJI.JPG'),
+('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', NULL, 'SYAIFUL_IMAN.JPG'),
+('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT011', NULL, 'SYARIFUDIN.JPG'),
+('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT011', NULL, 'WAHYUDIN.JPG');
 
 -- --------------------------------------------------------
 
@@ -329,7 +323,10 @@ INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
 ('JBT011', 'Penjaga Keamanan'),
 ('JBT012', 'Penjaga Kebersihan'),
 ('JBT013', 'Juru Masak'),
-('JBT014', 'Koperasi');
+('JBT014', 'Koperasi'),
+('JBT015', 'Tenaga Pendidik'),
+('JBT016', 'Staff TI'),
+('JBT017', 'Pustakawan');
 
 -- --------------------------------------------------------
 
@@ -889,7 +886,7 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (167, '::1', '2020-02-05', 15, '', 'Chrome', '79.0.3945.130', 'DESKTOP-Q713SR9', 'Windows 10'),
 (168, '::1', '2020-02-07', 11, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
 (169, '::1', '2020-02-08', 10, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
-(170, '::1', '2020-02-09', 1, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10');
+(170, '::1', '2020-02-09', 2, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -920,12 +917,6 @@ INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `hak_akses`, `
 --
 
 --
--- Indexes for table `calendar`
---
-ALTER TABLE `calendar`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tb_about`
 --
 ALTER TABLE `tb_about`
@@ -939,6 +930,12 @@ ALTER TABLE `tb_berita`
   ADD KEY `id_kat_artikel` (`id_kat_artikel`),
   ADD KEY `id_user` (`penulis`),
   ADD KEY `id_organisasi` (`id_organisasi`);
+
+--
+-- Indexes for table `tb_calendar`
+--
+ALTER TABLE `tb_calendar`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_fasilitas`
@@ -1062,15 +1059,15 @@ ALTER TABLE `tb_user`
 --
 
 --
--- AUTO_INCREMENT for table `calendar`
---
-ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
 -- AUTO_INCREMENT for table `tb_about`
 --
 ALTER TABLE `tb_about`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_calendar`
+--
+ALTER TABLE `tb_calendar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_galeri`
 --
