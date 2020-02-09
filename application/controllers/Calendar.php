@@ -5,6 +5,11 @@ class Calendar extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		//validasi jika user belum login
+		if($this->session->userdata('masuk') != TRUE){
+            echo "<script>;
+                  document.location='".base_url()."admin/login'</script>";
+                }
 		$this->table 		= 'tb_calendar';
 		$this->load->model('Globalmodel', 'modeldb'); 
 	}
