@@ -52,7 +52,8 @@
                                 }
                                 
                               ?>  
-                        <span class="profile-picture <?= $ubahnya?>">
+                              <!-- <?= $ubahnya?> -->
+                        <span class="profile-picture ">
                           <img id="avatar" width="300" class="editable img-responsive" src=<?php echo base_url('assets/photo/guru/'.$file_name.'');?>>
                         </span>
                         

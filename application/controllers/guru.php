@@ -26,42 +26,7 @@
 			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
 			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 			<script src="'.base_url().'assets/js/table.js"></script>
-			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
-			<script type="text/javascript">
-			jQuery(function($) {
-				var $overflow = '."''".';
-				var colorbox_params = {
-					rel: "colorbox",
-					reposition: true,
-					scalePhotos: true,
-					scrolling: false,
-					previous: '."'".'<i class="ace-icon fa fa-arrow-left"></i>'."'".',
-					next: '."'".'<i class="ace-icon fa fa-arrow-right"></i>'."'".',
-					close: '."'".'&times;'."'".',
-					current: '."'".'{current} of {total}'."'".',
-					maxWidth: '."'".'100%'."'".',
-					maxHeight: '."'".'100%'."'".',
-					onOpen: function() {
-						$overflow = document.body.style.overflow;
-						document.body.style.overflow = '."'".'hidden'."'".';
-					},
-					onClosed: function() {
-						document.body.style.overflow = $overflow;
-					},
-					onComplete: function() {
-						$.colorbox.resize();
-					}
-				};
-
-				$('."'".'.ace-thumbnails [data-rel="colorbox"]'."'".').colorbox(colorbox_params);
-				$("#cboxLoadingGraphic").html("<i class='."'".'ace-icon fa fa-spinner orange fa-spin'."'".'></i>"); //let'."'".'s add a custom loading icon
-
-
-				$(document).one('."'".'ajaxloadstart.page'."'".', function(e) {
-					$('."'".'#colorbox, #cboxOverlay'."'".').remove();
-				});
-			})
-		</script>';
+			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>';
 			$konten['konten'] 		= 'guru/view_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data guru';
@@ -309,6 +274,12 @@
 						$konten['tanggal']		= $row->tgl_lahir;
 						$konten['jbt']			= $row->id_jabatan;
 						$konten['mapel']		= $row->id_mapel;
+						
+						$cekmapel = $konten['mapel'];
+						if (($cekmapel)==null) {
+							echo "Tidak ada mata pelajaran";
+						}
+
 						$konten['file_name']	= $row->foto;				
 						
 					}

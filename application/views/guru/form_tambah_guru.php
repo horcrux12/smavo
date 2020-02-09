@@ -167,6 +167,7 @@ if(!empty($info_gagal))
               <label class="col-sm-2 control-label">Foto Guru</label>
               <div class="col-sm-5">
                 <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+                <i><font color="red">*Ukuran dimensi foto maksimal 367x550 pixel</font></i>
               </div>
             </div>
                 

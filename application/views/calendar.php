@@ -5,15 +5,20 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
+    <link rel="icon" href="<?php echo base_url();?>assets/photo/logo/logo.png">
+    <title>ADMINISTRATOR - SMA NEGERI 2 CIBINONG</title>
     <meta charset="utf-8" />
-    <title>Codeigniter Fullcalendar</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-   
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/calendar/css/bootstrap.min.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/calendar/css/style.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/calendar/font-awesome/css/font-awesome.min.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/calendar/plugins/fullcalendar/fullcalendar.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/calendar/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'; ?>">
 </head>
 <body>
     
-    
+
 
 <br><div class="container">
     <div class="page-content-wrapper">
@@ -28,15 +33,25 @@
                         <div class="portlet-body">
                             <div class="table-toolbar">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
+                                   
+                                   
+                                    <a href="<?php echo base_url();?>admin/dashboard">
+                                    <button type="button" class="btn btn-warning btn-sm pull-right">
+                                    <i class="fa  fa-arrow-circle-left"> &nbsp;</i>
+                                    Kembali  
+                                    </button>
+                                    </a>
+                                    </i>
                                         <div class="btn-group">
                                             <!-- <a href="#" class="btn btn-primary add_calendar"> Tambah Kegiatan
                                                 <i class="fa fa-plus"></i> -->
                                                 <a href="#" class="btn btn-primary add_calendar">
-                                                <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Kegiatan</a>
+                                                <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Jadwal Kegiatan</a>
                                             </a>
                                             <br>
                                             <br>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -129,8 +144,12 @@
 </div>
 </div>
 
-
-<!-- <script type="text/javascript">
+<script type="text/javascript" src="<?php echo base_url().'assets/calendar/js/jquery.min.js'; ?>"></script>      
+<script type="text/javascript" src="<?php echo base_url().'assets/calendar/js/moment.min.js'; ?>"></script>      
+<script type="text/javascript" src="<?php echo base_url().'assets/calendar/js/bootstrap.min.js'; ?>"></script>      
+<script type="text/javascript" src="<?php echo base_url().'assets/calendar/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js'; ?>"></script>      
+<script type="text/javascript" src="<?php echo base_url().'assets/calendar/plugins/fullcalendar/fullcalendar.js'; ?>"></script>      
+<script type="text/javascript">
     var get_data        = '<?php echo $get_data; ?>';
     var backend_url     = '<?php echo base_url(); ?>';
 
@@ -406,6 +425,6 @@
         })
     }
 
-</script> -->
+</script>
 </body>
 </html>
