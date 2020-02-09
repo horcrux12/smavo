@@ -19,18 +19,10 @@
 
       }
 
-      if(!$ ("#id-input-file-2").val())
-      {
-        alert('Maaf foto tidak boleh kosong');
-        $("#id-input-file-2").focus();
-        return false;
-
-      }
-
-      if(!$ ("#isi2").val())
+      if(!$ ("#isi").val())
       {
         alert('Maaf deskripsi tidak boleh kosong');
-        $("#isi2").focus();
+        $("#isi").focus();
         return false;
 
       }
@@ -65,9 +57,19 @@
               </div>
 
               <div class="form-group">
-            <label class="col-sm-2 control-label">Foto Utama</label>
+            <label class="col-sm-2 control-label">Foto Utama Logo</label>
             <div class="col-sm-8">
-              <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
+              <input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*"required/>
+              <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">File Dokumen</label>
+            <div class="col-sm-8">
+            <input type="file" class="form-control" id="validatedCustomFile" name="file_download" accept="" required/>
+            <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i><br>
+            <i><font color="red">*Jika tidak ada, kosongkan saja</font></i>
             </div>
           </div>
 
@@ -122,7 +124,7 @@
       var data = new FormData();
       data.append("image", image);
       $.ajax({
-          url: "<?php echo base_url('berita/upload_image')?>",
+          url: "<?php echo base_url('berita/upload_gambar')?>",
           cache: false,
           contentType: false,
           processData: false,
@@ -141,7 +143,7 @@
       $.ajax({
           data: {src : src},
           type: "POST",
-          url: "<?php echo base_url('berita/delete_image')?>",
+          url: "<?php echo base_url('berita/delete_gambar')?>",
           cache: false,
           success: function(response) {
               console.log(response);

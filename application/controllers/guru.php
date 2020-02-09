@@ -294,9 +294,9 @@
 			$konten['konten'] 		= 'guru/view_detail_guru';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Detail guru';
-			$konten['data']			= $this->model_guru->tampil_guru();
 			$key = $id;
 			$konten['data']			= $this->model_dinamic->getWhere('tb_guru','id_guru',$key);
+			
 			if($konten['data']->num_rows()>0)
 			{
 
@@ -325,10 +325,19 @@
 						$konten['file_name']	= "";
 				}
 			
-			$this->load->view('v_dashboard',$konten);
+				$jabatan= $this->model_dinamic->getWhere ('tb_jabatan','id_jabatan',$konten['jbt'])->result();
+				foreach ($jabatan as $key) {
+				$konten ['nama_jabatan'] = $key->nama_jabatan;
+
+				$mapel = $this->model_dinamic->getWhere ('tb_mapel','id_mapel',$konten['mapel'])->result();
+				foreach ($mapel as $key) {
+				$konten ['nama_mapel'] = $key->nama_mapel;
+			
+				$this->load->view('v_dashboard',$konten);
 		
 			} 
-
+		}
+	}
 
 		public function delete($id)
 		{

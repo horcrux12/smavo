@@ -333,7 +333,7 @@
 			if($konten['data']->num_rows()>0)
 			{
 
-				foreach ($query->result() as $row )
+				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_artikel;
 						$konten['kd_siswa']		= $row->id_kat_siswa;

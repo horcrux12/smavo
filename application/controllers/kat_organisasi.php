@@ -1,4 +1,4 @@
-	<?php
+<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class Kat_organisasi extends CI_Controller {
@@ -272,6 +272,7 @@
 						$konten['nama']			= $row->nama_organisasi;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file_name']	= $row->foto;
+						$konten['file_download']= $row->file;
 					}
 				}
 				else
@@ -280,9 +281,9 @@
 						$konten['nama']			= "";
 						$konten['isi']			= "";
 						$konten['file_name']    = "";
+						$konten['file_download']    = "";
 	
 				}
-			
 			$this->load->view('v_dashboard',$konten);
 		
 			}
@@ -325,14 +326,33 @@
 
 		public function simpan()
 		{
-			$config['upload_path'] 	= './assets/photo/organisasi/';
+			$config['upload_path'] 		= './assets/file/';
+			$config['allowed_types'] 	= 'docx|pdf|xlsx|pptx|zip|rar';
+			$config['encrypt_name']		= FALSE;
+			$config['overwrite']		= true;
+
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			$this->upload->do_upload('file_download');
+
+			$data['file'] 				= $this->upload->data('file_name');
+			
+			unset($config);
+
+			$config['upload_path'] 		= './assets/photo/organisasi/logo/';
 			$config['allowed_types'] 	= 'gif|jpg|jpeg|png';
-			$config['encrypt_name']	= FALSE;
-		   
+			$config['encrypt_name']		= FALSE;
+			$config['overwrite']		= true;
+
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);
 			$this->upload->do_upload('file_name');
-	  
+			if (!$this->upload->do_upload('file_name')) {
+				$this->upload->display_errors();
+				return FALSE;
+			}
+			else {
+				$data['foto'] 				= $this->upload->data('file_name');
 			$key = $this->input->post('kode');
 			$data['id_organisasi'] 				= $this->input->post('kode');
 			$data['nama_organisasi'] 			= $this->input->post('nama');
@@ -358,7 +378,7 @@
 			}
 			
 		}
-
+	}
 		public function delete($id)
 		{
 			
@@ -400,6 +420,7 @@
 						$konten['nama']			= $row->nama_organisasi;
 						$konten['isi']			= $row->deskripsi;
 						$konten['file_name']	= $row->foto;
+						$konten['file_download']= $row->file;
 					}
 				}
 				else
@@ -408,6 +429,7 @@
 						$konten['nama']			= "";
 						$konten['isi']			= "";
 						$konten['file_name']    = "";
+						$konten['file_download']    = "";
 	
 				}
 			

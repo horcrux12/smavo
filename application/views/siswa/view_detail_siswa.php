@@ -55,12 +55,21 @@
           </div>
         </div>
         
+        
         <div class="profile-info-row">
           <div class="profile-info-name"> Kategori Artikel </div>
           <div class="profile-info-value">
             <span class="editable" id="username"><?php echo $nama_kategori ?></span>
           </div>
         </div>
+
+        <!-- <div class="profile-info-row">
+          <div class="profile-info-name"> Nama Organisasi </div>
+
+          <div class="profile-info-value">
+            <span class="editable" id="jdl"><?php echo $org; ?></span>
+          </div>
+        </div> -->
 
 
         <div class="profile-info-row">

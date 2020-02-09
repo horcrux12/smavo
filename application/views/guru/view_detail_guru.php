@@ -106,7 +106,7 @@
                           <div class="profile-info-row">
                           <div class="profile-info-name"> Jabatan </div>
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $jbt?></span>
+                            <span class="editable" id="username"><?php echo $nama_jabatan?></span>
                           
                           </div>
                           </div>
@@ -115,7 +115,7 @@
                           <div class="profile-info-name"> Mata Pelajaran</div>
 
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $mapel?></span>
+                            <span class="editable" id="username"><?php echo $nama_mapel?></span>
                             
                           </div>
                           </div> 

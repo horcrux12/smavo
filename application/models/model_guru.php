@@ -79,18 +79,18 @@
 
 	// }
 
-	public function tampil_guru() 
-		{
-			$this->db->select('
-			tb_guru.*, tb_mapel.id_mapel AS id_mapel, tb_mapel.nama_mapel, tb_jabatan.id_jabatan AS jabatan, tb_jabatan.nama_jabatan
-		');
-		$this->db->from('tb_guru');
-		// $this->db->order_by('id_guru','DESC');
-		$this->db->join('tb_mapel','tb_guru.id_mapel = tb_mapel.id_mapel');
-		$this->db->join('tb_jabatan','tb_guru.id_jabatan = tb_jabatan.id_jabatan');
-		$query = $this->db->get();
-		return $query;
-		}
+	// public function tampil_guru() 
+	// 	{
+	// 		$this->db->select('
+	// 		tb_guru.*, tb_mapel.id_mapel AS id_mapel, tb_mapel.nama_mapel, tb_jabatan.id_jabatan AS jabatan, tb_jabatan.nama_jabatan
+	// 	');
+	// 	$this->db->from('tb_guru');
+	// 	// $this->db->order_by('id_guru','DESC');
+	// 	$this->db->join('tb_mapel','tb_guru.id_mapel = tb_mapel.id_mapel');
+	// 	$this->db->join('tb_jabatan','tb_guru.id_jabatan = tb_jabatan.id_jabatan');
+	// 	$query = $this->db->get();
+	// 	return $query;
+	// 	}
 	
 	public function GetDataWhere($where){
 		$this->db->select('

@@ -1,3 +1,21 @@
+<?php
+$info_hapus = $this->session->flashdata('info_hapus');
+if(!empty($info_hapus))
+
+{
+
+  echo "<div class='alert alert-success alert-dismissible'>";
+  echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>"; 
+  echo "</button>";
+  echo "&nbsp; <i class='icon fa fa-check'>"; 
+  echo "</i>";
+  echo $info_hapus;
+  echo "</div>";
+ 
+}
+?>
+
+
 <div class="center">
 	<ul class="ace-thumbnails clearfix">
 		<?php foreach ($data as $key) :?>
@@ -22,7 +40,7 @@
 					<i class="ace-icon fa fa-pencil"></i>
 				</a>
 
-				<a href="#">
+				<a href="<?php echo base_url();?>admin/galeri/hapus-galeri/<?php echo $key->id_galeri?>"  onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 					<i class="ace-icon fa fa-times red"></i>
 				</a>
 			</div>

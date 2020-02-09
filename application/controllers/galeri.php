@@ -75,9 +75,9 @@
 			$query = $this->db->get('tb_galeri');
 			if($query->num_rows()>0)
 				{
-					$query=$query->result();
-					unlink('./assets/photo/galeri/'.$query[0]->foto);
-					$this->model_berita->getdelete($key);
+					// $query=$query->result();
+					// unlink('./assets/photo/galeri/'.$query[0]->foto);
+					$this->model_galeri->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
 				redirect('admin/galeri');
