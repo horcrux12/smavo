@@ -38,6 +38,12 @@
 			return $query;
 		}
 
+		function getWhereArray ($table,$field,$where){
+			$this->db->where($field,$where);
+			$query = $this->db->get($table);
+			return $query->result_array();
+		}
+
 		function getDataWhere ($table,$field,$where)
 		{
 			$this->db->select('*');

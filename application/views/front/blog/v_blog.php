@@ -23,191 +23,57 @@
 					
 					<div class="col-md-8">
 						<div class="posts">
-
+							<?php foreach ($berita as $berita) {?>
 							<div class="post">
 								<div class="post-img">
 									<a href="#0" class="full-width">
-										<img src="<?= base_url();?>assets2/img/blog/2.jpg" alt="">
+										<img src="<?= base_url();?>assets/photo/berita/<?php echo $berita->foto ?>" alt="">
 									</a>
 								</div>
 								<div class="content text-center">
 									<div class="post-meta">
 										<div class="post-title">
 											<h5>
-												<a href="#0">Top WordPress Themes and Plugins for Hotels, Travel, and</a>
+												<a href="#0"><?php echo $berita->judul?></a>
 											</h5>
 										</div>
 										<ul class="meta">
 											<li>
 												<a href="#0">
 													<i class="fa fa-user" aria-hidden="true"></i>
-													Admin
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-folder-open" aria-hidden="true"></i>
-													WordPress
+													<?php echo $berita->nama?>
 												</a>
 											</li>
 											<li>
 												<a href="#0">
 													<i class="fa fa-calendar" aria-hidden="true"></i>
-													6 augu 2017
+													<?php echo format_indo(substr($berita->tanggal,0,10))?>
 												</a>
 											</li>
 											<li>
 												<a href="#0">
 													<i class="fa fa-tags" aria-hidden="true"></i>
-													Blog,WordPress,ThemeForest
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-comments" aria-hidden="true"></i>
-													0 Comments
+													<?php echo $berita->nama_kat_artikel;
+													if (!$berita->id_organisasi == null) {
+														echo ", ";
+														$kate = $this->model_dinamic->getWhereArray('tb_organisasi','id_organisasi',$berita->id_organisasi);
+														echo $kate[0]['nama_organisasi'];
+													}?>
 												</a>
 											</li>
 										</ul>
 									</div>
 
 									<div class="post-cont">
-										<p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+										<p><?php echo substr(strip_tags($berita->deskripsi),0,230),"...";?></p>
 									</div>
 
 									<a href="#0" class="butn">Read More</a>
 
 								</div>
 							</div>
-
-							<div class="post">
-								<div class="post-img">
-									<a href="#0" class="full-width">
-										<img src="<?= base_url();?>assets2/img/blog/3.jpg" alt="">
-									</a>
-								</div>
-								<div class="content text-center">
-									<div class="post-meta">
-										<div class="post-title">
-											<h5>
-												<a href="#0">Top WordPress Themes and Plugins for Hotels, Travel, and</a>
-											</h5>
-										</div>
-										<ul class="meta">
-											<li>
-												<a href="#0">
-													<i class="fa fa-user" aria-hidden="true"></i>
-													Admin
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-folder-open" aria-hidden="true"></i>
-													WordPress
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-calendar" aria-hidden="true"></i>
-													6 augu 2017
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-tags" aria-hidden="true"></i>
-													Blog,WordPress,ThemeForest
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-comments" aria-hidden="true"></i>
-													0 Comments
-												</a>
-											</li>
-										</ul>
-									</div>
-
-									<div class="post-cont">
-										<p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									</div>
-
-									<a href="#0" class="butn">Read More</a>
-
-								</div>
-							</div>
-
-							<div class="post">
-								<div class="post-img">
-									<a href="#0" class="full-width">
-										<img src="<?= base_url();?>assets2/img/blog/1.jpg" alt="">
-									</a>
-								</div>
-								<div class="content text-center">
-									<div class="post-meta">
-										<div class="post-title">
-											<h5>
-												<a href="#0">Top WordPress Themes and Plugins for Hotels, Travel, and</a>
-											</h5>
-										</div>
-										<ul class="meta">
-											<li>
-												<a href="#0">
-													<i class="fa fa-user" aria-hidden="true"></i>
-													Admin
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-folder-open" aria-hidden="true"></i>
-													WordPress
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-calendar" aria-hidden="true"></i>
-													6 augu 2017
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-tags" aria-hidden="true"></i>
-													Blog,WordPress,ThemeForest
-												</a>
-											</li>
-											<li>
-												<a href="#0">
-													<i class="fa fa-comments" aria-hidden="true"></i>
-													0 Comments
-												</a>
-											</li>
-										</ul>
-									</div>
-
-									<div class="post-cont">
-										<p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									</div>
-
-									<a href="#0" class="butn">Read More</a>
-
-								</div>
-							</div>
-
-							<div class="pagination">
-								<ul>
-									<li>
-										<a href="#0">First</a>
-									</li>
-									<li>
-										<a href="#0">1</a>
-									</li>
-									<li>
-										<a href="#0">2</a>
-									</li>
-									<li>
-										<a href="#0">last</a>
-									</li>
-								</ul>
-							</div>
+							<?php }?>
+							<?php echo $this->pagination->create_links();?>
 
 						</div>
 					</div>
@@ -220,11 +86,9 @@
 									<h6>Berita Terbaru</h6>
 								</div>
 								<ul>
-									<li><a href="#0">Top WordPress Themes and Plugins for Hotels.</a></li>
-									<li><a href="#0">Master These Awesome New Skills in March.</a></li>
-									<li><a href="#0">he 20 Best Lightroom Presets You Need.</a></li>
-									<li><a href="#0">Best Design Items to Appeal to the Millennial.</a></li>
-									<li><a href="#0">Stander Post With Image.</a></li>
+									<?php foreach ($berita_baru as $key) {?>
+										<li><a href="<?php echo base_url()?>berita/detail/<?php echo $key->id_berita?>"><?php echo $key->judul?></a></li>
+									<?php }?>	
 								</ul>
 							</div>
 
@@ -244,8 +108,9 @@
 									<h6>Kategori Berita</h6>
 								</div>
 								<ul>
-									<li><a href="#0">WordPress</a></li>
-									<li><a href="#0">ThemeForest</a></li>
+									<?php foreach ($kategori as $kay) {?>
+										<li><a href="<?= base_url('berita/kategori/');?><?php echo $kay->nama_kat_artikel; ?>"><?php echo $kay->nama_kat_artikel?></a></li>
+									<?php }?>
 								</ul>
 							</div>
 

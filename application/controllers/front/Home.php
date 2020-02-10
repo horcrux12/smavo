@@ -14,6 +14,28 @@ class Home extends CI_Controller
 	}
 	
 	public function index (){
+
+		//ambil data ip address pengguna
+		$data['browser'] = $this->agent->browser();
+		$data['browser_version'] = $this->agent->version();
+		$data['os_name'] = $this->agent->platform();
+		$data['ip_address'] = $this->input->ip_address();
+		$data['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+
+		$data_ini = $this->model_statistik->DataThisDay($data['ip_address'],date('Y-m-d'));
+		
+		if ($data_ini->num_rows()>0) {
+			$data_ini = $data_ini->result();
+			$data_update['id_statistik'] = $data_ini[0]->id_statistik;
+			$data_update['hits'] = $data_ini[0]->hits + 1;
+			$this->model_dinamic->update_data('id_statistik',$data_update['id_statistik'],$data_update,'tb_statistik');
+		}
+		else {
+			$data['tanggal'] = date('Y-m-d');
+			$data['hits'] = 1;
+			$this->model_dinamic->input_data($data,'tb_statistik');
+		}
+
 		$page_content['page'] = 'front/v_home';
 		// CSS
 		$page_content['css'] = '
@@ -75,26 +97,7 @@ class Home extends CI_Controller
 		<script src="'.base_url().'assets2/js/main_player.js"></script>';
 		$page_content['title'] = '';
 		   
-		//ambil data ip address pengguna
-		$data['browser'] = $this->agent->browser();
-		$data['browser_version'] = $this->agent->version();
-		$data['os_name'] = $this->agent->platform();
-		$data['ip_address'] = $this->input->ip_address();
-		$data['hostname'] = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-
-		$data_ini = $this->model_statistik->DataThisDay($data['ip_address'],date('Y-m-d'));
 		
-		if ($data_ini->num_rows()>0) {
-			$data_ini = $data_ini->result();
-			$data_update['id_statistik'] = $data_ini[0]->id_statistik;
-			$data_update['hits'] = $data_ini[0]->hits + 1;
-			$this->model_dinamic->update_data('id_statistik',$data_update['id_statistik'],$data_update,'tb_statistik');
-		}
-		else {
-			$data['tanggal'] = date('Y-m-d');
-
-			$this->model_dinamic->input_data($data,'tb_statistik');
-		}
 		
 		$berita 	= $this->model_berita->tampil_berita()->result();
 		$kemitraan  = $this->model_dinamic->getData ('tb_kemitraan');
