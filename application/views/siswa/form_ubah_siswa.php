@@ -61,13 +61,23 @@
 
                 
 
-              <div class="form-group">
-    <label class="col-sm-2 control-label">File</label>
-    <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept=""/>
-      <i><font color="red">*File yang telah terupload : <?php echo $file;?><br></font></i>
-    </div>
-  </div>
+          <div class="form-group">
+          <label class="col-sm-2 control-label">Foto Utama Logo</label>
+          <div class="col-sm-8">
+          <img id="avatar" class="editable img-responsive" width="40%" src="<?php echo base_url('assets/photo/karya-cipta/'.$file_name.'');?>"> 
+          <br><input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*" required/>
+          <i><font color="red">*Foto yang telah digunakan : <?php echo $file_name;?><br></font></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">File Dokumen</label>
+          <div class="col-sm-8">
+          <!-- <img id="avatar" class="editable img-responsive" width="40%" src="<?php echo base_url('assets/file/'.$file_download.'');?>">  -->
+          <input type="file" class="form-control" id="validatedCustomFile" name="file_download" accept="" required/>
+          <i><font color="red">*File yang telah terupload : <?php echo $file_download;?><br></font></i>
+          </div>
+        </div>
 
   <div class="form-group">
     <label for="" class="col-sm-2 control-label">Judul Artikel</label>
