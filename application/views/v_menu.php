@@ -168,7 +168,7 @@
 							        $data = $this->db->get('tb_kat_siswa');
 									foreach ($data->result() as $row) {?>
 									<li class="">
-										<a href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->nama_kat_siswa?>">
+										<a href="<?php echo base_url();?>admin/siswa/kategori-siswa/<?php echo $row->nama_kat_siswa?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											<?php echo $row->nama_kat_siswa?>
 										</a>		
@@ -189,7 +189,7 @@
 						<a href="<?php echo base_url();?>admin/kategori-pesan">
 							<i class="menu-icon fa  fa-envelope"></i>
 							<span class="menu-text"> Kotak Masuk </span>
-							<span class="badge badge-danger">5</span>
+							<!-- <span class="badge badge-danger">5</span> -->
 						</a>
 
 						<b class="arrow"></b>
@@ -204,6 +204,14 @@
 						<b class="arrow"></b>
 					</li>
 
+					<li class="">
+						<a href="<?php echo base_url();?>admin/kalendar-kegiatan">
+							<i class="menu-icon fa fa-calendar"></i>
+							<span class="menu-text"> Kalendar Kegiatan </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
 			<li class="">
 						<a href="<?php echo base_url();?>admin/administrator">
 							<i class="menu-icon fa fa-users"></i>

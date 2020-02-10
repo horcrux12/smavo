@@ -117,7 +117,6 @@ $route['admin/siswa/ubah-siswa/(:any)'] = 'siswa/ubah/$1'; //ubah
 $route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail/$1'; //detail
 $route['admin/siswa/hapus-siswa/(:any)'] = 'siswa/delete/$1'; //hapus data
 $route['admin/siswa/kategori-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; //tampil detail kategori data
-$route['admin/siswa/detail-siswa/(:any)'] = 'siswa/detail_kat_siswa/$1'; 
 
 // Setting
 $route['admin/pengaturan/kemitraan'] = 'kemitraan';
@@ -228,6 +227,9 @@ $route['admin/kategori-pesan/detail-pesan/(:any)'] = 'pesan/detail/$1';
 
 //statistik 
 $route['admin/statistik-pengguna'] = 'statistik';
+
+//kalender
+$route['admin/kalendar-kegiatan'] = 'calendar';
 
 //administrator
 $route['admin/administrator'] = 'user';

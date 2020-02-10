@@ -126,7 +126,7 @@ if(!empty($info_hapus))
                               <ul class="ace-thumbnails clearfix">
                                 <li class >
                                   <a href="<?= base_url()?>assets/photo/guru/<?= $row->foto?>" data-rel="colorbox" target="__blank" data-ids="<?= $ubahnya?>">
-                                    <img width="80" id="<?= $ubahnya?>" height="80" alt="150x150" src="<?= base_url()?>assets/photo/guru/<?= $row->foto;?>" />
+                                    <img width="80" id="" height="80" alt="150x150" src="<?= base_url()?>assets/photo/guru/<?= $row->foto;?>" />
                                     <div class="text">
                                       <div class="inner"><?php echo $row->nama_lengkap?></div>
                                     </div>

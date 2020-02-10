@@ -52,7 +52,8 @@
                                 }
                                 
                               ?>  
-                        <span class="profile-picture <?= $ubahnya?>">
+                              <!-- <?= $ubahnya?> -->
+                        <span class="profile-picture ">
                           <img id="avatar" width="300" class="editable img-responsive" src=<?php echo base_url('assets/photo/guru/'.$file_name.'');?>>
                         </span>
                         
@@ -106,7 +107,7 @@
                           <div class="profile-info-row">
                           <div class="profile-info-name"> Jabatan </div>
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $jbt?></span>
+                            <span class="editable" id="username"><?php echo $nama_jabatan?></span>
                           
                           </div>
                           </div>
@@ -115,7 +116,7 @@
                           <div class="profile-info-name"> Mata Pelajaran</div>
 
                           <div class="profile-info-value">
-                            <span class="editable" id="username"><?php echo $mapel?></span>
+                            <span class="editable" id="username"><?php echo $nama_mapel?></span>
                             
                           </div>
                           </div> 

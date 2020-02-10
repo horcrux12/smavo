@@ -11,6 +11,13 @@
             return $query;
         }
     
+        public function getdelete($key) // menghapus data galeri
+		{
+			$this->db->where('id_galeri',$key);
+			$this->db->delete('tb_galeri');
+		}
+
+
     }
     
     /* End of file ModelName.php */

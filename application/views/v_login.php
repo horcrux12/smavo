@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<background image="<?php echo base_url();?>assets/images/536.jpg">
+	<link rel="icon" href="<?php echo base_url();?>assets/photo/logo/logo.png">
+	
+	<!-- <body background="<?php echo base_url();?>assets/photo/background/20635.jpg"> -->
+	
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		
 		<meta charset="utf-8" />
+		
 		<title>Sistem Informasi Akademik SMA Negeri 2 Cibinong</title>
 
+		
 		<meta name="description" content="User login page" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />

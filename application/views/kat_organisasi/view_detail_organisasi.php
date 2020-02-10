@@ -22,7 +22,7 @@
                         <span class="profile-picture">
                           
 
-                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/organisasi/'.$file_name.'');?>>
+                          <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/organisasi/logo/'.$file_name.'');?>>
 
                           
                         </span>
@@ -70,6 +70,13 @@
                           </div>
                         </div>
 
+                        <div class="profile-info-row">
+                        <div class="profile-info-name"> Download File</div>
+
+                        <div class="profile-info-value">
+                          <span class="editable" id="username"><a href="<?php echo base_url('assets/file/'. $file_download .'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a></span>
+                        </div>
+                      </div>        
                         
                    </div>
                   </div>

@@ -51,7 +51,7 @@ if (!empty($info_gagal)) {
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
       <input type="file" id="id-input-file-2" name="file_name" accept="image/*"/>
-      <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font></i>
+      <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png (Harus diisi)</font></i>
     </div>
   </div>
 
