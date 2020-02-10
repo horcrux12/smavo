@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 // ------------ FRONT END ----------
 // Berita
 $route['berita'] = 'front/blog';
+$route['berita/(:num)'] = 'front/blog/index/$1';
 $route['berita/kategori/(:any)'] = 'front/blog/kategori/$1';
 $route['berita/detail/(:any)'] = 'front/blog/detail/$1';
 
