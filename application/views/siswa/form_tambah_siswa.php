@@ -64,6 +64,7 @@ if (!empty($info_gagal)) {
             <option value="<?php echo $row->id_organisasi;?>"><?php echo $row->nama_organisasi;?></option>
             <?php } ?>
               </select>
+              <i><font color="red">*Jika tidak ada, kosongkan saja</font></i>
               </div>
               </div>
   

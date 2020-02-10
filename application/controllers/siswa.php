@@ -189,7 +189,12 @@
 			$key = $this->input->post('kode');
 			$data['id_artikel'] 		= $this->input->post('kode');
 			$data['id_kat_siswa'] 		= $this->input->post('kd_siswa');
-			$data['id_organisasi'] 		= $this->input->post('org');
+			if (! $this->input->post('org')) {
+				$data['id_organisasi']	= null;
+			}
+			else{
+				$data['id_organisasi'] =  $this->input->post('org');
+			}
 			$data['judul'] 				= $this->input->post('jdl');
 			$data['id_user'] 			= $this->input->post('kd_user');
 			$data['deskripsi'] 			= $this->input->post('isi');
@@ -431,7 +436,12 @@
 					{
 						$konten['kode']						= $row->id_artikel;
 						$konten['kd_siswa']					= $row->id_kat_siswa;
-						$konten['org']						= $row->id_organisasi;
+						if (!$row->id_organisasi) {
+							$konten['org'] = "Tidak ada organisasi";
+						}else{
+							$org = $this->model_dinamic->getWhere('tb_organisasi','id_organisasi',$row->id_organisasi)->result_array();
+							$konten['org'] = $org[0]['nama_organisasi'];
+						}
 						$konten['jdl']						= $row->judul;
 						$konten['kd_user']					= $row->id_user;
 						$konten['isi']						= $row->deskripsi;
@@ -477,7 +487,8 @@
 			if($query->num_rows()>0)
 				{
 					$query=$query->result();
-					unlink('./assets/file/'.$query[0]->foto);
+					unlink('./assets/file/'.$query[0]->file);
+					unlink('./assets/photo/karya-cipta/'.$query[0]->foto);
 					$this->model_siswa->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}

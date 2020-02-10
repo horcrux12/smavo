@@ -47,7 +47,7 @@
   <div id="user-profile-1" class="user-profile row">
 
 
-    <div class="col-xs-12 col-sm-9">
+    <div class="col-xs-12 col-sm-12">
       <div class="center"></div>
 
       <div class="space-12"></div>

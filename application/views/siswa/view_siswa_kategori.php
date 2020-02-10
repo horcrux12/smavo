@@ -102,7 +102,7 @@ if(!empty($info_hapus))
                             <td><?php echo $row->nama?></td>
                             <td><?php echo $row->judul?></td>
                             <td class="center">
-                            <a href="<?php echo base_url('assets/file/'.$row->foto.'');?>" class="btn btn-primary"><i class="fa fa-download"> &nbsp;</i>Download</a>
+                            <a href="<?php echo base_url('assets/file/'.$row->file.'');?>" class="btn btn-primary"><i class="fa fa-download"> &nbsp;</i>Download</a>
                            </td>
 
                            
