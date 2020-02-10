@@ -272,42 +272,32 @@
 						$konten['nama']			= $row->nama_lengkap;
 						$konten['tempat']		= $row->tempat_lahir;
 						$konten['tanggal']		= $row->tgl_lahir;
-						$konten['jbt']			= $row->id_jabatan;
-						$konten['mapel']		= $row->id_mapel;
-						
-						$cekmapel = $konten['mapel'];
-						if (($cekmapel)==null) {
-							echo "Tidak ada mata pelajaran";
+						$jabatan 				= $this->model_dinamic->getWhere('tb_jabatan','id_jabatan',$row->id_jabatan)->result_array();
+						$konten['nama_jabatan'] = $jabatan[0]['nama_jabatan'];
+						if (!$row->id_mapel) {
+							$konten['nama_mapel'] = "Tidak ada mata pelajaran";
+						}else{
+							$mapel = $this->model_dinamic->getWhere('tb_mapel','id_mapel',$row->id_mapel)->result_array();
+							$konten['nama_mapel'] = $mapel[0]['nama_mapel'];
 						}
+
 
 						$konten['file_name']	= $row->foto;				
 						
 					}
-				}
-				else
-				{
-						$konten['kode']			= "";
-						$konten['nip']			= "";
-						$konten['nama']			= "";
-						$konten['tempat']		= "";
-						$konten['tanggal']		= "";
-						$konten['jbt']			= "";
-						$konten['mapel']		= "";
-						$konten['file_name']	= "";
-				}
-			
-				$jabatan= $this->model_dinamic->getWhere ('tb_jabatan','id_jabatan',$konten['jbt'])->result();
-				foreach ($jabatan as $key) {
-				$konten ['nama_jabatan'] = $key->nama_jabatan;
-
-				$mapel = $this->model_dinamic->getWhere ('tb_mapel','id_mapel',$konten['mapel'])->result();
-				foreach ($mapel as $key) {
-				$konten ['nama_mapel'] = $key->nama_mapel;
-			
-				$this->load->view('v_dashboard',$konten);
-		
-			} 
-		}
+			}
+			else
+			{
+					$konten['kode']			= "";
+					$konten['nip']			= "";
+					$konten['nama']			= "";
+					$konten['tempat']		= "";
+					$konten['tanggal']		= "";
+					$konten['jbt']			= "";
+					$konten['mapel']		= "";
+					$konten['file_name']	= "";
+			}
+			$this->load->view('v_dashboard',$konten);
 	}
 
 		public function delete($id)
