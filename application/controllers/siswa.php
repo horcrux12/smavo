@@ -22,7 +22,7 @@
 			$konten['css']		= '<link rel="stylesheet" href="'.base_url().'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">';
 			$konten['konten'] 		= 'siswa/view_siswa';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Data Artikel Siswa';
+			$konten['sub_judul'] 	= 'Data Artikel Kesiswaan';
 			$konten['data']			= $this->db->get('tb_siswa');
 			$konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
@@ -78,7 +78,7 @@
 				}
 			
 				
-				$konten['judul']		= 'Data Artikel Siswa';
+				$konten['judul']		= 'Data Artikel Kesiswaan';
 				
 				
 				$data = $this->model_dinamic->getWhere ('tb_kat_siswa','nama_kat_siswa',$id)->result();
@@ -380,7 +380,7 @@
 				';
 			$konten['konten'] 		= 'siswa/form_ubah_siswa';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Ubah Data Artikel Siswa';
+			$konten['sub_judul'] 	= 'Ubah Data Artikel Kesiswaan';
 			$key = $id;
 			$this->db->where('id_artikel',$key);
 			$konten['data'] = $this->db->get('tb_siswa');
@@ -424,7 +424,7 @@
 			$konten['js']			= '';
 			$konten['konten'] 		= 'siswa/view_detail_siswa';
 			$konten['judul']		= 'Data Master';
-			$konten['sub_judul'] 	= 'Detail Artikel Siswa';
+			$konten['sub_judul'] 	= 'Detail Data Artikel Kesiswaan';
 			$key = $id;
 			$konten['data']			= $this->model_dinamic->getWhere('tb_siswa','id_artikel',$key);
 			

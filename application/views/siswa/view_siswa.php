@@ -17,7 +17,7 @@ td p  img{
 
 
                     <div class="table-header">
-                     Data siswa
+                     Data Artikel Kesiswaan
                     </div>
 
                     <!-- div.table-responsive -->

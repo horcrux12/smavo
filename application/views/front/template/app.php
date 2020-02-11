@@ -67,7 +67,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <div class="loading">
+  <!-- <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -76,7 +76,7 @@
         <div></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- End Loading ====
       ======================================= -->
@@ -129,10 +129,11 @@
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
-              <li><a href="#">Organisasi</a></li>
-              <li><a href="#">Karya Cipta</a></li>
-              <li><a href="#">Tata Tertib</a></li>
-              <li><a href="#">Aturan Akademik</a></li>
+            <?php
+              $data = $this->model_dinamic->getData('tb_kat_siswa');
+              foreach ($data as $key) { ?>
+                <li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
+              <?php } ?>
             </ul>
           </li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="5">Kontak</a>
