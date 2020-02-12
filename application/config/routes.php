@@ -88,6 +88,9 @@ $route['sejarah'] = 'front/sejarah';
 // Sambutan
 $route['sambutan'] = 'front/sambutan';
 
+// Pesan
+$route['beranda/kirim-pesan'] = 'front/home/simpan';
+
 // Organisasi
 // $route['organisasi'] = 'front/organisasi';
 // $route['organisasi/detail/(:any)'] = 'front/organisasi/detail/$1'; 

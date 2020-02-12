@@ -92,7 +92,7 @@
             <div class="col-md-4 wow fadeInUp">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-paperplane-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Our Vision</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Visi</a></h2>
                 <p>
                   <?php echo $key->visi ?>
                 </p>
@@ -102,7 +102,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-pie-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Our Mision</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Misi</a></h2>
                 <p>
                   <?php echo $key->misi ?>
                 </p>
@@ -112,7 +112,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Our Plan</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Tujuan</a></h2>
                 <p>
                   <?php echo $key->plan ?>
                 </p>
@@ -220,7 +220,7 @@
             </div>
             <div class="col-lg-12">
               <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter="*" class="filter-active">Semua</li>
                 <?php foreach ($data['kategori'] as $key) { ?>
                   <li data-filter=".<?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>"><?php echo $key->nama_kat_artikel ?></li>
                 <?php } ?>
@@ -296,7 +296,7 @@
 
         <header class="section-header">
           <h3>Data Kunjungan</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
         </header>
 
         <div class="row counters">
@@ -333,7 +333,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3 class="section-title">Our Video</h3>
+          <h3 class="section-title">Video</h3>
         </header>
         <div class="row" style="padding-top: 30px;">
           <div class="col-lg-12 col-md-12 wow fadeInUp text-center">
@@ -392,7 +392,7 @@
           <div class="col-md-4">
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
+              <h3>Alamat</h3>
               <address>Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913-Jawa Barat Indonesia</address>
             </div>
           </div>
@@ -400,7 +400,7 @@
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
+              <h3>No Telephone</h3>
               <p><a href="tel:+155895548855"> +62 251 8654347</a></p>
             </div>
           </div>
@@ -415,32 +415,44 @@
 
         </div>
 
+
         <div class="form">
+              
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <form action="<?php echo base_url();?>beranda/kirim-pesan" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="pengirim" id="pengirim" class="form-control" placeholder="Nama Lengkap Pengirim" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Lengkap Pengirim" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Pesan" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <select class="form-control" name="kat" id="kat">
+              <option value="">-------------------------------------------------------- pilih salah satu -------------------------------------------------------</option>
+                  
+                  <option>Keluhan</option>
+                  <option>Rekomendasi/Saran</option>
+                                  
+              </select>
+              </div>
+             
+            <div class="form-group">
+              <textarea class="form-control" name="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Isi Pesan"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit">Kirim Pesan</button></div>
           </form>
         </div>
-
+        </div> 
       </div>
     </section><!-- #contact -->
 

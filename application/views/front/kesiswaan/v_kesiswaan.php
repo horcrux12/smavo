@@ -31,7 +31,7 @@
 <section id="team">
     <div class="container" style="padding-top: 20px;">
         <div class="section-header wow fadeInUp">
-            <h3>Tata Tertib</h3>
+            <h3><?php echo $title ?></h3>
         </div>
 </section>
 <!-- end judul -->
@@ -60,17 +60,18 @@
                                                 <!-- Item title -->
                                                 <!-- <h5>INI JUDUL</h5> -->
                                             </div>
-                                  
+                                        
                                             <ul class="meta">
                                                  <li>
-                                                     <a rel="author" href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/user/334-superuser">
-                                                        <i class="fa fa-user" aria-hidden="true"></i> Super User </a></li><li>
-                                                    <i class="fa fa-folder-open" aria-hidden="true"></i> Blog </li> <li>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i> Jul 17, 2018</li><li>
+                                                 
+                                                        <i class="fa fa-user" aria-hidden="true"></i><?php echo $jdl; ?></li><li>
+                                                    <i class="fa fa-folder-open" aria-hidden="true"></i> <?php echo $kd_user; ?></li> <li>
+                                                    <i class="fa fa-calendar" aria-hidden="true"><?php $nama_kategori;?></i> </li><li>
                                                     <i class="fa fa-tags" aria-hidden="true"></i>
                                                           <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/blog">blog</a>, 
                                                           <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/joomla">joomla</a>,</li>
-                                            </ul>
+                                                     
+                                                        </ul>
                                         </div>
                     
                                             <div class="post-cont">
