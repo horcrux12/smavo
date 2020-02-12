@@ -56,9 +56,11 @@
 				$page_content['page'] = 'front/kesiswaan/v_kesiswaan';
 				
 				// load data kesiswaan
-				$key=$id;
-				$page_content['data'] = $this->model_dinamic->getWhere('tb_siswa','id_artikel',$key);
-				
+				$doto = $this->model_dinamic->getWhere('tb_kat_siswa','nama_kat_siswa',$id)->result_array();
+				$key=$doto[0]['id_kat_siswa'];
+				// print_r($key);
+				$page_content['data'] = $this->model_dinamic->getWhere('tb_siswa','id_kat_siswa',$key);
+				// print_r($page_content['data']->result());
 
 					if($page_content['data']->num_rows()>0)
 				{
@@ -78,19 +80,19 @@
 							$page_content['isi']						= $row->deskripsi;
 							$page_content['file_name']					= $row->foto;
 							$page_content['file_download']				= $row->file;
-							}
 						}
-							else
-							{
-									$page_content['kode']					= "";
-									$page_content['kd_siswa']				= "";
-									$page_content['org']					= "";
-									$page_content['jdl']					= "";
-									$page_content['kd_user']				= "";
-									$page_content['isi']					= "";
-									$page_content['file_name']				= "";
-									$page_content['file_download']			= "";
-						} 
+				}
+					else
+				{
+						$page_content['kode']					= "";
+						$page_content['kd_siswa']				= "";
+						$page_content['org']					= "";
+						$page_content['jdl']					= "";
+						$page_content['kd_user']				= "";
+						$page_content['isi']					= "";
+						$page_content['file_name']				= "";
+						$page_content['file_download']			= "";
+				} 
 							$kategori = $this->model_dinamic->getWhere ('tb_kat_siswa','id_kat_siswa',$page_content['kd_siswa'])->result();
 							foreach ($kategori as $key) {
 							$page_content ['nama_kategori'] = $key->nama_kat_siswa;

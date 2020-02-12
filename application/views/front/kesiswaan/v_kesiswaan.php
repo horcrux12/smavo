@@ -64,7 +64,7 @@
                                             <ul class="meta">
                                                  <li>
                                                  
-                                                        <i class="fa fa-user" aria-hidden="true"></i><?php echo $jdl; ?></li><li>
+                                                    <i class="fa fa-user" aria-hidden="true"></i><?php echo $jdl; ?></li><li>
                                                     <i class="fa fa-folder-open" aria-hidden="true"></i> <?php echo $kd_user; ?></li> <li>
                                                     <i class="fa fa-calendar" aria-hidden="true"><?php $nama_kategori;?></i> </li><li>
                                                     <i class="fa fa-tags" aria-hidden="true"></i>

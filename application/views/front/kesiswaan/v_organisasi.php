@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-  </head>
-  <body>
-
 <section id="home" class="min-header bg-img" data-scroll-index="0" data-overlay-dark="5" data-background="<?= base_url(); ?>assets2/img/back.jpg" data-stellar-background-ratio="0.5">
     <div class="container-fluid">
         <div class="row">
@@ -99,6 +87,4 @@
          });
     }); -->
   <!-- </script> -->
-</body>
-</html>
 <!-- - - - - -end- - - - -  -->

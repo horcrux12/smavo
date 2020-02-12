@@ -92,7 +92,7 @@
             <div class="col-md-4 wow fadeInUp">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-paperplane-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Visi</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Vision</a></h2>
                 <p>
                   <?php echo $key->visi ?>
                 </p>
@@ -102,7 +102,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-pie-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Misi</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Mision</a></h2>
                 <p>
                   <?php echo $key->misi ?>
                 </p>
@@ -112,7 +112,7 @@
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
               <div class="about-col">
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                <h2 class="title"><a href="javascript:void(0);">Tujuan</a></h2>
+                <h2 class="title"><a href="javascript:void(0);">Our Plan</a></h2>
                 <p>
                   <?php echo $key->plan ?>
                 </p>
@@ -165,49 +165,6 @@
         <!-- <a class="cta-btn" href="#">Call To Action</a> -->
       </div>
     </section><!-- #call-to-action -->
-
-    <!--==========================
-      Skills Section
-    ============================-->
-    <!-- <section id="skills" data-scroll-index = "0">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Our Skills</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-        </header>
-
-        <div class="skills-content">
-
-          <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">HTML <i class="val">100%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">CSS <i class="val">90%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-
     <section class="blog section-padding " data-scroll-index="2">
       <div class="container">
         <div class="row">
@@ -220,7 +177,7 @@
             </div>
             <div class="col-lg-12">
               <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">Semua</li>
+                <li data-filter="*" class="filter-active">All</li>
                 <?php foreach ($data['kategori'] as $key) { ?>
                   <li data-filter=".<?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>"><?php echo $key->nama_kat_artikel ?></li>
                 <?php } ?>
@@ -296,7 +253,7 @@
 
         <header class="section-header">
           <h3>Data Kunjungan</h3>
-          <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </header>
 
         <div class="row counters">
@@ -333,7 +290,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3 class="section-title">Video</h3>
+          <h3 class="section-title">Our Video</h3>
         </header>
         <div class="row" style="padding-top: 30px;">
           <div class="col-lg-12 col-md-12 wow fadeInUp text-center">
@@ -373,20 +330,6 @@
               </a>
             </div>
           <?php } ?>
-          <?php foreach ($data['kemitraan'] as $key) { ?>
-            <div>
-              <a href="<?php echo $key->link_website ?>">
-                <img src="<?= base_url(); ?>assets/photo/kemitraan/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama; ?>">
-              </a>
-            </div>
-          <?php } ?>
-          <?php foreach ($data['kemitraan'] as $key) { ?>
-            <div>
-              <a href="<?php echo $key->link_website ?>">
-                <img src="<?= base_url(); ?>assets/photo/kemitraan/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama; ?>">
-              </a>
-            </div>
-          <?php } ?>
         </div>
 
       </div>
@@ -406,7 +349,7 @@
           <div class="col-md-4">
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
-              <h3>Alamat</h3>
+              <h3>Address</h3>
               <address>Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913-Jawa Barat Indonesia</address>
             </div>
           </div>
@@ -414,7 +357,7 @@
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
-              <h3>No Telephone</h3>
+              <h3>Phone Number</h3>
               <p><a href="tel:+155895548855"> +62 251 8654347</a></p>
             </div>
           </div>
@@ -429,44 +372,32 @@
 
         </div>
 
-
         <div class="form">
-              
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="<?php echo base_url();?>beranda/kirim-pesan" method="post" role="form" class="contactForm">
+          <form action="" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="pengirim" id="pengirim" class="form-control" placeholder="Nama Lengkap Pengirim" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email Lengkap Pengirim" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Pesan" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <select class="form-control" name="kat" id="kat">
-              <option value="">-------------------------------------------------------- pilih salah satu -------------------------------------------------------</option>
-                  
-                  <option>Keluhan</option>
-                  <option>Rekomendasi/Saran</option>
-                                  
-              </select>
-              </div>
-             
-            <div class="form-group">
-              <textarea class="form-control" name="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Isi Pesan"></textarea>
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div>
-        </div> 
+
       </div>
     </section><!-- #contact -->
 
