@@ -184,15 +184,15 @@
               <strong>Email:</strong> info@sman2cibinong.sch.id<br>
             </p>
 
-            
+        
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://gmail.com/" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
-
+            
           </div>
 
         </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12 Feb 2020 pada 09.59
+-- Generation Time: 12 Feb 2020 pada 18.23
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -479,7 +479,8 @@ INSERT INTO `tb_kontak` (`id_kontak`, `nama_pengirim`, `email_pengirim`, `katego
 (5, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'kjhgfd', 'kjhjhg', '2020-02-12 07:06:06'),
 (6, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'kjhgfd', 'hyfytftftf', '2020-02-12 07:24:35'),
 (7, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'kjhgfd', 'hyfytftftf', '2020-02-12 07:24:39'),
-(8, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'jhgyuug', 'kljhkh', '2020-02-12 07:25:49');
+(8, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'jhgyuug', 'kljhkh', '2020-02-12 07:25:49'),
+(9, 'Raka', 'ralhafizhi@gmail.com', 'Keluhan', ',kjhgfd', 'ngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdxngfdx', '2020-02-12 16:03:02');
 
 --
 -- Trigger `tb_kontak`
@@ -671,7 +672,7 @@ INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_organisasi`, `id_user`
 ('SW10022020001', 'KTS001', 'ORG006', 'USR001', 'Juara ke-1 Basket Putra', '<p>Juara ke-1 Basket Putra<br></p>', 'image12.png', 'ekskul_basket.docx', '2020-02-10 06:16:55'),
 ('SW10022020002', 'KTS002', NULL, 'USR001', 'Tanpa Organisasi', '<p>kjhgfd</p>', 'PPSCM.jpeg', '14_IRAWAN.pdf', '2020-02-10 06:44:27'),
 ('SW10022020004', 'KTS003', NULL, 'USR001', 'Tata Tertib SMA Negeri 2 Cibinong', '<p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Tata tertib secara umum diartikan sebagai suatu aturan atau tatanan yang harus dilaksanakan dan dipatuhi. Umumnya tata tertib terdapat pada institusi-institusi pendidikan, perusahaan dan kegiatan lainnya yang melibatkan banyak orang.</span></p><p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Tata tertib sekolah adalah aturan-aturan yang harus atau wajib ditaati di sekolah agar proses kegiatan belajar mengajar dapat berlangsung dengan baik. Tata tertib bertujuan untuk membantu siswa siswi memperoleh prestasi belajar yang maksimal.</span></p><p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Dalam tata tertib ada hal-hal yang wajib dikerjakan dan dilarang dalam lingkungan sekolah. Setiap pelanggar akan dikenakan sanksi, entah itu berupa hukuman lisan ataupun lainnya. Bukan hanya untuk siswa, di lingkungan sekolah tata tertib berlaku juga untuk kepala sekolah, guru atau perangkat sekolah lainnya.</span></p>', 'logo.png', 'Tata-tertib-SMAN-2-Cibinong.docx', '2020-02-11 07:27:02'),
-('SW10022020005', 'KTS004', NULL, 'USR001', 'Aturan Akademik', 'Aturan Akademik', '', NULL, '2020-02-10 06:55:59');
+('SW10022020005', 'KTS004', NULL, 'USR001', 'Aturan Akademik', '<p><img src="		\r\n\r\n\r\n	\r\n		\r\n	\r\n	\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/logo.png" style="width: 25%; float: left;" class="note-float-left">Berikut adalah aturan akademik SMA Negeri 2 Cibinong Berikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong Berikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong</p>', 'logo.png', 'Aturan-Akademik-SMAN-2-Cibinong.docx', '2020-02-12 11:07:31');
 
 --
 -- Trigger `tb_siswa`
@@ -711,6 +712,30 @@ CREATE TABLE `tb_slider` (
 
 INSERT INTO `tb_slider` (`id`, `judul_utama`, `sub_judul`, `deskripsi`, `foto`) VALUES
 (1, 'Selamat Datang di Website Resmi ', 'SMA NEGERI 2 CIBINONG', '<div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Jl. Karadenan No. 05 Cibinong Kabupaten Bogor 16913 - Jawa Barat </span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Telp: +62-251-8654347 Fax: +62-251-8654347 </span></div><div style="text-align: center; margin-left: 25px;" courier="" new",="" monospace;="" font-size:="" 14px;="" line-height:="" 19px;="" white-space:="" pre;"=""><span style="font-family: Arial; color: rgb(206, 198, 206);">Email: info@sman2cibinong.sch.id</span></div>', 'IMG_1137.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_sosmed`
+--
+
+CREATE TABLE `tb_sosmed` (
+  `id` int(4) NOT NULL,
+  `jenis_sosmed` varchar(20) NOT NULL,
+  `nama_sosmed` varchar(35) NOT NULL,
+  `link_website` tinytext
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_sosmed`
+--
+
+INSERT INTO `tb_sosmed` (`id`, `jenis_sosmed`, `nama_sosmed`, `link_website`) VALUES
+(1, 'Twitter', '@sman2cib', 'https://twitter.com/'),
+(2, 'Facebook', 'SMAN 2 Cibinong', 'https://facebook.com/'),
+(3, 'Instagram', '@sman2cib_', 'https://instagram.com/'),
+(4, 'Gmail', 'sman2cib@gmail.com', 'https://gmail.com/'),
+(5, 'linkedin', 'SMAN 2 Cibinong', 'https://www.linkedin.com/');
 
 -- --------------------------------------------------------
 
@@ -906,7 +931,7 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (170, '::1', '2020-02-09', 7, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
 (171, '::1', '2020-02-10', 74, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
 (172, '::1', '2020-02-11', 10, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
-(173, '::1', '2020-02-12', 49, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10');
+(173, '::1', '2020-02-12', 130, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -1063,6 +1088,12 @@ ALTER TABLE `tb_slider`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_sosmed`
+--
+ALTER TABLE `tb_sosmed`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
@@ -1102,7 +1133,7 @@ ALTER TABLE `tb_kemitraan`
 -- AUTO_INCREMENT for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
-  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tb_sambutan`
 --
@@ -1113,6 +1144,11 @@ ALTER TABLE `tb_sambutan`
 --
 ALTER TABLE `tb_slider`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_sosmed`
+--
+ALTER TABLE `tb_sosmed`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tb_statistik`
 --
