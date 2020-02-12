@@ -100,7 +100,7 @@
 							$page_content ['nama_user'] = $key->nama;
 						}		
 				}
-
+			}
 			if ($id == "Organisasi") {
 				$page_content['page'] = 'front/kesiswaan/v_organisasi';
 
@@ -119,6 +119,6 @@
 
 		}
 	}
- }   /* End of file Struktur.php */
+   /* End of file Struktur.php */
     
 ?>
