@@ -30,7 +30,8 @@
 			$konten['konten'] 		= 'pesan/view_pesan';
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Kategori Pesan';
-			$konten['data']			= $this->db->get('tb_kontak');
+			$this->db->order_by('tgl', 'DESC');
+			$konten['data']=$this->db->get('tb_kontak');
 			$this->load->view('v_dashboard',$konten);
 
 		}
@@ -54,12 +55,13 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Ubah Data Kategori Pesan';
 			$key = $id;
-			$this->db->where('id_kontak',$key);
-			$query = $this->db->get('tb_kontak');
-			if($query->num_rows()>0)
+			$konten['data']			= $this->model_dinamic->getWhere('tb_kontak','id_kontak',$key);
+			
+			
+			if($konten['data']->num_rows()>0)
 			{
 
-				foreach ($query->result() as $row )
+				foreach ($konten['data']->result() as $row )
 					{
 						
 						$konten['kode']			= $row->id_kontak;
@@ -135,12 +137,14 @@
 			$konten['sub_judul'] 	= 'Detail pesan';
 			// $konten['data']			= $this->model_pesan->pesan(); /// me-load function tampil pesan hasil join table
 			$key = $id;
-			$this->db->where('id_kontak',$key);
-			$query = $this->db->get('tb_kontak');
-			if($query->num_rows()>0)
+			$key = $id;
+			$konten['data']			= $this->model_dinamic->getWhere('tb_kontak','id_kontak',$key);
+			
+			
+			if($konten['data']->num_rows()>0)
 			{
 
-				foreach ($query->result() as $row )
+				foreach ($konten['data']->result() as $row )
 					{
 						$konten['kode']			= $row->id_kontak;
 						$konten['pengirim']		= $row->nama_pengirim;

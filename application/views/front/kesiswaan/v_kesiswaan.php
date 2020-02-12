@@ -64,10 +64,10 @@
                                             <ul class="meta">
                                                  <li>
                                                  
-                                                    <i class="fa fa-user" aria-hidden="true">&nbsp;</i><?php  echo $nama_user; ?></li><li>
-                                                    <i class="fa fa-folder-open" aria-hidden="true"></i><?php  echo  $nama_kategori; ?></li> <li>
+                                                    <a href=""><i class="fa fa-user" aria-hidden="true">&nbsp;</i><?php  echo $nama_user; ?></a></li><li>
+                                                    <a href=""><i class="fa fa-folder-open" aria-hidden="true"></i><?php  echo  $nama_kategori; ?></a></li> <li>
                                                     <?php foreach ($data->result() as $key) { ?>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<?php echo format_indo(substr($key->tanggal_update,0,10))?></i> </li><li>
+                                                    <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<?php echo format_indo(substr($key->tanggal_update,0,10))?></a></i> </li><li>
                                                     <?php } ?>
                                             </ul>
                                         </div>

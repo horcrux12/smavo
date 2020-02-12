@@ -28,7 +28,7 @@
   <div id="user-profile-1" class="user-profile row">
 
 
-    <div class="col-xs-12 col-sm-9">
+    <div class="col-xs-12 col-sm-12">
       <div class="center"></div>
 
       <div class="space-12"></div>
@@ -63,16 +63,12 @@
           <div class="profile-info-name"> Deskripsi </div>
 
           <div class="profile-info-value">
-            <span class="editable" id="username"><?php echo $isi; ?></span>
+            <!-- <span class="editable" id="username"></span> -->
+            <textarea class="form-control" name="isi" rows="10" readonly><?php echo $isi; ?></textarea>
           </div>
         </div>
 
-        <?php
-            $key = $this->uri->segment(3);
-            $this->db->where('id_kontak',$key);
-            $query = $this->db->get('tb_kontak');
-            foreach ($query->result() as $row) {
-            ?>
+        <?php foreach ($data->result() as $row) { ?>
         <div class="profile-info-row">
           <div class="profile-info-name"> Tanggal Kirim </div>
 
@@ -84,5 +80,4 @@
 
       </div>
     </div>
-  </div>
-</div>
+  

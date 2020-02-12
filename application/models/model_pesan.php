@@ -9,6 +9,7 @@
 
 			$this->db->where('id_kontak',$key);
 			$hasil = $this->db->get('tb_kontak');
+			
 			return $hasil;
 		}
 
