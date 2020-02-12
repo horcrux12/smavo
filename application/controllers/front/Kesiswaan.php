@@ -6,6 +6,9 @@
     
         public function index()
         {
+			
+			
+
             $page_content['page'] ='';
             $page_content['css'] ='
             <link href="'.base_url().'assets2/fasilitas/style_fas.css" rel="stylesheet">
@@ -16,11 +19,19 @@
             $page_content['js'] ='
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
 			$page_content['title'] ='';
+
+			
 			
             $this->load->view('front/template/app',$page_content);
         }
 
         public function kategori($id){
+			
+			//berita terkini
+			$berita_baru = $this->model_dinamic->getDataLimit ('tb_siswa',5,'tanggal_update');
+			$kategori = $this->model_dinamic->getData ('tb_kat_siswa');
+			$page_content['berita_baru'] = $berita_baru;
+			$page_content['kategori'] = $kategori;
 			
 			$page_content['css'] = '
 			<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
@@ -55,6 +66,7 @@
 				
 				$page_content['page'] = 'front/kesiswaan/v_kesiswaan';
 				
+
 				// load data kesiswaan
 				$doto = $this->model_dinamic->getWhere('tb_kat_siswa','nama_kat_siswa',$id)->result_array();
 				$key=$doto[0]['id_kat_siswa'];
@@ -62,6 +74,7 @@
 				$page_content['data'] = $this->model_dinamic->getWhere('tb_siswa','id_kat_siswa',$key);
 				// print_r($page_content['data']->result());
 
+				
 					if($page_content['data']->num_rows()>0)
 				{
 
@@ -100,7 +113,9 @@
 							$user = $this->model_dinamic->getWhere ('tb_user','id_user',$page_content['kd_user'])->result();
 							foreach ($user as $key) {
 							$page_content ['nama_user'] = $key->nama;
+
 						}		
+
 				}
 			}
 			if ($id == "Organisasi") {
@@ -118,8 +133,10 @@
 			$page_content['title'] = $id;
 
 			$this->load->view('front/template/app',$page_content);
+			
 
 		}
+		
 	}
    /* End of file Struktur.php */
     
