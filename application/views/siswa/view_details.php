@@ -31,6 +31,9 @@
 </div>
 <!-- /.page-header -->
 
+
+
+
 <div class="row">
   <div class="col-xs-12">
     <!-- PAGE CONTENT BEGINS -->
@@ -44,7 +47,7 @@
   <div id="user-profile-1" class="user-profile row">
 
 
-    <div class="col-xs-12 col-sm-9">
+    <div class="col-xs-12 col-sm-12">
       <div class="center"></div>
 
       <div class="space-12"></div>
@@ -86,7 +89,7 @@
           <div class="profile-info-name"> Nama File </div>
 
           <div class="profile-info-value">
-            <span class="editable" id="username"><?php echo $row->foto;?></span>
+            <span class="editable" id="username"><?php echo $row->file;?></span>
           </div>
         </div>
 
@@ -94,7 +97,7 @@
           <div class="profile-info-name"> Download File</div>
 
           <div class="profile-info-value">
-            <span class="editable" id="username"><a href="<?php echo base_url('assets/file/'. $row->foto .'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a></span>
+            <span class="editable" id="username"><a href="<?php echo base_url('assets/file/'. $row->file .'');?>" class="btn btn-primary"> <i class="fa fa-download"> &nbsp;</i>Download</a></span>
           </div>
         </div>
 

@@ -131,6 +131,28 @@ class Home extends CI_Controller
 		// echo "</pre>";
 		$this->load->view('front/template/app',$page_content);
 	}
+
+
+	public function simpan()
+		{
+			
+			$key = $this->input->post('kode');
+			$data['id_kontak'] 				= $this->input->post('kode');
+			$data['nama_pengirim'] 			= $this->input->post('pengirim');
+			$data['email_pengirim'] 		= $this->input->post('email');
+			$data['kategori_pesan'] 		= $this->input->post('kat');
+			$data['judul_pesan'] 			= $this->input->post('jdl');
+			$data['isi_pesan'] 				= $this->input->post('isi');
+			
+			
+			
+			{
+				$this->model_pesan->getinsert($data);
+				$this->session->set_flashdata('info','Pesan Terkirim');
+				
+			}
+			$this->load->view('front/template/app',$page_content);
+		}
 }
 
 ?>

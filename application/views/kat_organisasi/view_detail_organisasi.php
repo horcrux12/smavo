@@ -21,10 +21,8 @@
                       <div>
                         <span class="profile-picture">
                           
-
                           <img id="avatar" class="editable img-responsive" src=<?php echo base_url('assets/photo/organisasi/logo/'.$file_name.'');?>>
-
-                          
+ 
                         </span>
 
                         <div class="space-4"></div>

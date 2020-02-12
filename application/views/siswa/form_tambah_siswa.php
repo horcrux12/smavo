@@ -64,33 +64,41 @@ if (!empty($info_gagal)) {
             <option value="<?php echo $row->id_organisasi;?>"><?php echo $row->nama_organisasi;?></option>
             <?php } ?>
               </select>
+              <i><font color="red">*Jika tidak ada, kosongkan saja</font></i>
               </div>
               </div>
+  
+              <div class="form-group">
+            <label class="col-sm-2 control-label">Foto Utama</label>
+            <div class="col-sm-8">
+              <input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*"required/>
+              <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font></i>
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label class="col-sm-2 control-label">File Dokumen</label>
+            <div class="col-sm-8">
+            <input type="file" class="form-control" id="validatedCustomFile" name="file_download" accept="" required/>
+            <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i><br>
+            <i><font color="red">*Jika tidak ada, kosongkan saja</font></i>
+            </div>
+          </div>
 
-  <div class="form-group">
-    <label class="col-sm-2 control-label">File</label>
-    <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept=""/>
-     
-     <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i>
-    </div>
-  </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Judul</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Artikel Siswa" >
+            </div>
+          </div>
 
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Judul</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Artikel Siswa" >
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
-    <div class="col-sm-8">
-      <textarea name="isi" id="isi" ></textarea>
-    </div>
-  </div>
-  <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label " for="isi">Deskripsi</label>
+            <div class="col-sm-8">
+              <textarea name="isi" id="isi" ></textarea>
+            </div>
+          </div>
+          <br>
   
   <center>
 

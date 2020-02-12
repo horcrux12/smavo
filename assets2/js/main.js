@@ -57,7 +57,12 @@
   $(".clients-carousel").owlCarousel({
     autoplay: true,
     dots: true,
+<<<<<<< HEAD
     loop: true,responsiveClass:true
+=======
+    loop: true,
+    responsiveClass: true,
+>>>>>>> cc013deafed0171aaae564e8f5436a15d81b63a5
     responsive: { 0: { items: 2 }, 768: { items: 4 }, 900: { items: 6 }
     }
   });

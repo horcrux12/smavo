@@ -67,7 +67,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <div class="loading">
+  <!-- <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -76,7 +76,7 @@
         <div></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- End Loading ====
       ======================================= -->
@@ -95,7 +95,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="<?= base_url(); ?>">Home</a></li>
+          <li class="menu-active"><a href="<?= base_url(); ?>">Beranda</a></li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="1">Profil</a>
             <ul>
               <li><a href="<?php echo base_url();?>sambutan">Sambutan Kepala Sekolah</a></li>
@@ -129,10 +129,11 @@
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
-              <li><a href="#">Organisasi</a></li>
-              <li><a href="#">Karya Cipta</a></li>
-              <li><a href="#">Tata Tertib</a></li>
-              <li><a href="#">Aturan Akademik</a></li>
+            <?php
+              $data = $this->model_dinamic->getData('tb_kat_siswa');
+              foreach ($data as $key) { ?>
+                <li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
+              <?php } ?>
             </ul>
           </li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="5">Kontak</a>
@@ -165,7 +166,7 @@
           <div class="col-lg-4 col-md-8 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Beranda</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
