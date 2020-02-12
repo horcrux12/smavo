@@ -866,7 +866,7 @@ proto._create = function() {
   };
 
   this.css({
-    position: 'absolute'
+    position: 'relative'
   });
 };
 

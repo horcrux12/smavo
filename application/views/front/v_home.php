@@ -228,9 +228,9 @@
               <div class="row portfolio-container berita" id="portfolio-container">
                 <?php foreach ($data['berita'] as $key) { ?>
                   <div class="col-lg-4 portfolio-item <?php echo str_replace(" ", "-", $key->nama_kat_artikel) ?>">
-                    <div class="item text-center mb-md50">
-                      <div class="post-img">
-                        <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" alt="">
+                    <div class="card item text-center mb-md50">
+                      <div class="post-img" style="height: 160px;">
+                        <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" class="mx-auto d-block" alt="">
                         <div class="date">
                           <a href="#0">
                             <span><?php echo substr($key->tanggal,8,2) ;?></span>
@@ -366,6 +366,20 @@
         </header>
 
         <div class="owl-carousel clients-carousel owl-centered">
+          <?php foreach ($data['kemitraan'] as $key) { ?>
+            <div>
+              <a href="<?php echo $key->link_website ?>">
+                <img src="<?= base_url(); ?>assets/photo/kemitraan/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama; ?>">
+              </a>
+            </div>
+          <?php } ?>
+          <?php foreach ($data['kemitraan'] as $key) { ?>
+            <div>
+              <a href="<?php echo $key->link_website ?>">
+                <img src="<?= base_url(); ?>assets/photo/kemitraan/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama; ?>">
+              </a>
+            </div>
+          <?php } ?>
           <?php foreach ($data['kemitraan'] as $key) { ?>
             <div>
               <a href="<?php echo $key->link_website ?>">
