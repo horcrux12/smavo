@@ -101,6 +101,7 @@ class Home extends CI_Controller
 		
 		$berita 	= $this->model_berita->tampil_berita()->result();
 		$kemitraan  = $this->model_dinamic->getData ('tb_kemitraan');
+		$sosmed  = $this->model_dinamic->getData ('tb_sosmed');
 		$kategori_A	= $this->model_dinamic->getData('tb_kat_artikel');
 		// $profil 	= $this->model_profil->tampil_profil()->result();
 		$slider 	= $this->model_dinamic->getData ('tb_slider');
@@ -119,6 +120,7 @@ class Home extends CI_Controller
 		$page_content['data']['berita'] 		= $berita;
 		$page_content['data']['berita_limit'] 	= $limit_berita;
 		$page_content['data']['kemitraan'] 		= $kemitraan;
+		$page_content['data']['sosmed'] 		= $sosmed;
 		// $page_content['data']['about'] 			= $about; 
 		$page_content['data']['slider'] 		= $slider; 
 		$page_content['data']['about'] 			= $about; 

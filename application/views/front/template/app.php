@@ -184,6 +184,7 @@
               <strong>Email:</strong> info@sman2cibinong.sch.id<br>
             </p>
 
+            
             <div class="social-links">
               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
