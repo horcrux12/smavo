@@ -5,7 +5,7 @@
                 <div class="text-center col-md-12">
                     <h5>Visi dan Misi SMAN 2 Cibinong</h5>
                     <div class="path">
-                        <span><a href="<?= base_url() ?>">Home</a></span>
+                        <span><a href="<?= base_url() ?>">Beranda</a></span>
                         <span><a href="#0"><?= $title ?></a></span>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
     <div class="container" style="padding-top: 20px;">
         <div class="section-header wow fadeInUp">
             <h3>Visi dan Misi SMAN 2 Cibinong</h3>
-            <p>Berikut adalah sarana dan prasarana yang terdapat di SMAN 2 Cibinong guna menunjang kegiatan belajar mengajar agar terlaksana dengan baik dan nyaman</p>
+            <p>Berikut adalah Visi dan Misi SMAN 2 Cibinong guna menunjang kegiatan belajar mengajar agar terlaksana dengan baik dan nyaman</p>
         </div>
 </section>
 <!-- #team -->

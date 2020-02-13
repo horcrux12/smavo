@@ -6,7 +6,7 @@
                 <div class="text-center col-md-12">
                     <h5>Berita Terkini SMAN 2 Cibinong</h5>
                     <div class="path">
-                        <span><a href="<?= base_url() ?>">Home</a></span>
+                        <span><a href="<?= base_url() ?>">Beranda</a></span>
                         <span><a href="<?= base_url('berita') ?>">Berita</a></span>
                         <span><a href="<?= base_url('berita/kategori/'),$title ?>"><?php echo $title?></a></span>
                         <span><a href="#0"><?= $sub_title ?></a></span>

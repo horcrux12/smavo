@@ -138,8 +138,8 @@
           </li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="5">Kontak</a>
             <ul>
-              <li><a href="#">Kontak Kami</a></li>
-              <li><a href="#">Lokasi Sekolah</a></li>
+              <li><a href="<?= base_url('kontak/kontak-kami'); ?>">Kontak Kami</a></li>
+              <li><a href="<?= base_url('kontak/lokasi-sekolah'); ?>">Lokasi Sekolah</a></li>
             </ul>
           </li>
           <!-- <li><a href="#contact">Contact</a></li> -->
@@ -186,11 +186,11 @@
 
         
             <div class="social-links">
-              <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="https://facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://twitter.com/officialsmavo" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/Sman2Cibinong" class="facebook"><i class="fa fa-facebook"></i></a>
               <a href="https://instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="https://gmail.com/" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="https://linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://plus.google.com/u/0/107622506577547252711" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://www.youtube.com/channel/UCR64-kTszWp1CG1axMjxjMA" class="youtube"><i class="fa fa-youtube"></i></a>
             </div>
             
           </div>

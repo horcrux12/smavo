@@ -33,7 +33,7 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data profil';
 			$konten['data']			= $this->db->get('tb_profil');
-			$konten['data']			= $this->model_profil->tampil_profil(); //
+			$konten['data']			= $this->model_profil->tampil_profil(); 
 			$this->load->view('v_dashboard',$konten);
 
 		}

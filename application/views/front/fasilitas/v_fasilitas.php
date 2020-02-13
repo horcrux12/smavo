@@ -5,7 +5,7 @@
 				<div class="text-center col-md-12">
 					<h5>Fasilitas</h5>
 					<div class="path">
-						<span><a href="<?= base_url() ?>">Home</a></span>
+						<span><a href="<?= base_url() ?>">Beranda</a></span>
 						<span><a href="#0"><?= $title ?></a></span>
 					</div>
 				</div>

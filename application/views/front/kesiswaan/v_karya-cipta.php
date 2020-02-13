@@ -7,7 +7,6 @@
 					<h5>Berita Terkini SMAN 2 Cibinong</h5>
 					<div class="path">
 						<span><a href="<?= base_url() ?>">Beranda</a></span>
-						<span><a href="<?= base_url('berita') ?>">Berita</a></span>
 						<span><a href="#0"><?= $title ?></a></span>
 					</div>
 				</div>
@@ -15,6 +14,7 @@
 		</div>
 	</div>
 </section>
+
 <!-- ====== End Header ======  -->
 
 <!--====== Blog ======-->
@@ -24,53 +24,50 @@
 
 			<div class="col-md-8">
 				<div class="posts">
-					<?php foreach ($berita as $berita) { ?>
+					
 						<div class="post">
 							<div class="post-img">
 								<!-- <a href="#0" class="full-width"> -->
-								<img src="<?= base_url(); ?>assets/photo/berita/<?php echo $berita['foto'] ?>" alt="">
+								<img src="<?= base_url(); ?>assets/photo/karya-cipta/<?php echo $file_name ?>" alt="">
 								<!-- </a> -->
 							</div>
 							<div class="content text-center">
 								<div class="post-meta">
 									<div class="post-title">
 										<h5>
-											<a href="#0"><?php echo $berita['judul'] ?></a>
+											<a href="#0"><?php echo $jdl ?></a>
 										</h5>
 									</div>
 									<ul class="meta">
 										<li>
 											<i class="fa fa-user" aria-hidden="true"></i>
-											<?php echo $berita['nama'] ?>
+											<?php  echo $nama_user; ?>
 										</li>
 										<li>
-
+											<?php foreach ($data->result() as $key) { ?>
 											<i class="fa fa-calendar" aria-hidden="true"></i>
-											<?php echo format_indo(substr($berita['tanggal'], 0, 10)) ?>
-
+											<?php echo format_indo(substr($key->tanggal_update,0,10))?>
+											
 										</li>
 										<li>
 
 											<i class="fa fa-tags" aria-hidden="true"></i>
-											<?php echo $berita['nama_kat_artikel'];
-											if (!$berita['id_organisasi'] == null) {
-												echo ", ";
-												echo $berita['nama_organisasi'];
-											} ?>
+											<?php  echo  $nama_kategori; ?>
+											
 
 										</li>
 									</ul>
 								</div>
 
 								<div class="post-cont">
-									<p><?php echo substr(strip_tags($berita['deskripsi']), 0, 230), "..."; ?></p>
+									<p><?php echo substr(strip_tags($isi), 0, 230), "..."; ?></p>
 								</div>
-
-								<a href="<?php echo base_url('berita/detail/'),$berita['id_berita']?>" class="butn">Read More</a>
-
+								
+								<a href="<?php echo base_url('karya-cipta/detail/'),$key->id_artikel?>"class="butn">Read More</a>
+								<?php } ?>
 							</div>
 						</div>
-					<?php } ?>
+					
 					<?php echo $this->pagination->create_links(); ?>
 
 				</div>
@@ -78,38 +75,18 @@
 
 			<div class="col-md-4">
 				<div class="side-bar">
-
 					<div class="widget">
 						<div class="widget-title">
-							<h6>Berita Terbaru</h6>
+							<h6>Kategori Berita Kesiswaan</h6>
 						</div>
 						<ul>
-							<?php foreach ($berita_baru as $key) { ?>
-								<li><a href="<?php echo base_url() ?>berita/detail/<?php echo $key->id_berita ?>"><?php echo $key->judul ?></a></li>
-							<?php } ?>
-						</ul>
-					</div>
-
-
-					<div class="widget">
-						<div class="widget-title">
-							<h6>Karya Cipta Siswa</h6>
-						</div>
-						<ul>
-							<li><a href="#0">WordPress</a></li>
-							<li><a href="#0">ThemeForest</a></li>
-						</ul>
-					</div>
-
-					<div class="widget">
-						<div class="widget-title">
-							<h6>Kategori Berita</h6>
-						</div>
-						<ul>
-							<?php foreach ($kategori as $kay) { ?>
-								<li><a href="<?= base_url('berita/kategori/'); ?><?php echo $kay->nama_kat_artikel; ?>"><?php echo $kay->nama_kat_artikel ?></a></li>
-							<?php } ?>
-						</ul>
+						<?php
+						$data = $this->model_dinamic->getData('tb_kat_siswa');
+						foreach ($data as $key) { ?>
+						<li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
+						<?php }?>	
+						</li>
+					</ul>   
 					</div>
 
 				</div>

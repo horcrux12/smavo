@@ -19,6 +19,7 @@
                     <div class="path">
                         <span><a href="<?= base_url() ?>">Beranda</a></span>
                         <span><a href="#0"><?= $title ?></a></span>
+                        <span><a href="#0"><?= $sub_title ?></a></span>
                     </div>
                 </div>
             </div>
@@ -65,6 +66,7 @@
                                                  <li>
                                                  
                                                     <a href=""><i class="fa fa-user" aria-hidden="true">&nbsp;</i><?php  echo $nama_user; ?></a></li><li>
+                                                    <a href=""><i class="fa fa-folder-open" aria-hidden="true">&nbsp;</i><?php  echo $org; ?></a></li><li>
                                                     <a href=""><i class="fa fa-folder-open" aria-hidden="true"></i><?php  echo  $nama_kategori; ?></a></li> <li>
                                                     <?php foreach ($data->result() as $key) { ?>
                                                     <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<?php echo format_indo(substr($key->tanggal_update,0,10))?></a></i> </li><li>

@@ -45,7 +45,7 @@
 		<!-- heading modal -->
 		<div class="modal-header">
          
-        <h4 class="modal-title"><?php echo $key->nama_organisasi; ?></h4>
+        <h4 class="modal-title"><?php echo $nama; ?></h4>
 		<a class="close col-md-0" data-dismiss="modal">&times;</a>	
         </div>
         

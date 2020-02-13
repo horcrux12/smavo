@@ -91,6 +91,10 @@ $route['sambutan'] = 'front/sambutan';
 
 // Pesan
 $route['beranda/kirim-pesan'] = 'front/home/simpan';
+$route['kontak/kirim-pesan'] = 'front/kontak/simpan';
+
+//Lokasi
+$route['kontak/lokasi-sekolah'] = 'front/kontak/lokasi';
 
 // Organisasi
 // $route['organisasi'] = 'front/organisasi';
@@ -101,6 +105,10 @@ $route['beranda/kirim-pesan'] = 'front/home/simpan';
 
 //kesiswaan
 $route['kesiswaan/kategori/(:any)'] = 'front/kesiswaan/kategori/$1';
+$route['karya-cipta/detail/(:any)'] = 'front/kesiswaan/detail_karya/$1';
+
+//kontak
+$route['kontak/kontak-kami'] = 'front/kontak';
 
 
 
