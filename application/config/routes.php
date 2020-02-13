@@ -139,6 +139,12 @@ $route['admin/pengaturan/kemitraan/simpan-kemitraan'] = 'kemitraan/simpan';
 $route['admin/pengaturan/kemitraan/ubah-kemitraan/(:num)'] = 'kemitraan/ubah/$1';
 $route['admin/pengaturan/kemitraan/hapus-kemitraan/(:num)'] = 'kemitraan/delete/$1';
 
+$route['admin/pengaturan/sosmed'] = 'sosmed';
+$route['admin/pengaturan/sosmed/tambah-sosmed'] = 'sosmed/tambah';
+$route['admin/pengaturan/sosmed/simpan-sosmed'] = 'sosmed/simpan';
+$route['admin/pengaturan/sosmed/ubah-sosmed/(:num)'] = 'sosmed/ubah/$1';
+$route['admin/pengaturan/sosmed/hapus-sosmed/(:num)'] = 'sosmed/delete/$1';
+
 $route['admin/pengaturan/slider'] = 'slider';
 $route['admin/pengaturan/slider/tambah-slider'] = 'slider/tambah';
 $route['admin/pengaturan/slider/simpan-slider'] = 'slider/simpan';

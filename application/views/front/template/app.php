@@ -89,8 +89,8 @@
       <div id="logo" class="pull-left">
         <!-- <h1><a href="#intro" class="scrollto">BizPage</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a class="logo" href="#intro"><img src="<?= base_url(); ?>assets2/img/logo jawa barat.png" alt="logo" title="" /></a>
-        <a class="logo" href="#intro"><img src="<?= base_url(); ?>assets2/img/logo.png" alt="logo" title="" /></a>
+        <a class="logo" href="#"><img src="<?= base_url(); ?>assets2/img/logo jawa barat.png" alt="logo" title="" /></a>
+        <a class="logo" href="#"><img src="<?= base_url(); ?>assets2/img/logo.png" alt="logo" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -166,11 +166,11 @@
           <div class="col-lg-4 col-md-8 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Beranda</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url(); ?>">Beranda</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="1">Profil</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="2">Berita</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Kesiswaan</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="5">Kontak</a></li>
             </ul>
           </div>
 
@@ -184,14 +184,15 @@
               <strong>Email:</strong> info@sman2cibinong.sch.id<br>
             </p>
 
+        
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://gmail.com/" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
-
+            
           </div>
 
         </div>
@@ -200,7 +201,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright 2020 <a href="<?php echo base_url();?>">SMA Negeri 2 Cibinong</a> Theme by : <strong>BizPage</strong>. All Rights Reserved
+        &copy; Copyright <?php echo date('Y') ?> <a href="<?php echo base_url();?>">SMA Negeri 2 Cibinong</a>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -209,7 +210,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
   </footer><!-- #footer -->

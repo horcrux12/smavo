@@ -43,8 +43,8 @@ if(!empty($info_hapus))
                       <div class="pull-right tableTools-container"></div>
 
 
-                      <a href="<?php echo base_url();?>admin/kategori-pesan/tambah-pesan" class="btn btn-primary btn-small">
-                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Kotak Masuk</a>
+                      <!-- <a href="<?php echo base_url();?>admin/kategori-pesan/tambah-pesan" class="btn btn-primary btn-small">
+                    <i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah Data Kotak Masuk</a> -->
                   <br>
                 <br>
               </div>

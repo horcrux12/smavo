@@ -28,12 +28,12 @@
 
                  
 <!-- judul -->
-<section id="team">
+<!-- <section id="team">
     <div class="container" style="padding-top: 20px;">
         <div class="section-header wow fadeInUp">
             <h3><?php echo $title ?></h3>
         </div>
-</section>
+</section> -->
 <!-- end judul -->
 
 
@@ -58,30 +58,24 @@
 
                                     
                                                 <!-- Item title -->
-                                                <!-- <h5>INI JUDUL</h5> -->
+                                                <h5><?php  echo $jdl; ?></h5>
                                             </div>
                                         
                                             <ul class="meta">
                                                  <li>
                                                  
-                                                    <i class="fa fa-user" aria-hidden="true"></i><?php echo $jdl; ?></li><li>
-                                                    <i class="fa fa-folder-open" aria-hidden="true"></i> <?php echo $kd_user; ?></li> <li>
-                                                    <i class="fa fa-calendar" aria-hidden="true"><?php $nama_kategori;?></i> </li><li>
-                                                    <i class="fa fa-tags" aria-hidden="true"></i>
-                                                          <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/blog">blog</a>, 
-                                                          <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/tag/joomla">joomla</a>,</li>
-                                                     
-                                                        </ul>
+                                                    <a href=""><i class="fa fa-user" aria-hidden="true">&nbsp;</i><?php  echo $nama_user; ?></a></li><li>
+                                                    <a href=""><i class="fa fa-folder-open" aria-hidden="true"></i><?php  echo  $nama_kategori; ?></a></li> <li>
+                                                    <?php foreach ($data->result() as $key) { ?>
+                                                    <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<?php echo format_indo(substr($key->tanggal_update,0,10))?></a></i> </li><li>
+                                                    <?php } ?>
+                                            </ul>
                                         </div>
                     
                                             <div class="post-cont">
-                                                <!-- Item introtext -->
-                                                    <p><p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the </p>
                                                 
                                                     <!-- Item fulltext -->
-                                                    <p>1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has Lorem Ipsum is simply dummy text been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                                     <p class="spical">Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                                     <p>Lorem Ipsum is simply dummy text of the and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown pis simply dummy text of the and type setting industry. Lorem Ipsum has Lorem Ipsum is simply dummy text been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></p>
+                                                    <p><?php  echo $isi; ?></p>
                                                   </div>
                                             
                                             <div class="extra-info">
@@ -120,24 +114,10 @@
                             <div class="moduletable">
                                  <div id="k2ModuleBox122" class="widget ">
                                         <div class="widget-title">
-                                        <h6>Categories</h6>
+                                        <h6>Download File</h6>
                             </div>
-                            <ul class="level0"><li><a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list"><span class="catTitle">Blog</span> <span class="catCounter"> (4)</span></a></li></ul></div>
-                            </div>
-
-
-                                <div class="moduletable">
-                                    <div id="k2ModuleBox123" class="widget ">
-                                    <div class="widget-title">
-                                    <h6>Archive</h6>
-                                </div>
-                                    <ul>
-                                        <li>
-                                        <a href="http://www.codepedant.com/joomla/bemax/bemax-demo/blog/blog-list/itemlist/date/2018/7">
-                                        July 2018	        (4)	      	</a>
-                                       </li>
-                                    </ul>
-                                </div>
+                            <ul class="level0"><li><?php echo $file_download; ?></span></li></ul>
+                            <ul class="level0"><a href="<?php echo base_url('assets/file/'. $file_download .'');?>" class="btn btn-success"> <i class="fa fa-download"> &nbsp;</i>Download</a></span></li></ul></div>
                             </div>
 
 
@@ -146,21 +126,36 @@
                                          <div class="moduletable">
                                              <div id="k2ModuleBox107" class="widget k2ItemsBlock">
                                                 <div class="widget-title">
-                                                <h6>Recent Posts</h6>
+                                                
+                                            </div>
+                                    </div>
+                                        </div>
+                                        
+                                        <div class="moduletable">
+                                    </div>
+                                </div> 
+                                <div class="moduletable">
+                                    <div id="k2ModuleBox124" class="widget k2TagCloudBlock">
+                                         <div class="moduletable">
+                                             <div id="k2ModuleBox107" class="widget k2ItemsBlock">
+                                                <div class="widget-title">
+                                                <h6>Kategori</h6>
                                             </div>
                                         <ul>
-                                            <li class="even">
-                                                 <a class="moduleItemTitle" href="1-48-best-wordpress-themes.html">48 Best WordPress Themes</a>
-                                                    <div class="clr"></div>
-                                                    <div class="clr"></div>
-                                                    <div class="clr"></div>
+                                            <!-- <li class="even"> -->
+                                            <?php
+                                            $data = $this->model_dinamic->getData('tb_kat_siswa');
+                                            foreach ($data as $key) { ?>
+                                            <li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
+                                                    <?php }?>	
                                                     </li>
                                         </ul>   
                                     </div>
                                         </div>
+                                        <br>
                                         <div class="moduletable">
                                     </div>
-                                </div>           
+                                </div>    
                     <!-- End Right Sidebar -->
                             </div>
                         </div>
