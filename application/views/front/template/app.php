@@ -67,7 +67,7 @@
   <!-- =====================================
       ==== Start Loading -->
 
-  <!-- <div class="loading">
+  <div class="loading">
     <div class="text-center middle">
       <div class="lds-ellipsis">
         <div></div>
@@ -76,7 +76,7 @@
         <div></div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- End Loading ====
       ======================================= -->
@@ -164,7 +164,7 @@
           </div>
 
           <div class="col-lg-4 col-md-8 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Link Terkait</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url(); ?>">Beranda</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="1">Profil</a></li>
