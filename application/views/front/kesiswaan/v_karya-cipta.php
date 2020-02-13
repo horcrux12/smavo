@@ -63,7 +63,7 @@
 									<p><?php echo substr(strip_tags($isi), 0, 230), "..."; ?></p>
 								</div>
 								
-								<a href="<?php echo base_url('karya-cipta/detail/'),$key->id_artikel?>"class="butn">Read More</a>
+								<a href="<?php echo base_url('karya-cipta/detail/'),$key->id_artikel?>"class="butn">Baca Selengkapnya</a>
 								<?php } ?>
 							</div>
 						</div>

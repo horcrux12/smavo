@@ -66,7 +66,7 @@
 									<p><?php echo substr(strip_tags($berita->deskripsi), 0, 230), "..."; ?></p>
 								</div>
 
-								<a href="<?php echo base_url('berita/detail/'),$berita->id_berita?>" class="butn">Read More</a>
+								<a href="<?php echo base_url('berita/detail/'),$berita->id_berita?>" class="butn">Baca Selengkapnya</a>
 
 							</div>
 						</div>
