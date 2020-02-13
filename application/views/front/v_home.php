@@ -189,7 +189,7 @@
                       <div class="post-img" style="height: 160px;">
                         <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" class="mx-auto d-block" alt="">
                         <div class="date">
-                          <a href="#0">
+                          <a href="javascript:void(0)">
                             <span><?php echo substr($key->tanggal,8,2) ;?></span>
                             <span><?php echo format_indo_bln(substr($key->tanggal,0,10))?></span>
                           </a>
@@ -197,9 +197,9 @@
                       </div>
                       <div class="content">
                         <span class="tag">
-                          <a href="#0"><?php echo $key->nama_kat_artikel ?></a>
+                          <a href="javascript:void(0)"><?php echo $key->nama_kat_artikel ?></a>
                         </span>
-                        <h5><a href="#0"><?php echo $key->judul ?></a></h5>
+                        <h5><a href="<?php echo base_url('berita/detail/'),$key->id_berita?>"><?php echo $key->judul ?></a></h5>
                         <p><?php $a = $key->deskripsi;
                             echo substr(strip_tags($a), 0, 50) ?></p>
                       </div>
