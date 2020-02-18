@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Feb 2020 pada 18.12
+-- Generation Time: 18 Feb 2020 pada 07.09
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -278,7 +278,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR064', '1962122019941220', 'Yayah Hartati, S.Pd.', 'KARAWANG', '1962-12-20', 'JBT006', 'MP009', 'YAYAH_HARTATI.JPG'),
 ('GR065', '', 'Aef Saepudin', 'BOGOR', '1968-06-16', 'JBT010', NULL, 'AEF_SAEPUDIN.JPG'),
 ('GR066', '', 'Ahmad Rijkon', 'Garut', '1981-03-20', 'JBT012', NULL, 'AHMAD_RIJKON.JPG'),
-('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT010', NULL, 'DADAH_SOPIAH.JPG'),
+('GR067', '', 'Dadah Sopiah', 'BOGOR', '1975-01-21', 'JBT017', NULL, 'DADAH_SOPIAH.JPG'),
 ('GR068', '', 'Ending Suhandi', 'CIAMIS', '1965-04-08', 'JBT012', NULL, 'ENDING_SUHANDI.JPG'),
 ('GR069', '', 'Fitri Ihsani, S.Sos', 'BOGOR', '1987-06-29', 'JBT010', NULL, 'FITRI_IHSANI.JPG'),
 ('GR070', '', 'Galdis Dara Puspita, A.Md.Si', 'BOGOR', '1994-03-23', 'JBT009', NULL, 'GALDIS_DARA_PUSPITA.JPG'),
@@ -293,7 +293,11 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR079', '', 'Suradji', 'JAKARTA', '1971-01-10', 'JBT010', NULL, 'SURADJI.JPG'),
 ('GR080', '1961062820140510', 'Syaiful Iman', 'JAKARTA', '1961-06-28', 'JBT010', NULL, 'SYAIFUL_IMAN.JPG'),
 ('GR081', '', 'Syarifudin', 'JAKARTA', '1965-07-12', 'JBT011', NULL, 'SYARIFUDIN.JPG'),
-('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT011', NULL, 'WAHYUDIN.JPG');
+('GR082', '', 'Wahyudin', 'BOGOR', '1984-05-25', 'JBT011', NULL, 'WAHYUDIN.JPG'),
+('GR083', '', 'Teh Nani', '-', '0001-01-01', 'JBT012', NULL, 'NANI.JPG'),
+('GR084', '', 'Ema Eem', '-', '0001-01-01', 'JBT013', NULL, 'ma_eem.JPG'),
+('GR085', '', 'Ma Oong', '-', '0001-01-01', 'JBT013', NULL, 'ma_oong.JPG'),
+('GR086', '', 'Lili', '-', '0001-01-01', 'JBT012', NULL, 'lili.JPG');
 
 -- --------------------------------------------------------
 
