@@ -16,31 +16,38 @@
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
             $page_content['title'] ='Staff dan Guru';
 
+            $data = $this->model_guru->getGuru()->result_array();
             $jabatan = $this->model_dinamic->getData('tb_jabatan');
 
             foreach ($jabatan as $key) {
-                $data[$key->nama_jabatan] = $this->model_guru->GetDataWhere($key->id_jabatan)->result();
+                foreach ($data as $kiy) {
+                    if ($kiy['id_jabatan'] == $key->id_jabatan) {
+                        if ($kiy['id_mapel']==null) {
+                            $mapel = null;
+                        }else{
+                            $nih = $this->model_dinamic->getWhere('tb_mapel','id_mapel',$kiy['id_mapel'])->result_array();
+                            $mapel = $nih[0]['nama_mapel'];
+                        }
+                        $guru[$key->id_jabatan][] = array (
+                            'id_guru'           => $kiy['id_guru'],
+                            'nip'               => $kiy['nip'],
+                            'nama_lengkap'      => $kiy['nama_lengkap'],
+                            'tempat_lahir'      => $kiy['tempat_lahir'],
+                            'tgl_lahir'         => $kiy['tgl_lahir'],
+                            'id_jabatan'        => $kiy['id_jabatan'],
+                            'id_mapel'          => $kiy['id_mapel'],
+                            'nama_mapel'        => $mapel,
+                            'foto'              => $kiy['foto'],
+                            'jabatan'           => $kiy['jabatan'],
+                            'nama_jabatan'      => $kiy['nama_jabatan']
+                        );
+                    }
+                }
             }
-            $page_content['data'] = $data;
-
-            // foreach ($data as $key => $value) {
-            //     echo "$key","<br>";
-            //     foreach ($data[$key] as $key) {
-            //         echo $key->nama_lengkap,"<br>";
-            //         echo $key->nip,"<br>";
-            //         echo $key->nama_jabatan,"<br>","<br>";
-            //     }
+            // foreach ($jabatan as $key) {
+            //     $data[$key->nama_jabatan] = $this->model_guru->GetDataWhere($key->id_jabatan)->result();
             // }
-
-            // echo "<pre>";
-            // print_r($data);
-            // echo "</pre>";
-            // $data_jabatan = array("Kepala Sekolah",);
-            // // echo rotates("http://localhost/smavo/assets/photo/guru/CONY_NUGRAHENI.JPG");
-            //     $data = getimagesize("http://localhost/smavo/assets/photo/guru/CONY_NUGRAHENI.JPG");
-            //     print_r($data);
-            //     echo "<img src='http://localhost/smavo/assets/photo/guru/DRS__BAMBANG_SUMANTO1.JPG'>";
-
+            $page_content['data'] = $guru;
             $this->load->view('front/template/app',$page_content);
         }
     

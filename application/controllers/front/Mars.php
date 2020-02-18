@@ -17,6 +17,9 @@
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
             $page_content['title'] ='Mars';
 
+            $data = $this->model_dinamic->getWhere('tb_profil','id_info','PR13012020005')->result_array();
+            $page_content['data'] = $data;
+
             $this->load->view('front/template/app',$page_content);
         }
     

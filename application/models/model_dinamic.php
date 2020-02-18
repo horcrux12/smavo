@@ -13,6 +13,14 @@
 			return $query->result();
 		}
 
+		function getDatas ($table)
+		{
+			$this->db->select('*');
+			$this->db->from($table);
+			$query = $this->db->get();
+			return $query;
+		}
+
 		function getDataDESC ($table,$by)
 		{
 			$this->db->select('*');

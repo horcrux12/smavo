@@ -116,5 +116,17 @@
 		$query = $this->db->get();
 		return $query;
 		}
+
+	public function getGuru(){
+		$this->db->select('
+		tb_guru.*, tb_jabatan.id_jabatan AS jabatan, tb_jabatan.nama_jabatan
+		');
+		$this->db->from('tb_guru');
+		// $this->db->order_by('id_guru','DESC');
+		$this->db->join('tb_jabatan','tb_guru.id_jabatan = tb_jabatan.id_jabatan');
+		$query = $this->db->get();
+		return $query;
+	}
+	
 		
 }

@@ -17,6 +17,11 @@
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
             $page_content['title'] ='Visi-Misi';
 
+            $visi = $this->model_dinamic->getWhere('tb_profil','id_info','PR13012020002')->result_array();
+            $misi = $this->model_dinamic->getWhere('tb_profil','id_info','PR13012020003')->result_array();
+            $page_content['visi'] = $visi;
+            $page_content['misi'] = $misi;
+
             $this->load->view('front/template/app',$page_content);
         }
     
