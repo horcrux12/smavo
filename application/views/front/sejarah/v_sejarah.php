@@ -3,7 +3,7 @@
         <div class="row">
             <div class="v-middle mt-30">
                 <div class="text-center col-md-12">
-                    <h5><?php echo $data[0]['judul']?></h5>
+                    <h5><?php echo $data['isi'][0]['judul']?></h5>
                     <div class="path">
                         <span><a href="<?= base_url() ?>">Beranda</a></span>
                         <span><a href="#0"><?= $title ?></a></span>
@@ -19,7 +19,31 @@
             <h3>Sejarah</h3>
             <p style="padding-bottom:0; margin-bottom: 0;">Berikut adalah sejarah SMA Negeri 2 Cibinong </p>
         </div>
+        <br>
+        <br>
+        
+        <div class="col-lg-12 col-md-24 frame mt-3 wow fadeInUp">
+        <h5>Sejarah Kepemimpinan SMA Negeri 2 Cibinong</h5> <br>
+            <div class="row d-flex justify-content-center">
+                <?php foreach ($data['kepsek'] as $key) {?>
+                <div class="col-lg-3 col-md-6 wow fadeInUp">
+                    <div class="member">
+                        <img src="<?php echo base_url(); ?>assets/photo/kepsek/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4><?php echo $key['nama'] ?></h4>
+                                <span>Periode <?php echo $key['periode'] ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin: 0px;" class="text-center"><?php echo $key['nama'] ?></p>
+                    <p style="font-weight: bold; " class="text-center">Periode <?php echo $key['periode'] ?></p>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
 </section>
+
 <section class="blogs">
     <div class="container">
         <div class="row">
@@ -36,9 +60,9 @@
                             <div class="post-img"></div>
                             <div class="content" style="padding-top:0;">
                                 <div class="post-cont">
-
+                                    <h5>Sejarah SMA Negeri 2 Cibinong</h5> <br>
                                     <!-- Item fulltext -->
-                                    <p><?php echo $data[0]['deskripsi']; ?></p>
+                                    <p><?php echo $data['isi'][0]['deskripsi']; ?></p>
                                 </div>
 
                                 <div class="extra-info">

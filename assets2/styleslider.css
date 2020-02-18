@@ -62,7 +62,7 @@ img {
   content: '';
   width: 1px;
   height: 35px;
-  background: #18D26E;
+  background: #eba709;
   position: absolute;
   left: -1px;
   bottom: 0;
@@ -81,7 +81,7 @@ img {
   content: '';
   width: 1px;
   height: 35px;
-  background: #18D26E;
+  background: #eba709;
   position: absolute;
   right: -1px;
   bottom: 0;
@@ -1008,12 +1008,12 @@ img {
   background: #fff;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
-  border-bottom: 1px solid #18d26e;
+  border-bottom: 1px solid #eba709;
 }
 
 .blog #portfolio-flters li:hover,
 .blog #portfolio-flters li.filter-active {
-  background: #18d26e;
+  background: #eba709;
   color: #fff;
 }
 
@@ -1173,7 +1173,7 @@ img {
 .blogs .posts .post .content .meta li {
   display: inline-block;
   font-size: 12px;
-  color: #18d26e;
+  color: #eba709;
   margin: 5px;
 }
 .blogs .posts .post .content p {
@@ -1199,8 +1199,8 @@ img {
   transition: all .5s;
 }
 .blogs .posts .post .content .butn:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #eba709;
+  border-color: #eba709;
   color: #fff;
 }
 .blogs .posts .post .share-post {
@@ -1353,7 +1353,7 @@ img {
     margin-right: 4px;
     border: 1px solid rgba(0, 0, 0, 0.05); }
     .pagination.pagination-2 a.active, .pagination.pagination-2 span.active {
-      background: #18d26e;
+      background: #eba709;
       color: #fff;
       border: 1px solid transparent;
       -webkit-box-shadow: 0px 10px 27px -20px rgba(0, 0, 0, 0.33);

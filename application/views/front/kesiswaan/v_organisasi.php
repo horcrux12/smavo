@@ -80,7 +80,7 @@
                 data :  'getDetail='+ getDetail,
                 /* memanggil fungsi getDetail dan mengirimkannya */
                 success : function(data){
-                $('.modal-data').html(data);
+                $('.modal-data').html(data[0].deskripsi);
                 /* menampilkan data dalam bentuk dokumen HTML */
                 }
             });

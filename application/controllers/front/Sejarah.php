@@ -19,9 +19,12 @@
             $page_content['title'] ='Sejarah';
 
             $data = $this->model_dinamic->getWhere('tb_profil','id_info','PR13012020001')->result_array();
-            $page_content['data'] = $data;
+            $kepsek = $this->model_dinamic->getDatas('tb_kepsek')->result_array();
 
-            // print_r($page_content['data']);
+            $page_content['data']['isi'] = $data;
+            $page_content['data']['kepsek'] = $kepsek;
+
+            // print_r($page_content['data']['kepsek']);
 
             $this->load->view('front/template/app',$page_content);
         }
