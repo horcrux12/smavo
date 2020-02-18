@@ -38,7 +38,7 @@ if (!empty($info_hapus)) {
 
 		<div class="clearfix mb-3">
 			<div class="pull-right tableTools-container"></div>
-			<a href="<?php echo base_url(); ?>admin/pengaturan/kepsek/tambah-kepsek" class="btn btn-primary btn-small">
+			<a href="<?php echo base_url(); ?>admin/profil/kepsek/tambah-kepsek" class="btn btn-primary btn-small">
 				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah <?php echo $sub_judul ?></a><br><br>
 		</div>
 		<div class="table-header">
@@ -71,16 +71,16 @@ if (!empty($info_hapus)) {
 							<td><?php echo $key->nama ?></td>
 							<td class="center"><img src="<?php echo base_url() ?>assets/photo/kepsek/<?php echo $key->foto ?>" height="60px" alt=""></td>
 							<td>
-								<a href="<?php echo $key->periode ?>"><?php echo $key->periode ?></a>
+								<?php echo $key->periode ?>
 							</td>
 							<td>
 								<div class="hidden-sm hidden-xs action-buttons">
 
-									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/kepsek/ubah-kepsek/<?php echo $key->id?>">
+									<a class="green tooltip-info" title="Edit" data-rel="tooltip" href="<?php echo base_url(); ?>admin/profil/kepsek/ubah-kepsek/<?php echo $key->id?>">
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 
-									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/kepsek/hapus-kepsek/<?php echo $key->id?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/profil/kepsek/hapus-kepsek/<?php echo $key->id?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 								</div>

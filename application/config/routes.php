@@ -147,11 +147,6 @@ $route['admin/pengaturan/kemitraan/simpan-kemitraan'] = 'kemitraan/simpan';
 $route['admin/pengaturan/kemitraan/ubah-kemitraan/(:num)'] = 'kemitraan/ubah/$1';
 $route['admin/pengaturan/kemitraan/hapus-kemitraan/(:num)'] = 'kemitraan/delete/$1';
 
-$route['admin/pengaturan/kepsek'] = 'kepsek';
-$route['admin/pengaturan/kepsek/tambah-kepsek'] = 'kepsek/tambah';
-$route['admin/pengaturan/kepsek/simpan-kepsek'] = 'kepsek/simpan';
-$route['admin/pengaturan/kepsek/ubah-kepsek/(:num)'] = 'kepsek/ubah/$1';
-$route['admin/pengaturan/kepsek/hapus-kepsek/(:num)'] = 'kepsek/delete/$1';
 
 $route['admin/pengaturan/sosmed'] = 'sosmed';
 $route['admin/pengaturan/sosmed/tambah-sosmed'] = 'sosmed/tambah';
@@ -250,6 +245,13 @@ $route['admin/profil/simpan-profil'] = 'profil/simpan';
 $route['admin/profil/ubah-profil/(:any)'] = 'profil/ubah/$1';
 $route['admin/profil/hapus-profil/(:any)'] = 'profil/delete/$1';
 $route['admin/profil/detail-profil/(:any)'] = 'profil/detail/$1'; 
+
+$route['admin/profil/kepsek'] = 'kepsek';
+$route['admin/profil/kepsek/tambah-kepsek'] = 'kepsek/tambah';
+$route['admin/profil/kepsek/simpan-kepsek'] = 'kepsek/simpan';
+$route['admin/profil/kepsek/ubah-kepsek/(:num)'] = 'kepsek/ubah/$1';
+$route['admin/profil/kepsek/hapus-kepsek/(:num)'] = 'kepsek/delete/$1';
+
 
 //pesan
 $route['admin/kategori-pesan'] = 'pesan';

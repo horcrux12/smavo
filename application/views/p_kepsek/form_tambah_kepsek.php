@@ -19,7 +19,7 @@ if (!empty($info_gagal)) {
   Kembali
 </button>
 
-<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/pengaturan/kepsek/simpan-kepsek" onsubmit="return cekform();">
+<form id=Myform class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url(); ?>admin/profil/kepsek/simpan-kepsek" onsubmit="return cekform();">
   <input type="text" name="kode" value="<?php echo $kode;?>" hidden>
   <div class="form-group">
     <label for="nama" class="col-sm-2 control-label">Nama Kepala Sekolah</label>
@@ -30,7 +30,7 @@ if (!empty($info_gagal)) {
   <div class="form-group">
     <label class="col-sm-2 control-label">Foto Utama</label>
     <div class="col-sm-8">
-      <input type="file" id="id-input-file-2" name="file_name" accept="image/*" />
+    <input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*"  required/>
     </div>
   </div>
 
