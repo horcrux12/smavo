@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 07.09
+-- Generation Time: 18 Feb 2020 pada 07.11
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -216,7 +216,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR002', '      ', 'Airis Rizkia, S.Pd., M.Pd.', 'BOGOR', '1988-11-25', 'JBT006', 'MP005', 'AIRIS_RIZKIA.JPG'),
 ('GR003', '1970120719941220', 'Hj. Ani Rohaeni, S.Pd.,M.Pd.', 'SUMEDANG', '1970-12-07', 'JBT002', 'MP004', 'ANI_ROHAENI,_S_PD_,_M_PD.JPG'),
 ('GR004', '1992020820190310', 'ARI ARYANTO, S.Pd.', 'Bandung', '1992-02-08', 'JBT005', 'MP010', 'default.jpg'),
-('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP012', 'default.jpg'),
+('GR005', '', 'Aripudin, S.Pd', 'CIANJUR', '1988-12-27', 'JBT006', 'MP012', 'ARIPUDIN.JPG'),
 ('GR006', '', 'Artanti, S.Si.', 'BANDUNG', '1972-06-12', 'JBT006', 'MP011', 'ARTANTI.JPG'),
 ('GR007', '1963020819880310', 'Drs. Bambang Sumanto', 'KLATEN', '1963-02-08', 'JBT006', 'MP007', 'DRS__BAMBANG_SUMANTO.JPG'),
 ('GR008', '1969110819951210', 'DR.H. Bambang Supriyadi, M.Pd.', 'PURWOREJO', '1969-11-08', 'JBT001', 'MP002', 'BAMBANG_SUPRIYADI.JPG'),
