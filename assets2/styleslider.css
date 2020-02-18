@@ -1179,6 +1179,9 @@ img {
 .blogs .posts .post .content p {
   font-weight: 300;
 }
+.blogs .posts .post .content .post-cont img {
+  margin: 10px;
+}
 .blogs .posts .post .content .spical {
   padding: 15px;
   margin: 30px 0;

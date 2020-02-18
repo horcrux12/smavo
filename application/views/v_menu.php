@@ -255,10 +255,10 @@
 				<b class="arrow"></b>
 			</li>
 
-			<!-- <li class="">
+			<li class="">
 				<a href="<?php echo base_url()?>admin/pengaturan/sosmed"><i class="menu-icon fa fa-caret-right"></i>Sosial Media</a>
 				<b class="arrow"></b>
-			</li> -->
+			</li>
 		</ul>
 	</li>
 

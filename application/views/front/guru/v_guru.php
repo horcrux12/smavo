@@ -3,7 +3,7 @@
         <div class="row">
             <div class="v-middle mt-30">
                 <div class="text-center col-md-12">
-                    <h5>Staff dan Guru</h5>
+                    <h5>Staff dan Guru SMA Negeri 2 Cibinong</h5>
                     <div class="path">
                         <span><a href="<?= base_url() ?>">Home</a></span>
                         <span><a href="#0"><?= $title ?></a></span>
@@ -74,18 +74,21 @@
                                 <p style="font-weight: bold; margin-bottom: 0px;">Bidang Sarana Prasarana</p>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-lg-12 col-md-24 wow fadeInUp">
-                                    <div class="member">
-                                        <img src="<?php echo base_url(); ?>assets/photo/guru/default.png" class="img-fluid" alt="">
-                                        <div class="member-info">
-                                            <div class="member-info-content">
-                                                <h4><?php echo "nama" ?></h4>
-                                                <span><?php echo "jabatan" ?></span>
-                                                <span><?php echo "Guru " ?></span>
-                                            </div>
+                            <?php foreach ($data['JBT018'] as $key) {?>
+                            <div class="col-lg-12 col-md-24 wow fadeInUp">
+                                <div class="member">
+                                    <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                                    <div class="member-info">
+                                        <div class="member-info-content">
+                                            <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                            <?php if (!$key['nama_mapel']==null) :?>
+                                                <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                            <?php endif;?>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -95,18 +98,21 @@
                                 <p style="font-weight: bold; margin-bottom: 0px;">Bidang Kesiswaan</p>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-lg-12 col-md-24 wow fadeInUp">
-                                    <div class="member">
-                                        <img src="<?php echo base_url(); ?>assets/photo/guru/default.png" class="img-fluid" alt="">
-                                        <div class="member-info">
-                                            <div class="member-info-content">
-                                                <h4><?php echo "nama" ?></h4>
-                                                <span><?php echo "jabatan" ?></span>
-                                                <span><?php echo "Guru " ?></span>
-                                            </div>
+                            <?php foreach ($data['JBT019'] as $key) {?>
+                            <div class="col-lg-12 col-md-24 wow fadeInUp">
+                                <div class="member">
+                                    <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                                    <div class="member-info">
+                                        <div class="member-info-content">
+                                            <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                            <?php if (!$key['nama_mapel']==null) :?>
+                                                <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                            <?php endif;?>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -116,18 +122,21 @@
                                 <p style="font-weight: bold; margin-bottom: 0px;">Bidang Humas</p>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-lg-12 col-md-24 wow fadeInUp">
-                                    <div class="member">
-                                        <img src="<?php echo base_url(); ?>assets/photo/guru/default.png" class="img-fluid" alt="">
-                                        <div class="member-info">
-                                            <div class="member-info-content">
-                                                <h4><?php echo "nama" ?></h4>
-                                                <span><?php echo "jabatan" ?></span>
-                                                <span><?php echo "Guru " ?></span>
-                                            </div>
+                            <?php foreach ($data['JBT020'] as $key) {?>
+                            <div class="col-lg-12 col-md-24 wow fadeInUp">
+                                <div class="member">
+                                    <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                                    <div class="member-info">
+                                        <div class="member-info-content">
+                                            <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                            <?php if (!$key['nama_mapel']==null) :?>
+                                                <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                            <?php endif;?>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -260,18 +269,21 @@
                     <p>Guru SMA Negeri 2 Cibinong </p>
                 </div>
                 <div class="row d-flex justify-content-center">
+                    <?php foreach ($data['JBT006'] as $key) {?>
                     <div class="col-lg-3 col-md-6 wow fadeInUp">
                         <div class="member">
-                            <img src="<?php echo base_url(); ?>assets/photo/guru/default.png" class="img-fluid" alt="">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4><?php echo "nama" ?></h4>
-                                    <span><?php echo "jabatan" ?></span>
-                                    <span><?php echo "Guru " ?></span>
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
             <!-- End Guru -->
@@ -282,21 +294,150 @@
                     <p>Staff TU SMA Negeri 2 Cibinong </p>
                 </div>
                 <div class="row d-flex justify-content-center">
+                    <?php foreach ($data['JBT010'] as $key) {?>
                     <div class="col-lg-3 col-md-6 wow fadeInUp">
                         <div class="member">
-                            <img src="<?php echo base_url(); ?>assets/photo/guru/default.png" class="img-fluid" alt="">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4><?php echo "nama" ?></h4>
-                                    <span><?php echo "jabatan" ?></span>
-                                    <span><?php echo "Guru " ?></span>
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
             <!-- End Staff TU -->
+            <!-- Staff IT -->
+            <div class="col-lg-12 col-md-24 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3>Staff IT</h3>
+                    <p>Staff IT SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php foreach ($data['JBT016'] as $key) {?>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <!-- End Staff IT -->
+            <!-- Pustakawan -->
+            <div class="col-lg-12 col-md-24 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3>Pustakawan</h3>
+                    <p>Pustakawan SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php if (isset($data['JBT017'])) {
+                    foreach ($data['JBT017'] as $key) {?>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }} ?>
+                </div>
+            </div>
+            <!-- End Pustakawan -->
+            <!-- Security -->
+            <div class="col-lg-12 col-md-24 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3>Penjaga Keamaanan</h3>
+                    <p>Penjaga Keamaanan SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php foreach ($data['JBT011'] as $key) {?>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <!-- End Security -->
+            <!-- Juru Masak dan Penjaga Kebersihan -->
+            <div class="col-lg-6 col-md-12 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3>Penjaga Kebersihan</h3>
+                    <p>Penjaga Kebersihan SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php if (isset($data['JBT012'])) {
+                    foreach ($data['JBT012'] as $key) {?>
+                    <div class="col-lg-6 col-md-12 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }} ?>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3>Juru Masak</h3>
+                    <p>Juru Masak SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php if (isset($data['JBT013'])) {
+                    foreach ($data['JBT013'] as $key) {?>
+                    <div class="col-lg-6 col-md-12 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }} ?>
+                </div>
+            </div>
+            <!-- End Juru Masak dan Penjaga Kebersihan -->
         </div>
     </div>
 </section><!-- #team -->
