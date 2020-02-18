@@ -22,7 +22,7 @@
             $konten['css']		    = '';
 			$konten['konten'] 		= 'p_kepsek/view_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Data kepsek';
+			$konten['sub_judul'] 	= 'Data Kepala Sekolah';
 			$konten['data']			= $this->model_dinamic->getData('tb_kepsek');
 			$konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
@@ -53,7 +53,7 @@
 				';
 			$konten['konten'] 		= 'p_kepsek/form_tambah_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Tambah Data kepsek';
+			$konten['sub_judul'] 	= 'Tambah Data Kepala Sekolah';
 
 			$this->db->select('MAX(id) AS id_terakhir');
 			$this->db->from('tb_kepsek');
@@ -113,7 +113,7 @@
 					$this->model_kepsek->getinsert($data);
 					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
-				redirect('admin/pengaturan/kepsek');
+				redirect('admin/profil/kepsek');
 			}
 		}
 
@@ -128,7 +128,7 @@
 					$this->model_kepsek->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('admin/pengaturan/kepsek');
+				redirect('admin/profil/kepsek');
 		}
 
 		public function ubah($id) // Mengubah data berita
@@ -283,7 +283,7 @@
 				';
 			$konten['konten'] 		= 'p_kepsek/form_ubah_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Ubah Data kepsek';
+			$konten['sub_judul'] 	= 'Ubah Data Kepala Sekolah';
 			$key = $id;
 			$query = $this->model_dinamic->getWhere('tb_kepsek','id',$key);
 			if($query->num_rows()>0)

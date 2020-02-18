@@ -115,7 +115,7 @@
 								<?php } ?>
 
 						<li class="">
-							<a href="<?php echo base_url()?>admin/pengaturan/kepsek"><i class="menu-icon fa fa-caret-right"></i>Kepala Sekolah</a>
+							<a href="<?php echo base_url()?>admin/profil/kepsek"><i class="menu-icon fa fa-caret-right"></i>Kepala Sekolah</a>
 							<b class="arrow"></b>
 						</li>
 

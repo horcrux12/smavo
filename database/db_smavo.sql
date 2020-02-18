@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 07.42
+-- Generation Time: 18 Feb 2020 pada 08.03
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -470,6 +470,19 @@ CREATE TABLE `tb_kepsek` (
   `foto` tinytext NOT NULL,
   `periode` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_kepsek`
+--
+
+INSERT INTO `tb_kepsek` (`id`, `nama`, `foto`, `periode`) VALUES
+(1, 'Drs. U. Ali Muchtar', '1_-ali-muhtar.jpg', '1995-1996'),
+(2, 'Drs. Ali Rochman', '2_-ali-rohman.jpg', '1997-1999'),
+(3, 'Dra. Hj. Tati Sumiati', '3_-hj-tati.jpg', '1999-2005'),
+(4, 'Dra. Hj. Komariah', '4_-bu-kokom.jpg', '2005-2006'),
+(5, 'Dra. Hj. Zuraidah, MM', '6_-mamah.jpg', '2006-2011'),
+(6, 'Drs. Hidayat, MM', '5_-hidayat.jpg', '2011-2013'),
+(7, 'Dr. Bambang Supriyadi, M.Pd', '7_-BAPAK-BAMBANG-SUPRIYADI.jpg', '2014-Sekarang');
 
 -- --------------------------------------------------------
 
