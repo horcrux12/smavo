@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 08.03
+-- Generation Time: 18 Feb 2020 pada 09.08
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -39,7 +39,7 @@ CREATE TABLE `tb_about` (
 --
 
 INSERT INTO `tb_about` (`id`, `visi`, `misi`, `plan`, `deskripsi`) VALUES
-(1, 'Terwujudnya Warga Sekolah Yang Berakhlak Mulia, Mandiri, BerwawasanLingkungan, Dan Unggul Dalam Ipteks (Ilmu Pengetahuan Teknologi Dan Seni)', '1. Meningkatkan keimanan,dan ketakwaan untuk mewujudkan kepribadian yang utuh. \r\n2. Meningkatkan penghayatan dan pengamalan terhadap ajaran agama yang dianut. \r\n3. Mendorong seluruh elemen sekolah untuk mengenali potensi dirinya.', 'Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem ', 'SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang Nomor 20 tahun 2003 tentang Sisdiknas. Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten,Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami.');
+(1, 'Terwujudnya Warga Sekolah Yang Berakhlak Mulia, Mandiri, BerwawasanLingkungan, Dan Unggul Dalam Ipteks (Ilmu Pengetahuan Teknologi Dan Seni)', '1. Meningkatkan  keimanan,dan ketakwaan untuk mewujudkan kepribadian yang utuh.\r\n2. Meningkatkan PBM  (Proses Belajar Mengajar) yang inovatif dan kreatif  berdasarkan \r\n    wawasan lingkungan dengan semangat keunggulan secara efektif dan efisien. <br>\r\n3. Meningkatkan kualitas lulusan yang  memiliki sikap, pengetahuan, dan keterampilan  yang \r\n    seimbang  dan kompetitif. <br>\r\n4. Meningkatkan  jumlah  lulusan yang melanjutkan ke perguruan tinggi negeri terbaik di dalam \r\n    dan di luar negeri. <br>\r\n5. Melaksanakan sekolah berstandar Adiwiyata.', '1. Meningkatnya  keimanan dan ketakwaan untuk mewujudkan kepribadian yang  utuh <br>\r\n2. Terlaksananya PBM  (Proses Belajar Mengajar) yang inovatif dan kreatif untuk mencapai keunggulan <br>\r\n3. Meningkatnya kualitas lulusan yang  memiliki sikap, pengetahuan, dan keterampilan  yang seimbang  dan kompetitif <br>\r\n4. Meningkatkan layanan pendidikan melalui sistem manajemen sekolah dan penerapan ISO 9001:2015 <br>\r\n5. Terciptanya budaya lingkungan sekolah yang bersih, sehat dan indah.', 'SMA Negeri 2 Cibinong merupakan lembaga pendidikan yang sedang berusaha untuk mewujudkan impian, cita-cita dari warga dan stakeholdernya. Menjadikan sekolah yang bersih, hijau, sehat, aman dan nyaman serta terwujudnya delapan standar pendidikan dan ISO 2001 seperti yang diamanatkan dalam Undang-Undang Nomor 20 tahun 2003 tentang Sisdiknas. Serta menjadi lembaga pendidikan yang berprestasi di tingkat Kabupaten,Propinsi, Nasional maupun Internasional, yang tidak meninggalkan budaya lokal yang bernuansa Islami.');
 
 -- --------------------------------------------------------
 
@@ -970,7 +970,8 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (173, '::1', '2020-02-12', 135, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
 (174, '::1', '2020-02-13', 37, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
 (175, '::1', '2020-02-14', 18, '', 'Chrome', '80.0.3987.87', 'DESKTOP-Q713SR9', 'Windows 10'),
-(176, '::1', '2020-02-17', 1, '', 'Chrome', '80.0.3987.106', 'DESKTOP-Q713SR9', 'Windows 10');
+(176, '::1', '2020-02-17', 1, '', 'Chrome', '80.0.3987.106', 'DESKTOP-Q713SR9', 'Windows 10'),
+(177, '::1', '2020-02-18', 12, '', 'Chrome', '80.0.3987.106', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -1198,7 +1199,7 @@ ALTER TABLE `tb_sosmed`
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
