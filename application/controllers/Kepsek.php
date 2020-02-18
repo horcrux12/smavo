@@ -20,10 +20,10 @@
 
         function index(){
             $konten['css']		    = '';
-			$konten['konten'] 		= 'p_kemitraan/view_kemitraan';
+			$konten['konten'] 		= 'p_kepsek/view_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Data Kemitraan';
-			$konten['data']			= $this->model_dinamic->getData('tb_kemitraan');
+			$konten['sub_judul'] 	= 'Data kepsek';
+			$konten['data']			= $this->model_dinamic->getData('tb_kepsek');
 			$konten['js']			= '
 			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
 			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
@@ -51,12 +51,12 @@
 				<link rel="stylesheet" href="'.base_url().'assets/css/chosen.min.css" />
 				<link rel="stylesheet" href="'.base_url().'assets/summernote-master/dist/summernote-lite.min.css" />
 				';
-			$konten['konten'] 		= 'p_kemitraan/form_tambah_kemitraan';
+			$konten['konten'] 		= 'p_kepsek/form_tambah_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Tambah Data Kemitraan';
+			$konten['sub_judul'] 	= 'Tambah Data kepsek';
 
 			$this->db->select('MAX(id) AS id_terakhir');
-			$this->db->from('tb_kemitraan');
+			$this->db->from('tb_kepsek');
 			$terakhir = $this->db->get()->row();
 			$idRow=$terakhir->id_terakhir;
 			$idRow_tempat=$idRow+1;
@@ -77,7 +77,7 @@
 
 		public function simpan() // simpan data berita
 		{
-		  $config['upload_path'] 	= './assets/photo/kemitraan/';
+		  $config['upload_path'] 	= './assets/photo/kepsek/';
 		  $config['allowed_types'] 	= 'gif|jpg|jpeg|png';
 		//   $config['allowed_types'] 	= 'docx|pdf|xlxs';
 		  $config['encrypt_name']	= FALSE;
@@ -97,38 +97,38 @@
 			$data['id'] 				= $key;
 			$data['nama'] 				= $this->input->post('nama');
 			$data['foto'] 				= $this->upload->data('file_name');
-			$data['link_website']		= $this->input->post('link');
+			$data['periode']			= $this->input->post('periode');
 			
-			$query = $this->model_kemitraan->getdata($key);
+			$query = $this->model_kepsek->getdata($key);
 				if($query->num_rows()>0)
 				{
 					
-					$this->model_kemitraan->getupdate($key,$data);
+					$this->model_kepsek->getupdate($key,$data);
 					$this->session->set_flashdata('info','Data berhasil di update');
 					
 				}
 				else
 				{
 					// print_r($data);
-					$this->model_kemitraan->getinsert($data);
+					$this->model_kepsek->getinsert($data);
 					$this->session->set_flashdata('info','Data berhasil di simpan');
 				}
-				redirect('admin/pengaturan/kemitraan');
+				redirect('admin/pengaturan/kepsek');
 			}
 		}
 
 		public function delete($id)
 		{
 			$key = $id;
-			$query = $this->model_dinamic->getWhere ('tb_kemitraan','id',$id);
+			$query = $this->model_dinamic->getWhere ('tb_kepsek','id',$id);
 			if($query->num_rows()>0)
 				{
 					$query=$query->result();
 					unlink('./assets/photo/berita/'.$query[0]->foto);
-					$this->model_kemitraan->getdelete($key);
+					$this->model_kepsek->getdelete($key);
 					$this->session->set_flashdata('info_hapus','Data berhasil di hapus');
 				}
-				redirect('admin/pengaturan/kemitraan');
+				redirect('admin/pengaturan/kepsek');
 		}
 
 		public function ubah($id) // Mengubah data berita
@@ -281,11 +281,11 @@
 				});
 				</script>
 				';
-			$konten['konten'] 		= 'p_kemitraan/form_ubah_kemitraan';
+			$konten['konten'] 		= 'p_kepsek/form_ubah_kepsek';
 			$konten['judul']		= 'Dashboard';
-			$konten['sub_judul'] 	= 'Ubah Data Kemitraan';
+			$konten['sub_judul'] 	= 'Ubah Data kepsek';
 			$key = $id;
-			$query = $this->model_dinamic->getWhere('tb_kemitraan','id',$key);
+			$query = $this->model_dinamic->getWhere('tb_kepsek','id',$key);
 			if($query->num_rows()>0)
 			
 			{
@@ -295,7 +295,7 @@
 						$konten['kode']			= $row->id;
 						$konten['nama']			= $row->nama;
 						$konten['foto']			= $row->foto;
-						$konten['link']			= $row->link_website;
+						$konten['periode']		= $row->periode;
 						
 						
 					}
@@ -305,7 +305,7 @@
 						$konten['kode']			= '';
 						$konten['nama']			= '';
 						$konten['foto']			= '';
-						$konten['link']			= '';
+						$konten['periode']		= '';
 				}
 
 		$this->load->view('v_dashboard', $konten);

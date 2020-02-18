@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 07.26
+-- Generation Time: 18 Feb 2020 pada 07.42
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -225,7 +225,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR011', '1968120419910120', 'Cony Nugraheni,S.Pd', 'CILACAP', '1968-12-04', 'JBT006', 'MP011', 'CONY_NUGRAHENI.JPG'),
 ('GR012', '', 'Dede Sanjaya', 'Bogor', '1987-01-01', 'JBT006', 'MP001', 'default.jpg'),
 ('GR013', '1969010120031220', 'Dijah Noeringtyas, M.Pd.', 'SEMARANG', '1969-01-01', 'JBT006', 'MP004', 'DIJAH_NOERINGTYAS,_S_PD_,_M_PD.JPG'),
-('GR014', '1966040319941220', 'Diyah Nursela, S.Pd.', 'SUMEDANG', '1966-04-03', 'JBT006', 'MP012', 'DIYAH_NURSELA.JPG'),
+('GR014', '1966040319941220', 'Diyah Nursela, S.Pd.', 'SUMEDANG', '1966-04-03', 'JBT018', 'MP012', 'DIYAH_NURSELA.JPG'),
 ('GR015', '1968020319970220', 'Dra Dwi Kartika Rini R, M.Pd.', 'SURABAYA', '1968-02-03', 'JBT006', 'MP006', 'DRA__DWI_KARTIKA.JPG'),
 ('GR016', '1967082719970220', 'Dwi Rokhmiyatun, S.Pd.', 'KEBUMEN', '1967-08-27', 'JBT006', 'MP009', 'DWI_ROKHMIYATUN.JPG'),
 ('GR017', '1970020619951220', 'Elita Sari, S.Pd.', 'BOGOR', '1970-02-06', 'JBT006', 'MP016', 'ELITA-SARI_edit.jpg'),
@@ -243,7 +243,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR029', '1970021519941220', 'Dra Kristiana Kusumaningrum K, M.Pd.', 'Lampung', '1970-02-15', 'JBT006', 'MP011', 'DRA__KRISTIANA.JPG'),
 ('GR030', '1980120320090220', 'Lina Yudiastuti, S.Si.', 'Klaten', '1980-12-03', 'JBT006', 'MP013', 'default.jpg'),
 ('GR031', '', 'Liwah Lidyawati', 'Jakarta', '1971-02-14', 'JBT006', 'MP001', 'default.jpg'),
-('GR032', '1966030119941210', 'Drs. M.rusli', 'BOGOR', '1966-03-01', 'JBT006', 'MP010', 'DRS__M__RUSLI.JPG'),
+('GR032', '1966030119941210', 'Drs. M.rusli', 'BOGOR', '1966-03-01', 'JBT020', 'MP010', 'DRS__M__RUSLI.JPG'),
 ('GR033', '1968062619941220', 'Margaretha Sumartining  S,S.Pd.', 'MAGELANG', '1968-06-26', 'JBT006', 'MP013', 'MARGARETHA_SUMARTININGSIH.JPG'),
 ('GR034', '', 'Mariyana Septi Nugraheni , S.Pd.', 'JAKARTA', '1987-09-07', 'JBT006', 'MP010', 'MARIYANA_SEPTI.JPG'),
 ('GR035', '', 'Masitoh Noer, S.Pd', 'Jakarta', '1993-12-03', 'JBT006', 'MP010', 'MASITOH_NOER.JPG'),
@@ -267,7 +267,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR053', '1972110620140710', 'Selamat Riyadi', 'BOGOR', '1972-11-06', 'JBT006', 'MP001', 'default.jpg'),
 ('GR054', '1967050419900220', 'Sri Rohayati, M.Pd.', 'Tasikmalaya', '1967-05-04', 'JBT006', 'MP001', 'HJ__SRI_ROHAYATI.JPG'),
 ('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP004', 'HJ__SRI_ENDANG_WIGATI,_S_PD.JPG'),
-('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT006', 'MP006', 'SUDARYANA.JPG'),
+('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT019', 'MP006', 'SUDARYANA.JPG'),
 ('GR057', '1968122819951220', 'Dra. Sumitri , M.Pd.', 'KLATEN', '1968-12-28', 'JBT006', 'MP013', 'DRA__SUMITRI.JPG'),
 ('GR058', '', 'Syamsi  Jawawi Wahyudi, S.Pd.', 'CIANJUR', '1991-05-14', 'JBT006', 'MP002', 'syamsi.JPG'),
 ('GR059', '1974091320090220', 'Tatat Rahmalia, S.Pd.M.Pd.', 'BOGOR', '1974-09-13', 'JBT006', 'MP014', 'TATAT_RAHMALIA.JPG'),

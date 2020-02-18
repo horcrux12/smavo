@@ -113,8 +113,14 @@
 									<b class="arrow"></b>
 								</li>
 								<?php } ?>
+
+						<li class="">
+							<a href="<?php echo base_url()?>admin/pengaturan/kepsek"><i class="menu-icon fa fa-caret-right"></i>Kepala Sekolah</a>
+							<b class="arrow"></b>
+						</li>
+
 						</ul>
-						
+					
 						<ul class="submenu">
 								<li class="">
 								<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-caret-right"></i><span class="menu-text">Fasilitas</span>
@@ -259,6 +265,8 @@
 				<a href="<?php echo base_url()?>admin/pengaturan/sosmed"><i class="menu-icon fa fa-caret-right"></i>Sosial Media</a>
 				<b class="arrow"></b>
 			</li>
+
+			
 		</ul>
 	</li>
 
