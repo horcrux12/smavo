@@ -120,7 +120,7 @@ if (!empty($info_hapus)) {
 								</div>
 							</td>
 						</tr>
-					<?php $no++;
+					<?php 
 					} ?>
 				</tbody>
 			</table>
