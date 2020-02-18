@@ -167,10 +167,10 @@
             <h4>Link Terkait</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url(); ?>">Beranda</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="1">Profil</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="2">Berita</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Kesiswaan</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#" data-scroll-nav="5">Kontak</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url('sejarah'); ?>">Sejarah</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url('berita'); ?>">Berita</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url('kesiswaan/kategori/Karya%20Cipta'); ?>">Karya Cipta</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="<?= base_url('kontak/kontak-kami'); ?>">Kontak</a></li>
             </ul>
           </div>
 
@@ -186,11 +186,11 @@
 
         
             <div class="social-links">
-              <a href="https://twitter.com/officialsmavo" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="https://www.facebook.com/Sman2Cibinong" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="https://instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="https://plus.google.com/u/0/107622506577547252711" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="https://www.youtube.com/channel/UCR64-kTszWp1CG1axMjxjMA" class="youtube"><i class="fa fa-youtube"></i></a>
+              <a href="https://twitter.com/officialsmavo" class="twitter" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Twitter"; ?>"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/Sman2Cibinong" class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Facebook"; ?>"><i class="fa fa-facebook"></i></a>
+              <a href="https://instagram.com/" class="instagram" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Instagram"; ?>"><i class="fa fa-instagram" ></i></a>
+              <a href="https://plus.google.com/u/0/107622506577547252711" class="google-plus" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Google"; ?>"><i class="fa fa-google-plus"></i></a>
+              <a href="https://www.youtube.com/channel/UCR64-kTszWp1CG1axMjxjMA" class="youtube" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Youtube"; ?>"><i class="fa fa-youtube"></i></a>
             </div>
             
           </div>

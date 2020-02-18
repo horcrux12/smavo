@@ -260,22 +260,22 @@
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $data['kunjungan']['now'][0]->hits?></span>
-            <p>Online</p>
+            <p>Hari Ini</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $data['kunjungan']['week'][0]->hits?></span>
-            <p>Minggu Lalu</p>
+            <p>Minggu Ini </p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $data['kunjungan']['month'][0]->hits?></span>
-            <p>Bulan Lalu</p>
+            <p>Bulan Ini </p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $data['kunjungan']['year'][0]->hits?></span>
-            <p>Tahun Lalu</p>
+            <p>Tahun Ini </p>
           </div>
 
         </div>
