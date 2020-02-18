@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 07.11
+-- Generation Time: 18 Feb 2020 pada 07.26
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -231,8 +231,8 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR017', '1970020619951220', 'Elita Sari, S.Pd.', 'BOGOR', '1970-02-06', 'JBT006', 'MP016', 'ELITA-SARI_edit.jpg'),
 ('GR018', '1961010219851220', 'Hj. Erlina Alizar, S.Pd.M.Pd.', 'JAKARTA', '1961-01-02', 'JBT006', 'MP008', 'HJ__ERLINA_ALIZAR.JPG'),
 ('GR019', '1967051419941210', 'Fadjar Djaja Wirawan, S.Pd.', 'PACITAN', '1967-05-14', 'JBT006', 'MP015', 'FADJAR-DJAJA_EDIT.jpg'),
-('GR020', '', 'Fatmawati, S.Pd.I', 'Bogor', '1985-10-28', 'JBT006', 'MP001', 'default.jpg'),
-('GR021', '1970010419941220', 'Helfy Maryamul Ilfa, S.Pd., M.Pd.', 'TASIKMALAYA', '1970-01-04', 'JBT006', 'MP005', 'default.jpg'),
+('GR020', '', 'Fatmawati, S.Pd.I', 'Bogor', '1985-10-28', 'JBT006', 'MP001', '_fatma.JPG'),
+('GR021', '1970010419941220', 'Helfy Maryamul Ilfa, S.Pd., M.Pd.', 'TASIKMALAYA', '1970-01-04', 'JBT006', 'MP005', 'HELFI_M__ILFA.JPG'),
 ('GR022', '1974091120000320', 'Heni Handayani, M.Pd.', 'BOGOR', '1974-09-11', 'JBT006', 'MP005', 'HENI_HANDAYANI.JPG'),
 ('GR023', '', 'Ichsan,S.Pd.', 'JAKARTA', '1987-08-09', 'JBT006', 'MP012', 'ICHSAN.JPG'),
 ('GR024', '', 'Iis Sugiarti, S.Pd.M.Pd.', 'MAJALENGKA', '1989-12-21', 'JBT006', 'MP019', 'IIS_SUGIARTI.JPG'),
@@ -250,7 +250,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR036', '1992031120190320', 'Mimi Jamilah', 'Bogor', '1992-03-11', 'JBT006', 'MP001', 'default.jpg'),
 ('GR037', '', 'Muhamad', 'Bogor', '1983-07-07', 'JBT006', 'MP001', 'default.jpg'),
 ('GR038', '', 'Muhamad Yusup, S.Pd.', 'BOGOR', '1983-09-30', 'JBT006', 'MP002', 'M__YUSUP,_S_PD.JPG'),
-('GR039', '', 'Muthia Nurhidayah Ashfaar,SH., MH.', 'BOGOR', '1985-11-03', 'JBT006', 'MP010', 'default.jpg'),
+('GR039', '', 'Muthia Nurhidayah Ashfaar,SH., MH.', 'BOGOR', '1985-11-03', 'JBT006', 'MP010', 'muthi.JPG'),
 ('GR040', '1966072419941220', 'Dra. Nani Suryani , M.Pd', 'BOGOR', '1966-07-24', 'JBT006', 'MP004', 'DRA__NANI_SURYANI.JPG'),
 ('GR041', '', 'Nurlaela, S.Si', 'BOGOR', '1994-08-15', 'JBT006', 'MP006', 'NURLAELA.JPG'),
 ('GR042', '', 'Nurmawati', 'BOGOR', '1975-04-11', 'JBT006', 'MP001', 'default.jpg'),
@@ -265,8 +265,8 @@ INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_lengkap`, `tempat_lahir`, `tgl_la
 ('GR051', '', 'Sari Rahayu Hidayat, S.Pd.', 'BOGOR', '1993-06-23', 'JBT006', 'MP005', 'default.jpg'),
 ('GR052', '1965031119980220', 'Hj. Seerly Handayani, SE.,M.Pd.', 'BOGOR', '1965-03-11', 'JBT006', 'MP008', 'default.jpg'),
 ('GR053', '1972110620140710', 'Selamat Riyadi', 'BOGOR', '1972-11-06', 'JBT006', 'MP001', 'default.jpg'),
-('GR054', '1967050419900220', 'Sri Rohayati, M.Pd.', 'Tasikmalaya', '1967-05-04', 'JBT006', 'MP001', 'default.jpg'),
-('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP004', 'default.jpg'),
+('GR054', '1967050419900220', 'Sri Rohayati, M.Pd.', 'Tasikmalaya', '1967-05-04', 'JBT006', 'MP001', 'HJ__SRI_ROHAYATI.JPG'),
+('GR055', '1970071519970220', 'Hj. Srie Endang Wigati, M.Pd.', 'BOGOR', '1970-07-15', 'JBT006', 'MP004', 'HJ__SRI_ENDANG_WIGATI,_S_PD.JPG'),
 ('GR056', '1963092419951210', 'Drs. Sudaryana', 'YOGYAKARTA', '1963-09-24', 'JBT006', 'MP006', 'SUDARYANA.JPG'),
 ('GR057', '1968122819951220', 'Dra. Sumitri , M.Pd.', 'KLATEN', '1968-12-28', 'JBT006', 'MP013', 'DRA__SUMITRI.JPG'),
 ('GR058', '', 'Syamsi  Jawawi Wahyudi, S.Pd.', 'CIANJUR', '1991-05-14', 'JBT006', 'MP002', 'syamsi.JPG'),
@@ -457,6 +457,19 @@ INSERT INTO `tb_kemitraan` (`id`, `nama`, `foto`, `link_website`) VALUES
 (6, 'SMA Negeri 2 Cirebon', '556-SMAN_2_CIREBON.png', 'http://sman2cirebon.sch.id/'),
 (7, 'Alibeykoy Lisesi, Turki', 'k_09124350_Logo_SON.jpg', 'https://www.yelp.com/biz/alibe'),
 (8, 'Ringwood Collage, Australia', 'logo.png', 'https://www.ringwoodsc.vic.edu');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_kepsek`
+--
+
+CREATE TABLE `tb_kepsek` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(40) NOT NULL,
+  `foto` tinytext NOT NULL,
+  `periode` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1051,6 +1064,12 @@ ALTER TABLE `tb_kat_siswa`
 -- Indexes for table `tb_kemitraan`
 --
 ALTER TABLE `tb_kemitraan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_kepsek`
+--
+ALTER TABLE `tb_kepsek`
   ADD PRIMARY KEY (`id`);
 
 --
