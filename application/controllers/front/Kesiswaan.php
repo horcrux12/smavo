@@ -271,10 +271,6 @@
 
 				$this->load->view('front/template/app',$page_content);
 		}
-		public function ambilData(){
-			echo json_decode()
-		}
-		
 	}
    /* End of file Struktur.php */
     

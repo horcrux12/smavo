@@ -157,7 +157,7 @@
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="call-to-action" class="wow fadeIn" style="background-image: url('<?php echo base_url()?>assets2/img/batik.jpg')">
+    <section id="call-to-action" class="wow fadeIn" style="background-image: url('<?php echo base_url() ?>assets2/img/batik.jpg')">
       <div class="container text-center">
         <h3>Selamat Datang di Website SMAN 2 Cibinong</h3>
         <h1><span id="typed1"></span></h1>
@@ -190,8 +190,8 @@
                         <img src="<?= base_url(); ?>assets/photo/berita/<?php echo $key->foto ?>" class="mx-auto d-block" alt="">
                         <div class="date">
                           <a href="javascript:void(0)">
-                            <span><?php echo substr($key->tanggal,8,2) ;?></span>
-                            <span><?php echo format_indo_bln(substr($key->tanggal,0,10))?></span>
+                            <span><?php echo substr($key->tanggal, 8, 2); ?></span>
+                            <span><?php echo format_indo_bln(substr($key->tanggal, 0, 10)) ?></span>
                           </a>
                         </div>
                       </div>
@@ -199,7 +199,7 @@
                         <span class="tag">
                           <a href="javascript:void(0)"><?php echo $key->nama_kat_artikel ?></a>
                         </span>
-                        <h5><a href="<?php echo base_url('berita/detail/'),$key->id_berita?>"><?php echo $key->judul ?></a></h5>
+                        <h5><a href="<?php echo base_url('berita/detail/'), $key->id_berita ?>"><?php echo $key->judul ?></a></h5>
                         <p><?php $a = $key->deskripsi;
                             echo substr(strip_tags($a), 0, 50) ?></p>
                       </div>
@@ -209,11 +209,11 @@
               </div>
             </div>
             <div class="col-lg-12" id=pagination style="padding-top: 30px;">
-            <nav aria-label="...">
-              <ul class="pagination">
-              </ul>
-            </nav>
-          </div>
+              <nav aria-label="...">
+                <ul class="pagination">
+                </ul>
+              </nav>
+            </div>
           </div>
           <div class="col-sm-4">
             <div class="section-head col-sm-12 wow fadeInUp">
@@ -223,24 +223,74 @@
               </h4>
             </div>
             <div class="col-lg-12">
-            <br><br><br><br>
-            <div class="calender-cont widget-calender">
-              <div id="calendar"></div>
+              <br><br><br><br>
+              <div class="calender-cont widget-calender">
+                <div id="calendarIO"></div>
+
+              </div>
+              <div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <form class="form-horizontal" method="POST" action="POST" id="form_create">
+                      <input type="hidden" name="calendar_id" value="0">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Kalender Kegiatan</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div class="form-group">
+                          <div class="alert alert-danger" style="display: none;"></div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-4">Nama Kegiatan<span class="required"></span></label>
+                          <div class="col-sm-10">
+                            <input type="text" name="title" class="form-control" placeholder="Judul Kegiatan">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-sm-2">Deskripsi</label>
+                          <div class="col-sm-10">
+                            <textarea name="description" rows="3" class="form-control" placeholder="Deskripsi Kegiatan"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-sm-2">Tanggal Mulai</label>
+                          <div class="col-sm-10">
+                            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                              <input type="text" name="start_date" class="form-control" readonly>
+                              <span class="input-group-addon"><i class="fa fa-calendar font-dark"></i></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-sm-2">Tanggal Berakhir</label>
+                          <div class="col-sm-10">
+                            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                              <input type="text" name="end_date" class="form-control" readonly>
+                              <span class="input-group-addon"><i class="fa fa-calendar font-dark"></i></span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <a href="javascript::void" class="btn btn-danger" data-dismiss="modal">close</a>
+                        <!-- <a class="btn btn-danger delete_calendar" style="display: none;">Hapus</a>
+                        <button type="submit" class="btn green">Simpan</button> -->
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
             </div>
-            <!-- /.card -->
           </div>
-          </div>
-        </div>
-        <div class="row">
-          
-          
-        </div>
-        <br>
-        <br>
-        <div class="row">
-          
-        </div>
-      </div>
     </section>
     <!-- End Blog ====
       ======================================= -->
@@ -259,22 +309,22 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up"><?php echo $data['kunjungan']['now'][0]->hits?></span>
+            <span data-toggle="counter-up"><?php echo $data['kunjungan']['now'][0]->hits ?></span>
             <p>Hari Ini</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up"><?php echo $data['kunjungan']['week'][0]->hits?></span>
+            <span data-toggle="counter-up"><?php echo $data['kunjungan']['week'][0]->hits ?></span>
             <p>Minggu Ini </p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up"><?php echo $data['kunjungan']['month'][0]->hits?></span>
+            <span data-toggle="counter-up"><?php echo $data['kunjungan']['month'][0]->hits ?></span>
             <p>Bulan Ini </p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up"><?php echo $data['kunjungan']['year'][0]->hits?></span>
+            <span data-toggle="counter-up"><?php echo $data['kunjungan']['year'][0]->hits ?></span>
             <p>Tahun Ini </p>
           </div>
 
@@ -295,12 +345,7 @@
         <div class="row" style="padding-top: 30px;">
           <div class="col-lg-12 col-md-12 wow fadeInUp text-center">
             <div class="plyr__video-embed" id="player">
-            <iframe
-                src="https://www.youtube.com/embed/qhgyI-DMpAI"
-                allowfullscreen
-                allowtransparency
-                allow="autoplay"
-            ></iframe>
+              <iframe src="https://www.youtube.com/embed/qhgyI-DMpAI" allowfullscreen allowtransparency allow="autoplay"></iframe>
               <!-- <iframe width="1195" height="672" src="https://www.youtube.com/embed/qhgyI-DMpAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
             <!-- <div class="embed-responsive embed-responsive-16by9" id=players>
@@ -308,7 +353,7 @@
             </div> -->
           </div>
         </div>
-        
+
       </div>
     </section><!-- #portfolio -->
 
@@ -375,10 +420,10 @@
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="<?php echo base_url();?>beranda/kirim-pesan" method="post" role="form" class="contactForm">
+          <form action="<?php echo base_url(); ?>beranda/kirim-pesan" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="pengirim" id="pengirim" class="form-control"  placeholder="Nama Lengkap" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="pengirim" id="pengirim" class="form-control" placeholder="Nama Lengkap" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
@@ -389,20 +434,20 @@
 
             <div class="form-row">
               <div class="form-group col-md-4">
-              <select class="form-control" name="kat" id="kat" data-rule="required" data-msg="Please enter at least 8 chars of subject" />
-              <option value="">------------- pilih salah satu -------------</option>
-                  <option>Keluhan</option>
-                  <option>Rekomendasi/Saran</option>                 
-              </select>
+                <select class="form-control" name="kat" id="kat" data-rule="required" data-msg="Please enter at least 8 chars of subject" />
+                <option value="">------------- pilih salah satu -------------</option>
+                <option>Keluhan</option>
+                <option>Rekomendasi/Saran</option>
+                </select>
                 <div class="validation"></div>
               </div>
 
               <div class="form-group col-md-8">
                 <input type="text" class="form-control" name="jdl" id="jdl" placeholder="Judul Pesan" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
+                <div class="validation"></div>
               </div>
             </div>
-            
+
             <div class="form-group">
               <textarea class="form-control" name="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Deskripsi Pesan"></textarea>
               <div class="validation"></div>

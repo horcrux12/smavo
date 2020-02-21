@@ -11,6 +11,8 @@ class Home extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('user_agent');
+		$this->table 		= 'tb_calendar';
+		$this->load->model('Globalmodel', 'modeldb'); 
 	}
 	
 	public function index (){
@@ -45,6 +47,8 @@ class Home extends CI_Controller
 		<link href="'.base_url().'assets2/css/style_calendar.css" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">
 		<link href="'.base_url().'assets2/css/plyr.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="'.base_url().'assets/calendar/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
 
 		<link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">';
@@ -55,11 +59,14 @@ class Home extends CI_Controller
 		<script src="'.base_url().'assets2/js/main.js"></script>
 		<script src="'.base_url().'assets2/js/iso.js"></script>
 		<script src="'.base_url().'assets2/js/plyr.js"></script>
+		<script type="text/javascript" src="'.base_url().'assets/calendar/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>      
+
 
 		<!-- JS for this page -->
 		<script src="'.base_url().'assets2/js/scripts.js"></script>
 		<script src="'.base_url().'assets2/js/animated.headline.js"></script>
 		<script src="'.base_url().'assets2/js/jquery.counterup.min.js"></script>
+
 
 		<!-- Scroll To -->
 
@@ -93,7 +100,7 @@ class Home extends CI_Controller
 		<!-- Calendar -->
 		<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-		<script src="'.base_url().'assets2/js/fullcalendar-init.js"></script>
+		
 		<script src="'.base_url().'assets2/js/main_player.js"></script>';
 		$page_content['title'] = '';
 		   
@@ -131,6 +138,23 @@ class Home extends CI_Controller
 		// echo "<pre>";
 		// print_r($kunjungan);
 		// echo "</pre>";
+		
+		$data_calendar = $this->modeldb->get_list($this->table);
+		$calendar = array();
+		foreach ($data_calendar as $key => $val) 
+		{
+			$calendar[] = array(
+				'id' 	=> intval($val->id), 
+				'title' => $val->title, 
+				'description' => trim($val->description), 
+				'start' => date_format( date_create($val->start_date) ,"Y-m-d H:i:s"),
+				'end' 	=> date_format( date_create($val->end_date) ,"Y-m-d H:i:s"),
+				'color' => $val->color,
+			);
+		}
+
+		$page_content['get_data']			= json_encode($calendar);
+
 		$this->load->view('front/template/app',$page_content);
 	}
 
