@@ -247,34 +247,28 @@
                         <div class="form-group">
                           <label class="control-label col-sm-4">Nama Kegiatan<span class="required"></span></label>
                           <div class="col-sm-10">
-                            <input type="text" name="title" class="form-control" placeholder="Judul Kegiatan">
+                            <input type="text" name="title" class="form-control" placeholder="Judul Kegiatan" readonly>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label class="control-label col-sm-2">Deskripsi</label>
                           <div class="col-sm-10">
-                            <textarea name="description" rows="3" class="form-control" placeholder="Deskripsi Kegiatan"></textarea>
+                            <textarea name="description" rows="3" class="form-control" placeholder="Deskripsi Kegiatan" readonly></textarea>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label class="control-label col-sm-2">Tanggal Mulai</label>
                           <div class="col-sm-10">
-                            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
                               <input type="text" name="start_date" class="form-control" readonly>
-                              <span class="input-group-addon"><i class="fa fa-calendar font-dark"></i></span>
-                            </div>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label class="control-label col-sm-2">Tanggal Berakhir</label>
                           <div class="col-sm-10">
-                            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
                               <input type="text" name="end_date" class="form-control" readonly>
-                              <span class="input-group-addon"><i class="fa fa-calendar font-dark"></i></span>
-                            </div>
                           </div>
                         </div>
 
@@ -370,7 +364,7 @@
         <div class="owl-carousel clients-carousel owl-centered">
           <?php foreach ($data['kemitraan'] as $key) { ?>
             <div>
-              <a href="<?php echo $key->link_website ?>">
+              <a href="<?php echo $key->link_website ?>" target="_blank">
                 <img src="<?= base_url(); ?>assets/photo/kemitraan/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama; ?>">
               </a>
             </div>

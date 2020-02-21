@@ -125,7 +125,9 @@
             </ul> -->
           </li>
           <li><a href="<?= base_url('galeri'); ?>">Galeri</a></li>
+          <?php if ( current_url() == base_url() ) :?>
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
+          <?php endif; ?>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
               <?php
