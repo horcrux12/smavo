@@ -27,19 +27,18 @@
   <link href="<?= base_url(); ?>assets2/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href="<?= base_url(); ?>assets2/css/style_loading.css" rel="stylesheet">
 
-  <?php 
-    if (current_url()==base_url()) {
-      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foots.css".'"'." rel=".'"'."stylesheet".'"'.">
+  <?php
+  if (current_url() == base_url()) {
+    echo "<link href=" . '"' . "" . base_url() . "assets2/css/style_head_foots.css" . '"' . " rel=" . '"' . "stylesheet" . '"' . ">
       ";
-    }
-    else {
-      echo "<link href=".'"'."".base_url()."assets2/css/style_head_foots.css".'"'." rel=".'"'."stylesheet".'"'.">
+  } else {
+    echo "<link href=" . '"' . "" . base_url() . "assets2/css/style_head_foots.css" . '"' . " rel=" . '"' . "stylesheet" . '"' . ">
       ";
-    }
+  }
   ?>
 
   <!-- Main Stylesheet File -->
- 
+
 
   <!-- CSS for this page -->
   <?php echo $css; ?>
@@ -98,17 +97,17 @@
           <li class="menu-active"><a href="<?= base_url(); ?>">Beranda</a></li>
           <li class="menu-has-children"><a href="#" data-scroll-nav="1">Profil</a>
             <ul>
-              <li><a href="<?php echo base_url();?>sambutan">Sambutan Kepala Sekolah</a></li>
-              <li><a href="<?php echo base_url();?>sejarah">Sejarah</a></li>
-              <li><a href="<?php echo base_url();?>vismis">Visi dan Misi</a></li>
-              <li><a href="<?php echo base_url();?>tujuan">Tujuan</a></li>
-              <li><a href="<?php echo base_url();?>mars">Mars Sekolah</a></li>
-              <li><a href="<?php echo base_url();?>struktur">Struktur Organisasi</a></li>
-              <li><a href="<?php echo base_url();?>guru">Staff dan Guru</a></li>
-              <li><a href="<?php echo base_url();?>fasilitas">Fasilitas</a></li>
+              <li><a href="<?php echo base_url(); ?>sambutan">Sambutan Kepala Sekolah</a></li>
+              <li><a href="<?php echo base_url(); ?>sejarah">Sejarah</a></li>
+              <li><a href="<?php echo base_url(); ?>vismis">Visi dan Misi</a></li>
+              <li><a href="<?php echo base_url(); ?>tujuan">Tujuan</a></li>
+              <li><a href="<?php echo base_url(); ?>mars">Mars Sekolah</a></li>
+              <li><a href="<?php echo base_url(); ?>struktur">Struktur Organisasi</a></li>
+              <li><a href="<?php echo base_url(); ?>guru">Staff dan Guru</a></li>
+              <li><a href="<?php echo base_url(); ?>fasilitas">Fasilitas</a></li>
             </ul>
           </li>
-          
+
           <li class="menu-has-children"><a href="#" data-scroll-nav="2">Berita</a>
             <ul>
               <?php
@@ -126,10 +125,12 @@
             </ul> -->
           </li>
           <li><a href="<?= base_url('galeri'); ?>">Galeri</a></li>
+          <?php if ( current_url() == base_url() ) :?>
           <li><a href="#" data-scroll-nav="4">Kerjasama</a></li>
+          <?php endif; ?>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
-            <?php
+              <?php
               $data = $this->model_dinamic->getData('tb_kat_siswa');
               foreach ($data as $key) { ?>
                 <li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
@@ -184,15 +185,15 @@
               <strong>Email:</strong> info@sman2cibinong.sch.id<br>
             </p>
 
-        
+
             <div class="social-links">
               <a href="https://twitter.com/officialsmavo" class="twitter" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Twitter"; ?>"><i class="fa fa-twitter"></i></a>
               <a href="https://www.facebook.com/Sman2Cibinong" class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Facebook"; ?>"><i class="fa fa-facebook"></i></a>
-              <a href="https://instagram.com/" class="instagram" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Instagram"; ?>"><i class="fa fa-instagram" ></i></a>
+              <a href="https://instagram.com/" class="instagram" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Instagram"; ?>"><i class="fa fa-instagram"></i></a>
               <a href="https://plus.google.com/u/0/107622506577547252711" class="google-plus" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Google"; ?>"><i class="fa fa-google-plus"></i></a>
               <a href="https://www.youtube.com/channel/UCR64-kTszWp1CG1axMjxjMA" class="youtube" data-toggle="tooltip" data-placement="bottom" title="<?php echo "Youtube"; ?>"><i class="fa fa-youtube"></i></a>
             </div>
-            
+
           </div>
 
         </div>
@@ -201,7 +202,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <?php echo date('Y') ?> <a href="<?php echo base_url();?>">SMA Negeri 2 Cibinong</a>. All Rights Reserved
+        &copy; Copyright <?php echo date('Y') ?> <a href="<?php echo base_url(); ?>">SMA Negeri 2 Cibinong</a>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -237,14 +238,68 @@
   <!-- Contact Form JavaScript File -->
 
   <!-- Template Main Javascript File -->
-  
-  <script src="<?php echo base_url()?>assets2/js/jquery.stellar.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url()?>assets2/js/scrollIt.min.js"></script>
-  
-  <script src="<?php echo base_url()?>assets2/js/loading.js"></script>
 
-  <?php echo $js;?>
-  
+  <script src="<?php echo base_url() ?>assets2/js/jquery.stellar.min.js"></script>
+  <script type="text/javascript" src="<?php echo base_url() ?>assets2/js/scrollIt.min.js"></script>
+
+  <script src="<?php echo base_url() ?>assets2/js/loading.js"></script>
+
+  <?php echo $js; ?>
+<?php if ( current_url() == base_url() )  :?>
+  <script type="text/javascript">
+    var get_data = '<?php echo $get_data; ?>';
+    var backend_url = '<?php echo base_url(); ?>';
+
+    $(document).ready(function() {
+      $('.date-picker').datepicker();
+      $('#calendarIO').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,basicWeek,basicDay'
+        },
+        height: 650,
+        defaultDate: moment().format('YYYY-MM-DD'),
+        // editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        // selectable: true,
+        selectHelper: true,
+        // select: function(start, end) {
+        //   $('#create_modal input[name=start_date]').val(moment(start).format('YYYY-MM-DD'));
+        //   $('#create_modal input[name=end_date]').val(moment(end).format('YYYY-MM-DD'));
+        //   $('#create_modal').modal('show');
+        //   save();
+        //   $('#calendarIO').fullCalendar('unselect');
+        // },
+        // eventDrop: function(event, delta, revertFunc) { // si changement de position
+        //   editDropResize(event);
+        // },
+        // eventResize: function(event, dayDelta, minuteDelta, revertFunc) { // si changement de longueur
+        //   editDropResize(event);
+        // },
+        eventClick: function(event, element) {
+          // alert ("nah ini");
+          deteil(event);
+          // editData(event);
+          // deleteData(event);
+        },
+        events: JSON.parse(get_data)
+      });
+    });
+
+    function deteil(event) {
+      $('#create_modal input[name=calendar_id]').val(event.id);
+      $('#create_modal input[name=start_date]').val(moment(event.start).format('YYYY-MM-DD'));
+      $('#create_modal input[name=end_date]').val(moment(event.end).format('YYYY-MM-DD'));
+      $('#create_modal input[name=title]').val(event.title);
+      $('#create_modal input[name=description]').val(event.description);
+      $('#create_modal select[name=color]').val(event.color);
+      $('#create_modal .delete_calendar').show();
+      $('#create_modal').modal('show');
+    }
+  </script>
+<?php endif;?>
+
 </body>
 
 </html>

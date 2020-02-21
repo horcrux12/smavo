@@ -33,7 +33,7 @@
           <figure>
             <img src="<?= base_url();?>assets/photo/berita/<?php echo $key->foto?>" class="img-fluid" alt="">
             <a href="<?= base_url();?>assets/photo/berita/<?php echo $key->foto?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-            <a href="<?php echo base_url()?>berita/<?php echo $key->id_berita?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            <a href="<?php echo base_url()?>berita/detail/<?php echo $key->id_berita?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
           </figure>
         </div>
       </div>

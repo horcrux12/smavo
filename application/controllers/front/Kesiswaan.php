@@ -271,12 +271,15 @@
 
 				$this->load->view('front/template/app',$page_content);
 		}
+<<<<<<< HEAD
 
 		public function ambil_data_organisasi(){
 			$data = $this->model_dinamic->getData('tb_organisasi');
 			echo json_encode($data);
 		}
 		
+=======
+>>>>>>> e8047d8ba01cd6ec199d2614c29efed6bea353ed
 	}
    /* End of file Struktur.php */
     
