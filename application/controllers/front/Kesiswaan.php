@@ -271,8 +271,10 @@
 
 				$this->load->view('front/template/app',$page_content);
 		}
-		public function ambilData(){
-			echo json_decode()
+
+		public function ambil_data_organisasi(){
+			$data = $this->model_dinamic->getData('tb_organisasi');
+			echo json_encode($data);
 		}
 		
 	}
