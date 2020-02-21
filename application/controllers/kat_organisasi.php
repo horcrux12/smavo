@@ -436,5 +436,8 @@
 			$this->load->view('v_dashboard',$konten);
 		
 			}
-	
+	public function get(){
+		$data = $this->model_dinamic->getDatas('tb_organisasi')->result_array();
+		echo json_encode($data);
+	}
 }	

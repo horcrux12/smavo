@@ -24,7 +24,7 @@
         <div class="owl-carousel clients-carousel owl-centered wow fadeInRight">
           <?php foreach ($data['organisasi'] as $key) { ?>
             <div>
-            <a href="<?php echo base_url();?>organisasi/detail/<?php echo $key->id_organisasi?>" data-toggle="modal" data-target="#show">
+            <a class="ini" href="#" data-toggle="modal" data-target="#show" data-id="<?php echo $key->id_organisasi?>">
                 <img src="<?= base_url(); ?>assets/photo/organisasi/logo/<?php echo $key->foto ?>" alt="" data-toggle="tooltip" data-placement="bottom" title="<?php echo $key->nama_organisasi; ?>">
               </a>
             </div>
@@ -45,46 +45,75 @@
 		<!-- heading modal -->
 		<div class="modal-header">
          
-        <h4 class="modal-title"><?php echo $key->nama_organisasi; ?></h4>
+        <h4 class="modal-title"></h4>
 		<a class="close col-md-0" data-dismiss="modal">&times;</a>	
         </div>
         
 		<!-- body modal -->
 		<div class="modal-body">
-        <?php $data=$key->deskripsi;
-            $cut=substr($data,0,1200);
-            echo $cut;
-            echo " ................ " ?>
-        <div></div>
-        Informasi lebih lanjut mengenai <?php echo $key->nama_organisasi; ?> silakan download file <a href="<?php echo base_url('assets/file/'. $key->file .'');?>"> <?php echo $key->nama_organisasi; ?></a>
-        </div>
+      <div class="modal-data"></div>
+      Untuk informasi lebih lanjut, silakan download <a href="" class="modal-file" ></a>
+    </div>
         
 		<!-- footer modal -->
 		<div class="modal-footer">
-			<button type="button" class="btn btn-success" data-dismiss="modal">Keluar</button>
+			<button type="button" class="btn" style="background : #eba709" data-dismiss="modal">Keluar</button>
 		</div>
     </div> 
    </div>
 </div>
 
-<!-- Ini merupakan script yang terpenting
+<!-- Ini merupakan script yang terpenting -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#show').on('show.bs.modal', function (e) {
-            var getDetail = $(e.relatedTarget).data('id');
-            /* fungsi AJAX untuk melakukan fetch data */
+        // $('#show').on('show.bs.modal', function (e) {
+        //     var getDetail = $(e.relatedTarget).data('id');
+        //     /* fungsi AJAX untuk melakukan fetch data */
+        //     $.ajax({
+        //         type : 'POST',
+        //         url : "<?php echo base_url('kat_organisasi/get')?>",
+
+        //         /* detail per identifier ditampung pada berkas detail.php yang berada di folder application/view */
+        //         data :  'getDetail='+ getDetail,
+        //         /* memanggil fungsi getDetail dan mengirimkannya */
+        //         success : function(data){
+        //         // $('.modal-data').html(data[0].deskripsi);
+        //         console.log(data);
+        //         /* menampilkan data dalam bentuk dokumen HTML */
+        //         }
+        //     });
+        //  });
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '<?php echo base_url('kat_organisasi/get')?>',
+
+        // });
+        $('.ini').on('click',function(){
+            var ini = $(this).data('id');
             $.ajax({
-                type : 'post',
-                url : "<?php echo base_url('front/organisasi/detail')?>",
-                /* detail per identifier ditampung pada berkas detail.php yang berada di folder application/view */
-                data :  'getDetail='+ getDetail,
-                /* memanggil fungsi getDetail dan mengirimkannya */
-                success : function(data){
-                $('.modal-data').html(data[0].deskripsi);
-                /* menampilkan data dalam bentuk dokumen HTML */
+              type: 'POST',
+              url: '<?php echo base_url('kat_organisasi/get')?>',
+              dataType: 'json',
+              success: function(response) { 
+              // $('#result').html(response);
+              // }
+              for (var i = 0; i < response.length; i++) {
+                if (response[i].id_organisasi == ini) {
+                  var nah = {
+                    // 'id' : response[i].id_organisasi,
+                    'nama' : response[i].nama_organisasi,
+                    'deskripsi' : response[i].deskripsi,
+                    'file' : response[i].file
+                  };
                 }
+              }
+              $('.modal-title').html(nah.nama);
+              $('.modal-data').html(nah.deskripsi.slice(0,1200)+' . . . . . . . . . .');
+              $('.modal-file').html(nah.nama);
+              $('.modal-file').attr("href","<?php echo base_url('assets/file/'); ?>" + nah.file);
+              }
             });
-         });
-    }); -->
-  <!-- </script> -->
+        });
+    });
+</script>
 <!-- - - - - -end- - - - -  -->
