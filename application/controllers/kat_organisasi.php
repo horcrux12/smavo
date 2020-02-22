@@ -437,7 +437,7 @@
 		
 			}
 	public function get(){
-		$data = $this->model_dinamic->getDatas('tb_organisasi')->result_array();
+		$data = $this->model_dinamic->getDatas('tb_organisasi')->result();
 		echo json_encode($data);
 	}
 }	
