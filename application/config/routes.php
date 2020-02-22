@@ -110,7 +110,7 @@ $route['karya-cipta/detail/(:any)'] = 'front/kesiswaan/detail_karya/$1';
 
 //kontak
 $route['kontak/kontak-kami'] = 'front/kontak';
-
+$route['kontak/kirim-pesan'] = 'front/kontak/simpan';
 
 
 

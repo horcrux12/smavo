@@ -175,9 +175,10 @@ class Home extends CI_Controller
 			{
 				$this->model_pesan->getinsert($data);
 				// $this->session->set_flashdata('info','Pesan Terkirim');
-				
+				echo "<script>alert('Pesan Terkirim')</script>";  
 			}
-			$this->load->view('front/template/app',$page_content);
+			// $this->load->view('front/template/app',$page_content);
+			redirect('front/home');
 		}
 }
 

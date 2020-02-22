@@ -23,11 +23,9 @@
         </div>
 
       <div class="container">
-
-              <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="#" method="post" role="form" class="contactForm">
+     
+            <div class="form">
+          <form action="<?php echo base_url();?>kontak/kirim-pesan" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="pengirim" id="pengirim" class="form-control"  placeholder="Nama Lengkap" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />

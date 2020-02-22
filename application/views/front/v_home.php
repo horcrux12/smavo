@@ -411,9 +411,24 @@
 
         </div>
 
+              <?php
+                    $info = $this->session->flashdata('info');
+                    if (!empty($info)) {
+
+                      echo "<div class='alert alert-success alert-dismissible'>";
+                      echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>";
+                      echo "</button>";
+                      echo "<i class='icon fa fa-check'>";
+                      echo "</i>";
+                      echo $info;
+                      echo "</div>";
+                    }
+                 ?>
+                 
         <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
+          <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
+          <!-- <div id="errormessage"></div> -->
+        
           <form action="<?php echo base_url(); ?>beranda/kirim-pesan" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
