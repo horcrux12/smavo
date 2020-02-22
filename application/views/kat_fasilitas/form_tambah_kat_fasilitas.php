@@ -27,13 +27,13 @@
 
       // }
 
-      if(!$ ("#isi").val())
-      {
-        alert('Maaf deskripsi tidak boleh kosong');
-        $("#isi").focus();
-        return false;
+      // if(!$ ("#isi").val())
+      // {
+      //   alert('Maaf deskripsi tidak boleh kosong');
+      //   $("#isi").focus();
+      //   return false;
 
-      }
+      // }
 
   }
 
@@ -74,7 +74,7 @@
           </div> -->
 
                 <div class="form-group">
-          <label class="col-sm-2 control-label " for="isi">Deskripsi Fasilitas</label>
+          <label class="col-sm-2 control-label " for="isi">Deskripsi Fasilitas <br> <i><font color="red" >*Jika tidak ada, kosongkan saja</font></i></label>
           <div class="col-sm-8">
             <textarea name="isi" id="isi" ></textarea>
           </div>

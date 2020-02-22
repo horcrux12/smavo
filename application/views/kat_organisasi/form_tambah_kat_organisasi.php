@@ -19,13 +19,13 @@
 
       }
 
-      if(!$ ("#isi").val())
-      {
-        alert('Maaf deskripsi tidak boleh kosong');
-        $("#isi").focus();
-        return false;
+      // if(!$ ("#isi").val())
+      // {
+      //   alert('Maaf deskripsi tidak boleh kosong');
+      //   $("#isi").focus();
+      //   return false;
 
-      }
+      // }
 
   }
 
@@ -69,7 +69,7 @@
             <div class="col-sm-8">
             <input type="file" class="form-control" id="validatedCustomFile" name="file_download" accept="" required/>
             <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i><br>
-            <i><font color="red">*Jika tidak ada, kosongkan saja</font></i>
+            <!-- <i><font color="red">*Jika tidak ada, kosongkan saja</font></i> -->
             </div>
           </div>
 
