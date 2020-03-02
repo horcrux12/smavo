@@ -17,7 +17,7 @@
 	<div class="container" style="padding-top: 20px;">
 		<div class="section-header wow fadeInUp">
 			<h3>Organisasi</h3>
-			<p>Berikut adalah sarana dan prasarana yang terdapat di SMAN 2 Cibinong guna menunjang kegiatan belajar mengajar agar terlaksana dengan baik dan nyaman</p>
+			<p>Berikut adalah organisasi yang terdapat di SMAN 2 Cibinong guna menunjang kegiatan ekstrakulikuler siswa-siswi untuk pengembangan potensi diri</p>
 		</div>
 		<?php $z = 1;
     foreach ($data['organisasi'] as $key) { ?>
@@ -34,9 +34,14 @@
                       echo "Aliquam ornare mauris quis sapien interdum euod. Nullam a elementum odio. Vivamus vestibulum bib orci. ultricies...";
                     } else {
                       $ini = strip_tags($key->deskripsi, '<br>');
-                      echo substr($ini,0,100);
+                      echo substr($ini,0,250);
                     }
-                    ?></p>
+                    ?>
+                   
+                    </p>
+                    <div>
+                      Untuk informasi lebih lanjut, silakan download <a href="<?php echo base_url('assets/file/' . $key->file . ''); ?>" class=""><?php echo $key->nama_organisasi ?></a>
+                    </div>
                 </div>
               </div>
             </div>
@@ -62,8 +67,12 @@
                     } else {
                       $ini = strip_tags($key->deskripsi, '<br>');
                       echo substr($ini,0,100);
+                      echo'. . . . . .';
                     }
                     ?></p>
+                      <div>
+                      Untuk informasi lebih lanjut, silakan download <a href="<?php echo base_url('assets/file/' . $key->file . ''); ?>" class=""><?php echo $key->nama_organisasi ?></a>
+                    </div>
                 </div>
               </div>
             </div>

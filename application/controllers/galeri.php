@@ -22,7 +22,18 @@
 			$konten['judul']		= 'Data Master';
 			$konten['sub_judul'] 	= 'Data Galeri';
 			$konten['data']			= $this->model_dinamic->getData('tb_galeri');
-            $konten['js']			= '
+			$konten['js']			= '
+			<script src="'.base_url().'assets/js/jquery.dataTables.min.js"></script>
+			<script src="'.base_url().'assets/js/jquery.dataTables.bootstrap.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.buttons.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.flash.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.html5.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.print.min.js"></script>
+			<script src="'.base_url().'assets/js/buttons.colVis.min.js"></script>
+			<script src="'.base_url().'assets/js/dataTables.select.min.js"></script>
+			<script src="'.base_url().'assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+			<script src="'.base_url().'assets/js/table.js"></script>
+			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
 			<script src="'.base_url().'assets/js/jquery.colorbox.min.js"></script>
 			<script type="text/javascript">
 			jQuery(function($) {

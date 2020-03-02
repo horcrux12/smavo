@@ -35,11 +35,6 @@
                 <div class="validation"></div>
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Email Lengkap" data-rule="email" data-msg="Please enter a valid email" />
-              <div class="validation"></div>
-            </div>
-          </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">

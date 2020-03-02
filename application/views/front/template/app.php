@@ -130,6 +130,7 @@
           <?php endif; ?>
           <li class="menu-has-children"><a href="#">Siswa</a>
             <ul>
+            <li><a href="<?= base_url('kesiswaan/kategori/Organisasi'); ?>">Organisasi</a></li>
               <?php
               $data = $this->model_dinamic->getData('tb_kat_siswa');
               foreach ($data as $key) { ?>
