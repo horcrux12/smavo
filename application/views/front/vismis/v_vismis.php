@@ -57,7 +57,12 @@
                                     </div>
                                 </div>
                             </div>
-                        
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content -->
+            </div>
+            <div id="content" class="col-md-12 wow fadeInUp">
 
                        
                             <!-- Item Image -->

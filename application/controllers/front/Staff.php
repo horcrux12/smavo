@@ -48,6 +48,10 @@
             //     $data[$key->nama_jabatan] = $this->model_guru->GetDataWhere($key->id_jabatan)->result();
             // }
             $page_content['data'] = $guru;
+            $page_content['jabatan'] = $jabatan;
+            // echo "<pre>";
+            // print_r($page_content['jabatan']);
+            // echo "</pre>";
             $this->load->view('front/template/app',$page_content);
         }
     

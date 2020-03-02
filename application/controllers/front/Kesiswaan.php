@@ -38,6 +38,7 @@
 			$page_content['css'] = '
 			<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
+            <link href="'.base_url().'assets2/fasilitas/style_fas.css" rel="stylesheet">
 			<link href="'.base_url().'assets2/css/style.css" rel="stylesheet">
 			<link rel="stylesheet" href="'.base_url().'assets2/styleslider.css">
 			<link href="'.base_url().'assets2/css/helper.css" rel="stylesheet">';
@@ -126,6 +127,9 @@
 				// load data organisasi
 				$organisasi  = $this->model_dinamic->getData ('tb_organisasi');
 				$page_content['data']['organisasi'] = $organisasi;
+				$ini = strip_tags($organisasi[4]->deskripsi, '<br><p>');
+				$inis = preg_replace('/ {2,}/', ' ', str_replace('&nbsp;', ' ', $ini));
+				// print_r($ini);
 
 			}
 			if ($id == "Karya Cipta") {
