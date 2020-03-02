@@ -21,16 +21,19 @@
       <p>Untuk info lebih lanjut dan pengajuan pertanyaan seputar SMA Negeri 2 Cibinong dapat langsung menghubungi kami dibawah ini:</p>
     </div>
 
-    <div class="container">
-
-      <div class="form">
-        <div id="sendmessage">Your message has been sent. Thank you!</div>
-        <div id="errormessage"></div>
-        <form action="#" method="post" role="form" class="contactForm">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="text" name="pengirim" id="pengirim" class="form-control" placeholder="Nama Lengkap" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-              <div class="validation"></div>
+      <div class="container">
+     
+            <div class="form">
+          <form action="<?php echo base_url();?>kontak/kirim-pesan" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="pengirim" id="pengirim" class="form-control"  placeholder="Nama Lengkap" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Lengkap" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
             </div>
             <div class="form-group col-md-6">
               <input type="email" class="form-control" name="email" id="email" placeholder="Email Lengkap" data-rule="email" data-msg="Please enter a valid email" />

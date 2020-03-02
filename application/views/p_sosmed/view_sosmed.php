@@ -38,8 +38,8 @@ if (!empty($info_hapus)) {
 
 		<div class="clearfix mb-3">
 			<div class="pull-right tableTools-container"></div>
-			<a href="<?php echo base_url(); ?>admin/pengaturan/sosmed/tambah-sosmed" class="btn btn-primary btn-small">
-				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah <?php echo $sub_judul ?></a><br><br>
+			<!-- <a href="<?php echo base_url(); ?>admin/pengaturan/sosmed/tambah-sosmed" class="btn btn-primary btn-small">
+				<i class="fa fa-plus-circle">&nbsp;&nbsp;</i>Tambah <?php echo $sub_judul ?></a><br><br> -->
 		</div>
 		<div class="table-header">
 			<?php echo $sub_judul ?>
@@ -82,9 +82,9 @@ if (!empty($info_hapus)) {
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 
-									<a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/sosmed/hapus-sosmed/<?php echo $key->id?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+									<!-- <a class="red tooltip-info" title="Hapus" data-rel="tooltip" href="<?php echo base_url(); ?>admin/pengaturan/sosmed/hapus-sosmed/<?php echo $key->id?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
-									</a>
+									</a> -->
 								</div>
 
 								<div class="hidden-md hidden-lg">

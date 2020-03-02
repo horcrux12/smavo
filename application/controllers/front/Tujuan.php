@@ -15,7 +15,7 @@
             
             $page_content['js'] ='
             <script src="'.base_url().'assets2/js/scripts.js"></script>';
-            $page_content['title'] ='Tujuan-SMAVO';
+            $page_content['title'] ='Tujuan';
 
             $data = $this->model_dinamic->getWhere('tb_profil','id_info','PR13012020004')->result_array();
             $page_content['data'] = $data;

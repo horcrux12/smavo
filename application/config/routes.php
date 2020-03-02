@@ -105,11 +105,12 @@ $route['kontak/lokasi-sekolah'] = 'front/kontak/lokasi';
 
 //kesiswaan
 $route['kesiswaan/kategori/(:any)'] = 'front/kesiswaan/kategori/$1';
+$route['kesiswaan/kategori/(:any)/(:any)'] = 'front/kesiswaan/kategori/$1/$2';
 $route['karya-cipta/detail/(:any)'] = 'front/kesiswaan/detail_karya/$1';
 
 //kontak
 $route['kontak/kontak-kami'] = 'front/kontak';
-
+$route['kontak/kirim-pesan'] = 'front/kontak/simpan';
 
 
 

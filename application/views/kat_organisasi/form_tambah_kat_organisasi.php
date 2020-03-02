@@ -58,6 +58,7 @@
       <i>
         <font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font>
       </i>
+<<<<<<< HEAD
     </div>
   </div>
 
@@ -89,6 +90,58 @@
 </form>
 </div>
 </center>
+=======
+      <!-- end kembali -->
+   
+             
+           <form class="form-horizontal style-form" style="margin-top: 20px;" method="POST" enctype="multipart/form-data" name="form1" id="form1" action="<?php echo base_url();?>admin/kategori-organisasi/simpan-organisasi" onsubmit="return cekform();"> 
+              <div class="form-group">
+              <label for="" class="col-sm-2 control-label">ID Organisasi</label>
+              <div class="col-sm-8">
+              <input type="text" class="form-control" name="kode" id="kode" value="<?php echo $kode; ?>" readonly>
+              </div>
+              </div>
+
+              <div class="form-group">
+              <label for="" class="col-sm-2 control-label">Nama Organisasi</label>
+              <div class="col-sm-8">
+              <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Organisasi">
+              </div>
+              </div>
+
+              <div class="form-group">
+            <label class="col-sm-2 control-label">Foto Utama Logo</label>
+            <div class="col-sm-8">
+              <input type="file" class="form-control" id="validatedCustomFile" name="file_name" accept="image/*"required/>
+              <i><font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">File Dokumen</label>
+            <div class="col-sm-8">
+            <input type="file" class="form-control" id="validatedCustomFile" name="file_download" accept="" required/>
+            <i><font color="red">*file hanya bisa berekstensi .*pdf,.*docx,.*xlsx,.*pptx,.*zip,.*rar</font></i><br>
+            <!-- <i><font color="red">*Jika tidak ada, kosongkan saja</font></i> -->
+            </div>
+          </div>
+
+                <div class="form-group">
+          <label class="col-sm-2 control-label " for="isi">Deskripsi Organisasi</label>
+          <div class="col-sm-8">
+            <textarea name="isi" id="isi" ></textarea>
+          </div>
+        </div>
+
+                
+<center> 
+<div class="box-footer">    
+<button type="submit" class="btn btn-info btn-small"> Simpan</button>
+<button type="reset"  class="btn btn-danger btn-small">Batal</button>
+   </form>
+      </div>
+            </center>
+>>>>>>> a0b53549bab08acacc94c6e6a7e87fe3b2850d89
 
 
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>

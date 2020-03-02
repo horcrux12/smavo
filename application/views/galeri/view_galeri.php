@@ -28,18 +28,6 @@ if(!empty($info_hapus))
 			</a>
 
 			<div class="tools tools-bottom">
-				<a href="#">
-					<i class="ace-icon fa fa-link"></i>
-				</a>
-
-				<a href="#">
-					<i class="ace-icon fa fa-paperclip"></i>
-				</a>
-
-				<a href="#">
-					<i class="ace-icon fa fa-pencil"></i>
-				</a>
-
 				<a href="<?php echo base_url();?>admin/galeri/hapus-galeri/<?php echo $key->id_galeri?>"  onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
 					<i class="ace-icon fa fa-times red"></i>
 				</a>

@@ -314,7 +314,10 @@
                                         <small></small>
                                     </strong>
                             </marquee>   
+                            
                         </div>
+                        <?php $this->load->view('statistik/v_statistik',$konten);?>
+                        
 
 <!-- end hak akses admin_publish -->
 
@@ -354,7 +357,9 @@
                                         <small></small>
                                     </strong>
                             </marquee>   
+                            
                         </div>
+                        <?php $this->load->view('statistik/v_statistik',$konten);?>
 
 <?php endif; ?>
 <!-- end admin_siswa -->

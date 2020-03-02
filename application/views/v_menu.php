@@ -437,11 +437,11 @@
 
 						<ul class="submenu">
 
-								<li class="">
+								<!-- <li class="">
 								<a href="<?php echo base_url();?>admin/siswa	">
 									<i class="menu-icon fa fa-pencil-square-o"></i>
 									 Semua Artikel Siswa
-								</a>
+								</a> -->
 
 								<b class="arrow"></b>
 							</li>
@@ -461,21 +461,17 @@
 
 						<ul class="submenu">
 							
-									<?php
+						<?php
 									$this->db->order_by('id_kat_siswa');
 							        $data = $this->db->get('tb_kat_siswa');
-									foreach ($data->result() as $row) {
-									  
-									?>
+									foreach ($data->result() as $row) {?>
 									<li class="">
-
-								<a href="<?php echo base_url();?>admin/siswa/detail-siswa/<?php echo $row->nama_kat_siswa?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-									<?php echo $row->nama_kat_siswa?>
-								</a>
-								
-								<b class="arrow"></b>
-							</li>	
+										<a href="<?php echo base_url();?>admin/siswa/kategori-siswa/<?php echo $row->nama_kat_siswa?>">
+											<i class="menu-icon fa fa-caret-right"></i>
+											<?php echo $row->nama_kat_siswa?>
+										</a>		
+										<b class="arrow"></b>
+									</li>
 								<?php } ?>
 
 
