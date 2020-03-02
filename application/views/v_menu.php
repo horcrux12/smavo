@@ -158,15 +158,24 @@
 					</a>
 						<b class="arrow"></b>
 					<ul class="submenu">
-						<li class="">
+						<!-- <li class="">
 							<a href="<?php echo base_url();?>admin/siswa"><i class="menu-icon fa fa-pencil-square-o"></i>Semua Artikel Siswa</a>
 							<b class="arrow"></b>
-						</li>
+						</li> -->
 						<li class="">
 							<a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-pencil-square-o"></i><span class="menu-text">Artikel Siswa</span>
 								<b class="arrow fa fa-angle-down"></b>
 							</a>
 							<b class="arrow"></b>
+							<!-- <ul class="submenu">
+									<li class="">
+										<a href="<?php echo base_url();?>admin/berita/kategori-berita/Non%20Akademik">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Organisasi
+										</a>		
+										<b class="arrow"></b>
+									</li>
+						</ul> -->
 							<ul class="submenu">
 								
 									<?php
@@ -184,6 +193,7 @@
 	
 
 						</ul>
+						
 
 					</li>
 
@@ -441,10 +451,10 @@
 								<a href="<?php echo base_url();?>admin/siswa	">
 									<i class="menu-icon fa fa-pencil-square-o"></i>
 									 Semua Artikel Siswa
-								</a> -->
+								</a>
 
 								<b class="arrow"></b>
-							</li>
+							</li> -->
 
 						<li class="">
 						<a href="#" class="dropdown-toggle">
@@ -458,7 +468,15 @@
 
 						<b class="arrow"></b>
 
-
+						<ul class="submenu">
+									<li class="">
+										<a href="<?php echo base_url();?>admin/berita/kategori-berita/Non%20Akademik">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Organisasi
+										</a>		
+										<b class="arrow"></b>
+									</li>
+						</ul>
 						<ul class="submenu">
 							
 						<?php
@@ -476,6 +494,8 @@
 
 
 						</ul>
+
+						
 
 					</li>
 
