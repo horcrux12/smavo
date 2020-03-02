@@ -24,7 +24,7 @@
 <section class="blogs">
     <div class="container">
         <div class="row">
-            <div id="content" class="col-md-6 wow fadeInUp">
+            <div id="content" class="col-md-12 wow fadeInUp">
 
                 <!-- Begin Content -->
                 <div id="system-message-container"></div>
@@ -62,7 +62,7 @@
                 </div>
                 <!-- End Content -->
             </div>
-            <div id="content" class="col-md-6 wow fadeInUp">
+            <div id="content" class="col-md-12 wow fadeInUp">
 
                 <!-- Begin Content -->
                 <div id="system-message-container"></div>
