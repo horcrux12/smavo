@@ -58,7 +58,7 @@
       <i>
         <font color="red">*foto hanya bisa berekstensi .*jpg,.*gif,.*png</font>
       </i>
-<<<<<<< HEAD
+
     </div>
   </div>
 
