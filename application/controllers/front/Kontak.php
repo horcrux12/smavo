@@ -17,7 +17,10 @@
             <link href="'.base_url().'assets2/styleslider.css" rel="stylesheet">';
             
             $page_content['js'] ='
-            <script src="'.base_url().'assets2/js/scripts.js"></script>';
+            <script src="'.base_url().'assets2/js/scripts.js"></script>
+            <script src="'.base_url().'assets2/js/main.js"></script>
+            <script src="'.base_url().'assets2/contactform/contactform.js"></script>
+            ';
             $page_content['title'] ='Kontak';
 
             $this->load->view('front/template/app',$page_content);

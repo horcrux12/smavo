@@ -1,8 +1,14 @@
 jQuery(document).ready(function($) {
   "use strict";
 
+//   $('form.contactForm').submit(function(e) {
+//     alert("coba alert");
+//     e.preventDefault(); // don't submit multiple times
+//     this.submit(); // use the native submit method of the form element
+//     $('#imagefile').val(''); // blank the input
+// });
   //Contact
-  $('form.contactForm').submit(function() {
+  $('form.contactForm').submit(function(e) {
     var f = $(this).find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
@@ -99,6 +105,7 @@ jQuery(document).ready(function($) {
       url: action,
       data: str,
       success: function(msg) {
+        console.log(msg)
         // alert(msg);
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
@@ -112,6 +119,16 @@ jQuery(document).ready(function($) {
 
       }
     });
+    alert("Pesan Berhasil Dikirim")
+    $('#jdl').val("")
+    $('#email').val("")
+    $('#pengirim').val("")
+    $('#isi').val("")
+    $('#ini').attr('selected','selected')
+    // $("select[name=kat] option[value=]").attr('selected','selected');
+    // e.preventDefault(); // don't submit multiple times
+    // this.submit(); // use the native submit method of the form element
+    
     return false;
   });
 

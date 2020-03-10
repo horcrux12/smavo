@@ -444,7 +444,7 @@
             <div class="form-row">
               <div class="form-group col-md-4">
                 <select class="form-control" name="kat" id="kat" data-rule="required" data-msg="Please enter at least 8 chars of subject" />
-                <option value="">------------- pilih salah satu -------------</option>
+                <option id=ini value="">------------- pilih salah satu -------------</option>
                 <option>Keluhan</option>
                 <option>Rekomendasi/Saran</option>
                 </select>
@@ -458,7 +458,7 @@
             </div>
 
             <div class="form-group">
-              <textarea class="form-control" name="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Deskripsi Pesan"></textarea>
+              <textarea class="form-control" name="isi" id="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Deskripsi Pesan"></textarea>
               <div class="validation"></div>
             </div>
             <div class="text-center"><button type="submit">Kirim Pesan</button></div>

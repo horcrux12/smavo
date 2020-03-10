@@ -23,7 +23,7 @@
 
       <div class="container">
      
-            <div class="form">
+        <div class="form">
           <form action="<?php echo base_url();?>kontak/kirim-pesan" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -53,7 +53,7 @@
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" name="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Deskripsi Pesan"></textarea>
+            <textarea class="form-control" name="isi" id="isi" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Deskripsi Pesan"></textarea>
             <div class="validation"></div>
           </div>
           <div class="text-center"><button type="submit">Kirim Pesan</button></div>
