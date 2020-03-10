@@ -39,7 +39,7 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <select class="form-control" name="kat" id="kat" data-rule="required" data-msg="Please enter at least 8 chars of subject" />
-              <option value="">------------- pilih salah satu -------------</option>
+              <option id="ini" value="">------------- pilih salah satu -------------</option>
               <option>Keluhan</option>
               <option>Rekomendasi/Saran</option>
               </select>
