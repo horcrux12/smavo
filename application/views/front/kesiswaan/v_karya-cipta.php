@@ -17,6 +17,7 @@
 
 <!-- ====== End Header ======  -->
 
+
 <!--====== Blog ======-->
 <section class="blogs section-padding">
 	<div class="container">
@@ -24,7 +25,7 @@
 
 			<div class="col-md-8">
 				<div class="posts">
-					
+					<?php foreach ($data->result() as $key) { ?>
 						<div class="post">
 							<div class="post-img">
 								<!-- <a href="#0" class="full-width"> -->
@@ -35,7 +36,7 @@
 								<div class="post-meta">
 									<div class="post-title">
 										<h5>
-											<a href="#0"><?php echo $jdl ?></a>
+										<a href="#0"><?php echo $jdl ?></a>
 										</h5>
 									</div>
 									<ul class="meta">
@@ -44,17 +45,15 @@
 											<?php  echo $nama_user; ?>
 										</li>
 										<li>
-											<?php foreach ($data->result() as $key) { ?>
+
 											<i class="fa fa-calendar" aria-hidden="true"></i>
 											<?php echo format_indo(substr($key->tanggal_update,0,10))?>
-											
+
 										</li>
 										<li>
 
 											<i class="fa fa-tags" aria-hidden="true"></i>
-											<?php  echo  $nama_kategori; ?>
 											
-
 										</li>
 									</ul>
 								</div>
@@ -62,12 +61,12 @@
 								<div class="post-cont">
 									<p><?php echo substr(strip_tags($isi), 0, 230), "..."; ?></p>
 								</div>
-								
+
 								<a href="<?php echo base_url('karya-cipta/detail/'),$key->id_artikel?>"class="butn">Baca Selengkapnya</a>
-								<?php } ?>
+
 							</div>
 						</div>
-					
+					<?php } ?>
 					<?php echo $this->pagination->create_links(); ?>
 
 				</div>
@@ -75,18 +74,18 @@
 
 			<div class="col-md-4">
 				<div class="side-bar">
+
 					<div class="widget">
 						<div class="widget-title">
-							<h6>Kategori Berita Kesiswaan</h6>
+						<h6>Kategori Berita Kesiswaan</h6>
 						</div>
 						<ul>
 						<?php
-						$data = $this->model_dinamic->getData('tb_kat_siswa');
-						foreach ($data as $key) { ?>
-						<li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
-						<?php }?>	
-						</li>
-					</ul>   
+							$data = $this->model_dinamic->getData('tb_kat_siswa');
+							foreach ($data as $key) { ?>
+							<li><a href="<?= base_url('kesiswaan/kategori/'); ?><?php echo $key->nama_kat_siswa; ?>"><?php echo $key->nama_kat_siswa; ?></a></li>
+							<?php }?>	
+						</ul>
 					</div>
 
 				</div>

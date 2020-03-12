@@ -57,11 +57,11 @@
 									foreach ($foto[$key->id] as $kay) { ?>
 										<?php if ($n == 1) : ?>
 											<div class="carousel-item active">
-												<img src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
+												<img style="height: 465px !important;" src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
 											</div>
 										<?php else : ?>
 											<div class="carousel-item">
-												<img src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
+												<img style="height: 465px !important;" src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
 											</div>
 										<?php endif; ?>
 									<?php $n++;
@@ -102,11 +102,11 @@
 									foreach ($foto[$key->id] as $kay) { ?>
 										<?php if ($n == 1) : ?>
 											<div class="carousel-item active">
-												<img src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
+												<img style="height: 465px !important;" src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
 											</div>
 										<?php else : ?>
 											<div class="carousel-item">
-												<img src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
+												<img style="height: 465px !important;" src="<?php echo base_url() ?>assets/photo/fasilitas/<?php echo $kay->foto ?>" alt="" class="img-fluid">
 											</div>
 										<?php endif; ?>
 									<?php $n++;

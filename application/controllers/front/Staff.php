@@ -48,9 +48,24 @@
             //     $data[$key->nama_jabatan] = $this->model_guru->GetDataWhere($key->id_jabatan)->result();
             // }
             $page_content['data'] = $guru;
-            $page_content['jabatan'] = $jabatan;
+            
+            foreach ($guru as $key => $value) {
+                foreach ($jabatan as $nama) {
+                    if ($nama->id_jabatan == $key) {
+                        $ini = $nama->nama_jabatan;
+                    }
+                }
+                
+                $jbt[$key] = array (
+                    'id_jabatan' => $key,
+                    'nama_jabatan' => $ini
+                );
+            }
+
+            $page_content['jabatan'] = $jbt;
+
             // echo "<pre>";
-            // print_r($page_content['jabatan']);
+            // print_r($jbt);
             // echo "</pre>";
             $this->load->view('front/template/app',$page_content);
         }
