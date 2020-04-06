@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Mar 2020 pada 08.44
+-- Generation Time: 06 Apr 2020 pada 05.40
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.5.35
 
@@ -68,6 +68,11 @@ INSERT INTO `tb_berita` (`id_berita`, `id_kat_artikel`, `id_organisasi`, `judul`
 ('BR04022020007', 'KTA002', NULL, 'testing', 'USR001', '<p>paskibra</p>', 'OSN_TK_PROVINSI_(3).JPG', '', '2020-02-04 01:33:40'),
 ('BR04022020009', 'KTA002', 'ORG003', 'pramuka', 'USR001', '<p>pramuka</p>', 'OPSI_2018_(2).jpeg', '', '2020-02-04 01:38:42'),
 ('BR08022020010', 'KTA001', NULL, 'jajhft', 'USR002', '<p>lkhyufyf</p>', 'WhatsApp_Image_2020-02-07_at_15_17_58.jpeg', 'Ekskul_Bulutangkis.docx', '2020-02-08 15:53:15'),
+('BR12032020011', 'KTA001', NULL, 'AKADEMIK COBA 1 ', 'USR001', '<p>AKADEMIK COBA 1&nbsp; MASUK GA COBA<br></p>', 'logo_padus.png', '', '2020-03-12 04:42:47'),
+('BR12032020012', 'KTA002', NULL, 'NON AKADEMIK 1', 'USR001', '<p>NON AKADEMIK 1 MASUK GA&nbsp;<br></p>', 'logo_padus.png', '', '2020-03-12 04:43:25'),
+('BR12032020013', 'KTA003', NULL, 'UMUM 1 ', 'USR001', '<p>UMUM 1&nbsp; MASUK GA&nbsp;<br></p>', 'logo_padus.png', '', '2020-03-12 04:43:52'),
+('BR12032020014', 'KTA004', NULL, 'BEASISWA 1', 'USR001', '<p>BEASISWA 1 MASUK GA<br></p>', 'logo_padus.png', '', '2020-03-12 04:44:39'),
+('BR12032020015', 'KTA002', 'ORG008', 'NON AKADEMIK 2', 'USR001', '<p>NON AKADEMIK 2<br></p>', 'logo_padus.png', '', '2020-03-12 04:47:30'),
 ('BR26012020002', 'KTA001', NULL, 'juara', 'USR002', '<p>jua</p>', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg', '', '2020-01-26 09:45:41'),
 ('BR27012020003', 'KTA002', NULL, 'Penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire antara SMA Negeri 2 Cibinong dan IFI Jakarta', 'USR001', '<p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">Pada tanggal 10 Januari 2020, SMA Negeri 2 Cibinong dan IFI Jakarta melakukan penandatanganan Perjanjian Kerjasama (MOU) DELF Scolaire. Perjanjian ini menyepakati kerjasama antara sekolah dan IFI Jakarta selaku penyelenggara Ujian Kemampuan Berbahasa Prancis, untuk melaksanakan ujian DELF Scolaire dan melakukan pendampingan untuk &nbsp;membantu siswa dalam mempersiapkan diri dalam menghadapi ujian kemampuan berbahasa yang dikeluarkan oleh Kementrian Pendidikan Nasional Prancis dalam versi pelajar. Dengan adanya perjanjian ini, diharapkan siswa siswi SMA Negeri 2 Cibinong bisa mengikuti ujian dan&nbsp; mendapatkan sertifikat DELF sebagai bukti bahwa mereka bisa berkomunikasi dalam bahasa Prancis dan kemampuan tersebut diakui diseluruh dunia karena&nbsp; sertifikat DELF dikeluarkan oleh Kementrian Pendidikan Nasional Prancis.</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;"><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4298" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0010.jpg" alt="IMG-20200114-WA0010" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4297" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA00111.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4295" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0011.jpg" alt="IMG-20200114-WA0011" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4294" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0009.jpg" alt="IMG-20200114-WA0009" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4293" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0008.jpg" alt="IMG-20200114-WA0008" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4292" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0007.jpg" alt="IMG-20200114-WA0007" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a><a href="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" style="color: rgb(105, 7, 90); text-decoration: none;"><img class="alignleft size-full wp-image-4291" src="http://sman2cibinong.sch.id/wp-content/uploads/2020/01/IMG-20200114-WA0006.jpg" alt="IMG-20200114-WA0006" width="1280" height="854" style="display: block; max-width: 100%; height: auto; float: left; margin: 5px;"></a></p><p style="margin-top: 15px; margin-bottom: 0px; margin-left: 10px; color: rgb(51, 51, 51); font-size: 15px; font-family: &quot;Source Sans Pro&quot;, sans-serif;">&nbsp;</p>', 'IMG-20200114-WA0009-805x503.jpg', '', '2020-01-27 12:07:04');
 
@@ -115,7 +120,9 @@ CREATE TABLE `tb_calendar` (
 INSERT INTO `tb_calendar` (`id`, `title`, `description`, `color`, `start_date`, `end_date`, `create_at`, `create_by`, `modified_at`, `modified_by`) VALUES
 (1, 'sidang', 'sidang', '#FFD700', '2020-02-03', '2020-02-07', '2020-02-09 14:50:23', NULL, '2020-02-09 15:04:17', NULL),
 (3, 'UAS', 'uas', '#FF0000', '2020-02-13', '2020-02-26', '2020-02-10 05:12:46', NULL, '2020-02-10 06:11:05', NULL),
-(9, 'GLADI BERSIH UNBK 2020', '', '#0071c5', '2020-02-13', '2020-02-15', '2020-02-21 11:22:41', NULL, '2020-02-21 11:23:34', NULL);
+(9, 'GLADI BERSIH UNBK 2020', '', '#0071c5', '2020-02-13', '2020-02-15', '2020-02-21 11:22:41', NULL, '2020-02-21 11:23:34', NULL),
+(10, 'US ', '', '#0071c5', '2020-03-04', '2020-03-11', '2020-03-12 05:59:30', NULL, '2020-03-12 06:02:29', NULL),
+(11, 'UNBK ', 'UJIAN NASIONA BERBASIS KOMPUTER', '#40E0D0', '2020-03-30', '2020-04-03', '2020-03-12 06:00:31', NULL, '2020-03-12 06:03:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -188,7 +195,13 @@ INSERT INTO `tb_galeri` (`id_galeri`, `id_berita`, `foto`) VALUES
 (3, 'BR26012020002', 'FIKSI_2018_JUARA_FAVORIT_(2).jpeg'),
 (4, 'BR27012020003', 'IMG-20200114-WA0009-805x503.jpg'),
 (10, 'BR04022020006', 'OPSI_2018_(2).jpeg'),
-(11, 'BR04022020007', 'OSN_TK_PROVINSI_(3).JPG');
+(11, 'BR04022020007', 'OSN_TK_PROVINSI_(3).JPG'),
+(12, 'BR12032020011', 'silat.png'),
+(13, 'BR12032020011', 'logo_padus.png'),
+(14, 'BR12032020012', 'logo_padus.png'),
+(15, 'BR12032020013', 'logo_padus.png'),
+(16, 'BR12032020014', 'logo_padus.png'),
+(17, 'BR12032020015', 'logo_padus.png');
 
 -- --------------------------------------------------------
 
@@ -538,7 +551,12 @@ INSERT INTO `tb_kontak` (`id_kontak`, `nama_pengirim`, `email_pengirim`, `katego
 (31, 'Muhammad', 'ridhonesboer@ymail.com', 'Keluhan', 'kjhgtrdfghjkjhjhjhjhjbhb', 'testing', '2020-02-22 09:24:29'),
 (32, 'nova', 'novanurazis@gmail.com', 'Keluhan', 'jhgytfdsdddd', 'kjuy', '2020-02-22 09:25:21'),
 (33, 'nova', 'novanurazis@gmail.com', 'Keluhan', 'jhgytfdsdddd', 'kjuy', '2020-02-22 09:25:23'),
-(34, '', '', '', '', '', '2020-03-02 16:44:27');
+(34, '', '', '', '', '', '2020-03-02 16:44:27'),
+(35, 'Muhammad Ridho Fauzi', 'ralhafizhi@gmail.com', 'Rekomendasi/Saran', 'apapapapapapa', 'papapapapapapa', '2020-03-11 03:59:54'),
+(36, 'Muhammad Ridho Fauzi', 'ralhafizhi@gmail.com', 'Keluhan', 'apapapapapapa', 'apapapapapapa', '2020-03-11 04:00:20'),
+(37, 'nurazizah novalianty', 'NOVA@GMAIL.COM', 'Keluhan', 'TES BENERAN', 'COBA MASUK GA ', '2020-03-12 04:29:39'),
+(38, 'nurazizah novalianty', 'NOVA@GMAIL.COM', 'Keluhan', 'COBAIN LAGI ', 'COBA MASUK LAGI GA', '2020-03-12 04:30:29'),
+(39, 'nurazizah novalianty', 'NOVA@GMAIL.COM', 'Keluhan', 'COBAIN LAGI ', 'COBA MASUK LAGI GA', '2020-03-12 04:30:30');
 
 --
 -- Trigger `tb_kontak`
@@ -730,6 +748,8 @@ CREATE TABLE `tb_siswa` (
 INSERT INTO `tb_siswa` (`id_artikel`, `id_kat_siswa`, `id_organisasi`, `id_user`, `judul`, `deskripsi`, `foto`, `file`, `tanggal_update`) VALUES
 ('SW10022020004', 'KTS003', NULL, 'USR001', 'Tata Tertib SMA Negeri 2 Cibinong', '<p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Tata tertib secara umum diartikan sebagai suatu aturan atau tatanan yang harus dilaksanakan dan dipatuhi. Umumnya tata tertib terdapat pada institusi-institusi pendidikan, perusahaan dan kegiatan lainnya yang melibatkan banyak orang.</span></p><p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Tata tertib sekolah adalah aturan-aturan yang harus atau wajib ditaati di sekolah agar proses kegiatan belajar mengajar dapat berlangsung dengan baik. Tata tertib bertujuan untuk membantu siswa siswi memperoleh prestasi belajar yang maksimal.</span></p><p style="box-sizing: inherit; margin-bottom: 1rem; color: rgb(73, 73, 73); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 15px;"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">Dalam tata tertib ada hal-hal yang wajib dikerjakan dan dilarang dalam lingkungan sekolah. Setiap pelanggar akan dikenakan sanksi, entah itu berupa hukuman lisan ataupun lainnya. Bukan hanya untuk siswa, di lingkungan sekolah tata tertib berlaku juga untuk kepala sekolah, guru atau perangkat sekolah lainnya.</span></p>', 'logo.png', 'Tata-tertib-SMAN-2-Cibinong.docx', '2020-02-11 07:27:02'),
 ('SW10022020005', 'KTS004', NULL, 'USR001', 'Aturan Akademik', '<p><img src="		\r\n\r\n\r\n	\r\n		\r\n	\r\n	\r\n	\r\n	\r\n	\r\n	\r\n	\r\n					http://localhost/smavo/assets/photo/logo.png" style="width: 25%; float: left;" class="note-float-left">Berikut adalah aturan akademik SMA Negeri 2 Cibinong Berikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong Berikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongCibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 CibinongBerikut adalah aturan akademik SMA Negeri 2 Cibinong</p>', 'logo.png', 'Aturan-Akademik-SMAN-2-Cibinong.docx', '2020-02-12 11:07:31'),
+('SW12032020007', 'KTS002', NULL, 'USR001', 'ARTIKEL SISWA 1', '<p>ARTIKEL SISWA 1<br></p>', 'logo_padus.png', 'Paduan_Suara_SMAN_2_Cibinong.docx', '2020-03-12 04:54:22'),
+('SW12032020008', 'KTS002', 'ORG009', 'USR001', 'KARYA CIPTA 2', '<p>KARYA CIPTA 2<br></p>', 'logo_padus.png', 'Paduan_Suara_SMAN_2_Cibinong.docx', '2020-03-12 04:55:50'),
 ('SW22022020006', 'KTS002', NULL, 'USR001', 'Karya Cipta 1', '<p>Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta Karya cipta&nbsp;<br></p>', 'screenshot-localhost-2020_02_22-13_18_36.png', 'caridokumen_com_pembuatan-website-sdn-tukangan-yogyakarta-.pdf', '2020-02-22 11:26:28');
 
 --
@@ -998,7 +1018,9 @@ INSERT INTO `tb_statistik` (`id_statistik`, `ip_address`, `tanggal`, `hits`, `on
 (179, '::1', '2020-02-21', 31, '', 'Chrome', '80.0.3987.116', 'DESKTOP-Q713SR9', 'Windows 10'),
 (180, '::1', '2020-02-22', 52, '', 'Chrome', '80.0.3987.116', 'DESKTOP-Q713SR9', 'Windows 10'),
 (181, '::1', '2020-03-02', 9, '', 'Chrome', '80.0.3987.122', 'DESKTOP-Q713SR9', 'Windows 10'),
-(182, '::1', '2020-03-06', 3, '', 'Chrome', '80.0.3987.132', 'DESKTOP-Q713SR9', 'Windows 10');
+(182, '::1', '2020-03-06', 4, '', 'Chrome', '80.0.3987.132', 'DESKTOP-Q713SR9', 'Windows 10'),
+(183, '::1', '2020-03-11', 3, '', 'Chrome', '80.0.3987.132', 'DESKTOP-Q713SR9', 'Windows 10'),
+(184, '::1', '2020-03-12', 13, '', 'Chrome', '80.0.3987.132', 'DESKTOP-Q713SR9', 'Windows 10');
 
 -- --------------------------------------------------------
 
@@ -1191,12 +1213,12 @@ ALTER TABLE `tb_about`
 -- AUTO_INCREMENT for table `tb_calendar`
 --
 ALTER TABLE `tb_calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `tb_kemitraan`
 --
@@ -1206,7 +1228,7 @@ ALTER TABLE `tb_kemitraan`
 -- AUTO_INCREMENT for table `tb_kontak`
 --
 ALTER TABLE `tb_kontak`
-  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_kontak` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `tb_sambutan`
 --
@@ -1226,7 +1248,7 @@ ALTER TABLE `tb_sosmed`
 -- AUTO_INCREMENT for table `tb_statistik`
 --
 ALTER TABLE `tb_statistik`
-  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `id_statistik` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
