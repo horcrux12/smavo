@@ -290,8 +290,8 @@
             <!-- Staff TU -->
             <div class="col-lg-12 col-md-24 frame">
                 <div class="section-header wow fadeInUp">
-                    <h3>Staff TU</h3>
-                    <p>Staff TU SMA Negeri 2 Cibinong </p>
+                    <h3><?php echo $jabatan['JBT010']['nama_jabatan'] ?></h3>
+                    <p><?php echo $jabatan['JBT010']['nama_jabatan'] ?> SMA Negeri 2 Cibinong </p>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <?php foreach ($data['JBT010'] as $key) {?>
@@ -315,8 +315,8 @@
             <!-- Staff IT -->
             <div class="col-lg-12 col-md-24 frame">
                 <div class="section-header wow fadeInUp">
-                    <h3>Staff IT</h3>
-                    <p>Staff IT SMA Negeri 2 Cibinong </p>
+                    <h3><?php echo $jabatan['JBT016']['nama_jabatan'] ?></h3>
+                    <p><?php echo $jabatan['JBT016']['nama_jabatan'] ?> SMA Negeri 2 Cibinong </p>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <?php foreach ($data['JBT016'] as $key) {?>
@@ -338,15 +338,39 @@
             </div>
             <!-- End Staff IT -->
             <!-- Pustakawan -->
-            <div class="col-lg-12 col-md-24 frame">
+            <div class="col-lg-6 col-md-12 frame">
                 <div class="section-header wow fadeInUp">
-                    <h3>Pustakawan</h3>
-                    <p>Pustakawan SMA Negeri 2 Cibinong </p>
+                    <h3><?php echo $jabatan['JBT017']['nama_jabatan'] ?> </h3>
+                    <p><?php echo $jabatan['JBT017']['nama_jabatan'] ?> SMA Negeri 2 Cibinong </p>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <?php if (isset($data['JBT017'])) {
                     foreach ($data['JBT017'] as $key) {?>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                    <div class="col-lg-6 col-md-12 wow fadeInUp">
+                        <div class="member">
+                            <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4><?php echo $key['nama_lengkap'] ?></h4>
+                                    <?php if (!$key['nama_mapel']==null) :?>
+                                        <span><?php echo "Guru ",$key['nama_mapel']; ?></span>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }} ?>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 frame">
+                <div class="section-header wow fadeInUp">
+                    <h3><?php echo $jabatan['JBT009']['nama_jabatan'] ?></h3>
+                    <p><?php echo $jabatan['JBT009']['nama_jabatan'] ?> SMA Negeri 2 Cibinong </p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <?php if (isset($data['JBT009'])) {
+                    foreach ($data['JBT009'] as $key) {?>
+                    <div class="col-lg-6 col-md-12 wow fadeInUp">
                         <div class="member">
                             <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">
                             <div class="member-info">
@@ -440,14 +464,14 @@
             <!-- End Juru Masak dan Penjaga Kebersihan -->
             <!-- Seterusnya -->
             <?php foreach ($jabatan as $jbtn) {
-                if (!$jbtn->id_jabatan == "JBT001" || !$jbtn->id_jabatan == "JBT002" || !$jbtn->id_jabatan == "JBT003" || !$jbtn->id_jabatan == "JBT004" || !$jbtn->id_jabatan == "JBT005" || !$jbtn->id_jabatan == "JBT006" || !$jbtn->id_jabatan == "JBT007" || !$jbtn->id_jabatan == "JBT008" || !$jbtn->id_jabatan == "JBT009" || !$jbtn->id_jabatan == "JBT010" || !$jbtn->id_jabatan == "JBT011" || !$jbtn->id_jabatan == "JBT012" || !$jbtn->id_jabatan == "JBT013" || !$jbtn->id_jabatan == "JBT016" || !$jbtn->id_jabatan == "JBT017" || !$jbtn->id_jabatan == "JBT018" ||!$jbtn->id_jabatan == "JBT019" || !$jbtn->id_jabatan == "JBT020"   ) :?>
+                if ($jbtn['id_jabatan'] != "JBT001" && $jbtn['id_jabatan'] != "JBT002" && $jbtn['id_jabatan'] != "JBT003" && $jbtn['id_jabatan'] != "JBT004" && $jbtn['id_jabatan'] != "JBT005" && $jbtn['id_jabatan'] != "JBT006" && $jbtn['id_jabatan'] != "JBT007" && $jbtn['id_jabatan'] != "JBT008" && $jbtn['id_jabatan'] != "JBT009" && $jbtn['id_jabatan'] != "JBT010" && $jbtn['id_jabatan'] != "JBT011" && $jbtn['id_jabatan'] != "JBT012" && $jbtn['id_jabatan'] != "JBT013" && $jbtn['id_jabatan'] != "JBT016" && $jbtn['id_jabatan'] != "JBT017" && $jbtn['id_jabatan'] != "JBT018" &&$jbtn['id_jabatan'] != "JBT019" && $jbtn['id_jabatan'] != "JBT020") :?>
                 <div class="col-lg-12 col-md-24 frame">
                     <div class="section-header wow fadeInUp">
-                        <h3><?php echo $jbtn->nama_jabatan?></h3>
-                        <p><?php echo $jbtn->nama_jabatan?> SMA Negeri 2 Cibinong </p>
+                        <h3><?php echo $jbtn['nama_jabatan']?></h3>
+                        <p><?php echo $jbtn['nama_jabatan']?> SMA Negeri 2 Cibinong </p>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <?php foreach ($data[$jbtn->id_jabatan] as $key) {?>
+                        <?php foreach ($data[$jbtn['id_jabatan']] as $key) {?>
                         <div class="col-lg-3 col-md-6 wow fadeInUp">
                             <div class="member">
                                 <img src="<?php echo base_url(); ?>assets/photo/guru/<?php echo $key['foto'] ?>" class="img-fluid" alt="">

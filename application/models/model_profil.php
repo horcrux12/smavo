@@ -72,5 +72,19 @@
 		return $this->db->get();
 
 
-	}	
+	}
+	
+	public function count_karya($where){
+		$this->db->select('*');
+		$this->db->where('id_kat_siswa',$where);
+		$query = $this->db->get('tb_siswa');
+		return $query->num_rows();
+	}
+
+	public function karya_page($limit, $offset, $where){
+		$this->db->select('*');
+		$this->db->where('id_kat_siswa',$where);
+		$query = $this->db->get('tb_siswa', $limit, $offset);
+		return $query;
+	}
 }

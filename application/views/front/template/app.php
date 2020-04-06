@@ -88,8 +88,8 @@
       <div id="logo" class="pull-left">
         <!-- <h1><a href="#intro" class="scrollto">BizPage</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a class="logo" href="#"><img src="<?= base_url(); ?>assets2/img/logo jawa barat.png" alt="logo" title="" /></a>
-        <a class="logo" href="#"><img src="<?= base_url(); ?>assets2/img/logo.png" alt="logo" title="" /></a>
+        <a class="logo" href="<?= base_url(); ?>"><img src="<?= base_url(); ?>assets2/img/logo jawa barat.png" alt="logo" title="" /></a>
+        <a class="logo" href="<?= base_url(); ?>"><img src="<?= base_url(); ?>assets2/img/logo.png" alt="logo" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
