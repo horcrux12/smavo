@@ -152,6 +152,8 @@
 <script type="text/javascript">
     var get_data        = '<?php echo $get_data; ?>';
     var backend_url     = '<?php echo base_url(); ?>';
+    var ini = JSON.parse(get_data);
+    console.log(ini)
 
     $(document).ready(function() {
         $('.date-picker').datepicker();
@@ -163,30 +165,33 @@
             },
             defaultDate: moment().format('YYYY-MM-DD'),
             editable: true,
-                eventLimit: true, // allow "more" link when too many events
-                selectable: true,
-                selectHelper: true,
-                select: function(start, end) {
-                    $('#create_modal input[name=start_date]').val(moment(start).format('YYYY-MM-DD'));
-                    $('#create_modal input[name=end_date]').val(moment(end).format('YYYY-MM-DD'));
-                    $('#create_modal').modal('show');
-                    save();
-                    $('#calendarIO').fullCalendar('unselect');
-                },
-                eventDrop: function(event, delta, revertFunc) { // si changement de position
-                    editDropResize(event);
-                },
-                eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
-                    editDropResize(event);
-                },
-                eventClick: function(event, element)
-                {
-                    deteil(event);
-                    editData(event);
-                    deleteData(event);
-                },
-                events: JSON.parse(get_data)
-            });
+            eventLimit: true, // allow "more" link when too many events
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end) {
+                $('#create_modal input[name=start_date]').val(moment(start).format('YYYY-MM-DD'));
+                $('#create_modal input[name=end_date]').val(moment(end).format('YYYY-MM-DD'));
+                $('#create_modal').modal('show');
+                save();
+                $('#calendarIO').fullCalendar('unselect');
+                // console.log(start)
+                // console.log(end)
+            },
+            eventDrop: function(event, delta, revertFunc) { // si changement de position
+                editDropResize(event);
+            },
+            eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
+                editDropResize(event);
+            },
+            eventClick: function(event, element)
+            {
+                deteil(event);
+                editData(event);
+                deleteData(event);
+            },
+            events: JSON.parse(get_data),
+            displayEventTime : false
+        });
     });
 
     $(document).on('click', '.add_calendar', function(){
@@ -194,52 +199,53 @@
         $('#create_modal').modal('show');  
     })
 
-    $(document).on('submit', '#form_create', function(){
+    // $(document).on('submit', '#form_create', function(){
 
-        var element = $(this);
-        var eventData;
-        $.ajax({
-            url     : backend_url+'calendar/save',
-            type    : element.attr('method'),
-            data    : element.serialize(),
-            dataType: 'JSON',
-            beforeSend: function()
-            {
-                element.find('button[type=submit]').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
-            },
-            success: function(data)
-            {
-                if(data.status)
-                {   
-                    eventData = {
-                        id          : data.id,
-                        title       : $('#create_modal input[name=title]').val(),
-                        description : $('#create_modal textarea[name=description]').val(),
-                        start       : moment($('#create_modal input[name=start_date]').val()).format('YYYY-MM-DD HH:mm:ss'),
-                        end         : moment($('#create_modal input[name=end_date]').val()).format('YYYY-MM-DD HH:mm:ss'),
-                        color       : $('#create_modal select[name=color]').val()
-                    };
-                        $('#calendarIO').fullCalendar('renderEvent', eventData, true); // stick? = true
-                        $('#create_modal').modal('hide');
-                        element[0].reset();
-                        $('.notification').removeClass('alert-danger').addClass('alert-primary').find('p').html(data.notif);
-                    }
-                    else
-                    {
-                        element.find('.alert').css('display', 'block');
-                        element.find('.alert').html(data.notif);
-                    }
-                    element.find('button[type=submit]').html('Submit');
-                },
-                error: function (jqXHR, textStatus, errorThrown)
-                {
-                    element.find('button[type=submit]').html('Submit');
-                    element.find('.alert').css('display', 'block');
-                    element.find('.alert').html('Wrong server, please save again');
-                }         
-            });
-        return false;
-    })
+    //     var element = $(this);
+    //     var eventData;
+    //     $.ajax({
+    //         url     : backend_url+'calendar/save',
+    //         type    : element.attr('method'),
+    //         data    : element.serialize(),
+    //         dataType: 'JSON',
+    //         beforeSend: function()
+    //         {
+    //             element.find('button[type=submit]').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+    //         },
+    //         success: function(data)
+    //         {
+    //             // console.log(data.status)
+    //             if(data.status)
+    //             {   
+    //                 eventData = {
+    //                     id          : data.id,
+    //                     title       : $('#create_modal input[name=title]').val(),
+    //                     description : $('#create_modal textarea[name=description]').val(),
+    //                     start       : moment($('#create_modal input[name=start_date]').val()).format('YYYY-MM-DD HH:mm:ss'),
+    //                     end         : moment($('#create_modal input[name=end_date]').val()).format('YYYY-MM-DD HH:mm:ss'),
+    //                     color       : $('#create_modal select[name=color]').val()
+    //                 };
+    //                     $('#calendarIO').fullCalendar('renderEvent', eventData, true); // stick? = true
+    //                     $('#create_modal').modal('hide');
+    //                     element[0].reset();
+    //                     $('.notification').removeClass('alert-danger').addClass('alert-primary').find('p').html(data.notif);
+    //                 }
+    //                 else
+    //                 {
+    //                     element.find('.alert').css('display', 'block');
+    //                     element.find('.alert').html(data.notif);
+    //                 }
+    //                 element.find('button[type=submit]').html('Submit');
+    //             },
+    //             error: function (jqXHR, textStatus, errorThrown)
+    //             {
+    //                 element.find('button[type=submit]').html('Submit');
+    //                 element.find('.alert').css('display', 'block');
+    //                 element.find('.alert').html('Wrong server, please save again');
+    //             }         
+    //         });
+    //     return false;
+    // })
 
     function editDropResize(event)
     {
@@ -296,6 +302,7 @@
                 },
                 success: function(data)
                 {
+                    console.log(data)
                     if(data.status)
                     {   
                         eventData = {

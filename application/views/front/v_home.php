@@ -254,7 +254,7 @@
                         <div class="form-group">
                           <label class="control-label col-sm-2">Deskripsi</label>
                           <div class="col-sm-10">
-                            <textarea name="description" rows="3" class="form-control" placeholder="Deskripsi Kegiatan" readonly></textarea>
+                            <textarea name="description" rows="3" class="form-control" readonly></textarea>
                           </div>
                         </div>
 

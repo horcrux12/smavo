@@ -24,8 +24,8 @@ class Calendar extends CI_Controller {
 				'id' 	=> intval($val->id), 
 				'title' => $val->title, 
 				'description' => trim($val->description), 
-				'start' => date_format( date_create($val->start_date) ,"Y-m-d H:i:s"),
-				'end' 	=> date_format( date_create($val->end_date) ,"Y-m-d H:i:s"),
+				'start' => date_format( date_create($val->start_date) ,"Y-m-d"),
+				'end' 	=> date_format( date_create($val->end_date) ,"Y-m-d"),
 				'color' => $val->color,
 			);
 		}

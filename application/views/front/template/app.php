@@ -252,6 +252,7 @@
     var backend_url = '<?php echo base_url(); ?>';
 
     $(document).ready(function() {
+      
       $('.date-picker').datepicker();
       $('#calendarIO').fullCalendar({
         header: {
@@ -289,9 +290,10 @@
     });
 
     function deteil(event) {
+      console.log(event);
       $('#create_modal input[name=calendar_id]').val(event.id);
       $('#create_modal input[name=start_date]').val(moment(event.start).format('YYYY-MM-DD'));
-      $('#create_modal input[name=end_date]').val(moment(event.end).format('YYYY-MM-DD'));
+      $('#create_modal input[name=end_date]').val(moment(event.end).add(-1, 'days').format('YYYY-MM-DD'));
       $('#create_modal input[name=title]').val(event.title);
       $('#create_modal input[name=description]').val(event.description);
       $('#create_modal select[name=color]').val(event.color);

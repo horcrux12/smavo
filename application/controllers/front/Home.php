@@ -143,12 +143,15 @@ class Home extends CI_Controller
 		$calendar = array();
 		foreach ($data_calendar as $key => $val) 
 		{
+			$date = $val->end_date;
+			$date1 = str_replace('-', '/', $date);
+			$tomorrow = date('Y-m-d',strtotime($date1 . "+1 days"));
 			$calendar[] = array(
 				'id' 	=> intval($val->id), 
 				'title' => $val->title, 
 				'description' => trim($val->description), 
-				'start' => date_format( date_create($val->start_date) ,"Y-m-d H:i:s"),
-				'end' 	=> date_format( date_create($val->end_date) ,"Y-m-d H:i:s"),
+				'start' => date_format( date_create($val->start_date) ,"Y-m-d"),
+				'end' 	=> date_format( date_create($tomorrow) ,"Y-m-d"),
 				'color' => $val->color,
 			);
 		}
