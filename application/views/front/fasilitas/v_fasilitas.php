@@ -127,7 +127,7 @@
 								<div class="val">
 								<h4 class="card-title"><?php echo $key->nama_fasilitas ?></h4>
 								<p class="card-text"><?php
-									if (!$key->deskripsi == null) {
+									if ($key->deskripsi == null) {
 										echo "Aliquam ornare mauris quis sapien interdum euod. Nullam a elementum odio. Vivamus vestibulum bib orci. ultricies...";
 									}else {
 										echo $key->deskripsi;

@@ -79,6 +79,9 @@
                                 <div class="extra-info">
                                     <div class="itemAuthorBlock">
                                         <div class="itemAuthorDetails">
+                                            <?php if ($isi_berita[0]['file']) :?>
+                                                Download <a href="<?php echo base_url()?>assets/file/<?php echo $isi_berita[0]['file']?>"><?php echo $isi_berita[0]['file']?></a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
 

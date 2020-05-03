@@ -9,7 +9,8 @@ class Login extends CI_Controller{
 	function index(){
 		$this->load->view('v_login');
 	}
-	function cek(){
+    
+    function cek(){
         $username=($this->input->post('username'));
         $password=md5($this->input->post('password'));
         
@@ -18,13 +19,13 @@ class Login extends CI_Controller{
 
         $cekin = $this->session->userdata('hak_akses');
         if ($cekin) {
-            $this->session->set_userdata('masuk',TRUE);
+            $this->session->set_userdata('masuk',true);
+            print_r($this->session->userdata());
             redirect('admin/dashboard');
         }else{
             $url=base_url('admin/login');
             echo $this->session->set_flashdata('info','username atau password salah');
             redirect($url);
-
         }
     }
  }

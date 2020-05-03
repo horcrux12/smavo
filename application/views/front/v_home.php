@@ -197,7 +197,7 @@
                       </div>
                       <div class="content">
                         <span class="tag">
-                          <a href="javascript:void(0)"><?php echo $key->nama_kat_artikel ?></a>
+                          <a href="<?php echo base_url('berita/detail/'), $key->id_berita ?>"><?php echo $key->nama_kat_artikel ?></a>
                         </span>
                         <h5><a href="<?php echo base_url('berita/detail/'), $key->id_berita ?>"><?php echo $key->judul ?></a></h5>
                         <p><?php $a = $key->deskripsi;
